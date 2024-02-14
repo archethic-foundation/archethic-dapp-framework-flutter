@@ -5,6 +5,8 @@ export 'src/application/verified_tokens.dart';
 export 'src/application/version.dart';
 export 'src/domain/models/ucids_tokens.dart';
 export 'src/domain/models/verified_tokens.dart';
+export 'src/infrastructure/ucids_tokens.repository.dart';
+export 'src/infrastructure/verified_tokens.repository.dart';
 export 'src/l10n/localizations-ae-dapp-framework.dart';
 export 'src/l10n/localizations-ae-dapp-framework_en.dart';
 export 'src/ui/themes/app_theme_base.dart';
