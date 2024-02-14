@@ -2,7 +2,7 @@
 import 'dart:ui';
 import 'package:archethic_dapp_framework_flutter/src/l10n/localizations-ae-dapp-framework.dart';
 import 'package:archethic_dapp_framework_flutter/src/ui/themes/app_theme_base.dart';
-import 'package:archethic_dapp_framework_flutter/src/ui/util/components/app_button.dart';
+import 'package:archethic_dapp_framework_flutter/src/ui/util/components/buttons/app_button.dart';
 import 'package:archethic_dapp_framework_flutter/src/ui/util/components/icon_animated.dart';
 import 'package:flutter/material.dart';
 

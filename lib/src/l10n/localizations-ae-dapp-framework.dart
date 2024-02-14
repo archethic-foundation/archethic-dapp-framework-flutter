@@ -103,17 +103,23 @@ abstract class AppLocalizations {
   /// **'No'**
   String get aedappfm_no;
 
-  /// No description provided for @aedappfm_yes_btn_max.
+  /// No description provided for @aedappfm_btn_max.
   ///
   /// In en, this message translates to:
   /// **'MAX'**
-  String get aedappfm_yes_btn_max;
+  String get aedappfm_btn_max;
 
-  /// No description provided for @aedappfm_yes_btn_half.
+  /// No description provided for @aedappfm_btn_half.
   ///
   /// In en, this message translates to:
   /// **'HALF'**
-  String get aedappfm_yes_btn_half;
+  String get aedappfm_btn_half;
+
+  /// No description provided for @aedappfm_btn_resume.
+  ///
+  /// In en, this message translates to:
+  /// **'Resume'**
+  String get aedappfm_btn_resume;
 
   /// No description provided for @aedappfm_confirmationPopupTitle.
   ///

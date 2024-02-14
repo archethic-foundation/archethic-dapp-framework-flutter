@@ -4,8 +4,8 @@ import 'package:archethic_dapp_framework_flutter/src/ui/themes/app_theme_base.da
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
-class ButtonMax extends StatelessWidget {
-  const ButtonMax({
+class ButtonHalf extends StatelessWidget {
+  const ButtonHalf({
     super.key,
     required this.balanceAmount,
     required this.onTap,
@@ -28,13 +28,13 @@ class ButtonMax extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.transparent,
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: AppThemeBase.maxButtonColor),
+          border: Border.all(color: AppThemeBase.halfButtonColor),
         ),
         child: Padding(
           padding: const EdgeInsets.only(top: 2),
           child: Text(
-            AppLocalizations.of(context)!.aedappfm_yes_btn_max,
-            style: TextStyle(color: AppThemeBase.maxButtonColor),
+            AppLocalizations.of(context)!.aedappfm_btn_half,
+            style: TextStyle(color: AppThemeBase.halfButtonColor),
           ),
         ),
       )

@@ -11,10 +11,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aedappfm_no => 'No';
 
   @override
-  String get aedappfm_yes_btn_max => 'MAX';
+  String get aedappfm_btn_max => 'MAX';
 
   @override
-  String get aedappfm_yes_btn_half => 'HALF';
+  String get aedappfm_btn_half => 'HALF';
+
+  @override
+  String get aedappfm_btn_resume => 'Resume';
 
   @override
   String get aedappfm_confirmationPopupTitle => 'Confirmation Request';
