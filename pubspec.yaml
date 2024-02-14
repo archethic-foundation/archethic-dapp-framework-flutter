@@ -53,5 +53,5 @@ flutter:
   generate: true
   uses-material-design: true
   assets:
-    - assets/repositories/tokens/verified_tokens.json
-    - assets/repositories/tokens/ucids_tokens.json
+    - lib/src/domain/repositories/tokens/verified_tokens.json
+    - lib/src/domain/repositories/tokens/ucids_tokens.json

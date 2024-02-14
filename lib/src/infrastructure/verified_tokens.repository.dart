@@ -9,8 +9,8 @@ class VerifiedTokensRepositoryImpl
     implements VerifiedTokensRepositoryInterface {
   @override
   Future<VerifiedTokens> getVerifiedTokens() async {
-    final jsonContent =
-        await rootBundle.loadString('repositories/tokens/verified_tokens.json');
+    final jsonContent = await rootBundle
+        .loadString('lib/src/domain/repositories/tokens/verified_tokens.json');
 
     final Map<String, dynamic> jsonData = json.decode(jsonContent);
 
