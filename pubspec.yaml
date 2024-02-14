@@ -8,6 +8,13 @@ environment:
   sdk: ">=3.1.0 <4.0.0"
 
 dependencies:
+  # A client dart library to interact with Archethic Wallet RPC API.
+  archethic_wallet_client: ^1.0.0
+  #archethic_wallet_client:
+  #  git:
+  #    url: https://github.com/archethic-foundation/archethic-wallet-client-dart.git
+  #    ref: 29-integrate-dart-sdk-fix-from-pr-httpsgithubcomarchethic-foundationlibdartpull127
+
   flutter:
     sdk: flutter
 
@@ -20,9 +27,31 @@ dependencies:
   # State management
   flutter_riverpod: ^2.4.10
 
+  # Simple direct Service Locator that allows to decouple the interface from a concrete implementation and to access the concrete implementation from everywhere in your App
+  get_it: ^7.6.7
+
+  # Flutter plugin for querying information about the application package, such as CFBundleVersion on iOS or versionCode on Android
+  package_info_plus: ^4.2.0
+
+  # A package exposing annotations for riverpod_generator
+  riverpod_annotation: ^2.3.4
+
   # Wave animation
   wave: ^0.2.2
+
+dev_dependencies:
+  # A build system for Dart code generation and modular compilation.
+  build_runner: ^2.4.6
+  # Code generation for immutable classes that has a simple syntax/API without compromising on the features.
+  freezed: ^2.4.7
+  # Automatically generate code for converting to and from JSON by annotating Dart classes.
+  json_serializable: ^6.7.1
+  # A code generator for Riverpod. This both simplifies the syntax empowers it, such as allowing stateful hot-reload.
+  riverpod_generator: ^2.3.11
 
 flutter:
   generate: true
   uses-material-design: true
+  assets:
+    - lib/src/domain/repositories/tokens/verified_tokens.json
+    - lib/src/domain/repositories/tokens/ucids_tokens.json

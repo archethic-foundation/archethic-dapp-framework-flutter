@@ -4,5 +4,7 @@
     "aedappfm_no": "No",
     "aedappfm_yes_btn_max": "MAX",
     "aedappfm_yes_btn_half": "HALF",
-    "aedappfm_confirmationPopupTitle": "Confirmation Request"
+    "aedappfm_confirmationPopupTitle": "Confirmation Request",
+    "aedappfm_version": "Version:" ,
+    "aedappfm_build": "Build:"
 }

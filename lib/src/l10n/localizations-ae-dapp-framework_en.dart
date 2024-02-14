@@ -18,4 +18,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aedappfm_confirmationPopupTitle => 'Confirmation Request';
+
+  @override
+  String get aedappfm_version => 'Version:';
+
+  @override
+  String get aedappfm_build => 'Build:';
 }

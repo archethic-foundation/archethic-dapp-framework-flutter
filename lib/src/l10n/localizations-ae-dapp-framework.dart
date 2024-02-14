@@ -120,6 +120,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Confirmation Request'**
   String get aedappfm_confirmationPopupTitle;
+
+  /// No description provided for @aedappfm_version.
+  ///
+  /// In en, this message translates to:
+  /// **'Version:'**
+  String get aedappfm_version;
+
+  /// No description provided for @aedappfm_build.
+  ///
+  /// In en, this message translates to:
+  /// **'Build:'**
+  String get aedappfm_build;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

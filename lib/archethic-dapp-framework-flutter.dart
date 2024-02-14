@@ -19,6 +19,8 @@ export 'src/ui/util/components/popup_waves.dart';
 export 'src/ui/util/components/scale_size.dart';
 export 'src/ui/util/components/scrollbar.dart';
 export 'src/ui/util/delayed_task.dart';
+export 'src/ui/util/generic/formatters.dart';
+export 'src/ui/util/generic/responsive.dart';
 export 'src/ui/util/iconsax.dart';
 export 'src/util/address_util.dart';
 export 'src/util/generic/providers_observer.dart';
