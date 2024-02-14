@@ -1,0 +1,1 @@
+library archethic_dapp_framework_flutter;
