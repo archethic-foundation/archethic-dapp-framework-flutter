@@ -1,5 +1,10 @@
 library archethic_dapp_framework_flutter;
 
+export 'src/application/ucids_tokens.dart';
+export 'src/application/verified_tokens.dart';
+export 'src/application/version.dart';
+export 'src/domain/models/ucids_tokens.dart';
+export 'src/domain/models/verified_tokens.dart';
 export 'src/l10n/localizations-ae-dapp-framework.dart';
 export 'src/l10n/localizations-ae-dapp-framework_en.dart';
 export 'src/ui/themes/app_theme_base.dart';
@@ -23,4 +28,6 @@ export 'src/ui/util/generic/formatters.dart';
 export 'src/ui/util/generic/responsive.dart';
 export 'src/ui/util/iconsax.dart';
 export 'src/util/address_util.dart';
+export 'src/util/endpoint_util.dart';
+export 'src/util/generic/get_it_instance.dart';
 export 'src/util/generic/providers_observer.dart';
