@@ -11,6 +11,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aedappfm_no => 'No';
 
   @override
+  String get aedappfm_btn_close => 'Close';
+
+  @override
   String get aedappfm_btn_max => 'MAX';
 
   @override

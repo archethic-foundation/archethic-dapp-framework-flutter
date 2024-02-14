@@ -103,6 +103,12 @@ abstract class AppLocalizations {
   /// **'No'**
   String get aedappfm_no;
 
+  /// No description provided for @aedappfm_btn_close.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get aedappfm_btn_close;
+
   /// No description provided for @aedappfm_btn_max.
   ///
   /// In en, this message translates to:

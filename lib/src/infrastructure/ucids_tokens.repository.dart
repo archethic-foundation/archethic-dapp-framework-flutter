@@ -10,7 +10,8 @@ class UcidsTokensRepositoryImpl implements UcidsTokensRepositoryInterface {
   @override
   Future<UcidsTokens> getUcidsTokens() async {
     final jsonContent = await rootBundle.loadString(
-        'packages/archethic_dapp_framework_flutter/lib/src/domain/repositories/tokens/ucids_tokens.json');
+      'packages/archethic_dapp_framework_flutter/lib/src/domain/repositories/tokens/ucids_tokens.json',
+    );
 
     final Map<String, dynamic> jsonData = json.decode(jsonContent);
 

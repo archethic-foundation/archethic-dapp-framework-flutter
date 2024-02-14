@@ -1,11 +1,9 @@
 /// SPDX-License-Identifier: AGPL-3.0-or-later
 import 'package:archethic_dapp_framework_flutter/archethic-dapp-framework-flutter.dart';
-import 'package:archethic_dapp_framework_flutter/src/domain/models/failures.dart';
-import 'package:archethic_dapp_framework_flutter/src/ui/util/components/buttons/app_button.dart';
 import 'package:flutter/material.dart';
 
-class DexInProgressResumeBtn extends StatelessWidget {
-  const DexInProgressResumeBtn({
+class InProgressResumeBtn extends StatelessWidget {
+  const InProgressResumeBtn({
     required this.isProcessInProgress,
     required this.currentStep,
     required this.onPressed,
