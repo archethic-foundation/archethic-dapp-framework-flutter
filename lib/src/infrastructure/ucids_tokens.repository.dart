@@ -10,7 +10,7 @@ class UcidsTokensRepositoryImpl implements UcidsTokensRepositoryInterface {
   @override
   Future<UcidsTokens> getUcidsTokens() async {
     final jsonContent = await rootBundle
-        .loadString('lib/src/domain/repositories/tokens/ucids_tokens.json');
+        .loadString('assets/repositories/tokens/ucids_tokens.json');
 
     final Map<String, dynamic> jsonData = json.decode(jsonContent);
 
