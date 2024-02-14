@@ -10,8 +10,7 @@
 analyzer:
   exclude:
     - test/.test_coverage.dart
-    - lib/localization.dart
-    - lib/l10n/*
+    - lib/src/l10n/*
     - "**/*.freezed.dart"
     - "**/*.g.dart"
 

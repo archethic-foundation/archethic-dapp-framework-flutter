@@ -1,1 +1,2 @@
 flutter gen-l10n
+./lib/src/l10n/copy_l10n.sh

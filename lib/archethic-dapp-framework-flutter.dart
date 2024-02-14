@@ -1,6 +1,7 @@
 library archethic_dapp_framework_flutter;
 
-export 'src/l10n/intl_en.arb';
+export 'src/l10n/localizations-ae-dapp-framework.dart';
+export 'src/l10n/localizations-ae-dapp-framework_en.dart';
 export 'src/ui/themes/app_theme_base.dart';
 export 'src/ui/util/components/app_button.dart';
 export 'src/ui/util/components/app_text_field.dart';

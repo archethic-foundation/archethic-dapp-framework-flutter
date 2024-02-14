@@ -1,11 +1,10 @@
 /// SPDX-License-Identifier: AGPL-3.0-or-later
 import 'dart:ui';
-
+import 'package:archethic_dapp_framework_flutter/src/l10n/localizations-ae-dapp-framework.dart';
 import 'package:archethic_dapp_framework_flutter/src/ui/themes/app_theme_base.dart';
 import 'package:archethic_dapp_framework_flutter/src/ui/util/components/app_button.dart';
 import 'package:archethic_dapp_framework_flutter/src/ui/util/components/icon_animated.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/localizations.dart';
 
 class PopupCloseButton extends StatelessWidget {
   const PopupCloseButton({
@@ -69,7 +68,7 @@ class PopupCloseButton extends StatelessWidget {
                                   padding: const EdgeInsets.all(10),
                                   child: SelectableText(
                                     AppLocalizations.of(context)!
-                                        .confirmationPopupTitle,
+                                        .aedappfm_confirmationPopupTitle,
                                     style:
                                         Theme.of(context).textTheme.titleMedium,
                                   ),
@@ -94,15 +93,15 @@ class PopupCloseButton extends StatelessWidget {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       AppButton(
-                                        labelBtn:
-                                            AppLocalizations.of(context)!.no,
+                                        labelBtn: AppLocalizations.of(context)!
+                                            .aedappfm_no,
                                         onPressed: () async {
                                           Navigator.of(context).pop();
                                         },
                                       ),
                                       AppButton(
-                                        labelBtn:
-                                            AppLocalizations.of(context)!.yes,
+                                        labelBtn: AppLocalizations.of(context)!
+                                            .aedappfm_yes,
                                         onPressed: () async {
                                           if (warningCloseFunction != null) {
                                             await warningCloseFunction!();
