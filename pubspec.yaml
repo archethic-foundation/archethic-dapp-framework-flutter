@@ -53,5 +53,5 @@ flutter:
   generate: true
   uses-material-design: true
   assets:
-    - packages/archethic_dapp_framework_flutter/lib/src/domain/repositories/tokens/verified_tokens.json
-    - packages/archethic_dapp_framework_flutter/lib/src/domain/repositories/tokens/ucids_tokens.json
+    - lib/src/domain/repositories/tokens/verified_tokens.json
+    - lib/src/domain/repositories/tokens/ucids_tokens.json
