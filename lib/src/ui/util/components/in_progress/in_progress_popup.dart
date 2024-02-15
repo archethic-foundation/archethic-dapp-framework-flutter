@@ -10,9 +10,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class InProgressPopup {
   static Future<void> getDialog(
     BuildContext context,
-    WidgetRef ref,
-    List<Widget> body,
-    aedappfm.PopupCloseButton popupCloseButton,
+    List<Widget> Function(BuildContext context, WidgetRef ref) bodyBuilder,
+    aedappfm.PopupCloseButton Function(BuildContext context, WidgetRef ref)
+        closeButtonBuilder,
   ) async {
     return showDialog<void>(
       context: context,
@@ -78,7 +78,7 @@ class InProgressPopup {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           mainAxisSize: MainAxisSize.min,
-                                          children: body,
+                                          children: bodyBuilder(context, ref),
                                         ),
                                       ),
                                     ],
@@ -89,7 +89,7 @@ class InProgressPopup {
                           ),
                           Positioned(
                             right: 0,
-                            child: popupCloseButton,
+                            child: closeButtonBuilder(context, ref),
                           ),
                         ],
                       ),
