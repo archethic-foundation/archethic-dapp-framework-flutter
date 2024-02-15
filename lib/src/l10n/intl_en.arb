@@ -8,5 +8,6 @@
     "aedappfm_btn_resume": "Resume",
     "aedappfm_confirmationPopupTitle": "Confirmation Request",
     "aedappfm_version": "Version:",
-    "aedappfm_build": "Build:"
+    "aedappfm_build": "Build:",
+    "aedappfm_connectionWalletConnect": "Connect your wallet"
 }

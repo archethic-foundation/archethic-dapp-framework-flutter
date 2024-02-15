@@ -1,0 +1,1 @@
+enum ProcessStep { form, confirmation }

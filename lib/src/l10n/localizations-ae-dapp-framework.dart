@@ -144,6 +144,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Build:'**
   String get aedappfm_build;
+
+  /// No description provided for @aedappfm_connectionWalletConnect.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect your wallet'**
+  String get aedappfm_connectionWalletConnect;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

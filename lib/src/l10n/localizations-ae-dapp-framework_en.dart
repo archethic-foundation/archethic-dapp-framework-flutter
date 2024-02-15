@@ -30,4 +30,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aedappfm_build => 'Build:';
+
+  @override
+  String get aedappfm_connectionWalletConnect => 'Connect your wallet';
 }
