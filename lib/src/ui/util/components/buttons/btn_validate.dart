@@ -1,6 +1,5 @@
 /// SPDX-License-Identifier: AGPL-3.0-or-later
-import 'package:archethic_dapp_framework_flutter/archethic-dapp-framework-flutter.dart'
-    as aedappfm;
+import 'package:archethic_dapp_framework_flutter/src/ui/util/components/buttons/app_button.dart';
 import 'package:archethic_dapp_framework_flutter/src/ui/util/components/buttons/welcome_connect_wallet_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -41,7 +40,7 @@ class ButtonValidate extends ConsumerWidget {
     }
 
     if (controlOk == false) {
-      return aedappfm.AppButton(
+      return AppButton(
         background: background,
         labelBtn: labelBtn,
         disabled: true,
@@ -50,7 +49,7 @@ class ButtonValidate extends ConsumerWidget {
       );
     }
 
-    return aedappfm.AppButton(
+    return AppButton(
       background: background,
       labelBtn: labelBtn,
       onPressed: onPressed,

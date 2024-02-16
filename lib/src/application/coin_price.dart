@@ -1,8 +1,7 @@
 /// SPDX-License-Identifier: AGPL-3.0-or-later
 import 'dart:async';
 import 'dart:convert';
-import 'package:archethic_dapp_framework_flutter/archethic-dapp-framework-flutter.dart'
-    as aedappfm;
+import 'package:archethic_dapp_framework_flutter/src/application/ucids_tokens.dart';
 import 'package:archethic_dapp_framework_flutter/src/domain/models/crypto_price.dart';
 import 'package:http/http.dart' as http;
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -82,7 +81,7 @@ double _coinPriceFromAddress(
   final coinPrice = ref.read(
     CoinPriceProviders.coinPrice,
   );
-  final ucidsList = ref.read(aedappfm.UcidsTokensProviders.ucidsTokens);
+  final ucidsList = ref.read(UcidsTokensProviders.ucidsTokens);
 
   final ucid = ucidsList[address] ?? 0;
   if (ucid != 0) {

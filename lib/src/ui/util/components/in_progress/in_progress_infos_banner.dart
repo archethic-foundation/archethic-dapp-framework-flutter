@@ -1,6 +1,5 @@
-import 'package:archethic_dapp_framework_flutter/archethic-dapp-framework-flutter.dart'
-    as aedappfm;
 import 'package:archethic_dapp_framework_flutter/src/domain/models/failures.dart';
+import 'package:archethic_dapp_framework_flutter/src/ui/util/components/info_banner.dart';
 import 'package:flutter/material.dart';
 
 class InProgressInfosBanner extends StatelessWidget {
@@ -26,32 +25,32 @@ class InProgressInfosBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (failure != null && failureMessage != null) {
-      return aedappfm.InfoBanner(
+      return InfoBanner(
         failureMessage!,
-        aedappfm.InfoBannerType.error,
+        InfoBannerType.error,
         width: MediaQuery.of(context).size.width * 0.9,
       );
     }
 
     if (walletConfirmation == true) {
-      return aedappfm.InfoBanner(
+      return InfoBanner(
         walletConfirmationTxt,
-        aedappfm.InfoBannerType.request,
+        InfoBannerType.request,
         width: MediaQuery.of(context).size.width * 0.9,
       );
     }
 
     if (failure == null && isProcessInProgress == false) {
-      return aedappfm.InfoBanner(
+      return InfoBanner(
         successTxt,
-        aedappfm.InfoBannerType.success,
+        InfoBannerType.success,
         width: MediaQuery.of(context).size.width * 0.9,
       );
     }
 
-    return aedappfm.InfoBanner(
+    return InfoBanner(
       inProgressTxt,
-      aedappfm.InfoBannerType.request,
+      InfoBannerType.request,
       width: MediaQuery.of(context).size.width * 0.9,
       waitAnimation: true,
     );

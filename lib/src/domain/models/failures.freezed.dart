@@ -38,16 +38,30 @@ Failure _$FailureFromJson(Map<String, dynamic> json) {
       return Unauthorized.fromJson(json);
     case 'invalidValue':
       return InvalidValue.fromJson(json);
+    case 'htlcWithoutFunds':
+      return HTLCWithoutFunds.fromJson(json);
+    case 'notHTLC':
+      return NotHTLC.fromJson(json);
     case 'wrongNetwork':
       return WrongNetwork.fromJson(json);
+    case 'insufficientPoolFunds':
+      return InsufficientPoolFunds.fromJson(json);
     case 'incompatibleBrowser':
       return IncompatibleBrowser.fromJson(json);
+    case 'chainSwitchNotSupported':
+      return ChainSwitchNotSupported.fromJson(json);
+    case 'connectivityEVM':
+      return ConnectivityEVM.fromJson(json);
+    case 'paramEVMChain':
+      return ParamEVMChain.fromJson(json);
     case 'userRejected':
       return UserRejected.fromJson(json);
     case 'connectivityArchethic':
       return ConnectivityArchethic.fromJson(json);
     case 'timeout':
       return Timeout.fromJson(json);
+    case 'rpcErrorEVM':
+      return RPCErrorEVM.fromJson(json);
     case 'other':
       return OtherFailure.fromJson(json);
 
@@ -72,11 +86,18 @@ mixin _$Failure {
     required TResult Function() insufficientFunds,
     required TResult Function() unauthorized,
     required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
     required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
     required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
     required TResult Function(String? cause, String? stack) other,
   }) =>
       throw _privateConstructorUsedError;
@@ -93,11 +114,18 @@ mixin _$Failure {
     TResult? Function()? insufficientFunds,
     TResult? Function()? unauthorized,
     TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
     TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
     TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
     TResult? Function(String? cause, String? stack)? other,
   }) =>
       throw _privateConstructorUsedError;
@@ -114,11 +142,18 @@ mixin _$Failure {
     TResult Function()? insufficientFunds,
     TResult Function()? unauthorized,
     TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
     TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
     TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
     TResult Function(String? cause, String? stack)? other,
     required TResult orElse(),
   }) =>
@@ -137,12 +172,21 @@ mixin _$Failure {
     required TResult Function(InsufficientFunds value) insufficientFunds,
     required TResult Function(Unauthorized value) unauthorized,
     required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
     required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
     required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
         connectivityArchethic,
     required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
     required TResult Function(OtherFailure value) other,
   }) =>
       throw _privateConstructorUsedError;
@@ -160,11 +204,18 @@ mixin _$Failure {
     TResult? Function(InsufficientFunds value)? insufficientFunds,
     TResult? Function(Unauthorized value)? unauthorized,
     TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
     TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult? Function(OtherFailure value)? other,
   }) =>
       throw _privateConstructorUsedError;
@@ -182,11 +233,18 @@ mixin _$Failure {
     TResult Function(InsufficientFunds value)? insufficientFunds,
     TResult Function(Unauthorized value)? unauthorized,
     TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
     TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult Function(OtherFailure value)? other,
     required TResult orElse(),
   }) =>
@@ -269,11 +327,18 @@ class _$LoggedOutImpl extends LoggedOut {
     required TResult Function() insufficientFunds,
     required TResult Function() unauthorized,
     required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
     required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
     required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
     required TResult Function(String? cause, String? stack) other,
   }) {
     return loggedOut();
@@ -293,11 +358,18 @@ class _$LoggedOutImpl extends LoggedOut {
     TResult? Function()? insufficientFunds,
     TResult? Function()? unauthorized,
     TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
     TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
     TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
     TResult? Function(String? cause, String? stack)? other,
   }) {
     return loggedOut?.call();
@@ -317,11 +389,18 @@ class _$LoggedOutImpl extends LoggedOut {
     TResult Function()? insufficientFunds,
     TResult Function()? unauthorized,
     TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
     TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
     TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
     TResult Function(String? cause, String? stack)? other,
     required TResult orElse(),
   }) {
@@ -346,12 +425,21 @@ class _$LoggedOutImpl extends LoggedOut {
     required TResult Function(InsufficientFunds value) insufficientFunds,
     required TResult Function(Unauthorized value) unauthorized,
     required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
     required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
     required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
         connectivityArchethic,
     required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
     required TResult Function(OtherFailure value) other,
   }) {
     return loggedOut(this);
@@ -372,11 +460,18 @@ class _$LoggedOutImpl extends LoggedOut {
     TResult? Function(InsufficientFunds value)? insufficientFunds,
     TResult? Function(Unauthorized value)? unauthorized,
     TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
     TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult? Function(OtherFailure value)? other,
   }) {
     return loggedOut?.call(this);
@@ -397,11 +492,18 @@ class _$LoggedOutImpl extends LoggedOut {
     TResult Function(InsufficientFunds value)? insufficientFunds,
     TResult Function(Unauthorized value)? unauthorized,
     TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
     TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult Function(OtherFailure value)? other,
     required TResult orElse(),
   }) {
@@ -485,11 +587,18 @@ class _$NetworkFailureImpl extends NetworkFailure {
     required TResult Function() insufficientFunds,
     required TResult Function() unauthorized,
     required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
     required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
     required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
     required TResult Function(String? cause, String? stack) other,
   }) {
     return network();
@@ -509,11 +618,18 @@ class _$NetworkFailureImpl extends NetworkFailure {
     TResult? Function()? insufficientFunds,
     TResult? Function()? unauthorized,
     TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
     TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
     TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
     TResult? Function(String? cause, String? stack)? other,
   }) {
     return network?.call();
@@ -533,11 +649,18 @@ class _$NetworkFailureImpl extends NetworkFailure {
     TResult Function()? insufficientFunds,
     TResult Function()? unauthorized,
     TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
     TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
     TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
     TResult Function(String? cause, String? stack)? other,
     required TResult orElse(),
   }) {
@@ -562,12 +685,21 @@ class _$NetworkFailureImpl extends NetworkFailure {
     required TResult Function(InsufficientFunds value) insufficientFunds,
     required TResult Function(Unauthorized value) unauthorized,
     required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
     required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
     required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
         connectivityArchethic,
     required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
     required TResult Function(OtherFailure value) other,
   }) {
     return network(this);
@@ -588,11 +720,18 @@ class _$NetworkFailureImpl extends NetworkFailure {
     TResult? Function(InsufficientFunds value)? insufficientFunds,
     TResult? Function(Unauthorized value)? unauthorized,
     TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
     TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult? Function(OtherFailure value)? other,
   }) {
     return network?.call(this);
@@ -613,11 +752,18 @@ class _$NetworkFailureImpl extends NetworkFailure {
     TResult Function(InsufficientFunds value)? insufficientFunds,
     TResult Function(Unauthorized value)? unauthorized,
     TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
     TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult Function(OtherFailure value)? other,
     required TResult orElse(),
   }) {
@@ -730,11 +876,18 @@ class _$QuotaExceededFailureImpl extends QuotaExceededFailure {
     required TResult Function() insufficientFunds,
     required TResult Function() unauthorized,
     required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
     required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
     required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
     required TResult Function(String? cause, String? stack) other,
   }) {
     return quotaExceeded(cooldownEndDate);
@@ -754,11 +907,18 @@ class _$QuotaExceededFailureImpl extends QuotaExceededFailure {
     TResult? Function()? insufficientFunds,
     TResult? Function()? unauthorized,
     TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
     TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
     TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
     TResult? Function(String? cause, String? stack)? other,
   }) {
     return quotaExceeded?.call(cooldownEndDate);
@@ -778,11 +938,18 @@ class _$QuotaExceededFailureImpl extends QuotaExceededFailure {
     TResult Function()? insufficientFunds,
     TResult Function()? unauthorized,
     TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
     TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
     TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
     TResult Function(String? cause, String? stack)? other,
     required TResult orElse(),
   }) {
@@ -807,12 +974,21 @@ class _$QuotaExceededFailureImpl extends QuotaExceededFailure {
     required TResult Function(InsufficientFunds value) insufficientFunds,
     required TResult Function(Unauthorized value) unauthorized,
     required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
     required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
     required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
         connectivityArchethic,
     required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
     required TResult Function(OtherFailure value) other,
   }) {
     return quotaExceeded(this);
@@ -833,11 +1009,18 @@ class _$QuotaExceededFailureImpl extends QuotaExceededFailure {
     TResult? Function(InsufficientFunds value)? insufficientFunds,
     TResult? Function(Unauthorized value)? unauthorized,
     TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
     TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult? Function(OtherFailure value)? other,
   }) {
     return quotaExceeded?.call(this);
@@ -858,11 +1041,18 @@ class _$QuotaExceededFailureImpl extends QuotaExceededFailure {
     TResult Function(InsufficientFunds value)? insufficientFunds,
     TResult Function(Unauthorized value)? unauthorized,
     TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
     TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult Function(OtherFailure value)? other,
     required TResult orElse(),
   }) {
@@ -952,11 +1142,18 @@ class _$ServiceNotFoundImpl extends ServiceNotFound {
     required TResult Function() insufficientFunds,
     required TResult Function() unauthorized,
     required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
     required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
     required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
     required TResult Function(String? cause, String? stack) other,
   }) {
     return serviceNotFound();
@@ -976,11 +1173,18 @@ class _$ServiceNotFoundImpl extends ServiceNotFound {
     TResult? Function()? insufficientFunds,
     TResult? Function()? unauthorized,
     TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
     TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
     TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
     TResult? Function(String? cause, String? stack)? other,
   }) {
     return serviceNotFound?.call();
@@ -1000,11 +1204,18 @@ class _$ServiceNotFoundImpl extends ServiceNotFound {
     TResult Function()? insufficientFunds,
     TResult Function()? unauthorized,
     TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
     TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
     TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
     TResult Function(String? cause, String? stack)? other,
     required TResult orElse(),
   }) {
@@ -1029,12 +1240,21 @@ class _$ServiceNotFoundImpl extends ServiceNotFound {
     required TResult Function(InsufficientFunds value) insufficientFunds,
     required TResult Function(Unauthorized value) unauthorized,
     required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
     required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
     required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
         connectivityArchethic,
     required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
     required TResult Function(OtherFailure value) other,
   }) {
     return serviceNotFound(this);
@@ -1055,11 +1275,18 @@ class _$ServiceNotFoundImpl extends ServiceNotFound {
     TResult? Function(InsufficientFunds value)? insufficientFunds,
     TResult? Function(Unauthorized value)? unauthorized,
     TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
     TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult? Function(OtherFailure value)? other,
   }) {
     return serviceNotFound?.call(this);
@@ -1080,11 +1307,18 @@ class _$ServiceNotFoundImpl extends ServiceNotFound {
     TResult Function(InsufficientFunds value)? insufficientFunds,
     TResult Function(Unauthorized value)? unauthorized,
     TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
     TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult Function(OtherFailure value)? other,
     required TResult orElse(),
   }) {
@@ -1169,11 +1403,18 @@ class _$ServiceAlreadyExistsImpl extends ServiceAlreadyExists {
     required TResult Function() insufficientFunds,
     required TResult Function() unauthorized,
     required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
     required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
     required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
     required TResult Function(String? cause, String? stack) other,
   }) {
     return serviceAlreadyExists();
@@ -1193,11 +1434,18 @@ class _$ServiceAlreadyExistsImpl extends ServiceAlreadyExists {
     TResult? Function()? insufficientFunds,
     TResult? Function()? unauthorized,
     TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
     TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
     TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
     TResult? Function(String? cause, String? stack)? other,
   }) {
     return serviceAlreadyExists?.call();
@@ -1217,11 +1465,18 @@ class _$ServiceAlreadyExistsImpl extends ServiceAlreadyExists {
     TResult Function()? insufficientFunds,
     TResult Function()? unauthorized,
     TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
     TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
     TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
     TResult Function(String? cause, String? stack)? other,
     required TResult orElse(),
   }) {
@@ -1246,12 +1501,21 @@ class _$ServiceAlreadyExistsImpl extends ServiceAlreadyExists {
     required TResult Function(InsufficientFunds value) insufficientFunds,
     required TResult Function(Unauthorized value) unauthorized,
     required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
     required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
     required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
         connectivityArchethic,
     required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
     required TResult Function(OtherFailure value) other,
   }) {
     return serviceAlreadyExists(this);
@@ -1272,11 +1536,18 @@ class _$ServiceAlreadyExistsImpl extends ServiceAlreadyExists {
     TResult? Function(InsufficientFunds value)? insufficientFunds,
     TResult? Function(Unauthorized value)? unauthorized,
     TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
     TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult? Function(OtherFailure value)? other,
   }) {
     return serviceAlreadyExists?.call(this);
@@ -1297,11 +1568,18 @@ class _$ServiceAlreadyExistsImpl extends ServiceAlreadyExists {
     TResult Function(InsufficientFunds value)? insufficientFunds,
     TResult Function(Unauthorized value)? unauthorized,
     TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
     TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult Function(OtherFailure value)? other,
     required TResult orElse(),
   }) {
@@ -1385,11 +1663,18 @@ class _$PoolAlreadyExistsImpl extends PoolAlreadyExists {
     required TResult Function() insufficientFunds,
     required TResult Function() unauthorized,
     required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
     required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
     required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
     required TResult Function(String? cause, String? stack) other,
   }) {
     return poolAlreadyExists();
@@ -1409,11 +1694,18 @@ class _$PoolAlreadyExistsImpl extends PoolAlreadyExists {
     TResult? Function()? insufficientFunds,
     TResult? Function()? unauthorized,
     TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
     TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
     TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
     TResult? Function(String? cause, String? stack)? other,
   }) {
     return poolAlreadyExists?.call();
@@ -1433,11 +1725,18 @@ class _$PoolAlreadyExistsImpl extends PoolAlreadyExists {
     TResult Function()? insufficientFunds,
     TResult Function()? unauthorized,
     TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
     TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
     TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
     TResult Function(String? cause, String? stack)? other,
     required TResult orElse(),
   }) {
@@ -1462,12 +1761,21 @@ class _$PoolAlreadyExistsImpl extends PoolAlreadyExists {
     required TResult Function(InsufficientFunds value) insufficientFunds,
     required TResult Function(Unauthorized value) unauthorized,
     required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
     required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
     required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
         connectivityArchethic,
     required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
     required TResult Function(OtherFailure value) other,
   }) {
     return poolAlreadyExists(this);
@@ -1488,11 +1796,18 @@ class _$PoolAlreadyExistsImpl extends PoolAlreadyExists {
     TResult? Function(InsufficientFunds value)? insufficientFunds,
     TResult? Function(Unauthorized value)? unauthorized,
     TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
     TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult? Function(OtherFailure value)? other,
   }) {
     return poolAlreadyExists?.call(this);
@@ -1513,11 +1828,18 @@ class _$PoolAlreadyExistsImpl extends PoolAlreadyExists {
     TResult Function(InsufficientFunds value)? insufficientFunds,
     TResult Function(Unauthorized value)? unauthorized,
     TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
     TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult Function(OtherFailure value)? other,
     required TResult orElse(),
   }) {
@@ -1605,11 +1927,18 @@ class _$LPTokenAmountExceedBalanceImpl extends LPTokenAmountExceedBalance {
     required TResult Function() insufficientFunds,
     required TResult Function() unauthorized,
     required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
     required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
     required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
     required TResult Function(String? cause, String? stack) other,
   }) {
     return lpTokenAmountExceedBalance();
@@ -1629,11 +1958,18 @@ class _$LPTokenAmountExceedBalanceImpl extends LPTokenAmountExceedBalance {
     TResult? Function()? insufficientFunds,
     TResult? Function()? unauthorized,
     TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
     TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
     TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
     TResult? Function(String? cause, String? stack)? other,
   }) {
     return lpTokenAmountExceedBalance?.call();
@@ -1653,11 +1989,18 @@ class _$LPTokenAmountExceedBalanceImpl extends LPTokenAmountExceedBalance {
     TResult Function()? insufficientFunds,
     TResult Function()? unauthorized,
     TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
     TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
     TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
     TResult Function(String? cause, String? stack)? other,
     required TResult orElse(),
   }) {
@@ -1682,12 +2025,21 @@ class _$LPTokenAmountExceedBalanceImpl extends LPTokenAmountExceedBalance {
     required TResult Function(InsufficientFunds value) insufficientFunds,
     required TResult Function(Unauthorized value) unauthorized,
     required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
     required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
     required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
         connectivityArchethic,
     required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
     required TResult Function(OtherFailure value) other,
   }) {
     return lpTokenAmountExceedBalance(this);
@@ -1708,11 +2060,18 @@ class _$LPTokenAmountExceedBalanceImpl extends LPTokenAmountExceedBalance {
     TResult? Function(InsufficientFunds value)? insufficientFunds,
     TResult? Function(Unauthorized value)? unauthorized,
     TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
     TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult? Function(OtherFailure value)? other,
   }) {
     return lpTokenAmountExceedBalance?.call(this);
@@ -1733,11 +2092,18 @@ class _$LPTokenAmountExceedBalanceImpl extends LPTokenAmountExceedBalance {
     TResult Function(InsufficientFunds value)? insufficientFunds,
     TResult Function(Unauthorized value)? unauthorized,
     TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
     TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult Function(OtherFailure value)? other,
     required TResult orElse(),
   }) {
@@ -1821,11 +2187,18 @@ class _$PoolNotExistsImpl extends PoolNotExists {
     required TResult Function() insufficientFunds,
     required TResult Function() unauthorized,
     required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
     required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
     required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
     required TResult Function(String? cause, String? stack) other,
   }) {
     return poolNotExists();
@@ -1845,11 +2218,18 @@ class _$PoolNotExistsImpl extends PoolNotExists {
     TResult? Function()? insufficientFunds,
     TResult? Function()? unauthorized,
     TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
     TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
     TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
     TResult? Function(String? cause, String? stack)? other,
   }) {
     return poolNotExists?.call();
@@ -1869,11 +2249,18 @@ class _$PoolNotExistsImpl extends PoolNotExists {
     TResult Function()? insufficientFunds,
     TResult Function()? unauthorized,
     TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
     TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
     TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
     TResult Function(String? cause, String? stack)? other,
     required TResult orElse(),
   }) {
@@ -1898,12 +2285,21 @@ class _$PoolNotExistsImpl extends PoolNotExists {
     required TResult Function(InsufficientFunds value) insufficientFunds,
     required TResult Function(Unauthorized value) unauthorized,
     required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
     required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
     required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
         connectivityArchethic,
     required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
     required TResult Function(OtherFailure value) other,
   }) {
     return poolNotExists(this);
@@ -1924,11 +2320,18 @@ class _$PoolNotExistsImpl extends PoolNotExists {
     TResult? Function(InsufficientFunds value)? insufficientFunds,
     TResult? Function(Unauthorized value)? unauthorized,
     TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
     TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult? Function(OtherFailure value)? other,
   }) {
     return poolNotExists?.call(this);
@@ -1949,11 +2352,18 @@ class _$PoolNotExistsImpl extends PoolNotExists {
     TResult Function(InsufficientFunds value)? insufficientFunds,
     TResult Function(Unauthorized value)? unauthorized,
     TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
     TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult Function(OtherFailure value)? other,
     required TResult orElse(),
   }) {
@@ -2037,11 +2447,18 @@ class _$InsufficientFundsImpl extends InsufficientFunds {
     required TResult Function() insufficientFunds,
     required TResult Function() unauthorized,
     required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
     required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
     required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
     required TResult Function(String? cause, String? stack) other,
   }) {
     return insufficientFunds();
@@ -2061,11 +2478,18 @@ class _$InsufficientFundsImpl extends InsufficientFunds {
     TResult? Function()? insufficientFunds,
     TResult? Function()? unauthorized,
     TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
     TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
     TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
     TResult? Function(String? cause, String? stack)? other,
   }) {
     return insufficientFunds?.call();
@@ -2085,11 +2509,18 @@ class _$InsufficientFundsImpl extends InsufficientFunds {
     TResult Function()? insufficientFunds,
     TResult Function()? unauthorized,
     TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
     TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
     TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
     TResult Function(String? cause, String? stack)? other,
     required TResult orElse(),
   }) {
@@ -2114,12 +2545,21 @@ class _$InsufficientFundsImpl extends InsufficientFunds {
     required TResult Function(InsufficientFunds value) insufficientFunds,
     required TResult Function(Unauthorized value) unauthorized,
     required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
     required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
     required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
         connectivityArchethic,
     required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
     required TResult Function(OtherFailure value) other,
   }) {
     return insufficientFunds(this);
@@ -2140,11 +2580,18 @@ class _$InsufficientFundsImpl extends InsufficientFunds {
     TResult? Function(InsufficientFunds value)? insufficientFunds,
     TResult? Function(Unauthorized value)? unauthorized,
     TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
     TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult? Function(OtherFailure value)? other,
   }) {
     return insufficientFunds?.call(this);
@@ -2165,11 +2612,18 @@ class _$InsufficientFundsImpl extends InsufficientFunds {
     TResult Function(InsufficientFunds value)? insufficientFunds,
     TResult Function(Unauthorized value)? unauthorized,
     TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
     TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult Function(OtherFailure value)? other,
     required TResult orElse(),
   }) {
@@ -2253,11 +2707,18 @@ class _$UnauthorizedImpl extends Unauthorized {
     required TResult Function() insufficientFunds,
     required TResult Function() unauthorized,
     required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
     required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
     required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
     required TResult Function(String? cause, String? stack) other,
   }) {
     return unauthorized();
@@ -2277,11 +2738,18 @@ class _$UnauthorizedImpl extends Unauthorized {
     TResult? Function()? insufficientFunds,
     TResult? Function()? unauthorized,
     TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
     TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
     TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
     TResult? Function(String? cause, String? stack)? other,
   }) {
     return unauthorized?.call();
@@ -2301,11 +2769,18 @@ class _$UnauthorizedImpl extends Unauthorized {
     TResult Function()? insufficientFunds,
     TResult Function()? unauthorized,
     TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
     TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
     TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
     TResult Function(String? cause, String? stack)? other,
     required TResult orElse(),
   }) {
@@ -2330,12 +2805,21 @@ class _$UnauthorizedImpl extends Unauthorized {
     required TResult Function(InsufficientFunds value) insufficientFunds,
     required TResult Function(Unauthorized value) unauthorized,
     required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
     required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
     required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
         connectivityArchethic,
     required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
     required TResult Function(OtherFailure value) other,
   }) {
     return unauthorized(this);
@@ -2356,11 +2840,18 @@ class _$UnauthorizedImpl extends Unauthorized {
     TResult? Function(InsufficientFunds value)? insufficientFunds,
     TResult? Function(Unauthorized value)? unauthorized,
     TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
     TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult? Function(OtherFailure value)? other,
   }) {
     return unauthorized?.call(this);
@@ -2381,11 +2872,18 @@ class _$UnauthorizedImpl extends Unauthorized {
     TResult Function(InsufficientFunds value)? insufficientFunds,
     TResult Function(Unauthorized value)? unauthorized,
     TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
     TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult Function(OtherFailure value)? other,
     required TResult orElse(),
   }) {
@@ -2469,11 +2967,18 @@ class _$InvalidValueImpl extends InvalidValue {
     required TResult Function() insufficientFunds,
     required TResult Function() unauthorized,
     required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
     required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
     required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
     required TResult Function(String? cause, String? stack) other,
   }) {
     return invalidValue();
@@ -2493,11 +2998,18 @@ class _$InvalidValueImpl extends InvalidValue {
     TResult? Function()? insufficientFunds,
     TResult? Function()? unauthorized,
     TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
     TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
     TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
     TResult? Function(String? cause, String? stack)? other,
   }) {
     return invalidValue?.call();
@@ -2517,11 +3029,18 @@ class _$InvalidValueImpl extends InvalidValue {
     TResult Function()? insufficientFunds,
     TResult Function()? unauthorized,
     TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
     TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
     TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
     TResult Function(String? cause, String? stack)? other,
     required TResult orElse(),
   }) {
@@ -2546,12 +3065,21 @@ class _$InvalidValueImpl extends InvalidValue {
     required TResult Function(InsufficientFunds value) insufficientFunds,
     required TResult Function(Unauthorized value) unauthorized,
     required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
     required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
     required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
         connectivityArchethic,
     required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
     required TResult Function(OtherFailure value) other,
   }) {
     return invalidValue(this);
@@ -2572,11 +3100,18 @@ class _$InvalidValueImpl extends InvalidValue {
     TResult? Function(InsufficientFunds value)? insufficientFunds,
     TResult? Function(Unauthorized value)? unauthorized,
     TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
     TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult? Function(OtherFailure value)? other,
   }) {
     return invalidValue?.call(this);
@@ -2597,11 +3132,18 @@ class _$InvalidValueImpl extends InvalidValue {
     TResult Function(InsufficientFunds value)? insufficientFunds,
     TResult Function(Unauthorized value)? unauthorized,
     TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
     TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult Function(OtherFailure value)? other,
     required TResult orElse(),
   }) {
@@ -2625,6 +3167,525 @@ abstract class InvalidValue extends Failure {
 
   factory InvalidValue.fromJson(Map<String, dynamic> json) =
       _$InvalidValueImpl.fromJson;
+}
+
+/// @nodoc
+abstract class _$$HTLCWithoutFundsImplCopyWith<$Res> {
+  factory _$$HTLCWithoutFundsImplCopyWith(_$HTLCWithoutFundsImpl value,
+          $Res Function(_$HTLCWithoutFundsImpl) then) =
+      __$$HTLCWithoutFundsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$HTLCWithoutFundsImplCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$HTLCWithoutFundsImpl>
+    implements _$$HTLCWithoutFundsImplCopyWith<$Res> {
+  __$$HTLCWithoutFundsImplCopyWithImpl(_$HTLCWithoutFundsImpl _value,
+      $Res Function(_$HTLCWithoutFundsImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$HTLCWithoutFundsImpl extends HTLCWithoutFunds {
+  const _$HTLCWithoutFundsImpl({final String? $type})
+      : $type = $type ?? 'htlcWithoutFunds',
+        super._();
+
+  factory _$HTLCWithoutFundsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$HTLCWithoutFundsImplFromJson(json);
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'Failure.htlcWithoutFunds()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$HTLCWithoutFundsImpl);
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loggedOut,
+    required TResult Function() network,
+    required TResult Function(DateTime? cooldownEndDate) quotaExceeded,
+    required TResult Function() serviceNotFound,
+    required TResult Function() serviceAlreadyExists,
+    required TResult Function() poolAlreadyExists,
+    required TResult Function() lpTokenAmountExceedBalance,
+    required TResult Function() poolNotExists,
+    required TResult Function() insufficientFunds,
+    required TResult Function() unauthorized,
+    required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
+    required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
+    required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
+    required TResult Function() userRejected,
+    required TResult Function() connectivityArchethic,
+    required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
+    required TResult Function(String? cause, String? stack) other,
+  }) {
+    return htlcWithoutFunds();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loggedOut,
+    TResult? Function()? network,
+    TResult? Function(DateTime? cooldownEndDate)? quotaExceeded,
+    TResult? Function()? serviceNotFound,
+    TResult? Function()? serviceAlreadyExists,
+    TResult? Function()? poolAlreadyExists,
+    TResult? Function()? lpTokenAmountExceedBalance,
+    TResult? Function()? poolNotExists,
+    TResult? Function()? insufficientFunds,
+    TResult? Function()? unauthorized,
+    TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
+    TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
+    TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
+    TResult? Function()? userRejected,
+    TResult? Function()? connectivityArchethic,
+    TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
+    TResult? Function(String? cause, String? stack)? other,
+  }) {
+    return htlcWithoutFunds?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loggedOut,
+    TResult Function()? network,
+    TResult Function(DateTime? cooldownEndDate)? quotaExceeded,
+    TResult Function()? serviceNotFound,
+    TResult Function()? serviceAlreadyExists,
+    TResult Function()? poolAlreadyExists,
+    TResult Function()? lpTokenAmountExceedBalance,
+    TResult Function()? poolNotExists,
+    TResult Function()? insufficientFunds,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
+    TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
+    TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
+    TResult Function()? userRejected,
+    TResult Function()? connectivityArchethic,
+    TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
+    TResult Function(String? cause, String? stack)? other,
+    required TResult orElse(),
+  }) {
+    if (htlcWithoutFunds != null) {
+      return htlcWithoutFunds();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoggedOut value) loggedOut,
+    required TResult Function(NetworkFailure value) network,
+    required TResult Function(QuotaExceededFailure value) quotaExceeded,
+    required TResult Function(ServiceNotFound value) serviceNotFound,
+    required TResult Function(ServiceAlreadyExists value) serviceAlreadyExists,
+    required TResult Function(PoolAlreadyExists value) poolAlreadyExists,
+    required TResult Function(LPTokenAmountExceedBalance value)
+        lpTokenAmountExceedBalance,
+    required TResult Function(PoolNotExists value) poolNotExists,
+    required TResult Function(InsufficientFunds value) insufficientFunds,
+    required TResult Function(Unauthorized value) unauthorized,
+    required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
+    required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
+    required TResult Function(UserRejected value) userRejected,
+    required TResult Function(ConnectivityArchethic value)
+        connectivityArchethic,
+    required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
+    required TResult Function(OtherFailure value) other,
+  }) {
+    return htlcWithoutFunds(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoggedOut value)? loggedOut,
+    TResult? Function(NetworkFailure value)? network,
+    TResult? Function(QuotaExceededFailure value)? quotaExceeded,
+    TResult? Function(ServiceNotFound value)? serviceNotFound,
+    TResult? Function(ServiceAlreadyExists value)? serviceAlreadyExists,
+    TResult? Function(PoolAlreadyExists value)? poolAlreadyExists,
+    TResult? Function(LPTokenAmountExceedBalance value)?
+        lpTokenAmountExceedBalance,
+    TResult? Function(PoolNotExists value)? poolNotExists,
+    TResult? Function(InsufficientFunds value)? insufficientFunds,
+    TResult? Function(Unauthorized value)? unauthorized,
+    TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
+    TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
+    TResult? Function(UserRejected value)? userRejected,
+    TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
+    TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
+    TResult? Function(OtherFailure value)? other,
+  }) {
+    return htlcWithoutFunds?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(NetworkFailure value)? network,
+    TResult Function(QuotaExceededFailure value)? quotaExceeded,
+    TResult Function(ServiceNotFound value)? serviceNotFound,
+    TResult Function(ServiceAlreadyExists value)? serviceAlreadyExists,
+    TResult Function(PoolAlreadyExists value)? poolAlreadyExists,
+    TResult Function(LPTokenAmountExceedBalance value)?
+        lpTokenAmountExceedBalance,
+    TResult Function(PoolNotExists value)? poolNotExists,
+    TResult Function(InsufficientFunds value)? insufficientFunds,
+    TResult Function(Unauthorized value)? unauthorized,
+    TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
+    TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
+    TResult Function(UserRejected value)? userRejected,
+    TResult Function(ConnectivityArchethic value)? connectivityArchethic,
+    TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
+    TResult Function(OtherFailure value)? other,
+    required TResult orElse(),
+  }) {
+    if (htlcWithoutFunds != null) {
+      return htlcWithoutFunds(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$HTLCWithoutFundsImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class HTLCWithoutFunds extends Failure {
+  const factory HTLCWithoutFunds() = _$HTLCWithoutFundsImpl;
+  const HTLCWithoutFunds._() : super._();
+
+  factory HTLCWithoutFunds.fromJson(Map<String, dynamic> json) =
+      _$HTLCWithoutFundsImpl.fromJson;
+}
+
+/// @nodoc
+abstract class _$$NotHTLCImplCopyWith<$Res> {
+  factory _$$NotHTLCImplCopyWith(
+          _$NotHTLCImpl value, $Res Function(_$NotHTLCImpl) then) =
+      __$$NotHTLCImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$NotHTLCImplCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$NotHTLCImpl>
+    implements _$$NotHTLCImplCopyWith<$Res> {
+  __$$NotHTLCImplCopyWithImpl(
+      _$NotHTLCImpl _value, $Res Function(_$NotHTLCImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$NotHTLCImpl extends NotHTLC {
+  const _$NotHTLCImpl({final String? $type})
+      : $type = $type ?? 'notHTLC',
+        super._();
+
+  factory _$NotHTLCImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotHTLCImplFromJson(json);
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'Failure.notHTLC()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$NotHTLCImpl);
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loggedOut,
+    required TResult Function() network,
+    required TResult Function(DateTime? cooldownEndDate) quotaExceeded,
+    required TResult Function() serviceNotFound,
+    required TResult Function() serviceAlreadyExists,
+    required TResult Function() poolAlreadyExists,
+    required TResult Function() lpTokenAmountExceedBalance,
+    required TResult Function() poolNotExists,
+    required TResult Function() insufficientFunds,
+    required TResult Function() unauthorized,
+    required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
+    required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
+    required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
+    required TResult Function() userRejected,
+    required TResult Function() connectivityArchethic,
+    required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
+    required TResult Function(String? cause, String? stack) other,
+  }) {
+    return notHTLC();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loggedOut,
+    TResult? Function()? network,
+    TResult? Function(DateTime? cooldownEndDate)? quotaExceeded,
+    TResult? Function()? serviceNotFound,
+    TResult? Function()? serviceAlreadyExists,
+    TResult? Function()? poolAlreadyExists,
+    TResult? Function()? lpTokenAmountExceedBalance,
+    TResult? Function()? poolNotExists,
+    TResult? Function()? insufficientFunds,
+    TResult? Function()? unauthorized,
+    TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
+    TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
+    TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
+    TResult? Function()? userRejected,
+    TResult? Function()? connectivityArchethic,
+    TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
+    TResult? Function(String? cause, String? stack)? other,
+  }) {
+    return notHTLC?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loggedOut,
+    TResult Function()? network,
+    TResult Function(DateTime? cooldownEndDate)? quotaExceeded,
+    TResult Function()? serviceNotFound,
+    TResult Function()? serviceAlreadyExists,
+    TResult Function()? poolAlreadyExists,
+    TResult Function()? lpTokenAmountExceedBalance,
+    TResult Function()? poolNotExists,
+    TResult Function()? insufficientFunds,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
+    TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
+    TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
+    TResult Function()? userRejected,
+    TResult Function()? connectivityArchethic,
+    TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
+    TResult Function(String? cause, String? stack)? other,
+    required TResult orElse(),
+  }) {
+    if (notHTLC != null) {
+      return notHTLC();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoggedOut value) loggedOut,
+    required TResult Function(NetworkFailure value) network,
+    required TResult Function(QuotaExceededFailure value) quotaExceeded,
+    required TResult Function(ServiceNotFound value) serviceNotFound,
+    required TResult Function(ServiceAlreadyExists value) serviceAlreadyExists,
+    required TResult Function(PoolAlreadyExists value) poolAlreadyExists,
+    required TResult Function(LPTokenAmountExceedBalance value)
+        lpTokenAmountExceedBalance,
+    required TResult Function(PoolNotExists value) poolNotExists,
+    required TResult Function(InsufficientFunds value) insufficientFunds,
+    required TResult Function(Unauthorized value) unauthorized,
+    required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
+    required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
+    required TResult Function(UserRejected value) userRejected,
+    required TResult Function(ConnectivityArchethic value)
+        connectivityArchethic,
+    required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
+    required TResult Function(OtherFailure value) other,
+  }) {
+    return notHTLC(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoggedOut value)? loggedOut,
+    TResult? Function(NetworkFailure value)? network,
+    TResult? Function(QuotaExceededFailure value)? quotaExceeded,
+    TResult? Function(ServiceNotFound value)? serviceNotFound,
+    TResult? Function(ServiceAlreadyExists value)? serviceAlreadyExists,
+    TResult? Function(PoolAlreadyExists value)? poolAlreadyExists,
+    TResult? Function(LPTokenAmountExceedBalance value)?
+        lpTokenAmountExceedBalance,
+    TResult? Function(PoolNotExists value)? poolNotExists,
+    TResult? Function(InsufficientFunds value)? insufficientFunds,
+    TResult? Function(Unauthorized value)? unauthorized,
+    TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
+    TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
+    TResult? Function(UserRejected value)? userRejected,
+    TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
+    TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
+    TResult? Function(OtherFailure value)? other,
+  }) {
+    return notHTLC?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(NetworkFailure value)? network,
+    TResult Function(QuotaExceededFailure value)? quotaExceeded,
+    TResult Function(ServiceNotFound value)? serviceNotFound,
+    TResult Function(ServiceAlreadyExists value)? serviceAlreadyExists,
+    TResult Function(PoolAlreadyExists value)? poolAlreadyExists,
+    TResult Function(LPTokenAmountExceedBalance value)?
+        lpTokenAmountExceedBalance,
+    TResult Function(PoolNotExists value)? poolNotExists,
+    TResult Function(InsufficientFunds value)? insufficientFunds,
+    TResult Function(Unauthorized value)? unauthorized,
+    TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
+    TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
+    TResult Function(UserRejected value)? userRejected,
+    TResult Function(ConnectivityArchethic value)? connectivityArchethic,
+    TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
+    TResult Function(OtherFailure value)? other,
+    required TResult orElse(),
+  }) {
+    if (notHTLC != null) {
+      return notHTLC(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$NotHTLCImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class NotHTLC extends Failure {
+  const factory NotHTLC() = _$NotHTLCImpl;
+  const NotHTLC._() : super._();
+
+  factory NotHTLC.fromJson(Map<String, dynamic> json) = _$NotHTLCImpl.fromJson;
 }
 
 /// @nodoc
@@ -2711,11 +3772,18 @@ class _$WrongNetworkImpl extends WrongNetwork {
     required TResult Function() insufficientFunds,
     required TResult Function() unauthorized,
     required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
     required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
     required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
     required TResult Function(String? cause, String? stack) other,
   }) {
     return wrongNetwork(cause);
@@ -2735,11 +3803,18 @@ class _$WrongNetworkImpl extends WrongNetwork {
     TResult? Function()? insufficientFunds,
     TResult? Function()? unauthorized,
     TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
     TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
     TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
     TResult? Function(String? cause, String? stack)? other,
   }) {
     return wrongNetwork?.call(cause);
@@ -2759,11 +3834,18 @@ class _$WrongNetworkImpl extends WrongNetwork {
     TResult Function()? insufficientFunds,
     TResult Function()? unauthorized,
     TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
     TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
     TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
     TResult Function(String? cause, String? stack)? other,
     required TResult orElse(),
   }) {
@@ -2788,12 +3870,21 @@ class _$WrongNetworkImpl extends WrongNetwork {
     required TResult Function(InsufficientFunds value) insufficientFunds,
     required TResult Function(Unauthorized value) unauthorized,
     required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
     required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
     required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
         connectivityArchethic,
     required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
     required TResult Function(OtherFailure value) other,
   }) {
     return wrongNetwork(this);
@@ -2814,11 +3905,18 @@ class _$WrongNetworkImpl extends WrongNetwork {
     TResult? Function(InsufficientFunds value)? insufficientFunds,
     TResult? Function(Unauthorized value)? unauthorized,
     TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
     TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult? Function(OtherFailure value)? other,
   }) {
     return wrongNetwork?.call(this);
@@ -2839,11 +3937,18 @@ class _$WrongNetworkImpl extends WrongNetwork {
     TResult Function(InsufficientFunds value)? insufficientFunds,
     TResult Function(Unauthorized value)? unauthorized,
     TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
     TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult Function(OtherFailure value)? other,
     required TResult orElse(),
   }) {
@@ -2872,6 +3977,268 @@ abstract class WrongNetwork extends Failure {
   @JsonKey(ignore: true)
   _$$WrongNetworkImplCopyWith<_$WrongNetworkImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$InsufficientPoolFundsImplCopyWith<$Res> {
+  factory _$$InsufficientPoolFundsImplCopyWith(
+          _$InsufficientPoolFundsImpl value,
+          $Res Function(_$InsufficientPoolFundsImpl) then) =
+      __$$InsufficientPoolFundsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$InsufficientPoolFundsImplCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$InsufficientPoolFundsImpl>
+    implements _$$InsufficientPoolFundsImplCopyWith<$Res> {
+  __$$InsufficientPoolFundsImplCopyWithImpl(_$InsufficientPoolFundsImpl _value,
+      $Res Function(_$InsufficientPoolFundsImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$InsufficientPoolFundsImpl extends InsufficientPoolFunds {
+  const _$InsufficientPoolFundsImpl({final String? $type})
+      : $type = $type ?? 'insufficientPoolFunds',
+        super._();
+
+  factory _$InsufficientPoolFundsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$InsufficientPoolFundsImplFromJson(json);
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'Failure.insufficientPoolFunds()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InsufficientPoolFundsImpl);
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loggedOut,
+    required TResult Function() network,
+    required TResult Function(DateTime? cooldownEndDate) quotaExceeded,
+    required TResult Function() serviceNotFound,
+    required TResult Function() serviceAlreadyExists,
+    required TResult Function() poolAlreadyExists,
+    required TResult Function() lpTokenAmountExceedBalance,
+    required TResult Function() poolNotExists,
+    required TResult Function() insufficientFunds,
+    required TResult Function() unauthorized,
+    required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
+    required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
+    required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
+    required TResult Function() userRejected,
+    required TResult Function() connectivityArchethic,
+    required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
+    required TResult Function(String? cause, String? stack) other,
+  }) {
+    return insufficientPoolFunds();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loggedOut,
+    TResult? Function()? network,
+    TResult? Function(DateTime? cooldownEndDate)? quotaExceeded,
+    TResult? Function()? serviceNotFound,
+    TResult? Function()? serviceAlreadyExists,
+    TResult? Function()? poolAlreadyExists,
+    TResult? Function()? lpTokenAmountExceedBalance,
+    TResult? Function()? poolNotExists,
+    TResult? Function()? insufficientFunds,
+    TResult? Function()? unauthorized,
+    TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
+    TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
+    TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
+    TResult? Function()? userRejected,
+    TResult? Function()? connectivityArchethic,
+    TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
+    TResult? Function(String? cause, String? stack)? other,
+  }) {
+    return insufficientPoolFunds?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loggedOut,
+    TResult Function()? network,
+    TResult Function(DateTime? cooldownEndDate)? quotaExceeded,
+    TResult Function()? serviceNotFound,
+    TResult Function()? serviceAlreadyExists,
+    TResult Function()? poolAlreadyExists,
+    TResult Function()? lpTokenAmountExceedBalance,
+    TResult Function()? poolNotExists,
+    TResult Function()? insufficientFunds,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
+    TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
+    TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
+    TResult Function()? userRejected,
+    TResult Function()? connectivityArchethic,
+    TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
+    TResult Function(String? cause, String? stack)? other,
+    required TResult orElse(),
+  }) {
+    if (insufficientPoolFunds != null) {
+      return insufficientPoolFunds();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoggedOut value) loggedOut,
+    required TResult Function(NetworkFailure value) network,
+    required TResult Function(QuotaExceededFailure value) quotaExceeded,
+    required TResult Function(ServiceNotFound value) serviceNotFound,
+    required TResult Function(ServiceAlreadyExists value) serviceAlreadyExists,
+    required TResult Function(PoolAlreadyExists value) poolAlreadyExists,
+    required TResult Function(LPTokenAmountExceedBalance value)
+        lpTokenAmountExceedBalance,
+    required TResult Function(PoolNotExists value) poolNotExists,
+    required TResult Function(InsufficientFunds value) insufficientFunds,
+    required TResult Function(Unauthorized value) unauthorized,
+    required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
+    required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
+    required TResult Function(UserRejected value) userRejected,
+    required TResult Function(ConnectivityArchethic value)
+        connectivityArchethic,
+    required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
+    required TResult Function(OtherFailure value) other,
+  }) {
+    return insufficientPoolFunds(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoggedOut value)? loggedOut,
+    TResult? Function(NetworkFailure value)? network,
+    TResult? Function(QuotaExceededFailure value)? quotaExceeded,
+    TResult? Function(ServiceNotFound value)? serviceNotFound,
+    TResult? Function(ServiceAlreadyExists value)? serviceAlreadyExists,
+    TResult? Function(PoolAlreadyExists value)? poolAlreadyExists,
+    TResult? Function(LPTokenAmountExceedBalance value)?
+        lpTokenAmountExceedBalance,
+    TResult? Function(PoolNotExists value)? poolNotExists,
+    TResult? Function(InsufficientFunds value)? insufficientFunds,
+    TResult? Function(Unauthorized value)? unauthorized,
+    TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
+    TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
+    TResult? Function(UserRejected value)? userRejected,
+    TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
+    TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
+    TResult? Function(OtherFailure value)? other,
+  }) {
+    return insufficientPoolFunds?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(NetworkFailure value)? network,
+    TResult Function(QuotaExceededFailure value)? quotaExceeded,
+    TResult Function(ServiceNotFound value)? serviceNotFound,
+    TResult Function(ServiceAlreadyExists value)? serviceAlreadyExists,
+    TResult Function(PoolAlreadyExists value)? poolAlreadyExists,
+    TResult Function(LPTokenAmountExceedBalance value)?
+        lpTokenAmountExceedBalance,
+    TResult Function(PoolNotExists value)? poolNotExists,
+    TResult Function(InsufficientFunds value)? insufficientFunds,
+    TResult Function(Unauthorized value)? unauthorized,
+    TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
+    TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
+    TResult Function(UserRejected value)? userRejected,
+    TResult Function(ConnectivityArchethic value)? connectivityArchethic,
+    TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
+    TResult Function(OtherFailure value)? other,
+    required TResult orElse(),
+  }) {
+    if (insufficientPoolFunds != null) {
+      return insufficientPoolFunds(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$InsufficientPoolFundsImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class InsufficientPoolFunds extends Failure {
+  const factory InsufficientPoolFunds() = _$InsufficientPoolFundsImpl;
+  const InsufficientPoolFunds._() : super._();
+
+  factory InsufficientPoolFunds.fromJson(Map<String, dynamic> json) =
+      _$InsufficientPoolFundsImpl.fromJson;
 }
 
 /// @nodoc
@@ -2933,11 +4300,18 @@ class _$IncompatibleBrowserImpl extends IncompatibleBrowser {
     required TResult Function() insufficientFunds,
     required TResult Function() unauthorized,
     required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
     required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
     required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
     required TResult Function(String? cause, String? stack) other,
   }) {
     return incompatibleBrowser();
@@ -2957,11 +4331,18 @@ class _$IncompatibleBrowserImpl extends IncompatibleBrowser {
     TResult? Function()? insufficientFunds,
     TResult? Function()? unauthorized,
     TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
     TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
     TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
     TResult? Function(String? cause, String? stack)? other,
   }) {
     return incompatibleBrowser?.call();
@@ -2981,11 +4362,18 @@ class _$IncompatibleBrowserImpl extends IncompatibleBrowser {
     TResult Function()? insufficientFunds,
     TResult Function()? unauthorized,
     TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
     TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
     TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
     TResult Function(String? cause, String? stack)? other,
     required TResult orElse(),
   }) {
@@ -3010,12 +4398,21 @@ class _$IncompatibleBrowserImpl extends IncompatibleBrowser {
     required TResult Function(InsufficientFunds value) insufficientFunds,
     required TResult Function(Unauthorized value) unauthorized,
     required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
     required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
     required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
         connectivityArchethic,
     required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
     required TResult Function(OtherFailure value) other,
   }) {
     return incompatibleBrowser(this);
@@ -3036,11 +4433,18 @@ class _$IncompatibleBrowserImpl extends IncompatibleBrowser {
     TResult? Function(InsufficientFunds value)? insufficientFunds,
     TResult? Function(Unauthorized value)? unauthorized,
     TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
     TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult? Function(OtherFailure value)? other,
   }) {
     return incompatibleBrowser?.call(this);
@@ -3061,11 +4465,18 @@ class _$IncompatibleBrowserImpl extends IncompatibleBrowser {
     TResult Function(InsufficientFunds value)? insufficientFunds,
     TResult Function(Unauthorized value)? unauthorized,
     TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
     TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult Function(OtherFailure value)? other,
     required TResult orElse(),
   }) {
@@ -3089,6 +4500,789 @@ abstract class IncompatibleBrowser extends Failure {
 
   factory IncompatibleBrowser.fromJson(Map<String, dynamic> json) =
       _$IncompatibleBrowserImpl.fromJson;
+}
+
+/// @nodoc
+abstract class _$$ChainSwitchNotSupportedImplCopyWith<$Res> {
+  factory _$$ChainSwitchNotSupportedImplCopyWith(
+          _$ChainSwitchNotSupportedImpl value,
+          $Res Function(_$ChainSwitchNotSupportedImpl) then) =
+      __$$ChainSwitchNotSupportedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ChainSwitchNotSupportedImplCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$ChainSwitchNotSupportedImpl>
+    implements _$$ChainSwitchNotSupportedImplCopyWith<$Res> {
+  __$$ChainSwitchNotSupportedImplCopyWithImpl(
+      _$ChainSwitchNotSupportedImpl _value,
+      $Res Function(_$ChainSwitchNotSupportedImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ChainSwitchNotSupportedImpl extends ChainSwitchNotSupported {
+  const _$ChainSwitchNotSupportedImpl({final String? $type})
+      : $type = $type ?? 'chainSwitchNotSupported',
+        super._();
+
+  factory _$ChainSwitchNotSupportedImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ChainSwitchNotSupportedImplFromJson(json);
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'Failure.chainSwitchNotSupported()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChainSwitchNotSupportedImpl);
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loggedOut,
+    required TResult Function() network,
+    required TResult Function(DateTime? cooldownEndDate) quotaExceeded,
+    required TResult Function() serviceNotFound,
+    required TResult Function() serviceAlreadyExists,
+    required TResult Function() poolAlreadyExists,
+    required TResult Function() lpTokenAmountExceedBalance,
+    required TResult Function() poolNotExists,
+    required TResult Function() insufficientFunds,
+    required TResult Function() unauthorized,
+    required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
+    required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
+    required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
+    required TResult Function() userRejected,
+    required TResult Function() connectivityArchethic,
+    required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
+    required TResult Function(String? cause, String? stack) other,
+  }) {
+    return chainSwitchNotSupported();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loggedOut,
+    TResult? Function()? network,
+    TResult? Function(DateTime? cooldownEndDate)? quotaExceeded,
+    TResult? Function()? serviceNotFound,
+    TResult? Function()? serviceAlreadyExists,
+    TResult? Function()? poolAlreadyExists,
+    TResult? Function()? lpTokenAmountExceedBalance,
+    TResult? Function()? poolNotExists,
+    TResult? Function()? insufficientFunds,
+    TResult? Function()? unauthorized,
+    TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
+    TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
+    TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
+    TResult? Function()? userRejected,
+    TResult? Function()? connectivityArchethic,
+    TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
+    TResult? Function(String? cause, String? stack)? other,
+  }) {
+    return chainSwitchNotSupported?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loggedOut,
+    TResult Function()? network,
+    TResult Function(DateTime? cooldownEndDate)? quotaExceeded,
+    TResult Function()? serviceNotFound,
+    TResult Function()? serviceAlreadyExists,
+    TResult Function()? poolAlreadyExists,
+    TResult Function()? lpTokenAmountExceedBalance,
+    TResult Function()? poolNotExists,
+    TResult Function()? insufficientFunds,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
+    TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
+    TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
+    TResult Function()? userRejected,
+    TResult Function()? connectivityArchethic,
+    TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
+    TResult Function(String? cause, String? stack)? other,
+    required TResult orElse(),
+  }) {
+    if (chainSwitchNotSupported != null) {
+      return chainSwitchNotSupported();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoggedOut value) loggedOut,
+    required TResult Function(NetworkFailure value) network,
+    required TResult Function(QuotaExceededFailure value) quotaExceeded,
+    required TResult Function(ServiceNotFound value) serviceNotFound,
+    required TResult Function(ServiceAlreadyExists value) serviceAlreadyExists,
+    required TResult Function(PoolAlreadyExists value) poolAlreadyExists,
+    required TResult Function(LPTokenAmountExceedBalance value)
+        lpTokenAmountExceedBalance,
+    required TResult Function(PoolNotExists value) poolNotExists,
+    required TResult Function(InsufficientFunds value) insufficientFunds,
+    required TResult Function(Unauthorized value) unauthorized,
+    required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
+    required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
+    required TResult Function(UserRejected value) userRejected,
+    required TResult Function(ConnectivityArchethic value)
+        connectivityArchethic,
+    required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
+    required TResult Function(OtherFailure value) other,
+  }) {
+    return chainSwitchNotSupported(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoggedOut value)? loggedOut,
+    TResult? Function(NetworkFailure value)? network,
+    TResult? Function(QuotaExceededFailure value)? quotaExceeded,
+    TResult? Function(ServiceNotFound value)? serviceNotFound,
+    TResult? Function(ServiceAlreadyExists value)? serviceAlreadyExists,
+    TResult? Function(PoolAlreadyExists value)? poolAlreadyExists,
+    TResult? Function(LPTokenAmountExceedBalance value)?
+        lpTokenAmountExceedBalance,
+    TResult? Function(PoolNotExists value)? poolNotExists,
+    TResult? Function(InsufficientFunds value)? insufficientFunds,
+    TResult? Function(Unauthorized value)? unauthorized,
+    TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
+    TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
+    TResult? Function(UserRejected value)? userRejected,
+    TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
+    TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
+    TResult? Function(OtherFailure value)? other,
+  }) {
+    return chainSwitchNotSupported?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(NetworkFailure value)? network,
+    TResult Function(QuotaExceededFailure value)? quotaExceeded,
+    TResult Function(ServiceNotFound value)? serviceNotFound,
+    TResult Function(ServiceAlreadyExists value)? serviceAlreadyExists,
+    TResult Function(PoolAlreadyExists value)? poolAlreadyExists,
+    TResult Function(LPTokenAmountExceedBalance value)?
+        lpTokenAmountExceedBalance,
+    TResult Function(PoolNotExists value)? poolNotExists,
+    TResult Function(InsufficientFunds value)? insufficientFunds,
+    TResult Function(Unauthorized value)? unauthorized,
+    TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
+    TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
+    TResult Function(UserRejected value)? userRejected,
+    TResult Function(ConnectivityArchethic value)? connectivityArchethic,
+    TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
+    TResult Function(OtherFailure value)? other,
+    required TResult orElse(),
+  }) {
+    if (chainSwitchNotSupported != null) {
+      return chainSwitchNotSupported(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ChainSwitchNotSupportedImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class ChainSwitchNotSupported extends Failure {
+  const factory ChainSwitchNotSupported() = _$ChainSwitchNotSupportedImpl;
+  const ChainSwitchNotSupported._() : super._();
+
+  factory ChainSwitchNotSupported.fromJson(Map<String, dynamic> json) =
+      _$ChainSwitchNotSupportedImpl.fromJson;
+}
+
+/// @nodoc
+abstract class _$$ConnectivityEVMImplCopyWith<$Res> {
+  factory _$$ConnectivityEVMImplCopyWith(_$ConnectivityEVMImpl value,
+          $Res Function(_$ConnectivityEVMImpl) then) =
+      __$$ConnectivityEVMImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ConnectivityEVMImplCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$ConnectivityEVMImpl>
+    implements _$$ConnectivityEVMImplCopyWith<$Res> {
+  __$$ConnectivityEVMImplCopyWithImpl(
+      _$ConnectivityEVMImpl _value, $Res Function(_$ConnectivityEVMImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ConnectivityEVMImpl extends ConnectivityEVM {
+  const _$ConnectivityEVMImpl({final String? $type})
+      : $type = $type ?? 'connectivityEVM',
+        super._();
+
+  factory _$ConnectivityEVMImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ConnectivityEVMImplFromJson(json);
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'Failure.connectivityEVM()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ConnectivityEVMImpl);
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loggedOut,
+    required TResult Function() network,
+    required TResult Function(DateTime? cooldownEndDate) quotaExceeded,
+    required TResult Function() serviceNotFound,
+    required TResult Function() serviceAlreadyExists,
+    required TResult Function() poolAlreadyExists,
+    required TResult Function() lpTokenAmountExceedBalance,
+    required TResult Function() poolNotExists,
+    required TResult Function() insufficientFunds,
+    required TResult Function() unauthorized,
+    required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
+    required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
+    required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
+    required TResult Function() userRejected,
+    required TResult Function() connectivityArchethic,
+    required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
+    required TResult Function(String? cause, String? stack) other,
+  }) {
+    return connectivityEVM();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loggedOut,
+    TResult? Function()? network,
+    TResult? Function(DateTime? cooldownEndDate)? quotaExceeded,
+    TResult? Function()? serviceNotFound,
+    TResult? Function()? serviceAlreadyExists,
+    TResult? Function()? poolAlreadyExists,
+    TResult? Function()? lpTokenAmountExceedBalance,
+    TResult? Function()? poolNotExists,
+    TResult? Function()? insufficientFunds,
+    TResult? Function()? unauthorized,
+    TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
+    TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
+    TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
+    TResult? Function()? userRejected,
+    TResult? Function()? connectivityArchethic,
+    TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
+    TResult? Function(String? cause, String? stack)? other,
+  }) {
+    return connectivityEVM?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loggedOut,
+    TResult Function()? network,
+    TResult Function(DateTime? cooldownEndDate)? quotaExceeded,
+    TResult Function()? serviceNotFound,
+    TResult Function()? serviceAlreadyExists,
+    TResult Function()? poolAlreadyExists,
+    TResult Function()? lpTokenAmountExceedBalance,
+    TResult Function()? poolNotExists,
+    TResult Function()? insufficientFunds,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
+    TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
+    TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
+    TResult Function()? userRejected,
+    TResult Function()? connectivityArchethic,
+    TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
+    TResult Function(String? cause, String? stack)? other,
+    required TResult orElse(),
+  }) {
+    if (connectivityEVM != null) {
+      return connectivityEVM();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoggedOut value) loggedOut,
+    required TResult Function(NetworkFailure value) network,
+    required TResult Function(QuotaExceededFailure value) quotaExceeded,
+    required TResult Function(ServiceNotFound value) serviceNotFound,
+    required TResult Function(ServiceAlreadyExists value) serviceAlreadyExists,
+    required TResult Function(PoolAlreadyExists value) poolAlreadyExists,
+    required TResult Function(LPTokenAmountExceedBalance value)
+        lpTokenAmountExceedBalance,
+    required TResult Function(PoolNotExists value) poolNotExists,
+    required TResult Function(InsufficientFunds value) insufficientFunds,
+    required TResult Function(Unauthorized value) unauthorized,
+    required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
+    required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
+    required TResult Function(UserRejected value) userRejected,
+    required TResult Function(ConnectivityArchethic value)
+        connectivityArchethic,
+    required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
+    required TResult Function(OtherFailure value) other,
+  }) {
+    return connectivityEVM(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoggedOut value)? loggedOut,
+    TResult? Function(NetworkFailure value)? network,
+    TResult? Function(QuotaExceededFailure value)? quotaExceeded,
+    TResult? Function(ServiceNotFound value)? serviceNotFound,
+    TResult? Function(ServiceAlreadyExists value)? serviceAlreadyExists,
+    TResult? Function(PoolAlreadyExists value)? poolAlreadyExists,
+    TResult? Function(LPTokenAmountExceedBalance value)?
+        lpTokenAmountExceedBalance,
+    TResult? Function(PoolNotExists value)? poolNotExists,
+    TResult? Function(InsufficientFunds value)? insufficientFunds,
+    TResult? Function(Unauthorized value)? unauthorized,
+    TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
+    TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
+    TResult? Function(UserRejected value)? userRejected,
+    TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
+    TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
+    TResult? Function(OtherFailure value)? other,
+  }) {
+    return connectivityEVM?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(NetworkFailure value)? network,
+    TResult Function(QuotaExceededFailure value)? quotaExceeded,
+    TResult Function(ServiceNotFound value)? serviceNotFound,
+    TResult Function(ServiceAlreadyExists value)? serviceAlreadyExists,
+    TResult Function(PoolAlreadyExists value)? poolAlreadyExists,
+    TResult Function(LPTokenAmountExceedBalance value)?
+        lpTokenAmountExceedBalance,
+    TResult Function(PoolNotExists value)? poolNotExists,
+    TResult Function(InsufficientFunds value)? insufficientFunds,
+    TResult Function(Unauthorized value)? unauthorized,
+    TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
+    TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
+    TResult Function(UserRejected value)? userRejected,
+    TResult Function(ConnectivityArchethic value)? connectivityArchethic,
+    TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
+    TResult Function(OtherFailure value)? other,
+    required TResult orElse(),
+  }) {
+    if (connectivityEVM != null) {
+      return connectivityEVM(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ConnectivityEVMImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class ConnectivityEVM extends Failure {
+  const factory ConnectivityEVM() = _$ConnectivityEVMImpl;
+  const ConnectivityEVM._() : super._();
+
+  factory ConnectivityEVM.fromJson(Map<String, dynamic> json) =
+      _$ConnectivityEVMImpl.fromJson;
+}
+
+/// @nodoc
+abstract class _$$ParamEVMChainImplCopyWith<$Res> {
+  factory _$$ParamEVMChainImplCopyWith(
+          _$ParamEVMChainImpl value, $Res Function(_$ParamEVMChainImpl) then) =
+      __$$ParamEVMChainImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ParamEVMChainImplCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$ParamEVMChainImpl>
+    implements _$$ParamEVMChainImplCopyWith<$Res> {
+  __$$ParamEVMChainImplCopyWithImpl(
+      _$ParamEVMChainImpl _value, $Res Function(_$ParamEVMChainImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ParamEVMChainImpl extends ParamEVMChain {
+  const _$ParamEVMChainImpl({final String? $type})
+      : $type = $type ?? 'paramEVMChain',
+        super._();
+
+  factory _$ParamEVMChainImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ParamEVMChainImplFromJson(json);
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'Failure.paramEVMChain()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ParamEVMChainImpl);
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loggedOut,
+    required TResult Function() network,
+    required TResult Function(DateTime? cooldownEndDate) quotaExceeded,
+    required TResult Function() serviceNotFound,
+    required TResult Function() serviceAlreadyExists,
+    required TResult Function() poolAlreadyExists,
+    required TResult Function() lpTokenAmountExceedBalance,
+    required TResult Function() poolNotExists,
+    required TResult Function() insufficientFunds,
+    required TResult Function() unauthorized,
+    required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
+    required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
+    required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
+    required TResult Function() userRejected,
+    required TResult Function() connectivityArchethic,
+    required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
+    required TResult Function(String? cause, String? stack) other,
+  }) {
+    return paramEVMChain();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loggedOut,
+    TResult? Function()? network,
+    TResult? Function(DateTime? cooldownEndDate)? quotaExceeded,
+    TResult? Function()? serviceNotFound,
+    TResult? Function()? serviceAlreadyExists,
+    TResult? Function()? poolAlreadyExists,
+    TResult? Function()? lpTokenAmountExceedBalance,
+    TResult? Function()? poolNotExists,
+    TResult? Function()? insufficientFunds,
+    TResult? Function()? unauthorized,
+    TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
+    TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
+    TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
+    TResult? Function()? userRejected,
+    TResult? Function()? connectivityArchethic,
+    TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
+    TResult? Function(String? cause, String? stack)? other,
+  }) {
+    return paramEVMChain?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loggedOut,
+    TResult Function()? network,
+    TResult Function(DateTime? cooldownEndDate)? quotaExceeded,
+    TResult Function()? serviceNotFound,
+    TResult Function()? serviceAlreadyExists,
+    TResult Function()? poolAlreadyExists,
+    TResult Function()? lpTokenAmountExceedBalance,
+    TResult Function()? poolNotExists,
+    TResult Function()? insufficientFunds,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
+    TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
+    TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
+    TResult Function()? userRejected,
+    TResult Function()? connectivityArchethic,
+    TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
+    TResult Function(String? cause, String? stack)? other,
+    required TResult orElse(),
+  }) {
+    if (paramEVMChain != null) {
+      return paramEVMChain();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoggedOut value) loggedOut,
+    required TResult Function(NetworkFailure value) network,
+    required TResult Function(QuotaExceededFailure value) quotaExceeded,
+    required TResult Function(ServiceNotFound value) serviceNotFound,
+    required TResult Function(ServiceAlreadyExists value) serviceAlreadyExists,
+    required TResult Function(PoolAlreadyExists value) poolAlreadyExists,
+    required TResult Function(LPTokenAmountExceedBalance value)
+        lpTokenAmountExceedBalance,
+    required TResult Function(PoolNotExists value) poolNotExists,
+    required TResult Function(InsufficientFunds value) insufficientFunds,
+    required TResult Function(Unauthorized value) unauthorized,
+    required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
+    required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
+    required TResult Function(UserRejected value) userRejected,
+    required TResult Function(ConnectivityArchethic value)
+        connectivityArchethic,
+    required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
+    required TResult Function(OtherFailure value) other,
+  }) {
+    return paramEVMChain(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoggedOut value)? loggedOut,
+    TResult? Function(NetworkFailure value)? network,
+    TResult? Function(QuotaExceededFailure value)? quotaExceeded,
+    TResult? Function(ServiceNotFound value)? serviceNotFound,
+    TResult? Function(ServiceAlreadyExists value)? serviceAlreadyExists,
+    TResult? Function(PoolAlreadyExists value)? poolAlreadyExists,
+    TResult? Function(LPTokenAmountExceedBalance value)?
+        lpTokenAmountExceedBalance,
+    TResult? Function(PoolNotExists value)? poolNotExists,
+    TResult? Function(InsufficientFunds value)? insufficientFunds,
+    TResult? Function(Unauthorized value)? unauthorized,
+    TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
+    TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
+    TResult? Function(UserRejected value)? userRejected,
+    TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
+    TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
+    TResult? Function(OtherFailure value)? other,
+  }) {
+    return paramEVMChain?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(NetworkFailure value)? network,
+    TResult Function(QuotaExceededFailure value)? quotaExceeded,
+    TResult Function(ServiceNotFound value)? serviceNotFound,
+    TResult Function(ServiceAlreadyExists value)? serviceAlreadyExists,
+    TResult Function(PoolAlreadyExists value)? poolAlreadyExists,
+    TResult Function(LPTokenAmountExceedBalance value)?
+        lpTokenAmountExceedBalance,
+    TResult Function(PoolNotExists value)? poolNotExists,
+    TResult Function(InsufficientFunds value)? insufficientFunds,
+    TResult Function(Unauthorized value)? unauthorized,
+    TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
+    TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
+    TResult Function(UserRejected value)? userRejected,
+    TResult Function(ConnectivityArchethic value)? connectivityArchethic,
+    TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
+    TResult Function(OtherFailure value)? other,
+    required TResult orElse(),
+  }) {
+    if (paramEVMChain != null) {
+      return paramEVMChain(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ParamEVMChainImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class ParamEVMChain extends Failure {
+  const factory ParamEVMChain() = _$ParamEVMChainImpl;
+  const ParamEVMChain._() : super._();
+
+  factory ParamEVMChain.fromJson(Map<String, dynamic> json) =
+      _$ParamEVMChainImpl.fromJson;
 }
 
 /// @nodoc
@@ -3149,11 +5343,18 @@ class _$UserRejectedImpl extends UserRejected {
     required TResult Function() insufficientFunds,
     required TResult Function() unauthorized,
     required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
     required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
     required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
     required TResult Function(String? cause, String? stack) other,
   }) {
     return userRejected();
@@ -3173,11 +5374,18 @@ class _$UserRejectedImpl extends UserRejected {
     TResult? Function()? insufficientFunds,
     TResult? Function()? unauthorized,
     TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
     TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
     TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
     TResult? Function(String? cause, String? stack)? other,
   }) {
     return userRejected?.call();
@@ -3197,11 +5405,18 @@ class _$UserRejectedImpl extends UserRejected {
     TResult Function()? insufficientFunds,
     TResult Function()? unauthorized,
     TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
     TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
     TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
     TResult Function(String? cause, String? stack)? other,
     required TResult orElse(),
   }) {
@@ -3226,12 +5441,21 @@ class _$UserRejectedImpl extends UserRejected {
     required TResult Function(InsufficientFunds value) insufficientFunds,
     required TResult Function(Unauthorized value) unauthorized,
     required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
     required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
     required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
         connectivityArchethic,
     required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
     required TResult Function(OtherFailure value) other,
   }) {
     return userRejected(this);
@@ -3252,11 +5476,18 @@ class _$UserRejectedImpl extends UserRejected {
     TResult? Function(InsufficientFunds value)? insufficientFunds,
     TResult? Function(Unauthorized value)? unauthorized,
     TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
     TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult? Function(OtherFailure value)? other,
   }) {
     return userRejected?.call(this);
@@ -3277,11 +5508,18 @@ class _$UserRejectedImpl extends UserRejected {
     TResult Function(InsufficientFunds value)? insufficientFunds,
     TResult Function(Unauthorized value)? unauthorized,
     TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
     TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult Function(OtherFailure value)? other,
     required TResult orElse(),
   }) {
@@ -3367,11 +5605,18 @@ class _$ConnectivityArchethicImpl extends ConnectivityArchethic {
     required TResult Function() insufficientFunds,
     required TResult Function() unauthorized,
     required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
     required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
     required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
     required TResult Function(String? cause, String? stack) other,
   }) {
     return connectivityArchethic();
@@ -3391,11 +5636,18 @@ class _$ConnectivityArchethicImpl extends ConnectivityArchethic {
     TResult? Function()? insufficientFunds,
     TResult? Function()? unauthorized,
     TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
     TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
     TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
     TResult? Function(String? cause, String? stack)? other,
   }) {
     return connectivityArchethic?.call();
@@ -3415,11 +5667,18 @@ class _$ConnectivityArchethicImpl extends ConnectivityArchethic {
     TResult Function()? insufficientFunds,
     TResult Function()? unauthorized,
     TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
     TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
     TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
     TResult Function(String? cause, String? stack)? other,
     required TResult orElse(),
   }) {
@@ -3444,12 +5703,21 @@ class _$ConnectivityArchethicImpl extends ConnectivityArchethic {
     required TResult Function(InsufficientFunds value) insufficientFunds,
     required TResult Function(Unauthorized value) unauthorized,
     required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
     required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
     required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
         connectivityArchethic,
     required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
     required TResult Function(OtherFailure value) other,
   }) {
     return connectivityArchethic(this);
@@ -3470,11 +5738,18 @@ class _$ConnectivityArchethicImpl extends ConnectivityArchethic {
     TResult? Function(InsufficientFunds value)? insufficientFunds,
     TResult? Function(Unauthorized value)? unauthorized,
     TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
     TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult? Function(OtherFailure value)? other,
   }) {
     return connectivityArchethic?.call(this);
@@ -3495,11 +5770,18 @@ class _$ConnectivityArchethicImpl extends ConnectivityArchethic {
     TResult Function(InsufficientFunds value)? insufficientFunds,
     TResult Function(Unauthorized value)? unauthorized,
     TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
     TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult Function(OtherFailure value)? other,
     required TResult orElse(),
   }) {
@@ -3583,11 +5865,18 @@ class _$TimeoutImpl extends Timeout {
     required TResult Function() insufficientFunds,
     required TResult Function() unauthorized,
     required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
     required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
     required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
     required TResult Function(String? cause, String? stack) other,
   }) {
     return timeout();
@@ -3607,11 +5896,18 @@ class _$TimeoutImpl extends Timeout {
     TResult? Function()? insufficientFunds,
     TResult? Function()? unauthorized,
     TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
     TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
     TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
     TResult? Function(String? cause, String? stack)? other,
   }) {
     return timeout?.call();
@@ -3631,11 +5927,18 @@ class _$TimeoutImpl extends Timeout {
     TResult Function()? insufficientFunds,
     TResult Function()? unauthorized,
     TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
     TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
     TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
     TResult Function(String? cause, String? stack)? other,
     required TResult orElse(),
   }) {
@@ -3660,12 +5963,21 @@ class _$TimeoutImpl extends Timeout {
     required TResult Function(InsufficientFunds value) insufficientFunds,
     required TResult Function(Unauthorized value) unauthorized,
     required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
     required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
     required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
         connectivityArchethic,
     required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
     required TResult Function(OtherFailure value) other,
   }) {
     return timeout(this);
@@ -3686,11 +5998,18 @@ class _$TimeoutImpl extends Timeout {
     TResult? Function(InsufficientFunds value)? insufficientFunds,
     TResult? Function(Unauthorized value)? unauthorized,
     TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
     TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult? Function(OtherFailure value)? other,
   }) {
     return timeout?.call(this);
@@ -3711,11 +6030,18 @@ class _$TimeoutImpl extends Timeout {
     TResult Function(InsufficientFunds value)? insufficientFunds,
     TResult Function(Unauthorized value)? unauthorized,
     TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
     TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult Function(OtherFailure value)? other,
     required TResult orElse(),
   }) {
@@ -3738,6 +6064,297 @@ abstract class Timeout extends Failure {
   const Timeout._() : super._();
 
   factory Timeout.fromJson(Map<String, dynamic> json) = _$TimeoutImpl.fromJson;
+}
+
+/// @nodoc
+abstract class _$$RPCErrorEVMImplCopyWith<$Res> {
+  factory _$$RPCErrorEVMImplCopyWith(
+          _$RPCErrorEVMImpl value, $Res Function(_$RPCErrorEVMImpl) then) =
+      __$$RPCErrorEVMImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String? cause});
+}
+
+/// @nodoc
+class __$$RPCErrorEVMImplCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$RPCErrorEVMImpl>
+    implements _$$RPCErrorEVMImplCopyWith<$Res> {
+  __$$RPCErrorEVMImplCopyWithImpl(
+      _$RPCErrorEVMImpl _value, $Res Function(_$RPCErrorEVMImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? cause = freezed,
+  }) {
+    return _then(_$RPCErrorEVMImpl(
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$RPCErrorEVMImpl extends RPCErrorEVM {
+  const _$RPCErrorEVMImpl(this.cause, {final String? $type})
+      : $type = $type ?? 'rpcErrorEVM',
+        super._();
+
+  factory _$RPCErrorEVMImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RPCErrorEVMImplFromJson(json);
+
+  @override
+  final String? cause;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'Failure.rpcErrorEVM(cause: $cause)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RPCErrorEVMImpl &&
+            (identical(other.cause, cause) || other.cause == cause));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, cause);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RPCErrorEVMImplCopyWith<_$RPCErrorEVMImpl> get copyWith =>
+      __$$RPCErrorEVMImplCopyWithImpl<_$RPCErrorEVMImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loggedOut,
+    required TResult Function() network,
+    required TResult Function(DateTime? cooldownEndDate) quotaExceeded,
+    required TResult Function() serviceNotFound,
+    required TResult Function() serviceAlreadyExists,
+    required TResult Function() poolAlreadyExists,
+    required TResult Function() lpTokenAmountExceedBalance,
+    required TResult Function() poolNotExists,
+    required TResult Function() insufficientFunds,
+    required TResult Function() unauthorized,
+    required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
+    required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
+    required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
+    required TResult Function() userRejected,
+    required TResult Function() connectivityArchethic,
+    required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
+    required TResult Function(String? cause, String? stack) other,
+  }) {
+    return rpcErrorEVM(cause);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loggedOut,
+    TResult? Function()? network,
+    TResult? Function(DateTime? cooldownEndDate)? quotaExceeded,
+    TResult? Function()? serviceNotFound,
+    TResult? Function()? serviceAlreadyExists,
+    TResult? Function()? poolAlreadyExists,
+    TResult? Function()? lpTokenAmountExceedBalance,
+    TResult? Function()? poolNotExists,
+    TResult? Function()? insufficientFunds,
+    TResult? Function()? unauthorized,
+    TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
+    TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
+    TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
+    TResult? Function()? userRejected,
+    TResult? Function()? connectivityArchethic,
+    TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
+    TResult? Function(String? cause, String? stack)? other,
+  }) {
+    return rpcErrorEVM?.call(cause);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loggedOut,
+    TResult Function()? network,
+    TResult Function(DateTime? cooldownEndDate)? quotaExceeded,
+    TResult Function()? serviceNotFound,
+    TResult Function()? serviceAlreadyExists,
+    TResult Function()? poolAlreadyExists,
+    TResult Function()? lpTokenAmountExceedBalance,
+    TResult Function()? poolNotExists,
+    TResult Function()? insufficientFunds,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
+    TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
+    TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
+    TResult Function()? userRejected,
+    TResult Function()? connectivityArchethic,
+    TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
+    TResult Function(String? cause, String? stack)? other,
+    required TResult orElse(),
+  }) {
+    if (rpcErrorEVM != null) {
+      return rpcErrorEVM(cause);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoggedOut value) loggedOut,
+    required TResult Function(NetworkFailure value) network,
+    required TResult Function(QuotaExceededFailure value) quotaExceeded,
+    required TResult Function(ServiceNotFound value) serviceNotFound,
+    required TResult Function(ServiceAlreadyExists value) serviceAlreadyExists,
+    required TResult Function(PoolAlreadyExists value) poolAlreadyExists,
+    required TResult Function(LPTokenAmountExceedBalance value)
+        lpTokenAmountExceedBalance,
+    required TResult Function(PoolNotExists value) poolNotExists,
+    required TResult Function(InsufficientFunds value) insufficientFunds,
+    required TResult Function(Unauthorized value) unauthorized,
+    required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
+    required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
+    required TResult Function(UserRejected value) userRejected,
+    required TResult Function(ConnectivityArchethic value)
+        connectivityArchethic,
+    required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
+    required TResult Function(OtherFailure value) other,
+  }) {
+    return rpcErrorEVM(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoggedOut value)? loggedOut,
+    TResult? Function(NetworkFailure value)? network,
+    TResult? Function(QuotaExceededFailure value)? quotaExceeded,
+    TResult? Function(ServiceNotFound value)? serviceNotFound,
+    TResult? Function(ServiceAlreadyExists value)? serviceAlreadyExists,
+    TResult? Function(PoolAlreadyExists value)? poolAlreadyExists,
+    TResult? Function(LPTokenAmountExceedBalance value)?
+        lpTokenAmountExceedBalance,
+    TResult? Function(PoolNotExists value)? poolNotExists,
+    TResult? Function(InsufficientFunds value)? insufficientFunds,
+    TResult? Function(Unauthorized value)? unauthorized,
+    TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
+    TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
+    TResult? Function(UserRejected value)? userRejected,
+    TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
+    TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
+    TResult? Function(OtherFailure value)? other,
+  }) {
+    return rpcErrorEVM?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(NetworkFailure value)? network,
+    TResult Function(QuotaExceededFailure value)? quotaExceeded,
+    TResult Function(ServiceNotFound value)? serviceNotFound,
+    TResult Function(ServiceAlreadyExists value)? serviceAlreadyExists,
+    TResult Function(PoolAlreadyExists value)? poolAlreadyExists,
+    TResult Function(LPTokenAmountExceedBalance value)?
+        lpTokenAmountExceedBalance,
+    TResult Function(PoolNotExists value)? poolNotExists,
+    TResult Function(InsufficientFunds value)? insufficientFunds,
+    TResult Function(Unauthorized value)? unauthorized,
+    TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
+    TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
+    TResult Function(UserRejected value)? userRejected,
+    TResult Function(ConnectivityArchethic value)? connectivityArchethic,
+    TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
+    TResult Function(OtherFailure value)? other,
+    required TResult orElse(),
+  }) {
+    if (rpcErrorEVM != null) {
+      return rpcErrorEVM(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$RPCErrorEVMImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class RPCErrorEVM extends Failure {
+  const factory RPCErrorEVM(final String? cause) = _$RPCErrorEVMImpl;
+  const RPCErrorEVM._() : super._();
+
+  factory RPCErrorEVM.fromJson(Map<String, dynamic> json) =
+      _$RPCErrorEVMImpl.fromJson;
+
+  String? get cause;
+  @JsonKey(ignore: true)
+  _$$RPCErrorEVMImplCopyWith<_$RPCErrorEVMImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -3832,11 +6449,18 @@ class _$OtherFailureImpl extends OtherFailure {
     required TResult Function() insufficientFunds,
     required TResult Function() unauthorized,
     required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
     required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
     required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
     required TResult Function(String? cause, String? stack) other,
   }) {
     return other(cause, stack);
@@ -3856,11 +6480,18 @@ class _$OtherFailureImpl extends OtherFailure {
     TResult? Function()? insufficientFunds,
     TResult? Function()? unauthorized,
     TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
     TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
     TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
     TResult? Function(String? cause, String? stack)? other,
   }) {
     return other?.call(cause, stack);
@@ -3880,11 +6511,18 @@ class _$OtherFailureImpl extends OtherFailure {
     TResult Function()? insufficientFunds,
     TResult Function()? unauthorized,
     TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
     TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
     TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
     TResult Function(String? cause, String? stack)? other,
     required TResult orElse(),
   }) {
@@ -3909,12 +6547,21 @@ class _$OtherFailureImpl extends OtherFailure {
     required TResult Function(InsufficientFunds value) insufficientFunds,
     required TResult Function(Unauthorized value) unauthorized,
     required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
     required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
     required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
         connectivityArchethic,
     required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
     required TResult Function(OtherFailure value) other,
   }) {
     return other(this);
@@ -3935,11 +6582,18 @@ class _$OtherFailureImpl extends OtherFailure {
     TResult? Function(InsufficientFunds value)? insufficientFunds,
     TResult? Function(Unauthorized value)? unauthorized,
     TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
     TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult? Function(OtherFailure value)? other,
   }) {
     return other?.call(this);
@@ -3960,11 +6614,18 @@ class _$OtherFailureImpl extends OtherFailure {
     TResult Function(InsufficientFunds value)? insufficientFunds,
     TResult Function(Unauthorized value)? unauthorized,
     TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
     TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
     TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
     TResult Function(OtherFailure value)? other,
     required TResult orElse(),
   }) {

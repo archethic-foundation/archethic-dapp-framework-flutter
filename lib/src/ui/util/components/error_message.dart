@@ -1,6 +1,6 @@
 /// SPDX-License-Identifier: AGPL-3.0-or-later
-import 'package:archethic_dapp_framework_flutter/archethic-dapp-framework-flutter.dart'
-    as aedappfm;
+import 'package:archethic_dapp_framework_flutter/src/domain/models/failures.dart';
+import 'package:archethic_dapp_framework_flutter/src/ui/util/components/info_banner.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -11,7 +11,7 @@ class ErrorMessage extends ConsumerWidget {
     super.key,
   });
 
-  final aedappfm.Failure? failure;
+  final Failure? failure;
   final String? failureMessage;
 
   @override
@@ -26,9 +26,9 @@ class ErrorMessage extends ConsumerWidget {
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: SizedBox(
         height: 40,
-        child: aedappfm.InfoBanner(
+        child: InfoBanner(
           failureMessage ?? '',
-          aedappfm.InfoBannerType.error,
+          InfoBannerType.error,
         ),
       ),
     );

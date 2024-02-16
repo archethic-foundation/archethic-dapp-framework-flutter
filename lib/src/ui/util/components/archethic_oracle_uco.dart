@@ -1,7 +1,7 @@
 /// SPDX-License-Identifier: AGPL-3.0-or-later
-import 'package:archethic_dapp_framework_flutter/archethic-dapp-framework-flutter.dart'
-    as aedappfm;
 import 'package:archethic_dapp_framework_flutter/src/application/oracle/provider.dart';
+import 'package:archethic_dapp_framework_flutter/src/ui/util/components/icon_button_animated.dart';
+import 'package:archethic_dapp_framework_flutter/src/ui/util/generic/formatters.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
@@ -29,7 +29,7 @@ class ArchethicOracleUco extends ConsumerWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        aedappfm.IconButtonAnimated(
+        IconButtonAnimated(
           icon: const Icon(
             Icons.help,
             size: 16,

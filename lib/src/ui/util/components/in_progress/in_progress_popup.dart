@@ -1,9 +1,9 @@
 /// SPDX-License-Identifier: AGPL-3.0-or-later
-
 import 'dart:ui';
-
-import 'package:archethic_dapp_framework_flutter/archethic-dapp-framework-flutter.dart'
-    as aedappfm;
+import 'package:archethic_dapp_framework_flutter/src/ui/themes/app_theme_base.dart';
+import 'package:archethic_dapp_framework_flutter/src/ui/util/components/buttons/popup_close_button.dart';
+import 'package:archethic_dapp_framework_flutter/src/ui/util/components/popup_waves.dart';
+import 'package:archethic_dapp_framework_flutter/src/ui/util/components/scrollbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -11,7 +11,7 @@ class InProgressPopup {
   static Future<void> getDialog(
     BuildContext context,
     List<Widget> Function(BuildContext context, WidgetRef ref) bodyBuilder,
-    aedappfm.PopupCloseButton Function(BuildContext context, WidgetRef ref)
+    PopupCloseButton Function(BuildContext context, WidgetRef ref)
         closeButtonBuilder,
   ) async {
     return showDialog<void>(
@@ -29,7 +29,7 @@ class InProgressPopup {
                       elevation: 0,
                       content: Stack(
                         children: <Widget>[
-                          aedappfm.ArchethicScrollbar(
+                          ArchethicScrollbar(
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(20),
                               child: BackdropFilter(
@@ -42,14 +42,12 @@ class InProgressPopup {
                                     left: 8,
                                   ),
                                   height: 400,
-                                  width: aedappfm
-                                      .AppThemeBase.sizeBoxComponentWidth,
+                                  width: AppThemeBase.sizeBoxComponentWidth,
                                   decoration: BoxDecoration(
-                                    color:
-                                        aedappfm.AppThemeBase.sheetBackground,
+                                    color: AppThemeBase.sheetBackground,
                                     borderRadius: BorderRadius.circular(16),
                                     border: Border.all(
-                                      color: aedappfm.AppThemeBase.sheetBorder,
+                                      color: AppThemeBase.sheetBorder,
                                     ),
                                   ),
                                   child: Stack(
@@ -69,7 +67,7 @@ class InProgressPopup {
                                               bottomRight: Radius.circular(16),
                                             ),
                                           ),
-                                          child: aedappfm.PopupWaves(),
+                                          child: PopupWaves(),
                                         ),
                                       ),
                                       Padding(

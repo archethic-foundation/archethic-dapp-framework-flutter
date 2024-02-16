@@ -33,13 +33,23 @@ class Failure with _$Failure implements Exception {
   const factory Failure.insufficientFunds() = InsufficientFunds;
   const factory Failure.unauthorized() = Unauthorized;
   const factory Failure.invalidValue() = InvalidValue;
+  const factory Failure.htlcWithoutFunds() = HTLCWithoutFunds;
+  const factory Failure.notHTLC() = NotHTLC;
   const factory Failure.wrongNetwork(
     String cause,
   ) = WrongNetwork;
+  const factory Failure.insufficientPoolFunds() = InsufficientPoolFunds;
   const factory Failure.incompatibleBrowser() = IncompatibleBrowser;
+  const factory Failure.chainSwitchNotSupported() = ChainSwitchNotSupported;
+  const factory Failure.connectivityEVM() = ConnectivityEVM;
+  const factory Failure.paramEVMChain() = ParamEVMChain;
   const factory Failure.userRejected() = UserRejected;
   const factory Failure.connectivityArchethic() = ConnectivityArchethic;
   const factory Failure.timeout() = Timeout;
+  const factory Failure.rpcErrorEVM(
+    String? cause,
+  ) = RPCErrorEVM;
+
   const factory Failure.other({
     String? cause,
     String? stack,

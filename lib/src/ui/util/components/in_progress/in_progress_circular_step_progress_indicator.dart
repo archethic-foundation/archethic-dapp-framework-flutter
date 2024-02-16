@@ -1,6 +1,7 @@
 /// SPDX-License-Identifier: AGPL-3.0-or-later
-
-import 'package:archethic_dapp_framework_flutter/archethic-dapp-framework-flutter.dart';
+import 'package:archethic_dapp_framework_flutter/src/domain/models/failures.dart';
+import 'package:archethic_dapp_framework_flutter/src/ui/themes/app_theme_base.dart';
+import 'package:archethic_dapp_framework_flutter/src/ui/util/iconsax.dart';
 import 'package:flutter/material.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 

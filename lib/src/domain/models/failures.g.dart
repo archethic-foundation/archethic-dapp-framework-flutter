@@ -133,6 +133,28 @@ Map<String, dynamic> _$$InvalidValueImplToJson(_$InvalidValueImpl instance) =>
       'runtimeType': instance.$type,
     };
 
+_$HTLCWithoutFundsImpl _$$HTLCWithoutFundsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$HTLCWithoutFundsImpl(
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$HTLCWithoutFundsImplToJson(
+        _$HTLCWithoutFundsImpl instance) =>
+    <String, dynamic>{
+      'runtimeType': instance.$type,
+    };
+
+_$NotHTLCImpl _$$NotHTLCImplFromJson(Map<String, dynamic> json) =>
+    _$NotHTLCImpl(
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$NotHTLCImplToJson(_$NotHTLCImpl instance) =>
+    <String, dynamic>{
+      'runtimeType': instance.$type,
+    };
+
 _$WrongNetworkImpl _$$WrongNetworkImplFromJson(Map<String, dynamic> json) =>
     _$WrongNetworkImpl(
       json['cause'] as String,
@@ -145,6 +167,18 @@ Map<String, dynamic> _$$WrongNetworkImplToJson(_$WrongNetworkImpl instance) =>
       'runtimeType': instance.$type,
     };
 
+_$InsufficientPoolFundsImpl _$$InsufficientPoolFundsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$InsufficientPoolFundsImpl(
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$InsufficientPoolFundsImplToJson(
+        _$InsufficientPoolFundsImpl instance) =>
+    <String, dynamic>{
+      'runtimeType': instance.$type,
+    };
+
 _$IncompatibleBrowserImpl _$$IncompatibleBrowserImplFromJson(
         Map<String, dynamic> json) =>
     _$IncompatibleBrowserImpl(
@@ -153,6 +187,40 @@ _$IncompatibleBrowserImpl _$$IncompatibleBrowserImplFromJson(
 
 Map<String, dynamic> _$$IncompatibleBrowserImplToJson(
         _$IncompatibleBrowserImpl instance) =>
+    <String, dynamic>{
+      'runtimeType': instance.$type,
+    };
+
+_$ChainSwitchNotSupportedImpl _$$ChainSwitchNotSupportedImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ChainSwitchNotSupportedImpl(
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$ChainSwitchNotSupportedImplToJson(
+        _$ChainSwitchNotSupportedImpl instance) =>
+    <String, dynamic>{
+      'runtimeType': instance.$type,
+    };
+
+_$ConnectivityEVMImpl _$$ConnectivityEVMImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ConnectivityEVMImpl(
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$ConnectivityEVMImplToJson(
+        _$ConnectivityEVMImpl instance) =>
+    <String, dynamic>{
+      'runtimeType': instance.$type,
+    };
+
+_$ParamEVMChainImpl _$$ParamEVMChainImplFromJson(Map<String, dynamic> json) =>
+    _$ParamEVMChainImpl(
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$ParamEVMChainImplToJson(_$ParamEVMChainImpl instance) =>
     <String, dynamic>{
       'runtimeType': instance.$type,
     };
@@ -186,6 +254,18 @@ _$TimeoutImpl _$$TimeoutImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$TimeoutImplToJson(_$TimeoutImpl instance) =>
     <String, dynamic>{
+      'runtimeType': instance.$type,
+    };
+
+_$RPCErrorEVMImpl _$$RPCErrorEVMImplFromJson(Map<String, dynamic> json) =>
+    _$RPCErrorEVMImpl(
+      json['cause'] as String?,
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$RPCErrorEVMImplToJson(_$RPCErrorEVMImpl instance) =>
+    <String, dynamic>{
+      'cause': instance.cause,
       'runtimeType': instance.$type,
     };
 
