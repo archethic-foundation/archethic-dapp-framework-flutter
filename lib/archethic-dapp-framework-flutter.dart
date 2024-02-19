@@ -45,6 +45,7 @@ export 'src/ui/util/components/popup_template.dart';
 export 'src/ui/util/components/popup_waves.dart';
 export 'src/ui/util/components/scale_size.dart';
 export 'src/ui/util/components/scrollbar.dart';
+export 'src/ui/util/components/single_card.dart';
 export 'src/ui/util/delayed_task.dart';
 export 'src/ui/util/generic/formatters.dart';
 export 'src/ui/util/generic/responsive.dart';

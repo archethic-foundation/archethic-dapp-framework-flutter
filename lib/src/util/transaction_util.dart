@@ -251,17 +251,68 @@ mixin TransactionMixin {
 
   Future<double> getAmountFromTx(
     String txAddress,
-  ) async {
-    final transactionMap = await sl.get<ApiService>().getTransaction(
-      [txAddress],
-      request: ' data {ledger {token { transfers { amount } } } }',
-    );
-    final transfers = transactionMap[txAddress]?.data?.ledger?.token?.transfers;
-    if (transfers == null ||
-        transfers.isEmpty ||
-        transfers.first.amount == null) {
-      return 0.0;
+    bool isUCO,
+    String to, {
+    bool withLastAddress = false,
+  }) async {
+    final genesisTo = await sl.get<ApiService>().getGenesisAddress(to);
+
+    var transactionMap = <String, Transaction>{};
+    var amount = 0.0;
+    if (isUCO) {
+      if (withLastAddress) {
+        transactionMap = await sl.get<ApiService>().getLastTransaction(
+          [txAddress],
+          request: ' data {ledger {uco { transfers { amount, to } } } }',
+        );
+      } else {
+        transactionMap = await sl.get<ApiService>().getTransaction(
+          [txAddress],
+          request: ' data {ledger {uco { transfers { amount, to } } } }',
+        );
+      }
+
+      final transfers = transactionMap[txAddress]?.data?.ledger?.uco?.transfers;
+      if (transfers == null ||
+          transfers.isEmpty ||
+          transfers.first.amount == null) {
+        return amount;
+      }
+
+      for (final transfer in transfers) {
+        if (transfer.to!.toUpperCase() == genesisTo.address!.toUpperCase()) {
+          amount = fromBigInt(transfer.amount).toDouble();
+          break;
+        }
+      }
+      return amount;
+    } else {
+      if (withLastAddress) {
+        transactionMap = await sl.get<ApiService>().getLastTransaction(
+          [txAddress],
+          request: ' data {ledger {token { transfers { amount, to } } } }',
+        );
+      } else {
+        transactionMap = await sl.get<ApiService>().getTransaction(
+          [txAddress],
+          request: ' data {ledger {token { transfers { amount, to } } } }',
+        );
+      }
+
+      final transfers =
+          transactionMap[txAddress]?.data?.ledger?.token?.transfers;
+      if (transfers == null ||
+          transfers.isEmpty ||
+          transfers.first.amount == null) {
+        return amount;
+      }
+      for (final transfer in transfers) {
+        if (transfer.to!.toUpperCase() == genesisTo.address!.toUpperCase()) {
+          amount = fromBigInt(transfer.amount).toDouble();
+          break;
+        }
+      }
+      return amount;
     }
-    return fromBigInt(transfers.first.amount).toDouble();
   }
 }

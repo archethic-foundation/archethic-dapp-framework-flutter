@@ -212,6 +212,27 @@ extension StringNumberExt on String {
     return resultBuilder.toString();
   }
 
+  String reduceSymbol({int lengthMax = 5}) {
+    String subOnCharacter({
+      required String str,
+      required int from,
+      required int to,
+    }) {
+      final runes = str.runes.toList();
+      var result = '';
+      for (var i = from; i < to; i++) {
+        // ignore: use_string_buffers
+        result = result + String.fromCharCode(runes[i]);
+      }
+      return result;
+    }
+
+    if (runes.length > lengthMax) {
+      return '${subOnCharacter(str: this, from: 0, to: lengthMax)}...';
+    }
+    return this;
+  }
+
   String compactNumber() {
     final f = NumberFormat.compact();
     final doubleNumber = double.tryParse(this) ?? 0;
