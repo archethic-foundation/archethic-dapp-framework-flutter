@@ -3,6 +3,9 @@ import 'package:archethic_lib_dart/archethic_lib_dart.dart';
 
 class EndpointUtil {
   static String getEnvironnement() {
+    if (sl.isRegistered<ApiService>() == false) {
+      return '';
+    }
     final endpointUrl = sl.get<ApiService>().endpoint;
     switch (endpointUrl) {
       case 'https://testnet.archethic.net':
