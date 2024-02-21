@@ -15,6 +15,9 @@ dependencies:
   #    url: https://github.com/archethic-foundation/archethic-wallet-client-dart.git
   #    ref: 29-integrate-dart-sdk-fix-from-pr-httpsgithubcomarchethic-foundationlibdartpull127
 
+  # Compression
+  archive: ^3.4.10
+
   flutter:
     sdk: flutter
 
