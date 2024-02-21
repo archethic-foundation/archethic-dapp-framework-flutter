@@ -17,3 +17,5 @@ mixin FileMixin {
     );
   }
 }
+
+class ZipAndEncodeHelper with FileMixin {}
