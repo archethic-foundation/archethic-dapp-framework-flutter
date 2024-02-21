@@ -10,7 +10,7 @@ mixin FileMixin {
     return base64Url.encode(compressedData!);
   }
 
-  Uint8List zipAndDecodeContent(String data) {
+  Uint8List dezipAndDecodeContent(String data) {
     final compressedData = base64Url.decode(data);
     return Uint8List.fromList(
       GZipDecoder().decodeBytes(compressedData),
