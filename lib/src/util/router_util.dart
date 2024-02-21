@@ -17,3 +17,5 @@ mixin RouterMixin {
     return parameter;
   }
 }
+
+class QueryParameterHelper with RouterMixin {}
