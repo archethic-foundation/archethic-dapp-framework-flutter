@@ -11,10 +11,11 @@ mixin RouterMixin {
         .zipAndEncodeContent(Uint8List.fromList(utf8.encode(parameterEncoded)));
   }
 
-  String decodeQueryParameter(String encodedParameter) {
+  dynamic decodeQueryParameter(String encodedParameter) {
     final helper = ZipAndEncodeHelper();
     final parameterEncoded = helper.dezipAndDecodeContent(encodedParameter);
-    final parameterJson = utf8.decode(parameterEncoded);
+    final parameteDecoded = utf8.decode(parameterEncoded);
+    final parameterJson = Uri.decodeComponent(parameteDecoded);
     final parameter = jsonDecode(parameterJson);
     return parameter;
   }
