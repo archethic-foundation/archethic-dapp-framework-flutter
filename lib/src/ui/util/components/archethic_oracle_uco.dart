@@ -9,8 +9,11 @@ import 'package:url_launcher/url_launcher.dart';
 
 class ArchethicOracleUco extends ConsumerWidget {
   const ArchethicOracleUco({
+    required this.faqLink,
     super.key,
   });
+
+  final String faqLink;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -35,11 +38,7 @@ class ArchethicOracleUco extends ConsumerWidget {
             size: 16,
           ),
           onPressed: () {
-            launchUrl(
-              Uri.parse(
-                'https://wiki.archethic.net/FAQ/dex/#how-is-the-price-of-uco-estimated',
-              ),
-            );
+            launchUrl(Uri.parse(faqLink));
           },
           color: Colors.white,
         ),
