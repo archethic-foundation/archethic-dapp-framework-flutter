@@ -57,5 +57,6 @@ export 'src/util/endpoint_util.dart';
 export 'src/util/file_util.dart';
 export 'src/util/generic/get_it_instance.dart';
 export 'src/util/generic/providers_observer.dart';
+export 'src/util/periodic_future.dart';
 export 'src/util/router_util.dart';
 export 'src/util/transaction_util.dart';
