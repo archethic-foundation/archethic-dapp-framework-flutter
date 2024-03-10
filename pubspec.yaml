@@ -2,12 +2,15 @@ name: archethic_dapp_framework_flutter
 description: An internal framework for archethic flutter development
 homepage: https://github.com/archethic-foundation/archethic-dapp-framework-flutter
 
-version: 0.0.1+1
+version: 0.0.1
 
 environment:
   sdk: ">=3.1.0 <4.0.0"
 
 dependencies:
+  # Archethic dart library for Flutter based on Official Archethic Javascript library for Node and Browser
+  archethic_lib_dart: ^3.3.0
+
   # A client dart library to interact with Archethic Wallet RPC API.
   archethic_wallet_client: ^1.0.0
   #archethic_wallet_client:
@@ -30,8 +33,17 @@ dependencies:
   # State management
   flutter_riverpod: ^2.4.10
 
+  # Annotations for the freezed code-generator. This package does nothing without freezed too
+  freezed_annotation: ^2.4.1
+
   # Simple direct Service Locator that allows to decouple the interface from a concrete implementation and to access the concrete implementation from everywhere in your App
   get_it: ^7.6.7
+
+  # A composable, multi-platform, Future-based API for HTTP requests
+  http: ^1.1.0
+
+  # Contains code to deal with internationalized/localized messages, date and number formatting and parsing, bi-directional text, and other internationalization issues.
+  intl: ^0.18.1
 
   # A Flutter plugin for rendering an animated and customizable starfield on a dark background.
   lit_starfield: ^0.1.1
@@ -44,6 +56,9 @@ dependencies:
 
   # Bar indicator made of a series of selected and unselected steps
   step_progress_indicator: ^1.0.2
+
+  # Flutter plugin for launching a URL. Supports web, phone, SMS, and email schemes
+  url_launcher: ^6.1.12
 
   # Wave animation
   wave: ^0.2.2

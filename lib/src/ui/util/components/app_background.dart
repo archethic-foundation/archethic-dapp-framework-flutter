@@ -1,5 +1,4 @@
-import 'package:archethic_dapp_framework_flutter/archethic-dapp-framework-flutter.dart'
-    as aedappfm;
+import 'package:archethic_dapp_framework_flutter/src/ui/themes/app_theme_base.dart';
 import 'package:flutter/material.dart';
 import 'package:lit_starfield/view.dart';
 
@@ -24,7 +23,7 @@ class AppBackground extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               colorFilter: ColorFilter.mode(
-                aedappfm.ArchethicThemeBase.purple500.withOpacity(1),
+                ArchethicThemeBase.purple500.withOpacity(1),
                 BlendMode.modulate,
               ),
               image: AssetImage(
@@ -40,7 +39,7 @@ class AppBackground extends StatelessWidget {
             child: LitStarfieldContainer(
               velocity: 0.2,
               number: 200,
-              starColor: aedappfm.ArchethicThemeBase.neutral0,
+              starColor: ArchethicThemeBase.neutral0,
               scale: 3,
               backgroundDecoration: const BoxDecoration(
                 color: Colors.transparent,
@@ -54,7 +53,7 @@ class AppBackground extends StatelessWidget {
               velocity: 0.5,
               number: 100,
               scale: 10,
-              starColor: aedappfm.ArchethicThemeBase.blue600,
+              starColor: ArchethicThemeBase.blue600,
               backgroundDecoration: const BoxDecoration(
                 color: Colors.transparent,
               ),
