@@ -9,16 +9,18 @@ class PopupTemplate extends StatelessWidget {
     super.key,
     required this.popupContent,
     required this.popupTitle,
-    required this.popupHeight,
+    this.popupHeight,
     this.warningCloseLabel = '',
     this.warningCloseFunction,
+    this.displayCloseButton = true,
   });
 
   final Widget popupContent;
   final String popupTitle;
-  final double popupHeight;
+  final double? popupHeight;
   final String warningCloseLabel;
   final Function? warningCloseFunction;
+  final bool displayCloseButton;
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +52,13 @@ class PopupTemplate extends StatelessWidget {
                             color: AppThemeBase.sheetBorder,
                           ),
                         ),
-                        child: popupContent,
+                        child: popupHeight == null
+                            ? SingleChildScrollView(
+                                child: Wrap(
+                                  children: [popupContent],
+                                ),
+                              )
+                            : popupContent,
                       ),
                     ),
                   ),
@@ -85,13 +93,14 @@ class PopupTemplate extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Positioned(
-                    right: 0,
-                    child: PopupCloseButton(
-                      warningCloseLabel: warningCloseLabel,
-                      warningCloseFunction: warningCloseFunction,
+                  if (displayCloseButton)
+                    Positioned(
+                      right: 0,
+                      child: PopupCloseButton(
+                        warningCloseLabel: warningCloseLabel,
+                        warningCloseFunction: warningCloseFunction,
+                      ),
                     ),
-                  ),
                 ],
               ),
             ),
