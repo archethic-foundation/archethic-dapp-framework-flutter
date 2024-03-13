@@ -1,6 +1,5 @@
 import 'package:archethic_dapp_framework_flutter/src/domain/models/ucids_tokens.dart';
 import 'package:archethic_dapp_framework_flutter/src/infrastructure/ucids_tokens.repository.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'ucids_tokens.g.dart';
@@ -12,7 +11,7 @@ class _UcidsTokensNotifier extends Notifier<Map<String, int>> {
     return {};
   }
 
-  Future<void> init(WidgetRef ref) async {
+  Future<void> init() async {
     state =
         await ref.read(UcidsTokensProviders.getUcidsTokensFromNetwork.future);
   }
