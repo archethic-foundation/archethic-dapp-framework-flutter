@@ -23,3 +23,8 @@ Add `aedappfm.AppLocalizations.delegate` in `localizationsDelegates` property of
 ### Warning
 To avoid key doublons, we recommand to suffix Archethic DApp Framework imports in the DApp project.<br/>
 For example: `import 'package:archethic_dapp_framework_flutter/archethic-dapp-framework-flutter.dart as aedappfm;` 
+
+### Pre-requisites
+
+- Flutter 3.19+
+- Dart 3.3+
