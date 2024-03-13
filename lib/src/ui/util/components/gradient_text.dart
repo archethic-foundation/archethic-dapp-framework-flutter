@@ -26,12 +26,16 @@ class GradientText extends StatelessWidget {
           ? SelectableText(
               text,
               style: style,
-              textScaleFactor: ScaleSize.textScaleFactor(context),
+              textScaler: TextScaler.linear(
+                ScaleSize.textScaleFactor(context),
+              ),
             )
           : Text(
               text,
               style: style,
-              textScaleFactor: ScaleSize.textScaleFactor(context),
+              textScaler: TextScaler.linear(
+                ScaleSize.textScaleFactor(context),
+              ),
             ),
     );
   }
