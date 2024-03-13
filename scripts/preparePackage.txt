@@ -1,6 +1,8 @@
 flutter pub outdated
 flutter pub get
 dart fix --dry-run
+dart pub publish --dry-run
+dart pub publish
 
 Clean dependencies (from https://pub.dev/packages/dependency_validator)
 dart pub add --dev dependency_validator
