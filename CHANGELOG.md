@@ -1,5 +1,8 @@
 Changelog
 =========
+#### Version 0.0.4
+* Responsive: Add tools
+
 #### Version 0.0.3
 * Fix bug
 
