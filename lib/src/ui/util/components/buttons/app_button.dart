@@ -1,5 +1,6 @@
 /// SPDX-License-Identifier: AGPL-3.0-or-later
 import 'package:archethic_dapp_framework_flutter/src/ui/themes/app_theme_base.dart';
+import 'package:archethic_dapp_framework_flutter/src/ui/util/generic/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -91,7 +92,10 @@ class AppButtonState extends State<AppButton> {
               color: widget.disabled
                   ? Colors.white.withOpacity(0.5)
                   : Colors.white,
-              fontSize: widget.fontSize,
+              fontSize: Responsive.fontSizeFromValue(
+                context,
+                desktopValue: widget.fontSize,
+              ),
               fontWeight: FontWeight.w400,
             ),
             maxLines: 1,

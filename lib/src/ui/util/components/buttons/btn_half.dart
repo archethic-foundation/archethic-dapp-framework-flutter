@@ -1,6 +1,7 @@
 /// SPDX-License-Identifier: AGPL-3.0-or-later
 import 'package:archethic_dapp_framework_flutter/src/l10n/localizations-ae-dapp-framework.dart';
 import 'package:archethic_dapp_framework_flutter/src/ui/themes/app_theme_base.dart';
+import 'package:archethic_dapp_framework_flutter/src/ui/util/generic/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -34,7 +35,13 @@ class ButtonHalf extends StatelessWidget {
           padding: const EdgeInsets.only(top: 2),
           child: Text(
             AppLocalizations.of(context)!.aedappfm_btn_half,
-            style: TextStyle(color: AppThemeBase.halfButtonColor),
+            style: DefaultTextStyle.of(context).style.copyWith(
+                  color: AppThemeBase.halfButtonColor,
+                  fontSize: Responsive.fontSizeFromTextStyle(
+                    context,
+                    DefaultTextStyle.of(context).style,
+                  ),
+                ),
           ),
         ),
       )

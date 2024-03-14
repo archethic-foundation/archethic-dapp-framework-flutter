@@ -7,12 +7,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class ButtonClose extends ConsumerWidget {
   const ButtonClose({
     required this.onPressed,
+    this.fontSize = 16,
     super.key,
     this.background = const Color(0xFF3D1D63),
   });
 
   final VoidCallback onPressed;
   final Color background;
+  final double fontSize;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -20,6 +22,7 @@ class ButtonClose extends ConsumerWidget {
       background: background,
       labelBtn: AppLocalizations.of(context)!.aedappfm_btn_close,
       onPressed: onPressed,
+      fontSize: fontSize,
     );
   }
 }
