@@ -1,5 +1,8 @@
 Changelog
 =========
+#### Version 0.0.5
+* Get Verified tokens from blockchain
+
 #### Version 0.0.4
 * Responsive: Add tools
 
