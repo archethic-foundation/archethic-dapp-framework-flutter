@@ -206,7 +206,7 @@ class _GetUcidFromAddressProviderElement extends FutureProviderElement<int>
 }
 
 String _$ucidsTokensNotifierHash() =>
-    r'b0a107d3c9a7e36c293d810c83be9fe914bf5450';
+    r'8e9056b2dc25ddb45fafda90e7869d8f188a3d43';
 
 /// See also [_UcidsTokensNotifier].
 @ProviderFor(_UcidsTokensNotifier)

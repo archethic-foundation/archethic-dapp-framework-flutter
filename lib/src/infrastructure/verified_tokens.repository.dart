@@ -1,51 +1,19 @@
 /// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import 'dart:convert';
 import 'package:archethic_dapp_framework_flutter/src/domain/models/verified_tokens.dart';
 import 'package:archethic_dapp_framework_flutter/src/domain/repositories/tokens/verified_tokens.repository.dart';
-import 'package:archethic_dapp_framework_flutter/src/util/endpoint_util.dart';
 import 'package:flutter/services.dart';
 
 class VerifiedTokensRepositoryImpl
     implements VerifiedTokensRepositoryInterface {
   @override
   Future<VerifiedTokens> getVerifiedTokens() async {
-    final jsonContent = await rootBundle.loadString(
-      'packages/archethic_dapp_framework_flutter/lib/src/domain/repositories/tokens/verified_tokens.json',
-    );
+    final jsonContent = await rootBundle
+        .loadString('lib/domain/repositories/tokens/verified_tokens.json');
 
     final Map<String, dynamic> jsonData = json.decode(jsonContent);
 
     return VerifiedTokens.fromJson(jsonData);
-  }
-
-  @override
-  Future<List<String>> getVerifiedTokensFromNetwork() async {
-    final verifiedTokens = await getVerifiedTokens();
-    final network = EndpointUtil.getEnvironnement();
-
-    switch (network) {
-      case 'testnet':
-        return verifiedTokens.testnet;
-      case 'mainnet':
-        return verifiedTokens.mainnet;
-      case 'devnet':
-        return verifiedTokens.devnet;
-      default:
-        return [];
-    }
-  }
-
-  @override
-  Future<bool> isVerifiedToken(
-    String address,
-  ) async {
-    if (address == 'UCO') {
-      return true;
-    }
-    final verifiedTokens = await getVerifiedTokensFromNetwork();
-    if (verifiedTokens.contains(address.toUpperCase())) {
-      return true;
-    }
-    return false;
   }
 }

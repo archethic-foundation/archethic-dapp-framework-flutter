@@ -7,12 +7,12 @@ part of 'verified_tokens.dart';
 // **************************************************************************
 
 String _$verifiedTokensRepositoryHash() =>
-    r'987a9d6bf9496249eaf45b2163561f0c1cca7ac8';
+    r'a5536a493a63ddbd1102cb6e91c31a402641f749';
 
 /// See also [_verifiedTokensRepository].
 @ProviderFor(_verifiedTokensRepository)
 final _verifiedTokensRepositoryProvider =
-    Provider<VerifiedTokensRepositoryImpl>.internal(
+    Provider<VerifiedTokensRepository>.internal(
   _verifiedTokensRepository,
   name: r'_verifiedTokensRepositoryProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -22,8 +22,7 @@ final _verifiedTokensRepositoryProvider =
   allTransitiveDependencies: null,
 );
 
-typedef _VerifiedTokensRepositoryRef
-    = ProviderRef<VerifiedTokensRepositoryImpl>;
+typedef _VerifiedTokensRepositoryRef = ProviderRef<VerifiedTokensRepository>;
 String _$getVerifiedTokensHash() => r'fdd8866488e517f410a06ff21dbafbbdc420d431';
 
 /// See also [_getVerifiedTokens].
@@ -40,23 +39,7 @@ final _getVerifiedTokensProvider = FutureProvider<VerifiedTokens>.internal(
 
 typedef _GetVerifiedTokensRef = FutureProviderRef<VerifiedTokens>;
 String _$getVerifiedTokensFromNetworkHash() =>
-    r'95870d8cba19d76ef4ca32d54ba71ca7f2652e99';
-
-/// See also [_getVerifiedTokensFromNetwork].
-@ProviderFor(_getVerifiedTokensFromNetwork)
-final _getVerifiedTokensFromNetworkProvider =
-    FutureProvider<List<String>>.internal(
-  _getVerifiedTokensFromNetwork,
-  name: r'_getVerifiedTokensFromNetworkProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$getVerifiedTokensFromNetworkHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
-
-typedef _GetVerifiedTokensFromNetworkRef = FutureProviderRef<List<String>>;
-String _$isVerifiedTokenHash() => r'e83d28efbb2d4da616d3537e2d2eda8cc1b15c42';
+    r'bb1aa631bacb1a50db3dfd3a9c21270d2862965c';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -78,6 +61,141 @@ class _SystemHash {
     return 0x1fffffff & (hash + ((0x00003fff & hash) << 15));
   }
 }
+
+/// See also [_getVerifiedTokensFromNetwork].
+@ProviderFor(_getVerifiedTokensFromNetwork)
+const _getVerifiedTokensFromNetworkProvider =
+    _GetVerifiedTokensFromNetworkFamily();
+
+/// See also [_getVerifiedTokensFromNetwork].
+class _GetVerifiedTokensFromNetworkFamily
+    extends Family<AsyncValue<List<String>>> {
+  /// See also [_getVerifiedTokensFromNetwork].
+  const _GetVerifiedTokensFromNetworkFamily();
+
+  /// See also [_getVerifiedTokensFromNetwork].
+  _GetVerifiedTokensFromNetworkProvider call(
+    String network,
+  ) {
+    return _GetVerifiedTokensFromNetworkProvider(
+      network,
+    );
+  }
+
+  @override
+  _GetVerifiedTokensFromNetworkProvider getProviderOverride(
+    covariant _GetVerifiedTokensFromNetworkProvider provider,
+  ) {
+    return call(
+      provider.network,
+    );
+  }
+
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'_getVerifiedTokensFromNetworkProvider';
+}
+
+/// See also [_getVerifiedTokensFromNetwork].
+class _GetVerifiedTokensFromNetworkProvider
+    extends FutureProvider<List<String>> {
+  /// See also [_getVerifiedTokensFromNetwork].
+  _GetVerifiedTokensFromNetworkProvider(
+    String network,
+  ) : this._internal(
+          (ref) => _getVerifiedTokensFromNetwork(
+            ref as _GetVerifiedTokensFromNetworkRef,
+            network,
+          ),
+          from: _getVerifiedTokensFromNetworkProvider,
+          name: r'_getVerifiedTokensFromNetworkProvider',
+          debugGetCreateSourceHash:
+              const bool.fromEnvironment('dart.vm.product')
+                  ? null
+                  : _$getVerifiedTokensFromNetworkHash,
+          dependencies: _GetVerifiedTokensFromNetworkFamily._dependencies,
+          allTransitiveDependencies:
+              _GetVerifiedTokensFromNetworkFamily._allTransitiveDependencies,
+          network: network,
+        );
+
+  _GetVerifiedTokensFromNetworkProvider._internal(
+    super._createNotifier, {
+    required super.name,
+    required super.dependencies,
+    required super.allTransitiveDependencies,
+    required super.debugGetCreateSourceHash,
+    required super.from,
+    required this.network,
+  }) : super.internal();
+
+  final String network;
+
+  @override
+  Override overrideWith(
+    FutureOr<List<String>> Function(_GetVerifiedTokensFromNetworkRef provider)
+        create,
+  ) {
+    return ProviderOverride(
+      origin: this,
+      override: _GetVerifiedTokensFromNetworkProvider._internal(
+        (ref) => create(ref as _GetVerifiedTokensFromNetworkRef),
+        from: from,
+        name: null,
+        dependencies: null,
+        allTransitiveDependencies: null,
+        debugGetCreateSourceHash: null,
+        network: network,
+      ),
+    );
+  }
+
+  @override
+  FutureProviderElement<List<String>> createElement() {
+    return _GetVerifiedTokensFromNetworkProviderElement(this);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return other is _GetVerifiedTokensFromNetworkProvider &&
+        other.network == network;
+  }
+
+  @override
+  int get hashCode {
+    var hash = _SystemHash.combine(0, runtimeType.hashCode);
+    hash = _SystemHash.combine(hash, network.hashCode);
+
+    return _SystemHash.finish(hash);
+  }
+}
+
+mixin _GetVerifiedTokensFromNetworkRef on FutureProviderRef<List<String>> {
+  /// The parameter `network` of this provider.
+  String get network;
+}
+
+class _GetVerifiedTokensFromNetworkProviderElement
+    extends FutureProviderElement<List<String>>
+    with _GetVerifiedTokensFromNetworkRef {
+  _GetVerifiedTokensFromNetworkProviderElement(super.provider);
+
+  @override
+  String get network =>
+      (origin as _GetVerifiedTokensFromNetworkProvider).network;
+}
+
+String _$isVerifiedTokenHash() => r'dd54f863e9bf7e4f12c0feddde293ec73ca9ab4a';
 
 /// See also [_isVerifiedToken].
 @ProviderFor(_isVerifiedToken)
@@ -204,5 +322,25 @@ class _IsVerifiedTokenProviderElement extends FutureProviderElement<bool>
   @override
   String get address => (origin as _IsVerifiedTokenProvider).address;
 }
+
+String _$verifiedTokensNotifierHash() =>
+    r'9201c8dcedd20cb8de335ecf40cdcc9b533ba4c4';
+
+/// See also [_VerifiedTokensNotifier].
+@ProviderFor(_VerifiedTokensNotifier)
+final _verifiedTokensNotifierProvider = NotifierProvider<
+    _VerifiedTokensNotifier,
+    ({String network, List<String> verifiedTokensList})>.internal(
+  _VerifiedTokensNotifier.new,
+  name: r'_verifiedTokensNotifierProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$verifiedTokensNotifierHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef _$VerifiedTokensNotifier
+    = Notifier<({String network, List<String> verifiedTokensList})>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
