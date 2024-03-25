@@ -1,7 +1,6 @@
 /// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'dart:convert';
-import 'dart:developer';
 import 'package:archethic_dapp_framework_flutter/src/domain/models/verified_tokens.dart';
 import 'package:archethic_dapp_framework_flutter/src/domain/repositories/tokens/verified_tokens.repository.dart';
 import 'package:archethic_dapp_framework_flutter/src/util/generic/get_it_instance.dart';
@@ -44,7 +43,6 @@ class VerifiedTokensRepositoryImpl
     String address,
     List<String> verifiedTokensList,
   ) async {
-    log('verifiedTokens $verifiedTokensList');
     if (verifiedTokensList.contains(address.toUpperCase())) {
       return true;
     }
@@ -64,7 +62,6 @@ class VerifiedTokensRepositoryImpl
           jsonDecode(lastAddressMap[txAddress]!.data!.content!);
       if (jsonMap['verifiedTokens'] != null &&
           jsonMap['verifiedTokens']['tokens'] != null) {
-        log('Verified tokens ${jsonMap['verifiedTokens']['tokens']}');
         return List.from(jsonMap['verifiedTokens']['tokens']);
       }
     }

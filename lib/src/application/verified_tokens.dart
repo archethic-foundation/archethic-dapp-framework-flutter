@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:archethic_dapp_framework_flutter/src/domain/models/verified_tokens.dart';
 import 'package:archethic_dapp_framework_flutter/src/infrastructure/verified_tokens.repository.dart';
 import 'package:archethic_dapp_framework_flutter/src/util/endpoint_util.dart';
@@ -24,7 +22,6 @@ class _VerifiedTokensNotifier
     final verifiedTokensFromNetwork = await ref
         .watch(_verifiedTokensRepositoryProvider)
         .getVerifiedTokensFromNetwork(network);
-    log('Verified tokens list ($network) $verifiedTokensFromNetwork');
     state = (network: network, verifiedTokensList: verifiedTokensFromNetwork);
   }
 }
