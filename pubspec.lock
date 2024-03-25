@@ -41,6 +41,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.3.8"
+  archethic_wallet_client:
+    dependency: "direct main"
+    description:
+      name: archethic_wallet_client
+      sha256: f07adecdcf466e5caa5f779bf72622b27183645c52381257dca7ca7503c68686
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0-dev.1"
   archive:
     dependency: "direct main"
     description:
@@ -225,6 +233,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.3"
+  deeplink_rpc:
+    dependency: transitive
+    description:
+      name: deeplink_rpc
+      sha256: eefff517ccc79f26b4414fc3387932d49f80248640ebfbf8331d4a998531d1d9
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.6"
   ecdsa:
     dependency: transitive
     description:
@@ -488,6 +504,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.8.1"
+  json_rpc_2:
+    dependency: transitive
+    description:
+      name: json_rpc_2
+      sha256: "5e469bffa23899edacb7b22787780068d650b106a21c76db3c49218ab7ca447e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.2"
   json_serializable:
     dependency: "direct dev"
     description:
