@@ -1,5 +1,8 @@
 Changelog
 =========
+#### Version 0.0.6
+* Upgrade dependencies
+
 #### Version 0.0.5
 * Get Verified tokens from blockchain
 
