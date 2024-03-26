@@ -95,6 +95,8 @@ class AppButtonState extends State<AppButton> {
               fontSize: Responsive.fontSizeFromValue(
                 context,
                 desktopValue: widget.fontSize,
+                ratioTablet: 1,
+                ratioMobile: 1,
               ),
               fontWeight: FontWeight.w400,
             ),
