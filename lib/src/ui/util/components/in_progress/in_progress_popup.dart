@@ -12,10 +12,14 @@ class InProgressPopup {
     BuildContext context,
     List<Widget> Function(BuildContext context, WidgetRef ref) bodyBuilder,
     PopupCloseButton Function(BuildContext context, WidgetRef ref)
-        closeButtonBuilder,
-  ) async {
+        closeButtonBuilder, {
+    bool useSafeArea = false,
+    bool useRootNavigator = false,
+  }) async {
     return showDialog<void>(
       context: context,
+      useSafeArea: useSafeArea,
+      useRootNavigator: useRootNavigator,
       builder: (context) {
         return ScaffoldMessenger(
           child: Builder(
