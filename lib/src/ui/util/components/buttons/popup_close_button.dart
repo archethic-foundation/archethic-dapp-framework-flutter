@@ -109,7 +109,6 @@ class PopupCloseButton extends StatelessWidget {
 
                                           if (!context.mounted) return;
                                           Navigator.of(context).pop();
-                                          Navigator.of(context).pop();
                                         },
                                       ),
                                     ],
