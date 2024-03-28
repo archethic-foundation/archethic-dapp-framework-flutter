@@ -1,5 +1,6 @@
 /// SPDX-License-Identifier: AGPL-3.0-or-later
 import 'package:archethic_dapp_framework_flutter/src/ui/themes/app_theme_base.dart';
+import 'package:archethic_dapp_framework_flutter/src/ui/util/generic/responsive.dart';
 import 'package:archethic_dapp_framework_flutter/src/ui/util/iconsax.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -101,6 +102,19 @@ class InfoBanner extends StatelessWidget {
                                                     .colorScheme
                                                     .primary
                                                 : AppThemeBase.statusOK,
+                                        fontSize: Theme.of(context)
+                                            .textTheme
+                                            .bodyMedium!
+                                            .copyWith(
+                                              fontSize: Responsive
+                                                  .fontSizeFromTextStyle(
+                                                context,
+                                                Theme.of(context)
+                                                    .textTheme
+                                                    .bodyMedium!,
+                                              ),
+                                            )
+                                            .fontSize,
                                       ),
                                     ),
                                   ),

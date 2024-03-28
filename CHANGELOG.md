@@ -1,5 +1,18 @@
 Changelog
 =========
+#### Version 0.0.9
+* Fix responsive
+* Fix popup navigation
+
+#### Version 0.0.8
+* Upgrade dependencies
+
+#### Version 0.0.7
+* Upgrade dependencies
+
+#### Version 0.0.6
+* Upgrade dependencies
+
 #### Version 0.0.5
 * Get Verified tokens from blockchain
 
