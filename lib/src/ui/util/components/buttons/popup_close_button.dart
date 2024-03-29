@@ -12,11 +12,13 @@ class PopupCloseButton extends StatelessWidget {
     this.warningCloseLabel = '',
     this.warningCloseFunction,
     this.warningCloseWarning = false,
+    this.closeFunction,
   });
 
   final bool warningCloseWarning;
   final String warningCloseLabel;
   final Function? warningCloseFunction;
+  final Function? closeFunction;
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +27,12 @@ class PopupCloseButton extends StatelessWidget {
       child: InkWell(
         onTap: () async {
           if (warningCloseWarning == false) {
-            if (warningCloseFunction != null) {
-              await warningCloseFunction!();
+            if (closeFunction != null) {
+              await closeFunction!();
+            } else {
+              if (!context.mounted) return;
+              Navigator.of(context).pop();
             }
-            if (!context.mounted) return;
-            Navigator.of(context).pop();
             return;
           }
 
