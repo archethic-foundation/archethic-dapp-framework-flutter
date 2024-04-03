@@ -1,5 +1,5 @@
 # Archethic's flutter framework to create Archethic Dapps
-WIP
+This project provides widgets to facilitate the creation of Archethic DApps
 
 ## Arb file management
 

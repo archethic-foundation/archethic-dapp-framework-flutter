@@ -38,15 +38,17 @@ class Responsive extends StatelessWidget {
   static double fontSizeFromValue(
     BuildContext context, {
     required double desktopValue,
+    double ratioTablet = 2,
+    double ratioMobile = 4,
   }) {
     if (Responsive.isDesktop(context)) {
       return desktopValue;
     } else {
       if (Responsive.isTablet(context)) {
-        return desktopValue - 2;
+        return desktopValue - ratioTablet;
       }
     }
-    return desktopValue - 4;
+    return desktopValue - ratioMobile;
   }
 
   @override

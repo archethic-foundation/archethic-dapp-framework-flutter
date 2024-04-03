@@ -2,7 +2,7 @@ name: archethic_dapp_framework_flutter
 description: An internal framework for archethic flutter development
 homepage: https://github.com/archethic-foundation/archethic-dapp-framework-flutter
 
-version: 0.0.5
+version: 1.0.0
 
 environment:
   sdk: ">=3.3.0 <4.0.0"
@@ -12,11 +12,7 @@ dependencies:
   archethic_lib_dart: ^3.3.0
 
   # A client dart library to interact with Archethic Wallet RPC API.
-  archethic_wallet_client: ^1.0.0
-  #archethic_wallet_client:
-  #  git:
-  #    url: https://github.com/archethic-foundation/archethic-wallet-client-dart.git
-  #    ref: 29-integrate-dart-sdk-fix-from-pr-httpsgithubcomarchethic-foundationlibdartpull127
+  archethic_wallet_client: ^1.1.0
 
   # Compression
   archive: ^3.4.10

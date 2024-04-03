@@ -37,18 +37,18 @@ packages:
     dependency: "direct main"
     description:
       name: archethic_lib_dart
-      sha256: a327b4838ae3c39b14905e01199899befa11568734b0f7f7ed950c88d936af44
+      sha256: "6de293153303da1a32e8b32e12410bf3da351f24aeb5b77fccd052aab852bb7e"
       url: "https://pub.dev"
     source: hosted
-    version: "3.3.7"
+    version: "3.3.11"
   archethic_wallet_client:
     dependency: "direct main"
     description:
       name: archethic_wallet_client
-      sha256: ffb6821b039df5597ada7f54b2f64bc0198c0dd54342517138d1ddac66678cd9
+      sha256: cdfadc5d8d095db8b766d327d2bcc2de649102cb69f21851c63d66743900ffd0
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.11"
+    version: "1.1.0"
   archive:
     dependency: "direct main"
     description:
@@ -117,10 +117,10 @@ packages:
     dependency: "direct dev"
     description:
       name: build_runner
-      sha256: "581bacf68f89ec8792f5e5a0b2c4decd1c948e97ce659dc783688c8a88fbec21"
+      sha256: "3ac61a79bfb6f6cc11f693591063a7f19a7af628dc52f141743edac5c16e8c22"
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.8"
+    version: "2.4.9"
   build_runner_core:
     dependency: transitive
     description:
@@ -141,10 +141,10 @@ packages:
     dependency: transitive
     description:
       name: built_value
-      sha256: fedde275e0a6b798c3296963c5cd224e3e1b55d0e478d5b7e65e6b540f363a0e
+      sha256: c7913a9737ee4007efedaffc968c049fd0f3d0e49109e778edc10de9426005cb
       url: "https://pub.dev"
     source: hosted
-    version: "8.9.1"
+    version: "8.9.2"
   characters:
     dependency: transitive
     description:
@@ -161,22 +161,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.3"
-  ci:
-    dependency: transitive
-    description:
-      name: ci
-      sha256: "145d095ce05cddac4d797a158bc4cf3b6016d1fe63d8c3d2fbd7212590adca13"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.1.0"
-  cli_util:
-    dependency: transitive
-    description:
-      name: cli_util
-      sha256: c05b7406fdabc7a49a3929d4af76bcaccbbffcbcdcf185b082e1ae07da323d19
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.4.1"
   clock:
     dependency: transitive
     description:
@@ -225,22 +209,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.7.0"
-  custom_lint:
-    dependency: transitive
-    description:
-      name: custom_lint
-      sha256: "445242371d91d2e24bd7b82e3583a2c05610094ba2d0575262484ad889c8f981"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.6.2"
   custom_lint_core:
     dependency: transitive
     description:
       name: custom_lint_core
-      sha256: ce5d6215f4e143f7780ce53f73dfa6fc503f39d2d30bef76c48be9ac1a09d9a6
+      sha256: a85e8f78f4c52f6c63cdaf8c872eb573db0231dcdf3c3a5906d493c1f8bc20e6
       url: "https://pub.dev"
     source: hosted
-    version: "0.6.2"
+    version: "0.6.3"
   dart_style:
     dependency: transitive
     description:
@@ -269,10 +245,10 @@ packages:
     dependency: transitive
     description:
       name: ecdsa
-      sha256: dd1efbaf6c18bfde9347dddcfe10dce3dd044e5a1b237457a49b5c24850dfb95
+      sha256: b71687a843151255fced9fead63b09816cc59e9ae7b954e6a852bdc344ae1aca
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.4"
+    version: "0.1.0"
   elliptic:
     dependency: transitive
     description:
@@ -372,18 +348,18 @@ packages:
     dependency: transitive
     description:
       name: frontend_server_client
-      sha256: "408e3ca148b31c20282ad6f37ebfa6f4bdc8fede5b74bc2f08d9d92b55db3612"
+      sha256: f64a0333a82f30b0cca061bc3d143813a486dc086b574bfb233b7c1372427694
       url: "https://pub.dev"
     source: hosted
-    version: "3.2.0"
+    version: "4.0.0"
   get_it:
     dependency: "direct main"
     description:
       name: get_it
-      sha256: e6017ce7fdeaf218dc51a100344d8cb70134b80e28b760f8bb23c242437bafd7
+      sha256: "36524bfb3f0b4ec952c3202466fdd69ad1f7ac1dd9b0a7564177707e45bfaeb9"
       url: "https://pub.dev"
     source: hosted
-    version: "7.6.7"
+    version: "7.6.8"
   glob:
     dependency: transitive
     description:
@@ -660,10 +636,10 @@ packages:
     dependency: transitive
     description:
       name: phoenix_socket
-      sha256: dcbf94b27a5492e14b7cc74dfd2e2a6cec73cfb09cee4f1cc19a58dfa40eb3c2
+      sha256: "21c0ed733db29a74d54f676aaab4800d8b7278bc0e4e95a7a7c5d7773464a2bf"
       url: "https://pub.dev"
     source: hosted
-    version: "0.6.4"
+    version: "0.7.1"
   pinenacl:
     dependency: transitive
     description:
@@ -1017,10 +993,10 @@ packages:
     dependency: transitive
     description:
       name: win32
-      sha256: "8cb58b45c47dcb42ab3651533626161d6b67a2921917d8d429791f76972b3480"
+      sha256: "0a989dc7ca2bb51eac91e8fd00851297cfffd641aa7538b165c62637ca0eaa4a"
       url: "https://pub.dev"
     source: hosted
-    version: "5.3.0"
+    version: "5.4.0"
   x25519:
     dependency: transitive
     description:
