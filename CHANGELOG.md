@@ -1,5 +1,8 @@
 Changelog
 =========
+#### Version 1.0.0
+* Stable version
+
 #### Version 0.0.9
 * Fix responsive
 * Fix popup navigation
