@@ -44,10 +44,11 @@ packages:
   archethic_wallet_client:
     dependency: "direct main"
     description:
-      name: archethic_wallet_client
-      sha256: cdfadc5d8d095db8b766d327d2bcc2de649102cb69f21851c63d66743900ffd0
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: web_extension_support
+      resolved-ref: "6ce7f6794630b6eec3860832460ee581066dc6a8"
+      url: "https://github.com/archethic-foundation/archethic-wallet-client-dart.git"
+    source: git
     version: "1.1.0"
   archive:
     dependency: "direct main"
