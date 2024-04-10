@@ -52,6 +52,10 @@ Failure _$FailureFromJson(Map<String, dynamic> json) {
       return ChainSwitchNotSupported.fromJson(json);
     case 'connectivityEVM':
       return ConnectivityEVM.fromJson(json);
+    case 'walletNotSupportedEVM':
+      return WalletNotSupportedEVM.fromJson(json);
+    case 'noWalletSupportedEVM':
+      return NoWalletSupportedEVM.fromJson(json);
     case 'paramEVMChain':
       return ParamEVMChain.fromJson(json);
     case 'userRejected':
@@ -93,6 +97,8 @@ mixin _$Failure {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -121,6 +127,8 @@ mixin _$Failure {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -149,6 +157,8 @@ mixin _$Failure {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -181,6 +191,9 @@ mixin _$Failure {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -211,6 +224,8 @@ mixin _$Failure {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -240,6 +255,8 @@ mixin _$Failure {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -334,6 +351,8 @@ class _$LoggedOutImpl extends LoggedOut {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -365,6 +384,8 @@ class _$LoggedOutImpl extends LoggedOut {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -396,6 +417,8 @@ class _$LoggedOutImpl extends LoggedOut {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -434,6 +457,9 @@ class _$LoggedOutImpl extends LoggedOut {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -467,6 +493,8 @@ class _$LoggedOutImpl extends LoggedOut {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -499,6 +527,8 @@ class _$LoggedOutImpl extends LoggedOut {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -594,6 +624,8 @@ class _$NetworkFailureImpl extends NetworkFailure {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -625,6 +657,8 @@ class _$NetworkFailureImpl extends NetworkFailure {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -656,6 +690,8 @@ class _$NetworkFailureImpl extends NetworkFailure {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -694,6 +730,9 @@ class _$NetworkFailureImpl extends NetworkFailure {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -727,6 +766,8 @@ class _$NetworkFailureImpl extends NetworkFailure {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -759,6 +800,8 @@ class _$NetworkFailureImpl extends NetworkFailure {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -883,6 +926,8 @@ class _$QuotaExceededFailureImpl extends QuotaExceededFailure {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -914,6 +959,8 @@ class _$QuotaExceededFailureImpl extends QuotaExceededFailure {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -945,6 +992,8 @@ class _$QuotaExceededFailureImpl extends QuotaExceededFailure {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -983,6 +1032,9 @@ class _$QuotaExceededFailureImpl extends QuotaExceededFailure {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -1016,6 +1068,8 @@ class _$QuotaExceededFailureImpl extends QuotaExceededFailure {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -1048,6 +1102,8 @@ class _$QuotaExceededFailureImpl extends QuotaExceededFailure {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -1149,6 +1205,8 @@ class _$ServiceNotFoundImpl extends ServiceNotFound {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -1180,6 +1238,8 @@ class _$ServiceNotFoundImpl extends ServiceNotFound {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -1211,6 +1271,8 @@ class _$ServiceNotFoundImpl extends ServiceNotFound {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -1249,6 +1311,9 @@ class _$ServiceNotFoundImpl extends ServiceNotFound {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -1282,6 +1347,8 @@ class _$ServiceNotFoundImpl extends ServiceNotFound {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -1314,6 +1381,8 @@ class _$ServiceNotFoundImpl extends ServiceNotFound {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -1410,6 +1479,8 @@ class _$ServiceAlreadyExistsImpl extends ServiceAlreadyExists {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -1441,6 +1512,8 @@ class _$ServiceAlreadyExistsImpl extends ServiceAlreadyExists {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -1472,6 +1545,8 @@ class _$ServiceAlreadyExistsImpl extends ServiceAlreadyExists {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -1510,6 +1585,9 @@ class _$ServiceAlreadyExistsImpl extends ServiceAlreadyExists {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -1543,6 +1621,8 @@ class _$ServiceAlreadyExistsImpl extends ServiceAlreadyExists {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -1575,6 +1655,8 @@ class _$ServiceAlreadyExistsImpl extends ServiceAlreadyExists {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -1670,6 +1752,8 @@ class _$PoolAlreadyExistsImpl extends PoolAlreadyExists {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -1701,6 +1785,8 @@ class _$PoolAlreadyExistsImpl extends PoolAlreadyExists {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -1732,6 +1818,8 @@ class _$PoolAlreadyExistsImpl extends PoolAlreadyExists {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -1770,6 +1858,9 @@ class _$PoolAlreadyExistsImpl extends PoolAlreadyExists {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -1803,6 +1894,8 @@ class _$PoolAlreadyExistsImpl extends PoolAlreadyExists {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -1835,6 +1928,8 @@ class _$PoolAlreadyExistsImpl extends PoolAlreadyExists {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -1934,6 +2029,8 @@ class _$LPTokenAmountExceedBalanceImpl extends LPTokenAmountExceedBalance {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -1965,6 +2062,8 @@ class _$LPTokenAmountExceedBalanceImpl extends LPTokenAmountExceedBalance {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -1996,6 +2095,8 @@ class _$LPTokenAmountExceedBalanceImpl extends LPTokenAmountExceedBalance {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -2034,6 +2135,9 @@ class _$LPTokenAmountExceedBalanceImpl extends LPTokenAmountExceedBalance {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -2067,6 +2171,8 @@ class _$LPTokenAmountExceedBalanceImpl extends LPTokenAmountExceedBalance {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -2099,6 +2205,8 @@ class _$LPTokenAmountExceedBalanceImpl extends LPTokenAmountExceedBalance {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -2194,6 +2302,8 @@ class _$PoolNotExistsImpl extends PoolNotExists {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -2225,6 +2335,8 @@ class _$PoolNotExistsImpl extends PoolNotExists {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -2256,6 +2368,8 @@ class _$PoolNotExistsImpl extends PoolNotExists {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -2294,6 +2408,9 @@ class _$PoolNotExistsImpl extends PoolNotExists {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -2327,6 +2444,8 @@ class _$PoolNotExistsImpl extends PoolNotExists {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -2359,6 +2478,8 @@ class _$PoolNotExistsImpl extends PoolNotExists {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -2454,6 +2575,8 @@ class _$InsufficientFundsImpl extends InsufficientFunds {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -2485,6 +2608,8 @@ class _$InsufficientFundsImpl extends InsufficientFunds {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -2516,6 +2641,8 @@ class _$InsufficientFundsImpl extends InsufficientFunds {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -2554,6 +2681,9 @@ class _$InsufficientFundsImpl extends InsufficientFunds {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -2587,6 +2717,8 @@ class _$InsufficientFundsImpl extends InsufficientFunds {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -2619,6 +2751,8 @@ class _$InsufficientFundsImpl extends InsufficientFunds {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -2714,6 +2848,8 @@ class _$UnauthorizedImpl extends Unauthorized {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -2745,6 +2881,8 @@ class _$UnauthorizedImpl extends Unauthorized {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -2776,6 +2914,8 @@ class _$UnauthorizedImpl extends Unauthorized {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -2814,6 +2954,9 @@ class _$UnauthorizedImpl extends Unauthorized {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -2847,6 +2990,8 @@ class _$UnauthorizedImpl extends Unauthorized {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -2879,6 +3024,8 @@ class _$UnauthorizedImpl extends Unauthorized {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -2974,6 +3121,8 @@ class _$InvalidValueImpl extends InvalidValue {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -3005,6 +3154,8 @@ class _$InvalidValueImpl extends InvalidValue {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -3036,6 +3187,8 @@ class _$InvalidValueImpl extends InvalidValue {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -3074,6 +3227,9 @@ class _$InvalidValueImpl extends InvalidValue {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -3107,6 +3263,8 @@ class _$InvalidValueImpl extends InvalidValue {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -3139,6 +3297,8 @@ class _$InvalidValueImpl extends InvalidValue {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -3234,6 +3394,8 @@ class _$HTLCWithoutFundsImpl extends HTLCWithoutFunds {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -3265,6 +3427,8 @@ class _$HTLCWithoutFundsImpl extends HTLCWithoutFunds {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -3296,6 +3460,8 @@ class _$HTLCWithoutFundsImpl extends HTLCWithoutFunds {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -3334,6 +3500,9 @@ class _$HTLCWithoutFundsImpl extends HTLCWithoutFunds {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -3367,6 +3536,8 @@ class _$HTLCWithoutFundsImpl extends HTLCWithoutFunds {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -3399,6 +3570,8 @@ class _$HTLCWithoutFundsImpl extends HTLCWithoutFunds {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -3494,6 +3667,8 @@ class _$NotHTLCImpl extends NotHTLC {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -3525,6 +3700,8 @@ class _$NotHTLCImpl extends NotHTLC {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -3556,6 +3733,8 @@ class _$NotHTLCImpl extends NotHTLC {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -3594,6 +3773,9 @@ class _$NotHTLCImpl extends NotHTLC {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -3627,6 +3809,8 @@ class _$NotHTLCImpl extends NotHTLC {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -3659,6 +3843,8 @@ class _$NotHTLCImpl extends NotHTLC {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -3779,6 +3965,8 @@ class _$WrongNetworkImpl extends WrongNetwork {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -3810,6 +3998,8 @@ class _$WrongNetworkImpl extends WrongNetwork {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -3841,6 +4031,8 @@ class _$WrongNetworkImpl extends WrongNetwork {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -3879,6 +4071,9 @@ class _$WrongNetworkImpl extends WrongNetwork {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -3912,6 +4107,8 @@ class _$WrongNetworkImpl extends WrongNetwork {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -3944,6 +4141,8 @@ class _$WrongNetworkImpl extends WrongNetwork {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -4046,6 +4245,8 @@ class _$InsufficientPoolFundsImpl extends InsufficientPoolFunds {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -4077,6 +4278,8 @@ class _$InsufficientPoolFundsImpl extends InsufficientPoolFunds {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -4108,6 +4311,8 @@ class _$InsufficientPoolFundsImpl extends InsufficientPoolFunds {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -4146,6 +4351,9 @@ class _$InsufficientPoolFundsImpl extends InsufficientPoolFunds {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -4179,6 +4387,8 @@ class _$InsufficientPoolFundsImpl extends InsufficientPoolFunds {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -4211,6 +4421,8 @@ class _$InsufficientPoolFundsImpl extends InsufficientPoolFunds {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -4307,6 +4519,8 @@ class _$IncompatibleBrowserImpl extends IncompatibleBrowser {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -4338,6 +4552,8 @@ class _$IncompatibleBrowserImpl extends IncompatibleBrowser {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -4369,6 +4585,8 @@ class _$IncompatibleBrowserImpl extends IncompatibleBrowser {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -4407,6 +4625,9 @@ class _$IncompatibleBrowserImpl extends IncompatibleBrowser {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -4440,6 +4661,8 @@ class _$IncompatibleBrowserImpl extends IncompatibleBrowser {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -4472,6 +4695,8 @@ class _$IncompatibleBrowserImpl extends IncompatibleBrowser {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -4570,6 +4795,8 @@ class _$ChainSwitchNotSupportedImpl extends ChainSwitchNotSupported {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -4601,6 +4828,8 @@ class _$ChainSwitchNotSupportedImpl extends ChainSwitchNotSupported {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -4632,6 +4861,8 @@ class _$ChainSwitchNotSupportedImpl extends ChainSwitchNotSupported {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -4670,6 +4901,9 @@ class _$ChainSwitchNotSupportedImpl extends ChainSwitchNotSupported {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -4703,6 +4937,8 @@ class _$ChainSwitchNotSupportedImpl extends ChainSwitchNotSupported {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -4735,6 +4971,8 @@ class _$ChainSwitchNotSupportedImpl extends ChainSwitchNotSupported {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -4830,6 +5068,8 @@ class _$ConnectivityEVMImpl extends ConnectivityEVM {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -4861,6 +5101,8 @@ class _$ConnectivityEVMImpl extends ConnectivityEVM {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -4892,6 +5134,8 @@ class _$ConnectivityEVMImpl extends ConnectivityEVM {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -4930,6 +5174,9 @@ class _$ConnectivityEVMImpl extends ConnectivityEVM {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -4963,6 +5210,8 @@ class _$ConnectivityEVMImpl extends ConnectivityEVM {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -4995,6 +5244,8 @@ class _$ConnectivityEVMImpl extends ConnectivityEVM {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -5023,6 +5274,555 @@ abstract class ConnectivityEVM extends Failure {
 
   factory ConnectivityEVM.fromJson(Map<String, dynamic> json) =
       _$ConnectivityEVMImpl.fromJson;
+}
+
+/// @nodoc
+abstract class _$$WalletNotSupportedEVMImplCopyWith<$Res> {
+  factory _$$WalletNotSupportedEVMImplCopyWith(
+          _$WalletNotSupportedEVMImpl value,
+          $Res Function(_$WalletNotSupportedEVMImpl) then) =
+      __$$WalletNotSupportedEVMImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$WalletNotSupportedEVMImplCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$WalletNotSupportedEVMImpl>
+    implements _$$WalletNotSupportedEVMImplCopyWith<$Res> {
+  __$$WalletNotSupportedEVMImplCopyWithImpl(_$WalletNotSupportedEVMImpl _value,
+      $Res Function(_$WalletNotSupportedEVMImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$WalletNotSupportedEVMImpl extends WalletNotSupportedEVM {
+  const _$WalletNotSupportedEVMImpl({final String? $type})
+      : $type = $type ?? 'walletNotSupportedEVM',
+        super._();
+
+  factory _$WalletNotSupportedEVMImpl.fromJson(Map<String, dynamic> json) =>
+      _$$WalletNotSupportedEVMImplFromJson(json);
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'Failure.walletNotSupportedEVM()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$WalletNotSupportedEVMImpl);
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loggedOut,
+    required TResult Function() network,
+    required TResult Function(DateTime? cooldownEndDate) quotaExceeded,
+    required TResult Function() serviceNotFound,
+    required TResult Function() serviceAlreadyExists,
+    required TResult Function() poolAlreadyExists,
+    required TResult Function() lpTokenAmountExceedBalance,
+    required TResult Function() poolNotExists,
+    required TResult Function() insufficientFunds,
+    required TResult Function() unauthorized,
+    required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
+    required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
+    required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
+    required TResult Function() paramEVMChain,
+    required TResult Function() userRejected,
+    required TResult Function() connectivityArchethic,
+    required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
+    required TResult Function(String? cause, String? stack) other,
+  }) {
+    return walletNotSupportedEVM();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loggedOut,
+    TResult? Function()? network,
+    TResult? Function(DateTime? cooldownEndDate)? quotaExceeded,
+    TResult? Function()? serviceNotFound,
+    TResult? Function()? serviceAlreadyExists,
+    TResult? Function()? poolAlreadyExists,
+    TResult? Function()? lpTokenAmountExceedBalance,
+    TResult? Function()? poolNotExists,
+    TResult? Function()? insufficientFunds,
+    TResult? Function()? unauthorized,
+    TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
+    TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
+    TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
+    TResult? Function()? paramEVMChain,
+    TResult? Function()? userRejected,
+    TResult? Function()? connectivityArchethic,
+    TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
+    TResult? Function(String? cause, String? stack)? other,
+  }) {
+    return walletNotSupportedEVM?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loggedOut,
+    TResult Function()? network,
+    TResult Function(DateTime? cooldownEndDate)? quotaExceeded,
+    TResult Function()? serviceNotFound,
+    TResult Function()? serviceAlreadyExists,
+    TResult Function()? poolAlreadyExists,
+    TResult Function()? lpTokenAmountExceedBalance,
+    TResult Function()? poolNotExists,
+    TResult Function()? insufficientFunds,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
+    TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
+    TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
+    TResult Function()? paramEVMChain,
+    TResult Function()? userRejected,
+    TResult Function()? connectivityArchethic,
+    TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
+    TResult Function(String? cause, String? stack)? other,
+    required TResult orElse(),
+  }) {
+    if (walletNotSupportedEVM != null) {
+      return walletNotSupportedEVM();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoggedOut value) loggedOut,
+    required TResult Function(NetworkFailure value) network,
+    required TResult Function(QuotaExceededFailure value) quotaExceeded,
+    required TResult Function(ServiceNotFound value) serviceNotFound,
+    required TResult Function(ServiceAlreadyExists value) serviceAlreadyExists,
+    required TResult Function(PoolAlreadyExists value) poolAlreadyExists,
+    required TResult Function(LPTokenAmountExceedBalance value)
+        lpTokenAmountExceedBalance,
+    required TResult Function(PoolNotExists value) poolNotExists,
+    required TResult Function(InsufficientFunds value) insufficientFunds,
+    required TResult Function(Unauthorized value) unauthorized,
+    required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
+    required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
+    required TResult Function(UserRejected value) userRejected,
+    required TResult Function(ConnectivityArchethic value)
+        connectivityArchethic,
+    required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
+    required TResult Function(OtherFailure value) other,
+  }) {
+    return walletNotSupportedEVM(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoggedOut value)? loggedOut,
+    TResult? Function(NetworkFailure value)? network,
+    TResult? Function(QuotaExceededFailure value)? quotaExceeded,
+    TResult? Function(ServiceNotFound value)? serviceNotFound,
+    TResult? Function(ServiceAlreadyExists value)? serviceAlreadyExists,
+    TResult? Function(PoolAlreadyExists value)? poolAlreadyExists,
+    TResult? Function(LPTokenAmountExceedBalance value)?
+        lpTokenAmountExceedBalance,
+    TResult? Function(PoolNotExists value)? poolNotExists,
+    TResult? Function(InsufficientFunds value)? insufficientFunds,
+    TResult? Function(Unauthorized value)? unauthorized,
+    TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
+    TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
+    TResult? Function(UserRejected value)? userRejected,
+    TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
+    TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
+    TResult? Function(OtherFailure value)? other,
+  }) {
+    return walletNotSupportedEVM?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(NetworkFailure value)? network,
+    TResult Function(QuotaExceededFailure value)? quotaExceeded,
+    TResult Function(ServiceNotFound value)? serviceNotFound,
+    TResult Function(ServiceAlreadyExists value)? serviceAlreadyExists,
+    TResult Function(PoolAlreadyExists value)? poolAlreadyExists,
+    TResult Function(LPTokenAmountExceedBalance value)?
+        lpTokenAmountExceedBalance,
+    TResult Function(PoolNotExists value)? poolNotExists,
+    TResult Function(InsufficientFunds value)? insufficientFunds,
+    TResult Function(Unauthorized value)? unauthorized,
+    TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
+    TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
+    TResult Function(UserRejected value)? userRejected,
+    TResult Function(ConnectivityArchethic value)? connectivityArchethic,
+    TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
+    TResult Function(OtherFailure value)? other,
+    required TResult orElse(),
+  }) {
+    if (walletNotSupportedEVM != null) {
+      return walletNotSupportedEVM(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$WalletNotSupportedEVMImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class WalletNotSupportedEVM extends Failure {
+  const factory WalletNotSupportedEVM() = _$WalletNotSupportedEVMImpl;
+  const WalletNotSupportedEVM._() : super._();
+
+  factory WalletNotSupportedEVM.fromJson(Map<String, dynamic> json) =
+      _$WalletNotSupportedEVMImpl.fromJson;
+}
+
+/// @nodoc
+abstract class _$$NoWalletSupportedEVMImplCopyWith<$Res> {
+  factory _$$NoWalletSupportedEVMImplCopyWith(_$NoWalletSupportedEVMImpl value,
+          $Res Function(_$NoWalletSupportedEVMImpl) then) =
+      __$$NoWalletSupportedEVMImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$NoWalletSupportedEVMImplCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$NoWalletSupportedEVMImpl>
+    implements _$$NoWalletSupportedEVMImplCopyWith<$Res> {
+  __$$NoWalletSupportedEVMImplCopyWithImpl(_$NoWalletSupportedEVMImpl _value,
+      $Res Function(_$NoWalletSupportedEVMImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$NoWalletSupportedEVMImpl extends NoWalletSupportedEVM {
+  const _$NoWalletSupportedEVMImpl({final String? $type})
+      : $type = $type ?? 'noWalletSupportedEVM',
+        super._();
+
+  factory _$NoWalletSupportedEVMImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NoWalletSupportedEVMImplFromJson(json);
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'Failure.noWalletSupportedEVM()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NoWalletSupportedEVMImpl);
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loggedOut,
+    required TResult Function() network,
+    required TResult Function(DateTime? cooldownEndDate) quotaExceeded,
+    required TResult Function() serviceNotFound,
+    required TResult Function() serviceAlreadyExists,
+    required TResult Function() poolAlreadyExists,
+    required TResult Function() lpTokenAmountExceedBalance,
+    required TResult Function() poolNotExists,
+    required TResult Function() insufficientFunds,
+    required TResult Function() unauthorized,
+    required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
+    required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
+    required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
+    required TResult Function() paramEVMChain,
+    required TResult Function() userRejected,
+    required TResult Function() connectivityArchethic,
+    required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
+    required TResult Function(String? cause, String? stack) other,
+  }) {
+    return noWalletSupportedEVM();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loggedOut,
+    TResult? Function()? network,
+    TResult? Function(DateTime? cooldownEndDate)? quotaExceeded,
+    TResult? Function()? serviceNotFound,
+    TResult? Function()? serviceAlreadyExists,
+    TResult? Function()? poolAlreadyExists,
+    TResult? Function()? lpTokenAmountExceedBalance,
+    TResult? Function()? poolNotExists,
+    TResult? Function()? insufficientFunds,
+    TResult? Function()? unauthorized,
+    TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
+    TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
+    TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
+    TResult? Function()? paramEVMChain,
+    TResult? Function()? userRejected,
+    TResult? Function()? connectivityArchethic,
+    TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
+    TResult? Function(String? cause, String? stack)? other,
+  }) {
+    return noWalletSupportedEVM?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loggedOut,
+    TResult Function()? network,
+    TResult Function(DateTime? cooldownEndDate)? quotaExceeded,
+    TResult Function()? serviceNotFound,
+    TResult Function()? serviceAlreadyExists,
+    TResult Function()? poolAlreadyExists,
+    TResult Function()? lpTokenAmountExceedBalance,
+    TResult Function()? poolNotExists,
+    TResult Function()? insufficientFunds,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
+    TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
+    TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
+    TResult Function()? paramEVMChain,
+    TResult Function()? userRejected,
+    TResult Function()? connectivityArchethic,
+    TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
+    TResult Function(String? cause, String? stack)? other,
+    required TResult orElse(),
+  }) {
+    if (noWalletSupportedEVM != null) {
+      return noWalletSupportedEVM();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoggedOut value) loggedOut,
+    required TResult Function(NetworkFailure value) network,
+    required TResult Function(QuotaExceededFailure value) quotaExceeded,
+    required TResult Function(ServiceNotFound value) serviceNotFound,
+    required TResult Function(ServiceAlreadyExists value) serviceAlreadyExists,
+    required TResult Function(PoolAlreadyExists value) poolAlreadyExists,
+    required TResult Function(LPTokenAmountExceedBalance value)
+        lpTokenAmountExceedBalance,
+    required TResult Function(PoolNotExists value) poolNotExists,
+    required TResult Function(InsufficientFunds value) insufficientFunds,
+    required TResult Function(Unauthorized value) unauthorized,
+    required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
+    required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
+    required TResult Function(UserRejected value) userRejected,
+    required TResult Function(ConnectivityArchethic value)
+        connectivityArchethic,
+    required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
+    required TResult Function(OtherFailure value) other,
+  }) {
+    return noWalletSupportedEVM(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoggedOut value)? loggedOut,
+    TResult? Function(NetworkFailure value)? network,
+    TResult? Function(QuotaExceededFailure value)? quotaExceeded,
+    TResult? Function(ServiceNotFound value)? serviceNotFound,
+    TResult? Function(ServiceAlreadyExists value)? serviceAlreadyExists,
+    TResult? Function(PoolAlreadyExists value)? poolAlreadyExists,
+    TResult? Function(LPTokenAmountExceedBalance value)?
+        lpTokenAmountExceedBalance,
+    TResult? Function(PoolNotExists value)? poolNotExists,
+    TResult? Function(InsufficientFunds value)? insufficientFunds,
+    TResult? Function(Unauthorized value)? unauthorized,
+    TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
+    TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
+    TResult? Function(UserRejected value)? userRejected,
+    TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
+    TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
+    TResult? Function(OtherFailure value)? other,
+  }) {
+    return noWalletSupportedEVM?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(NetworkFailure value)? network,
+    TResult Function(QuotaExceededFailure value)? quotaExceeded,
+    TResult Function(ServiceNotFound value)? serviceNotFound,
+    TResult Function(ServiceAlreadyExists value)? serviceAlreadyExists,
+    TResult Function(PoolAlreadyExists value)? poolAlreadyExists,
+    TResult Function(LPTokenAmountExceedBalance value)?
+        lpTokenAmountExceedBalance,
+    TResult Function(PoolNotExists value)? poolNotExists,
+    TResult Function(InsufficientFunds value)? insufficientFunds,
+    TResult Function(Unauthorized value)? unauthorized,
+    TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
+    TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
+    TResult Function(UserRejected value)? userRejected,
+    TResult Function(ConnectivityArchethic value)? connectivityArchethic,
+    TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
+    TResult Function(OtherFailure value)? other,
+    required TResult orElse(),
+  }) {
+    if (noWalletSupportedEVM != null) {
+      return noWalletSupportedEVM(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$NoWalletSupportedEVMImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class NoWalletSupportedEVM extends Failure {
+  const factory NoWalletSupportedEVM() = _$NoWalletSupportedEVMImpl;
+  const NoWalletSupportedEVM._() : super._();
+
+  factory NoWalletSupportedEVM.fromJson(Map<String, dynamic> json) =
+      _$NoWalletSupportedEVMImpl.fromJson;
 }
 
 /// @nodoc
@@ -5090,6 +5890,8 @@ class _$ParamEVMChainImpl extends ParamEVMChain {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -5121,6 +5923,8 @@ class _$ParamEVMChainImpl extends ParamEVMChain {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -5152,6 +5956,8 @@ class _$ParamEVMChainImpl extends ParamEVMChain {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -5190,6 +5996,9 @@ class _$ParamEVMChainImpl extends ParamEVMChain {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -5223,6 +6032,8 @@ class _$ParamEVMChainImpl extends ParamEVMChain {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -5255,6 +6066,8 @@ class _$ParamEVMChainImpl extends ParamEVMChain {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -5350,6 +6163,8 @@ class _$UserRejectedImpl extends UserRejected {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -5381,6 +6196,8 @@ class _$UserRejectedImpl extends UserRejected {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -5412,6 +6229,8 @@ class _$UserRejectedImpl extends UserRejected {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -5450,6 +6269,9 @@ class _$UserRejectedImpl extends UserRejected {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -5483,6 +6305,8 @@ class _$UserRejectedImpl extends UserRejected {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -5515,6 +6339,8 @@ class _$UserRejectedImpl extends UserRejected {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -5612,6 +6438,8 @@ class _$ConnectivityArchethicImpl extends ConnectivityArchethic {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -5643,6 +6471,8 @@ class _$ConnectivityArchethicImpl extends ConnectivityArchethic {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -5674,6 +6504,8 @@ class _$ConnectivityArchethicImpl extends ConnectivityArchethic {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -5712,6 +6544,9 @@ class _$ConnectivityArchethicImpl extends ConnectivityArchethic {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -5745,6 +6580,8 @@ class _$ConnectivityArchethicImpl extends ConnectivityArchethic {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -5777,6 +6614,8 @@ class _$ConnectivityArchethicImpl extends ConnectivityArchethic {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -5872,6 +6711,8 @@ class _$TimeoutImpl extends Timeout {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -5903,6 +6744,8 @@ class _$TimeoutImpl extends Timeout {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -5934,6 +6777,8 @@ class _$TimeoutImpl extends Timeout {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -5972,6 +6817,9 @@ class _$TimeoutImpl extends Timeout {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -6005,6 +6853,8 @@ class _$TimeoutImpl extends Timeout {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -6037,6 +6887,8 @@ class _$TimeoutImpl extends Timeout {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -6157,6 +7009,8 @@ class _$RPCErrorEVMImpl extends RPCErrorEVM {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -6188,6 +7042,8 @@ class _$RPCErrorEVMImpl extends RPCErrorEVM {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -6219,6 +7075,8 @@ class _$RPCErrorEVMImpl extends RPCErrorEVM {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -6257,6 +7115,9 @@ class _$RPCErrorEVMImpl extends RPCErrorEVM {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -6290,6 +7151,8 @@ class _$RPCErrorEVMImpl extends RPCErrorEVM {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -6322,6 +7185,8 @@ class _$RPCErrorEVMImpl extends RPCErrorEVM {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -6456,6 +7321,8 @@ class _$OtherFailureImpl extends OtherFailure {
     required TResult Function() incompatibleBrowser,
     required TResult Function() chainSwitchNotSupported,
     required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
     required TResult Function() paramEVMChain,
     required TResult Function() userRejected,
     required TResult Function() connectivityArchethic,
@@ -6487,6 +7354,8 @@ class _$OtherFailureImpl extends OtherFailure {
     TResult? Function()? incompatibleBrowser,
     TResult? Function()? chainSwitchNotSupported,
     TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
     TResult? Function()? paramEVMChain,
     TResult? Function()? userRejected,
     TResult? Function()? connectivityArchethic,
@@ -6518,6 +7387,8 @@ class _$OtherFailureImpl extends OtherFailure {
     TResult Function()? incompatibleBrowser,
     TResult Function()? chainSwitchNotSupported,
     TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
     TResult Function()? paramEVMChain,
     TResult Function()? userRejected,
     TResult Function()? connectivityArchethic,
@@ -6556,6 +7427,9 @@ class _$OtherFailureImpl extends OtherFailure {
     required TResult Function(ChainSwitchNotSupported value)
         chainSwitchNotSupported,
     required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
     required TResult Function(ParamEVMChain value) paramEVMChain,
     required TResult Function(UserRejected value) userRejected,
     required TResult Function(ConnectivityArchethic value)
@@ -6589,6 +7463,8 @@ class _$OtherFailureImpl extends OtherFailure {
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult? Function(ParamEVMChain value)? paramEVMChain,
     TResult? Function(UserRejected value)? userRejected,
     TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
@@ -6621,6 +7497,8 @@ class _$OtherFailureImpl extends OtherFailure {
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
     TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
     TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
     TResult Function(ParamEVMChain value)? paramEVMChain,
     TResult Function(UserRejected value)? userRejected,
     TResult Function(ConnectivityArchethic value)? connectivityArchethic,

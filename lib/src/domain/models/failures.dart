@@ -42,6 +42,8 @@ class Failure with _$Failure implements Exception {
   const factory Failure.incompatibleBrowser() = IncompatibleBrowser;
   const factory Failure.chainSwitchNotSupported() = ChainSwitchNotSupported;
   const factory Failure.connectivityEVM() = ConnectivityEVM;
+  const factory Failure.walletNotSupportedEVM() = WalletNotSupportedEVM;
+  const factory Failure.noWalletSupportedEVM() = NoWalletSupportedEVM;
   const factory Failure.paramEVMChain() = ParamEVMChain;
   const factory Failure.userRejected() = UserRejected;
   const factory Failure.connectivityArchethic() = ConnectivityArchethic;

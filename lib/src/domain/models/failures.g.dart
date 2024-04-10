@@ -215,6 +215,30 @@ Map<String, dynamic> _$$ConnectivityEVMImplToJson(
       'runtimeType': instance.$type,
     };
 
+_$WalletNotSupportedEVMImpl _$$WalletNotSupportedEVMImplFromJson(
+        Map<String, dynamic> json) =>
+    _$WalletNotSupportedEVMImpl(
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$WalletNotSupportedEVMImplToJson(
+        _$WalletNotSupportedEVMImpl instance) =>
+    <String, dynamic>{
+      'runtimeType': instance.$type,
+    };
+
+_$NoWalletSupportedEVMImpl _$$NoWalletSupportedEVMImplFromJson(
+        Map<String, dynamic> json) =>
+    _$NoWalletSupportedEVMImpl(
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$NoWalletSupportedEVMImplToJson(
+        _$NoWalletSupportedEVMImpl instance) =>
+    <String, dynamic>{
+      'runtimeType': instance.$type,
+    };
+
 _$ParamEVMChainImpl _$$ParamEVMChainImplFromJson(Map<String, dynamic> json) =>
     _$ParamEVMChainImpl(
       $type: json['runtimeType'] as String?,
