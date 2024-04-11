@@ -1,5 +1,7 @@
 Changelog
 =========
+#### Version 1.1.3
+* Upgrade dependencies
 
 #### Version 1.1.2
 * Improve AmountTextInputFormatter behavior
