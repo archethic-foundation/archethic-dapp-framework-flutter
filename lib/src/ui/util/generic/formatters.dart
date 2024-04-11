@@ -92,14 +92,14 @@ class LowerCaseTextFormatter extends TextInputFormatter {
 
 class AmountTextInputFormatter extends TextInputFormatter {
   AmountTextInputFormatter({
-    this.thousandsSeparator = ' ',
     this.decimalSeparator = '.',
+    this.thousandsSeparator = ' ',
     this.precision = 2,
   });
 
-  String thousandsSeparator;
-  String decimalSeparator;
-  int precision;
+  final String thousandsSeparator;
+  final String decimalSeparator;
+  final int precision;
 
   @override
   TextEditingValue formatEditUpdate(
@@ -110,30 +110,43 @@ class AmountTextInputFormatter extends TextInputFormatter {
       return newValue;
     }
 
-    final value =
-        newValue.text.unifyDecimalSeparator().removeIllegalNumberCharacters();
+    final valueFiltered = TextEditingValue(
+      text:
+          newValue.text.unifyDecimalSeparator().removeIllegalNumberCharacters(),
+    );
 
-    if (!value.isValidNumber()) {
+    if (!valueFiltered.text.isValidNumber()) {
       return oldValue;
     }
 
-    final formattedNumberBuilder = StringBuffer()
-      ..write(
-        value
-            .integerPart(decimalSeparator)
-            .splitFromRight(3, thousandsSeparator),
-      );
+    final parts = valueFiltered.text.split(decimalSeparator);
+    final integerPart = parts[0].replaceAll(thousandsSeparator, '');
+    final decimalPart = parts.length > 1
+        ? decimalSeparator + parts[1].limitLength(precision)
+        : '';
 
-    if (value.hasDecimalPart(decimalSeparator)) {
-      formattedNumberBuilder
-        ..write(decimalSeparator)
-        ..write(value.decimalPart(decimalSeparator).limitLength(precision));
-    }
+    final formattedIntegerPart = _formatIntegerPart(integerPart);
 
-    return newValue.copyWith(
-      text: formattedNumberBuilder.toString(),
-      selection: TextSelection.collapsed(offset: formattedNumberBuilder.length),
+    final newText = formattedIntegerPart + decimalPart;
+
+    final int cursorPosition = min(
+      newText.length,
+      newValue.selection.end + (newText.length - newValue.text.length),
     );
+
+    return TextEditingValue(
+      text: newText,
+      selection: TextSelection.collapsed(offset: cursorPosition),
+    );
+  }
+
+  String _formatIntegerPart(String integerPart) {
+    final reversedString = integerPart.split('').reversed.join();
+    final formattedReversedString = reversedString.replaceAllMapped(
+      RegExp(r'(\d{3})(?=\d)'),
+      (match) => '${match.group(0)}$thousandsSeparator',
+    );
+    return formattedReversedString.split('').reversed.join();
   }
 }
 
