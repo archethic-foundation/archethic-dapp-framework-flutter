@@ -1,6 +1,9 @@
 Changelog
 =========
 
+#### Version 1.1.1
+* Upgrade dependencies
+
 #### Version 1.1.0
 * Upgrade dependencies (AWC web extension support)
 
