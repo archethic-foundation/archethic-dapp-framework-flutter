@@ -45,10 +45,10 @@ packages:
     dependency: "direct main"
     description:
       name: archethic_wallet_client
-      sha256: e054d068108ef39cbd913917c35e747d60a1a27c7a332d132332d86b7b8e68cd
+      sha256: "6679c081ebffdb2e9c5aa73ed2b5b8bc8b90d0ba4483a08bff61669df4254b43"
       url: "https://pub.dev"
     source: hosted
-    version: "1.2.0"
+    version: "1.2.1"
   archive:
     dependency: "direct main"
     description:
@@ -332,10 +332,10 @@ packages:
     dependency: "direct dev"
     description:
       name: freezed
-      sha256: "57247f692f35f068cae297549a46a9a097100685c6780fe67177503eea5ed4e5"
+      sha256: "91bce569d4805ea5bad6619a3e8690df8ad062a235165af4c0c5d928dda15eaf"
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.7"
+    version: "2.5.1"
   freezed_annotation:
     dependency: "direct main"
     description:
@@ -636,10 +636,10 @@ packages:
     dependency: transitive
     description:
       name: phoenix_socket
-      sha256: "21c0ed733db29a74d54f676aaab4800d8b7278bc0e4e95a7a7c5d7773464a2bf"
+      sha256: "95898872f898a4f53c81b552a0ddd4ebb35881c0616f1242150f1b4f0536e6c7"
       url: "https://pub.dev"
     source: hosted
-    version: "0.7.1"
+    version: "0.7.2"
   pinenacl:
     dependency: transitive
     description:
@@ -660,10 +660,10 @@ packages:
     dependency: transitive
     description:
       name: pointycastle
-      sha256: "43ac87de6e10afabc85c445745a7b799e04de84cebaa4fd7bf55a5e1e9604d29"
+      sha256: "70fe966348fe08c34bf929582f1d8247d9d9408130723206472b4687227e4333"
       url: "https://pub.dev"
     source: hosted
-    version: "3.7.4"
+    version: "3.8.0"
   pool:
     dependency: transitive
     description:
@@ -945,10 +945,10 @@ packages:
     dependency: transitive
     description:
       name: uuid
-      sha256: cd210a09f7c18cbe5a02511718e0334de6559871052c90a90c0cca46a4aa81c8
+      sha256: "814e9e88f21a176ae1359149021870e87f7cddaf633ab678a5d2b0bff7fd1ba8"
       url: "https://pub.dev"
     source: hosted
-    version: "4.3.3"
+    version: "4.4.0"
   vector_math:
     dependency: transitive
     description:
@@ -985,10 +985,10 @@ packages:
     dependency: transitive
     description:
       name: web_socket_channel
-      sha256: "1d8e795e2a8b3730c41b8a98a2dff2e0fb57ae6f0764a1c46ec5915387d257b2"
+      sha256: "58c6666b342a38816b2e7e50ed0f1e261959630becd4c879c4f26bfa14aa5a42"
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.4"
+    version: "2.4.5"
   win32:
     dependency: transitive
     description:
