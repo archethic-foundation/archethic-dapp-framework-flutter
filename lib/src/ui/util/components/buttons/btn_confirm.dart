@@ -7,12 +7,14 @@ class ButtonConfirm extends StatelessWidget {
     required this.labelBtn,
     required this.onPressed,
     this.background = const Color(0xFF3D1D63),
+    this.disabled = false,
     super.key,
   });
 
   final String labelBtn;
   final Function onPressed;
   final Color background;
+  final bool disabled;
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +22,7 @@ class ButtonConfirm extends StatelessWidget {
       background: background,
       labelBtn: labelBtn,
       onPressed: onPressed,
+      disabled: disabled,
     );
   }
 }

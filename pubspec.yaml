@@ -2,7 +2,7 @@ name: archethic_dapp_framework_flutter
 description: An internal framework for archethic flutter development
 homepage: https://github.com/archethic-foundation/archethic-dapp-framework-flutter
 
-version: 1.1.3
+version: 1.1.4
 
 environment:
   sdk: ">=3.3.0 <4.0.0"
@@ -38,6 +38,10 @@ dependencies:
 
   # Simple direct Service Locator that allows to decouple the interface from a concrete implementation and to access the concrete implementation from everywhere in your App
   get_it: ^7.6.7
+
+  # Hive is a lightweight and blazing fast key-value database written in pure Dart
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
 
   # A composable, multi-platform, Future-based API for HTTP requests
   http: ^1.2.1

@@ -150,6 +150,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Connect your wallet'**
   String get aedappfm_connectionWalletConnect;
+
+  /// No description provided for @aedappfm_consent_already.
+  ///
+  /// In en, this message translates to:
+  /// **'The Terms of use and Privacy Policy was last accepted on'**
+  String get aedappfm_consent_already;
+
+  /// No description provided for @aedappfm_consent_to_check_part1.
+  ///
+  /// In en, this message translates to:
+  /// **'I agree to the '**
+  String get aedappfm_consent_to_check_part1;
+
+  /// No description provided for @aedappfm_consent_to_check_part2.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Use'**
+  String get aedappfm_consent_to_check_part2;
+
+  /// No description provided for @aedappfm_consent_to_check_part3.
+  ///
+  /// In en, this message translates to:
+  /// **' and '**
+  String get aedappfm_consent_to_check_part3;
+
+  /// No description provided for @aedappfm_consent_to_check_part4.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get aedappfm_consent_to_check_part4;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

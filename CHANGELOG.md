@@ -1,5 +1,8 @@
 Changelog
 =========
+#### Version 1.1.4
+* Add legal consentement management
+
 #### Version 1.1.3
 * Upgrade dependencies
 
