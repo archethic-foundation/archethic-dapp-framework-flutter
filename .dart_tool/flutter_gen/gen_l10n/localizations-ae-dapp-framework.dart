@@ -151,11 +151,35 @@ abstract class AppLocalizations {
   /// **'Connect your wallet'**
   String get aedappfm_connectionWalletConnect;
 
-  /// No description provided for @aedappfm_consent_already.
+  /// No description provided for @aedappfm_consent_already_part1.
   ///
   /// In en, this message translates to:
-  /// **'The Terms of use and Privacy Policy was last accepted on'**
-  String get aedappfm_consent_already;
+  /// **'The '**
+  String get aedappfm_consent_already_part1;
+
+  /// No description provided for @aedappfm_consent_already_part2.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Use'**
+  String get aedappfm_consent_already_part2;
+
+  /// No description provided for @aedappfm_consent_already_part3.
+  ///
+  /// In en, this message translates to:
+  /// **' and '**
+  String get aedappfm_consent_already_part3;
+
+  /// No description provided for @aedappfm_consent_already_part4.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get aedappfm_consent_already_part4;
+
+  /// No description provided for @aedappfm_consent_already_part5.
+  ///
+  /// In en, this message translates to:
+  /// **' was last accepted on '**
+  String get aedappfm_consent_already_part5;
 
   /// No description provided for @aedappfm_consent_to_check_part1.
   ///

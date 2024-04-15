@@ -22,7 +22,11 @@ class HiveConsentDatasource {
 
   Future<void> _setValue<T>(dynamic key, T value) => _box.put(key, value);
 
-  Future<void> addAddress(String v) {
+  Future<void> addAddress(String v) async {
+    if (getConsentTime(v) != null) {
+      return;
+    }
+
     final vHashed = uint8ListToHex(hash(v.toUpperCase()));
     return _setValue(
       hashAddresses,

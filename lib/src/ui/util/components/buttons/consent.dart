@@ -24,78 +24,65 @@ class ConsentToCheck extends ConsumerWidget {
       children: [
         Expanded(
           child: CheckboxListTile(
-            title: InkWell(
-              onTap: () {},
-              child: Row(
-                children: [
-                  Text(
+            title: Row(
+              children: [
+                Text(
+                  AppLocalizations.of(context)!.aedappfm_consent_to_check_part1,
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        fontSize: Responsive.fontSizeFromTextStyle(
+                          context,
+                          Theme.of(context).textTheme.bodyMedium!,
+                        ),
+                      ),
+                ),
+                InkWell(
+                  onTap: () async {
+                    if (!await canLaunchUrl(Uri.parse(uriTermsOfUse))) return;
+
+                    await launchUrl(Uri.parse(uriTermsOfUse));
+                  },
+                  child: Text(
                     AppLocalizations.of(context)!
-                        .aedappfm_consent_to_check_part1,
+                        .aedappfm_consent_to_check_part2,
                     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          decoration: TextDecoration.underline,
                           fontSize: Responsive.fontSizeFromTextStyle(
                             context,
                             Theme.of(context).textTheme.bodyMedium!,
                           ),
                         ),
                   ),
-                  InkWell(
-                    onTap: () async {
-                      if (!await canLaunchUrl(Uri.parse(uriTermsOfUse))) return;
+                ),
+                Text(
+                  AppLocalizations.of(context)!.aedappfm_consent_to_check_part3,
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        fontSize: Responsive.fontSizeFromTextStyle(
+                          context,
+                          Theme.of(context).textTheme.bodyMedium!,
+                        ),
+                      ),
+                ),
+                InkWell(
+                  onTap: () async {
+                    if (!await canLaunchUrl(Uri.parse(uriPrivacyPolicy))) {
+                      return;
+                    }
 
-                      await launchUrl(Uri.parse(uriTermsOfUse));
-                    },
-                    child: Text(
-                      AppLocalizations.of(context)!
-                          .aedappfm_consent_to_check_part2,
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            decoration: TextDecoration.underline,
-                            fontSize: Responsive.fontSizeFromTextStyle(
-                              context,
-                              Theme.of(context).textTheme.bodyMedium!,
-                            ),
-                          ),
-                    ),
-                  ),
-                  Text(
+                    await launchUrl(Uri.parse(uriPrivacyPolicy));
+                  },
+                  child: Text(
                     AppLocalizations.of(context)!
-                        .aedappfm_consent_to_check_part3,
+                        .aedappfm_consent_to_check_part4,
                     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          decoration: TextDecoration.underline,
                           fontSize: Responsive.fontSizeFromTextStyle(
                             context,
                             Theme.of(context).textTheme.bodyMedium!,
                           ),
                         ),
                   ),
-                  InkWell(
-                    onTap: () async {
-                      if (!await canLaunchUrl(Uri.parse(uriPrivacyPolicy))) {
-                        return;
-                      }
-
-                      await launchUrl(Uri.parse(uriPrivacyPolicy));
-                    },
-                    child: Text(
-                      AppLocalizations.of(context)!
-                          .aedappfm_consent_to_check_part4,
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            decoration: TextDecoration.underline,
-                            fontSize: Responsive.fontSizeFromTextStyle(
-                              context,
-                              Theme.of(context).textTheme.bodyMedium!,
-                            ),
-                          ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 7, bottom: 3),
-                    child: Icon(
-                      Iconsax.export_3,
-                      size:
-                          Theme.of(context).textTheme.bodyMedium!.fontSize! - 1,
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
             value: consentChecked,
             onChanged: onToggleConsent,
@@ -111,9 +98,13 @@ class ConsentAlready extends ConsumerWidget {
   const ConsentAlready({
     super.key,
     required this.consentDateTime,
+    required this.uriTermsOfUse,
+    required this.uriPrivacyPolicy,
   });
 
   final DateTime consentDateTime;
+  final String uriTermsOfUse;
+  final String uriPrivacyPolicy;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -122,35 +113,95 @@ class ConsentAlready extends ConsumerWidget {
       child: Row(
         children: [
           Expanded(
-            child: InkWell(
-              onTap: () {},
-              child: Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      bottom: 3,
-                      right: 7,
-                    ),
-                    child: Icon(
-                      Iconsax.info_circle,
-                      size:
-                          Theme.of(context).textTheme.bodyMedium!.fontSize! - 1,
-                    ),
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                    bottom: 3,
+                    right: 7,
                   ),
-                  Text(
-                      '${AppLocalizations.of(context)!.aedappfm_consent_already} ${DateFormat.yMd(
+                  child: Icon(
+                    Iconsax.info_circle,
+                    size: Theme.of(context).textTheme.bodyMedium!.fontSize! - 1,
+                  ),
+                ),
+                Text(
+                  AppLocalizations.of(context)!.aedappfm_consent_already_part1,
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        fontSize: Responsive.fontSizeFromTextStyle(
+                          context,
+                          Theme.of(context).textTheme.bodyMedium!,
+                        ),
+                      ),
+                ),
+                InkWell(
+                  onTap: () async {
+                    if (!await canLaunchUrl(Uri.parse(uriTermsOfUse))) return;
+
+                    await launchUrl(Uri.parse(uriTermsOfUse));
+                  },
+                  child: Text(
+                    AppLocalizations.of(context)!
+                        .aedappfm_consent_already_part2,
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          decoration: TextDecoration.underline,
+                          fontSize: Responsive.fontSizeFromTextStyle(
+                            context,
+                            Theme.of(context).textTheme.bodyMedium!,
+                          ),
+                        ),
+                  ),
+                ),
+                Text(
+                  AppLocalizations.of(context)!.aedappfm_consent_already_part3,
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        fontSize: Responsive.fontSizeFromTextStyle(
+                          context,
+                          Theme.of(context).textTheme.bodyMedium!,
+                        ),
+                      ),
+                ),
+                InkWell(
+                  onTap: () async {
+                    if (!await canLaunchUrl(Uri.parse(uriPrivacyPolicy))) {
+                      return;
+                    }
+
+                    await launchUrl(Uri.parse(uriPrivacyPolicy));
+                  },
+                  child: Text(
+                    AppLocalizations.of(context)!
+                        .aedappfm_consent_already_part4,
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          decoration: TextDecoration.underline,
+                          fontSize: Responsive.fontSizeFromTextStyle(
+                            context,
+                            Theme.of(context).textTheme.bodyMedium!,
+                          ),
+                        ),
+                  ),
+                ),
+                Text(
+                  AppLocalizations.of(context)!.aedappfm_consent_already_part5,
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        fontSize: Responsive.fontSizeFromTextStyle(
+                          context,
+                          Theme.of(context).textTheme.bodyMedium!,
+                        ),
+                      ),
+                ),
+                Text(
+                  DateFormat.yMd(
                     Localizations.localeOf(context).languageCode,
-                  ).add_Hm().format(consentDateTime)}'),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 7, bottom: 3),
-                    child: Icon(
-                      Iconsax.export_3,
-                      size:
-                          Theme.of(context).textTheme.bodyMedium!.fontSize! - 1,
-                    ),
-                  ),
-                ],
-              ),
+                  ).add_Hm().format(consentDateTime),
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        fontSize: Responsive.fontSizeFromTextStyle(
+                          context,
+                          Theme.of(context).textTheme.bodyMedium!,
+                        ),
+                      ),
+                ),
+              ],
             ),
           ),
         ],

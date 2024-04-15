@@ -35,7 +35,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aedappfm_connectionWalletConnect => 'Connect your wallet';
 
   @override
-  String get aedappfm_consent_already => 'The Terms of use and Privacy Policy was last accepted on';
+  String get aedappfm_consent_already_part1 => 'The ';
+
+  @override
+  String get aedappfm_consent_already_part2 => 'Terms of Use';
+
+  @override
+  String get aedappfm_consent_already_part3 => ' and ';
+
+  @override
+  String get aedappfm_consent_already_part4 => 'Privacy Policy';
+
+  @override
+  String get aedappfm_consent_already_part5 => ' was last accepted on ';
 
   @override
   String get aedappfm_consent_to_check_part1 => 'I agree to the ';

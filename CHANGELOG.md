@@ -1,5 +1,8 @@
 Changelog
 =========
+#### Version 1.1.5
+* Fix legal consentement management
+
 #### Version 1.1.4
 * Add legal consentement management
 
