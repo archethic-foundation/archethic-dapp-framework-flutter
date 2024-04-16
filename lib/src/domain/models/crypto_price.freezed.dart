@@ -23,7 +23,8 @@ mixin _$CryptoPrice {
   int? get timestamp => throw _privateConstructorUsedError; // Used UCIDs
   double get polygon => throw _privateConstructorUsedError; // 3890
   double get ethereum => throw _privateConstructorUsedError; // 1027
-  double get bsc => throw _privateConstructorUsedError;
+  double get bsc => throw _privateConstructorUsedError; // 1839
+  double get usdc => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,7 +38,12 @@ abstract class $CryptoPriceCopyWith<$Res> {
           CryptoPrice value, $Res Function(CryptoPrice) then) =
       _$CryptoPriceCopyWithImpl<$Res, CryptoPrice>;
   @useResult
-  $Res call({int? timestamp, double polygon, double ethereum, double bsc});
+  $Res call(
+      {int? timestamp,
+      double polygon,
+      double ethereum,
+      double bsc,
+      double usdc});
 }
 
 /// @nodoc
@@ -57,6 +63,7 @@ class _$CryptoPriceCopyWithImpl<$Res, $Val extends CryptoPrice>
     Object? polygon = null,
     Object? ethereum = null,
     Object? bsc = null,
+    Object? usdc = null,
   }) {
     return _then(_value.copyWith(
       timestamp: freezed == timestamp
@@ -75,6 +82,10 @@ class _$CryptoPriceCopyWithImpl<$Res, $Val extends CryptoPrice>
           ? _value.bsc
           : bsc // ignore: cast_nullable_to_non_nullable
               as double,
+      usdc: null == usdc
+          ? _value.usdc
+          : usdc // ignore: cast_nullable_to_non_nullable
+              as double,
     ) as $Val);
   }
 }
@@ -87,7 +98,12 @@ abstract class _$$CryptoPriceImplCopyWith<$Res>
       __$$CryptoPriceImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? timestamp, double polygon, double ethereum, double bsc});
+  $Res call(
+      {int? timestamp,
+      double polygon,
+      double ethereum,
+      double bsc,
+      double usdc});
 }
 
 /// @nodoc
@@ -105,6 +121,7 @@ class __$$CryptoPriceImplCopyWithImpl<$Res>
     Object? polygon = null,
     Object? ethereum = null,
     Object? bsc = null,
+    Object? usdc = null,
   }) {
     return _then(_$CryptoPriceImpl(
       timestamp: freezed == timestamp
@@ -123,6 +140,10 @@ class __$$CryptoPriceImplCopyWithImpl<$Res>
           ? _value.bsc
           : bsc // ignore: cast_nullable_to_non_nullable
               as double,
+      usdc: null == usdc
+          ? _value.usdc
+          : usdc // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -134,7 +155,8 @@ class _$CryptoPriceImpl implements _CryptoPrice {
       {this.timestamp,
       this.polygon = 0.0,
       this.ethereum = 0.0,
-      this.bsc = 0.0});
+      this.bsc = 0.0,
+      this.usdc = 0.0});
 
   factory _$CryptoPriceImpl.fromJson(Map<String, dynamic> json) =>
       _$$CryptoPriceImplFromJson(json);
@@ -153,10 +175,14 @@ class _$CryptoPriceImpl implements _CryptoPrice {
   @override
   @JsonKey()
   final double bsc;
+// 1839
+  @override
+  @JsonKey()
+  final double usdc;
 
   @override
   String toString() {
-    return 'CryptoPrice(timestamp: $timestamp, polygon: $polygon, ethereum: $ethereum, bsc: $bsc)';
+    return 'CryptoPrice(timestamp: $timestamp, polygon: $polygon, ethereum: $ethereum, bsc: $bsc, usdc: $usdc)';
   }
 
   @override
@@ -169,13 +195,14 @@ class _$CryptoPriceImpl implements _CryptoPrice {
             (identical(other.polygon, polygon) || other.polygon == polygon) &&
             (identical(other.ethereum, ethereum) ||
                 other.ethereum == ethereum) &&
-            (identical(other.bsc, bsc) || other.bsc == bsc));
+            (identical(other.bsc, bsc) || other.bsc == bsc) &&
+            (identical(other.usdc, usdc) || other.usdc == usdc));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, timestamp, polygon, ethereum, bsc);
+      Object.hash(runtimeType, timestamp, polygon, ethereum, bsc, usdc);
 
   @JsonKey(ignore: true)
   @override
@@ -196,7 +223,8 @@ abstract class _CryptoPrice implements CryptoPrice {
       {final int? timestamp,
       final double polygon,
       final double ethereum,
-      final double bsc}) = _$CryptoPriceImpl;
+      final double bsc,
+      final double usdc}) = _$CryptoPriceImpl;
 
   factory _CryptoPrice.fromJson(Map<String, dynamic> json) =
       _$CryptoPriceImpl.fromJson;
@@ -209,6 +237,8 @@ abstract class _CryptoPrice implements CryptoPrice {
   double get ethereum;
   @override // 1027
   double get bsc;
+  @override // 1839
+  double get usdc;
   @override
   @JsonKey(ignore: true)
   _$$CryptoPriceImplCopyWith<_$CryptoPriceImpl> get copyWith =>

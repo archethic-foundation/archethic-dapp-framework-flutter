@@ -1,5 +1,10 @@
 Changelog
 =========
+
+#### Version 1.1.6
+* Add UDSC market price (for testnet usage)
+* Update Archethic Dart SDK version 3.3.13
+
 #### Version 1.1.5
 * Fix legal consentement management
 
