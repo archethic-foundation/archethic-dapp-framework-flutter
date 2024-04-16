@@ -12,6 +12,7 @@ _$CryptoPriceImpl _$$CryptoPriceImplFromJson(Map<String, dynamic> json) =>
       polygon: (json['polygon'] as num?)?.toDouble() ?? 0.0,
       ethereum: (json['ethereum'] as num?)?.toDouble() ?? 0.0,
       bsc: (json['bsc'] as num?)?.toDouble() ?? 0.0,
+      usdc: (json['usdc'] as num?)?.toDouble() ?? 0.0,
     );
 
 Map<String, dynamic> _$$CryptoPriceImplToJson(_$CryptoPriceImpl instance) =>
@@ -20,4 +21,5 @@ Map<String, dynamic> _$$CryptoPriceImplToJson(_$CryptoPriceImpl instance) =>
       'polygon': instance.polygon,
       'ethereum': instance.ethereum,
       'bsc': instance.bsc,
+      'usdc': instance.usdc,
     };

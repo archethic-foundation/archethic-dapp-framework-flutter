@@ -34,8 +34,9 @@ class _CoinPriceNotifier extends Notifier<CryptoPrice> {
     // 3890 : Polygon
     // 1027 : Ethereum
     // 1839 : BSC
+    // 3408 : USDC
     const url =
-        'https://fas.archethic.net/api/v1/quotes/latest?ucids=1027,3890,1839';
+        'https://fas.archethic.net/api/v1/quotes/latest?ucids=1027,3890,1839,3408';
     final headers = {
       'Content-type': 'application/json',
       'Accept': 'application/json',
@@ -69,6 +70,7 @@ class _CoinPriceNotifier extends Notifier<CryptoPrice> {
       'polygon': jsonData['3890'],
       'ethereum': jsonData['1027'],
       'bsc': jsonData['1839'],
+      'usdc': jsonData['3408'],
     };
   }
 }
@@ -92,6 +94,8 @@ double _coinPriceFromAddress(
         return coinPrice.bsc;
       case 3890:
         return coinPrice.polygon;
+      case 3408:
+        return coinPrice.usdc;
       default:
         return 0;
     }

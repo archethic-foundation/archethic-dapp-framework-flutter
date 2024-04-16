@@ -11,6 +11,7 @@ class CryptoPrice with _$CryptoPrice {
     @Default(0.0) double polygon, // 3890
     @Default(0.0) double ethereum, // 1027
     @Default(0.0) double bsc, // 1839
+    @Default(0.0) double usdc, // 3408
   }) = _CryptoPrice;
 
   factory CryptoPrice.fromJson(Map<String, dynamic> json) =>
