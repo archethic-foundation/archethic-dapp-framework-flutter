@@ -1,5 +1,6 @@
 /// SPDX-License-Identifier: AGPL-3.0-or-later
 import 'package:archethic_dapp_framework_flutter/src/ui/util/components/buttons/app_button.dart';
+import 'package:archethic_dapp_framework_flutter/src/ui/util/dimens.dart';
 import 'package:flutter/material.dart';
 
 class ButtonConfirm extends StatelessWidget {
@@ -8,6 +9,7 @@ class ButtonConfirm extends StatelessWidget {
     required this.onPressed,
     this.background = const Color(0xFF3D1D63),
     this.disabled = false,
+    this.dimens = Dimens.buttonDimens,
     super.key,
   });
 
@@ -15,6 +17,7 @@ class ButtonConfirm extends StatelessWidget {
   final Function onPressed;
   final Color background;
   final bool disabled;
+  final List<double> dimens;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +26,7 @@ class ButtonConfirm extends StatelessWidget {
       labelBtn: labelBtn,
       onPressed: onPressed,
       disabled: disabled,
+      dimens: dimens,
     );
   }
 }

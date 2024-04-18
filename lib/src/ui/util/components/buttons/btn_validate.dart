@@ -1,6 +1,7 @@
 /// SPDX-License-Identifier: AGPL-3.0-or-later
 import 'package:archethic_dapp_framework_flutter/src/ui/util/components/buttons/app_button.dart';
 import 'package:archethic_dapp_framework_flutter/src/ui/util/components/buttons/welcome_connect_wallet_btn.dart';
+import 'package:archethic_dapp_framework_flutter/src/ui/util/dimens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -15,6 +16,7 @@ class ButtonValidate extends ConsumerWidget {
     this.height = 40,
     this.fontSize = 16,
     this.displayWalletConnect = false,
+    this.dimens = Dimens.buttonDimens,
     super.key,
   });
 
@@ -27,6 +29,7 @@ class ButtonValidate extends ConsumerWidget {
   final bool displayWalletConnect;
   final bool isConnected;
   final VoidCallback displayWalletConnectOnPressed;
+  final List<double> dimens;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -46,6 +49,7 @@ class ButtonValidate extends ConsumerWidget {
         disabled: true,
         height: height,
         fontSize: fontSize,
+        dimens: dimens,
       );
     }
 
@@ -55,6 +59,7 @@ class ButtonValidate extends ConsumerWidget {
       onPressed: onPressed,
       height: height,
       fontSize: fontSize,
+      dimens: dimens,
     );
   }
 }

@@ -1,6 +1,9 @@
 Changelog
 =========
 
+#### Version 1.1.7
+* Widgets UI Improvements
+ 
 #### Version 1.1.6
 * Add UDSC market price (for testnet usage)
 * Update Archethic Dart SDK version 3.3.13
