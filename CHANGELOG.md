@@ -1,6 +1,9 @@
 Changelog
 =========
 
+#### Version 1.1.9
+* Fix crash with PopupCloseButton widget
+
 #### Version 1.1.8
 * Update Archethic Dart SDK version 3.3.14
 

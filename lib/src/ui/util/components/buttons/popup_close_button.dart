@@ -1,9 +1,10 @@
 /// SPDX-License-Identifier: AGPL-3.0-or-later
-import 'dart:ui';
 import 'package:archethic_dapp_framework_flutter/src/l10n/localizations-ae-dapp-framework.dart';
 import 'package:archethic_dapp_framework_flutter/src/ui/themes/app_theme_base.dart';
 import 'package:archethic_dapp_framework_flutter/src/ui/util/components/buttons/app_button.dart';
 import 'package:archethic_dapp_framework_flutter/src/ui/util/components/icon_animated.dart';
+import 'package:archethic_dapp_framework_flutter/src/ui/util/components/popup_template.dart';
+import 'package:archethic_dapp_framework_flutter/src/ui/util/generic/responsive.dart';
 import 'package:flutter/material.dart';
 
 class PopupCloseButton extends StatelessWidget {
@@ -38,93 +39,72 @@ class PopupCloseButton extends StatelessWidget {
 
           return showDialog(
             context: context,
+            barrierDismissible: true,
             builder: (context) {
-              return ScaffoldMessenger(
-                child: Builder(
-                  builder: (context) {
-                    return ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                        child: AlertDialog(
-                          backgroundColor: AppThemeBase.sheetBackground,
-                          contentPadding: const EdgeInsets.only(
-                            top: 10,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(20)),
-                            side: BorderSide(
-                              color: AppThemeBase.sheetBorder,
-                            ),
-                          ),
-                          content: Container(
-                            color: Colors.transparent,
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 10,
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisSize: MainAxisSize.min,
-                              children: <Widget>[
-                                Padding(
-                                  padding: const EdgeInsets.all(10),
-                                  child: SelectableText(
-                                    AppLocalizations.of(context)!
-                                        .aedappfm_confirmationPopupTitle,
-                                    style:
-                                        Theme.of(context).textTheme.titleMedium,
-                                  ),
+              return PopupTemplate(
+                displayCloseButton: false,
+                popupContent: Container(
+                  color: Colors.transparent,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: SelectableText(
+                          warningCloseLabel,
+                          style: Theme.of(
+                            context,
+                          ).textTheme.bodyMedium!.copyWith(
+                                fontSize: Responsive.fontSizeFromTextStyle(
+                                  context,
+                                  Theme.of(context).textTheme.bodyMedium!,
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.all(10),
-                                  child: SelectableText(
-                                    warningCloseLabel,
-                                    style:
-                                        Theme.of(context).textTheme.bodyMedium,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                Container(
-                                  width: double.infinity,
-                                  padding: const EdgeInsets.only(
-                                    bottom: 20,
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      AppButton(
-                                        labelBtn: AppLocalizations.of(context)!
-                                            .aedappfm_no,
-                                        onPressed: () async {
-                                          Navigator.of(context).pop();
-                                        },
-                                      ),
-                                      AppButton(
-                                        labelBtn: AppLocalizations.of(context)!
-                                            .aedappfm_yes,
-                                        onPressed: () async {
-                                          if (warningCloseFunction != null) {
-                                            await warningCloseFunction!();
-                                          }
-
-                                          if (!context.mounted) return;
-                                          Navigator.of(context).pop();
-                                        },
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
+                              ),
                         ),
                       ),
-                    );
-                  },
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.only(
+                          bottom: 20,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            AppButton(
+                              labelBtn:
+                                  AppLocalizations.of(context)!.aedappfm_no,
+                              onPressed: () async {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                            AppButton(
+                              labelBtn:
+                                  AppLocalizations.of(context)!.aedappfm_yes,
+                              onPressed: () async {
+                                if (warningCloseFunction != null) {
+                                  await warningCloseFunction!();
+                                }
+
+                                if (!context.mounted) return;
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
+                popupTitle: AppLocalizations.of(context)!
+                    .aedappfm_confirmationPopupTitle,
+                popupHeight: 180,
               );
             },
           );
