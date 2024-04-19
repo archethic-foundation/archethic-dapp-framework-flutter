@@ -15,6 +15,7 @@ class InProgressPopup {
         closeButtonBuilder, {
     bool useSafeArea = false,
     bool useRootNavigator = false,
+    double height = 400,
   }) async {
     return showDialog<void>(
       context: context,
@@ -29,6 +30,7 @@ class InProgressPopup {
                   return Scaffold(
                     backgroundColor: Colors.transparent.withAlpha(120),
                     body: AlertDialog(
+                      insetPadding: EdgeInsets.zero,
                       backgroundColor: Colors.transparent,
                       elevation: 0,
                       content: Stack(
@@ -45,7 +47,7 @@ class InProgressPopup {
                                     right: 15,
                                     left: 8,
                                   ),
-                                  height: 400,
+                                  height: height,
                                   width: AppThemeBase.sizeBoxComponentWidth,
                                   decoration: BoxDecoration(
                                     color: AppThemeBase.sheetBackground,
