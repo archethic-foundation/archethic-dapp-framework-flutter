@@ -1,6 +1,9 @@
 Changelog
 =========
 
+#### Version 1.1.10
+* Fix consentement local db management
+
 #### Version 1.1.9
 * Fix crash with PopupCloseButton widget
 

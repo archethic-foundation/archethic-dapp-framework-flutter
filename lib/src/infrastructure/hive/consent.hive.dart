@@ -17,41 +17,39 @@ class HiveConsentDatasource {
     return HiveConsentDatasource._(box);
   }
 
-  T _getValue<T>(dynamic key, {T? defaultValue}) =>
-      _box.get(key, defaultValue: defaultValue) as T;
-
-  Future<void> _setValue<T>(dynamic key, T value) => _box.put(key, value);
-
   Future<void> addAddress(String v) async {
     if (getConsentTime(v) != null) {
       return;
     }
 
     final vHashed = uint8ListToHex(hash(v.toUpperCase()));
-    return _setValue(
+    return _box.put(
       hashAddresses,
       {
-        ...getAddresses() as List<String>,
+        ...getAddresses(),
         '$vHashed|${DateTime.now().millisecondsSinceEpoch}',
       }.toList(),
     );
   }
 
-  List<dynamic> getAddresses() =>
-      _getValue(hashAddresses, defaultValue: <String>[]);
+  List<dynamic> getAddresses() {
+    final result = _box.get(hashAddresses, defaultValue: <String>[]);
+    return result;
+  }
 
   DateTime? getConsentTime(String v) {
     final vHashed = uint8ListToHex(hash(v.toUpperCase()));
     DateTime? _datetime;
-    getAddresses().forEach(
-      (element) {
-        final parts = element.split('|');
-        if (parts[0] == vHashed && int.tryParse(parts[1].toString()) != null) {
-          _datetime =
-              DateTime.fromMillisecondsSinceEpoch(int.tryParse(parts[1])!);
-        }
-      },
-    );
+
+    final addresses = getAddresses();
+    for (final address in addresses) {
+      final parts = address.split('|');
+      if (parts[0] == vHashed && int.tryParse(parts[1]) != null) {
+        _datetime =
+            DateTime.fromMillisecondsSinceEpoch(int.tryParse(parts[1])!);
+      }
+    }
+
     return _datetime;
   }
 
