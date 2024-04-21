@@ -1,6 +1,10 @@
 Changelog
 =========
 
+#### Version 1.1.11
+* Add icon param in InProgressCircularStepProgressIndicator Widget
+* Fix onPress action when AppButton is disabled
+
 #### Version 1.1.10
 * Fix consentement local db management
 

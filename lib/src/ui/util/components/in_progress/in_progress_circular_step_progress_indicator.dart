@@ -10,6 +10,7 @@ class InProgressCircularStepProgressIndicator extends StatelessWidget {
     required this.currentStep,
     required this.totalSteps,
     required this.isProcessInProgress,
+    this.icon = Iconsax.timer,
     this.failure,
     super.key,
   });
@@ -18,6 +19,7 @@ class InProgressCircularStepProgressIndicator extends StatelessWidget {
   final int totalSteps;
   final bool isProcessInProgress;
   final Failure? failure;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
@@ -58,8 +60,8 @@ class InProgressCircularStepProgressIndicator extends StatelessWidget {
                       strokeWidth: 1,
                     ),
                   ),
-                const Icon(
-                  Iconsax.timer,
+                Icon(
+                  icon,
                   size: 16,
                 ),
               ],

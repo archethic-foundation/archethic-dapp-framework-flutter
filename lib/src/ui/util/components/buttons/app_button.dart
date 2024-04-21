@@ -79,7 +79,9 @@ class AppButtonState extends State<AppButton> {
           ),
         ),
         onPressed: () {
-          widget.onPressed!();
+          if (widget.disabled == false) {
+            widget.onPressed!();
+          }
         },
         child: SizedBox(
           height: widget.height,
