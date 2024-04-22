@@ -1,6 +1,9 @@
 Changelog
 =========
 
+#### Version 1.1.12
+* Update Archethic Dart SDK version 3.3.15
+
 #### Version 1.1.11
 * Add icon param in InProgressCircularStepProgressIndicator Widget
 * Fix onPress action when AppButton is disabled
