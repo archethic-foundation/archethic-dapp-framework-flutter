@@ -1,6 +1,9 @@
 Changelog
 =========
 
+#### Version 1.1.13
+* Add aeETH UCID
+
 #### Version 1.1.12
 * Update Archethic Dart SDK version 3.3.15
 
