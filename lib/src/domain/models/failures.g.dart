@@ -155,6 +155,29 @@ Map<String, dynamic> _$$NotHTLCImplToJson(_$NotHTLCImpl instance) =>
       'runtimeType': instance.$type,
     };
 
+_$FaucetUCOErrorImpl _$$FaucetUCOErrorImplFromJson(Map<String, dynamic> json) =>
+    _$FaucetUCOErrorImpl(
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$FaucetUCOErrorImplToJson(
+        _$FaucetUCOErrorImpl instance) =>
+    <String, dynamic>{
+      'runtimeType': instance.$type,
+    };
+
+_$FaucetUCUserRejectedImpl _$$FaucetUCUserRejectedImplFromJson(
+        Map<String, dynamic> json) =>
+    _$FaucetUCUserRejectedImpl(
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$FaucetUCUserRejectedImplToJson(
+        _$FaucetUCUserRejectedImpl instance) =>
+    <String, dynamic>{
+      'runtimeType': instance.$type,
+    };
+
 _$WrongNetworkImpl _$$WrongNetworkImplFromJson(Map<String, dynamic> json) =>
     _$WrongNetworkImpl(
       json['cause'] as String,

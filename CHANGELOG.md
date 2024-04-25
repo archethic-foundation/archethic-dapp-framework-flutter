@@ -1,6 +1,9 @@
 Changelog
 =========
 
+#### Version 1.1.14
+* Add new Failures
+
 #### Version 1.1.13
 * Add aeETH UCID
 

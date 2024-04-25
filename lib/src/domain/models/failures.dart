@@ -35,6 +35,8 @@ class Failure with _$Failure implements Exception {
   const factory Failure.invalidValue() = InvalidValue;
   const factory Failure.htlcWithoutFunds() = HTLCWithoutFunds;
   const factory Failure.notHTLC() = NotHTLC;
+  const factory Failure.faucetUCOError() = FaucetUCOError;
+  const factory Failure.faucetUCOUserRejected() = FaucetUCUserRejected;
   const factory Failure.wrongNetwork(
     String cause,
   ) = WrongNetwork;

@@ -42,6 +42,10 @@ Failure _$FailureFromJson(Map<String, dynamic> json) {
       return HTLCWithoutFunds.fromJson(json);
     case 'notHTLC':
       return NotHTLC.fromJson(json);
+    case 'faucetUCOError':
+      return FaucetUCOError.fromJson(json);
+    case 'faucetUCOUserRejected':
+      return FaucetUCUserRejected.fromJson(json);
     case 'wrongNetwork':
       return WrongNetwork.fromJson(json);
     case 'insufficientPoolFunds':
@@ -92,6 +96,8 @@ mixin _$Failure {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -122,6 +128,8 @@ mixin _$Failure {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -152,6 +160,8 @@ mixin _$Failure {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -184,6 +194,8 @@ mixin _$Failure {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -219,6 +231,8 @@ mixin _$Failure {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -250,6 +264,8 @@ mixin _$Failure {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -346,6 +362,8 @@ class _$LoggedOutImpl extends LoggedOut {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -379,6 +397,8 @@ class _$LoggedOutImpl extends LoggedOut {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -412,6 +432,8 @@ class _$LoggedOutImpl extends LoggedOut {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -450,6 +472,8 @@ class _$LoggedOutImpl extends LoggedOut {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -488,6 +512,8 @@ class _$LoggedOutImpl extends LoggedOut {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -522,6 +548,8 @@ class _$LoggedOutImpl extends LoggedOut {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -619,6 +647,8 @@ class _$NetworkFailureImpl extends NetworkFailure {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -652,6 +682,8 @@ class _$NetworkFailureImpl extends NetworkFailure {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -685,6 +717,8 @@ class _$NetworkFailureImpl extends NetworkFailure {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -723,6 +757,8 @@ class _$NetworkFailureImpl extends NetworkFailure {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -761,6 +797,8 @@ class _$NetworkFailureImpl extends NetworkFailure {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -795,6 +833,8 @@ class _$NetworkFailureImpl extends NetworkFailure {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -921,6 +961,8 @@ class _$QuotaExceededFailureImpl extends QuotaExceededFailure {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -954,6 +996,8 @@ class _$QuotaExceededFailureImpl extends QuotaExceededFailure {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -987,6 +1031,8 @@ class _$QuotaExceededFailureImpl extends QuotaExceededFailure {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -1025,6 +1071,8 @@ class _$QuotaExceededFailureImpl extends QuotaExceededFailure {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -1063,6 +1111,8 @@ class _$QuotaExceededFailureImpl extends QuotaExceededFailure {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -1097,6 +1147,8 @@ class _$QuotaExceededFailureImpl extends QuotaExceededFailure {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -1200,6 +1252,8 @@ class _$ServiceNotFoundImpl extends ServiceNotFound {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -1233,6 +1287,8 @@ class _$ServiceNotFoundImpl extends ServiceNotFound {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -1266,6 +1322,8 @@ class _$ServiceNotFoundImpl extends ServiceNotFound {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -1304,6 +1362,8 @@ class _$ServiceNotFoundImpl extends ServiceNotFound {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -1342,6 +1402,8 @@ class _$ServiceNotFoundImpl extends ServiceNotFound {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -1376,6 +1438,8 @@ class _$ServiceNotFoundImpl extends ServiceNotFound {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -1474,6 +1538,8 @@ class _$ServiceAlreadyExistsImpl extends ServiceAlreadyExists {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -1507,6 +1573,8 @@ class _$ServiceAlreadyExistsImpl extends ServiceAlreadyExists {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -1540,6 +1608,8 @@ class _$ServiceAlreadyExistsImpl extends ServiceAlreadyExists {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -1578,6 +1648,8 @@ class _$ServiceAlreadyExistsImpl extends ServiceAlreadyExists {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -1616,6 +1688,8 @@ class _$ServiceAlreadyExistsImpl extends ServiceAlreadyExists {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -1650,6 +1724,8 @@ class _$ServiceAlreadyExistsImpl extends ServiceAlreadyExists {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -1747,6 +1823,8 @@ class _$PoolAlreadyExistsImpl extends PoolAlreadyExists {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -1780,6 +1858,8 @@ class _$PoolAlreadyExistsImpl extends PoolAlreadyExists {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -1813,6 +1893,8 @@ class _$PoolAlreadyExistsImpl extends PoolAlreadyExists {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -1851,6 +1933,8 @@ class _$PoolAlreadyExistsImpl extends PoolAlreadyExists {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -1889,6 +1973,8 @@ class _$PoolAlreadyExistsImpl extends PoolAlreadyExists {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -1923,6 +2009,8 @@ class _$PoolAlreadyExistsImpl extends PoolAlreadyExists {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -2024,6 +2112,8 @@ class _$LPTokenAmountExceedBalanceImpl extends LPTokenAmountExceedBalance {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -2057,6 +2147,8 @@ class _$LPTokenAmountExceedBalanceImpl extends LPTokenAmountExceedBalance {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -2090,6 +2182,8 @@ class _$LPTokenAmountExceedBalanceImpl extends LPTokenAmountExceedBalance {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -2128,6 +2222,8 @@ class _$LPTokenAmountExceedBalanceImpl extends LPTokenAmountExceedBalance {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -2166,6 +2262,8 @@ class _$LPTokenAmountExceedBalanceImpl extends LPTokenAmountExceedBalance {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -2200,6 +2298,8 @@ class _$LPTokenAmountExceedBalanceImpl extends LPTokenAmountExceedBalance {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -2297,6 +2397,8 @@ class _$PoolNotExistsImpl extends PoolNotExists {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -2330,6 +2432,8 @@ class _$PoolNotExistsImpl extends PoolNotExists {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -2363,6 +2467,8 @@ class _$PoolNotExistsImpl extends PoolNotExists {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -2401,6 +2507,8 @@ class _$PoolNotExistsImpl extends PoolNotExists {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -2439,6 +2547,8 @@ class _$PoolNotExistsImpl extends PoolNotExists {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -2473,6 +2583,8 @@ class _$PoolNotExistsImpl extends PoolNotExists {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -2570,6 +2682,8 @@ class _$InsufficientFundsImpl extends InsufficientFunds {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -2603,6 +2717,8 @@ class _$InsufficientFundsImpl extends InsufficientFunds {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -2636,6 +2752,8 @@ class _$InsufficientFundsImpl extends InsufficientFunds {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -2674,6 +2792,8 @@ class _$InsufficientFundsImpl extends InsufficientFunds {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -2712,6 +2832,8 @@ class _$InsufficientFundsImpl extends InsufficientFunds {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -2746,6 +2868,8 @@ class _$InsufficientFundsImpl extends InsufficientFunds {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -2843,6 +2967,8 @@ class _$UnauthorizedImpl extends Unauthorized {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -2876,6 +3002,8 @@ class _$UnauthorizedImpl extends Unauthorized {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -2909,6 +3037,8 @@ class _$UnauthorizedImpl extends Unauthorized {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -2947,6 +3077,8 @@ class _$UnauthorizedImpl extends Unauthorized {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -2985,6 +3117,8 @@ class _$UnauthorizedImpl extends Unauthorized {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -3019,6 +3153,8 @@ class _$UnauthorizedImpl extends Unauthorized {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -3116,6 +3252,8 @@ class _$InvalidValueImpl extends InvalidValue {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -3149,6 +3287,8 @@ class _$InvalidValueImpl extends InvalidValue {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -3182,6 +3322,8 @@ class _$InvalidValueImpl extends InvalidValue {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -3220,6 +3362,8 @@ class _$InvalidValueImpl extends InvalidValue {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -3258,6 +3402,8 @@ class _$InvalidValueImpl extends InvalidValue {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -3292,6 +3438,8 @@ class _$InvalidValueImpl extends InvalidValue {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -3389,6 +3537,8 @@ class _$HTLCWithoutFundsImpl extends HTLCWithoutFunds {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -3422,6 +3572,8 @@ class _$HTLCWithoutFundsImpl extends HTLCWithoutFunds {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -3455,6 +3607,8 @@ class _$HTLCWithoutFundsImpl extends HTLCWithoutFunds {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -3493,6 +3647,8 @@ class _$HTLCWithoutFundsImpl extends HTLCWithoutFunds {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -3531,6 +3687,8 @@ class _$HTLCWithoutFundsImpl extends HTLCWithoutFunds {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -3565,6 +3723,8 @@ class _$HTLCWithoutFundsImpl extends HTLCWithoutFunds {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -3662,6 +3822,8 @@ class _$NotHTLCImpl extends NotHTLC {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -3695,6 +3857,8 @@ class _$NotHTLCImpl extends NotHTLC {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -3728,6 +3892,8 @@ class _$NotHTLCImpl extends NotHTLC {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -3766,6 +3932,8 @@ class _$NotHTLCImpl extends NotHTLC {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -3804,6 +3972,8 @@ class _$NotHTLCImpl extends NotHTLC {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -3838,6 +4008,8 @@ class _$NotHTLCImpl extends NotHTLC {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -3872,6 +4044,577 @@ abstract class NotHTLC extends Failure {
   const NotHTLC._() : super._();
 
   factory NotHTLC.fromJson(Map<String, dynamic> json) = _$NotHTLCImpl.fromJson;
+}
+
+/// @nodoc
+abstract class _$$FaucetUCOErrorImplCopyWith<$Res> {
+  factory _$$FaucetUCOErrorImplCopyWith(_$FaucetUCOErrorImpl value,
+          $Res Function(_$FaucetUCOErrorImpl) then) =
+      __$$FaucetUCOErrorImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FaucetUCOErrorImplCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$FaucetUCOErrorImpl>
+    implements _$$FaucetUCOErrorImplCopyWith<$Res> {
+  __$$FaucetUCOErrorImplCopyWithImpl(
+      _$FaucetUCOErrorImpl _value, $Res Function(_$FaucetUCOErrorImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$FaucetUCOErrorImpl extends FaucetUCOError {
+  const _$FaucetUCOErrorImpl({final String? $type})
+      : $type = $type ?? 'faucetUCOError',
+        super._();
+
+  factory _$FaucetUCOErrorImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FaucetUCOErrorImplFromJson(json);
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'Failure.faucetUCOError()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$FaucetUCOErrorImpl);
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loggedOut,
+    required TResult Function() network,
+    required TResult Function(DateTime? cooldownEndDate) quotaExceeded,
+    required TResult Function() serviceNotFound,
+    required TResult Function() serviceAlreadyExists,
+    required TResult Function() poolAlreadyExists,
+    required TResult Function() lpTokenAmountExceedBalance,
+    required TResult Function() poolNotExists,
+    required TResult Function() insufficientFunds,
+    required TResult Function() unauthorized,
+    required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
+    required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
+    required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
+    required TResult Function() paramEVMChain,
+    required TResult Function() userRejected,
+    required TResult Function() connectivityArchethic,
+    required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
+    required TResult Function(String? cause, String? stack) other,
+  }) {
+    return faucetUCOError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loggedOut,
+    TResult? Function()? network,
+    TResult? Function(DateTime? cooldownEndDate)? quotaExceeded,
+    TResult? Function()? serviceNotFound,
+    TResult? Function()? serviceAlreadyExists,
+    TResult? Function()? poolAlreadyExists,
+    TResult? Function()? lpTokenAmountExceedBalance,
+    TResult? Function()? poolNotExists,
+    TResult? Function()? insufficientFunds,
+    TResult? Function()? unauthorized,
+    TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
+    TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
+    TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
+    TResult? Function()? paramEVMChain,
+    TResult? Function()? userRejected,
+    TResult? Function()? connectivityArchethic,
+    TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
+    TResult? Function(String? cause, String? stack)? other,
+  }) {
+    return faucetUCOError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loggedOut,
+    TResult Function()? network,
+    TResult Function(DateTime? cooldownEndDate)? quotaExceeded,
+    TResult Function()? serviceNotFound,
+    TResult Function()? serviceAlreadyExists,
+    TResult Function()? poolAlreadyExists,
+    TResult Function()? lpTokenAmountExceedBalance,
+    TResult Function()? poolNotExists,
+    TResult Function()? insufficientFunds,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
+    TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
+    TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
+    TResult Function()? paramEVMChain,
+    TResult Function()? userRejected,
+    TResult Function()? connectivityArchethic,
+    TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
+    TResult Function(String? cause, String? stack)? other,
+    required TResult orElse(),
+  }) {
+    if (faucetUCOError != null) {
+      return faucetUCOError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoggedOut value) loggedOut,
+    required TResult Function(NetworkFailure value) network,
+    required TResult Function(QuotaExceededFailure value) quotaExceeded,
+    required TResult Function(ServiceNotFound value) serviceNotFound,
+    required TResult Function(ServiceAlreadyExists value) serviceAlreadyExists,
+    required TResult Function(PoolAlreadyExists value) poolAlreadyExists,
+    required TResult Function(LPTokenAmountExceedBalance value)
+        lpTokenAmountExceedBalance,
+    required TResult Function(PoolNotExists value) poolNotExists,
+    required TResult Function(InsufficientFunds value) insufficientFunds,
+    required TResult Function(Unauthorized value) unauthorized,
+    required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
+    required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
+    required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
+    required TResult Function(UserRejected value) userRejected,
+    required TResult Function(ConnectivityArchethic value)
+        connectivityArchethic,
+    required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
+    required TResult Function(OtherFailure value) other,
+  }) {
+    return faucetUCOError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoggedOut value)? loggedOut,
+    TResult? Function(NetworkFailure value)? network,
+    TResult? Function(QuotaExceededFailure value)? quotaExceeded,
+    TResult? Function(ServiceNotFound value)? serviceNotFound,
+    TResult? Function(ServiceAlreadyExists value)? serviceAlreadyExists,
+    TResult? Function(PoolAlreadyExists value)? poolAlreadyExists,
+    TResult? Function(LPTokenAmountExceedBalance value)?
+        lpTokenAmountExceedBalance,
+    TResult? Function(PoolNotExists value)? poolNotExists,
+    TResult? Function(InsufficientFunds value)? insufficientFunds,
+    TResult? Function(Unauthorized value)? unauthorized,
+    TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
+    TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
+    TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
+    TResult? Function(UserRejected value)? userRejected,
+    TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
+    TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
+    TResult? Function(OtherFailure value)? other,
+  }) {
+    return faucetUCOError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(NetworkFailure value)? network,
+    TResult Function(QuotaExceededFailure value)? quotaExceeded,
+    TResult Function(ServiceNotFound value)? serviceNotFound,
+    TResult Function(ServiceAlreadyExists value)? serviceAlreadyExists,
+    TResult Function(PoolAlreadyExists value)? poolAlreadyExists,
+    TResult Function(LPTokenAmountExceedBalance value)?
+        lpTokenAmountExceedBalance,
+    TResult Function(PoolNotExists value)? poolNotExists,
+    TResult Function(InsufficientFunds value)? insufficientFunds,
+    TResult Function(Unauthorized value)? unauthorized,
+    TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
+    TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
+    TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
+    TResult Function(UserRejected value)? userRejected,
+    TResult Function(ConnectivityArchethic value)? connectivityArchethic,
+    TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
+    TResult Function(OtherFailure value)? other,
+    required TResult orElse(),
+  }) {
+    if (faucetUCOError != null) {
+      return faucetUCOError(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$FaucetUCOErrorImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class FaucetUCOError extends Failure {
+  const factory FaucetUCOError() = _$FaucetUCOErrorImpl;
+  const FaucetUCOError._() : super._();
+
+  factory FaucetUCOError.fromJson(Map<String, dynamic> json) =
+      _$FaucetUCOErrorImpl.fromJson;
+}
+
+/// @nodoc
+abstract class _$$FaucetUCUserRejectedImplCopyWith<$Res> {
+  factory _$$FaucetUCUserRejectedImplCopyWith(_$FaucetUCUserRejectedImpl value,
+          $Res Function(_$FaucetUCUserRejectedImpl) then) =
+      __$$FaucetUCUserRejectedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FaucetUCUserRejectedImplCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$FaucetUCUserRejectedImpl>
+    implements _$$FaucetUCUserRejectedImplCopyWith<$Res> {
+  __$$FaucetUCUserRejectedImplCopyWithImpl(_$FaucetUCUserRejectedImpl _value,
+      $Res Function(_$FaucetUCUserRejectedImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$FaucetUCUserRejectedImpl extends FaucetUCUserRejected {
+  const _$FaucetUCUserRejectedImpl({final String? $type})
+      : $type = $type ?? 'faucetUCOUserRejected',
+        super._();
+
+  factory _$FaucetUCUserRejectedImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FaucetUCUserRejectedImplFromJson(json);
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'Failure.faucetUCOUserRejected()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FaucetUCUserRejectedImpl);
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loggedOut,
+    required TResult Function() network,
+    required TResult Function(DateTime? cooldownEndDate) quotaExceeded,
+    required TResult Function() serviceNotFound,
+    required TResult Function() serviceAlreadyExists,
+    required TResult Function() poolAlreadyExists,
+    required TResult Function() lpTokenAmountExceedBalance,
+    required TResult Function() poolNotExists,
+    required TResult Function() insufficientFunds,
+    required TResult Function() unauthorized,
+    required TResult Function() invalidValue,
+    required TResult Function() htlcWithoutFunds,
+    required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
+    required TResult Function(String cause) wrongNetwork,
+    required TResult Function() insufficientPoolFunds,
+    required TResult Function() incompatibleBrowser,
+    required TResult Function() chainSwitchNotSupported,
+    required TResult Function() connectivityEVM,
+    required TResult Function() walletNotSupportedEVM,
+    required TResult Function() noWalletSupportedEVM,
+    required TResult Function() paramEVMChain,
+    required TResult Function() userRejected,
+    required TResult Function() connectivityArchethic,
+    required TResult Function() timeout,
+    required TResult Function(String? cause) rpcErrorEVM,
+    required TResult Function(String? cause, String? stack) other,
+  }) {
+    return faucetUCOUserRejected();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loggedOut,
+    TResult? Function()? network,
+    TResult? Function(DateTime? cooldownEndDate)? quotaExceeded,
+    TResult? Function()? serviceNotFound,
+    TResult? Function()? serviceAlreadyExists,
+    TResult? Function()? poolAlreadyExists,
+    TResult? Function()? lpTokenAmountExceedBalance,
+    TResult? Function()? poolNotExists,
+    TResult? Function()? insufficientFunds,
+    TResult? Function()? unauthorized,
+    TResult? Function()? invalidValue,
+    TResult? Function()? htlcWithoutFunds,
+    TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
+    TResult? Function(String cause)? wrongNetwork,
+    TResult? Function()? insufficientPoolFunds,
+    TResult? Function()? incompatibleBrowser,
+    TResult? Function()? chainSwitchNotSupported,
+    TResult? Function()? connectivityEVM,
+    TResult? Function()? walletNotSupportedEVM,
+    TResult? Function()? noWalletSupportedEVM,
+    TResult? Function()? paramEVMChain,
+    TResult? Function()? userRejected,
+    TResult? Function()? connectivityArchethic,
+    TResult? Function()? timeout,
+    TResult? Function(String? cause)? rpcErrorEVM,
+    TResult? Function(String? cause, String? stack)? other,
+  }) {
+    return faucetUCOUserRejected?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loggedOut,
+    TResult Function()? network,
+    TResult Function(DateTime? cooldownEndDate)? quotaExceeded,
+    TResult Function()? serviceNotFound,
+    TResult Function()? serviceAlreadyExists,
+    TResult Function()? poolAlreadyExists,
+    TResult Function()? lpTokenAmountExceedBalance,
+    TResult Function()? poolNotExists,
+    TResult Function()? insufficientFunds,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidValue,
+    TResult Function()? htlcWithoutFunds,
+    TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
+    TResult Function(String cause)? wrongNetwork,
+    TResult Function()? insufficientPoolFunds,
+    TResult Function()? incompatibleBrowser,
+    TResult Function()? chainSwitchNotSupported,
+    TResult Function()? connectivityEVM,
+    TResult Function()? walletNotSupportedEVM,
+    TResult Function()? noWalletSupportedEVM,
+    TResult Function()? paramEVMChain,
+    TResult Function()? userRejected,
+    TResult Function()? connectivityArchethic,
+    TResult Function()? timeout,
+    TResult Function(String? cause)? rpcErrorEVM,
+    TResult Function(String? cause, String? stack)? other,
+    required TResult orElse(),
+  }) {
+    if (faucetUCOUserRejected != null) {
+      return faucetUCOUserRejected();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoggedOut value) loggedOut,
+    required TResult Function(NetworkFailure value) network,
+    required TResult Function(QuotaExceededFailure value) quotaExceeded,
+    required TResult Function(ServiceNotFound value) serviceNotFound,
+    required TResult Function(ServiceAlreadyExists value) serviceAlreadyExists,
+    required TResult Function(PoolAlreadyExists value) poolAlreadyExists,
+    required TResult Function(LPTokenAmountExceedBalance value)
+        lpTokenAmountExceedBalance,
+    required TResult Function(PoolNotExists value) poolNotExists,
+    required TResult Function(InsufficientFunds value) insufficientFunds,
+    required TResult Function(Unauthorized value) unauthorized,
+    required TResult Function(InvalidValue value) invalidValue,
+    required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
+    required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
+    required TResult Function(WrongNetwork value) wrongNetwork,
+    required TResult Function(InsufficientPoolFunds value)
+        insufficientPoolFunds,
+    required TResult Function(IncompatibleBrowser value) incompatibleBrowser,
+    required TResult Function(ChainSwitchNotSupported value)
+        chainSwitchNotSupported,
+    required TResult Function(ConnectivityEVM value) connectivityEVM,
+    required TResult Function(WalletNotSupportedEVM value)
+        walletNotSupportedEVM,
+    required TResult Function(NoWalletSupportedEVM value) noWalletSupportedEVM,
+    required TResult Function(ParamEVMChain value) paramEVMChain,
+    required TResult Function(UserRejected value) userRejected,
+    required TResult Function(ConnectivityArchethic value)
+        connectivityArchethic,
+    required TResult Function(Timeout value) timeout,
+    required TResult Function(RPCErrorEVM value) rpcErrorEVM,
+    required TResult Function(OtherFailure value) other,
+  }) {
+    return faucetUCOUserRejected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoggedOut value)? loggedOut,
+    TResult? Function(NetworkFailure value)? network,
+    TResult? Function(QuotaExceededFailure value)? quotaExceeded,
+    TResult? Function(ServiceNotFound value)? serviceNotFound,
+    TResult? Function(ServiceAlreadyExists value)? serviceAlreadyExists,
+    TResult? Function(PoolAlreadyExists value)? poolAlreadyExists,
+    TResult? Function(LPTokenAmountExceedBalance value)?
+        lpTokenAmountExceedBalance,
+    TResult? Function(PoolNotExists value)? poolNotExists,
+    TResult? Function(InsufficientFunds value)? insufficientFunds,
+    TResult? Function(Unauthorized value)? unauthorized,
+    TResult? Function(InvalidValue value)? invalidValue,
+    TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
+    TResult? Function(WrongNetwork value)? wrongNetwork,
+    TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
+    TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult? Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult? Function(ConnectivityEVM value)? connectivityEVM,
+    TResult? Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult? Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
+    TResult? Function(ParamEVMChain value)? paramEVMChain,
+    TResult? Function(UserRejected value)? userRejected,
+    TResult? Function(ConnectivityArchethic value)? connectivityArchethic,
+    TResult? Function(Timeout value)? timeout,
+    TResult? Function(RPCErrorEVM value)? rpcErrorEVM,
+    TResult? Function(OtherFailure value)? other,
+  }) {
+    return faucetUCOUserRejected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(NetworkFailure value)? network,
+    TResult Function(QuotaExceededFailure value)? quotaExceeded,
+    TResult Function(ServiceNotFound value)? serviceNotFound,
+    TResult Function(ServiceAlreadyExists value)? serviceAlreadyExists,
+    TResult Function(PoolAlreadyExists value)? poolAlreadyExists,
+    TResult Function(LPTokenAmountExceedBalance value)?
+        lpTokenAmountExceedBalance,
+    TResult Function(PoolNotExists value)? poolNotExists,
+    TResult Function(InsufficientFunds value)? insufficientFunds,
+    TResult Function(Unauthorized value)? unauthorized,
+    TResult Function(InvalidValue value)? invalidValue,
+    TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
+    TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
+    TResult Function(WrongNetwork value)? wrongNetwork,
+    TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
+    TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
+    TResult Function(ChainSwitchNotSupported value)? chainSwitchNotSupported,
+    TResult Function(ConnectivityEVM value)? connectivityEVM,
+    TResult Function(WalletNotSupportedEVM value)? walletNotSupportedEVM,
+    TResult Function(NoWalletSupportedEVM value)? noWalletSupportedEVM,
+    TResult Function(ParamEVMChain value)? paramEVMChain,
+    TResult Function(UserRejected value)? userRejected,
+    TResult Function(ConnectivityArchethic value)? connectivityArchethic,
+    TResult Function(Timeout value)? timeout,
+    TResult Function(RPCErrorEVM value)? rpcErrorEVM,
+    TResult Function(OtherFailure value)? other,
+    required TResult orElse(),
+  }) {
+    if (faucetUCOUserRejected != null) {
+      return faucetUCOUserRejected(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$FaucetUCUserRejectedImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class FaucetUCUserRejected extends Failure {
+  const factory FaucetUCUserRejected() = _$FaucetUCUserRejectedImpl;
+  const FaucetUCUserRejected._() : super._();
+
+  factory FaucetUCUserRejected.fromJson(Map<String, dynamic> json) =
+      _$FaucetUCUserRejectedImpl.fromJson;
 }
 
 /// @nodoc
@@ -3960,6 +4703,8 @@ class _$WrongNetworkImpl extends WrongNetwork {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -3993,6 +4738,8 @@ class _$WrongNetworkImpl extends WrongNetwork {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -4026,6 +4773,8 @@ class _$WrongNetworkImpl extends WrongNetwork {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -4064,6 +4813,8 @@ class _$WrongNetworkImpl extends WrongNetwork {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -4102,6 +4853,8 @@ class _$WrongNetworkImpl extends WrongNetwork {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -4136,6 +4889,8 @@ class _$WrongNetworkImpl extends WrongNetwork {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -4240,6 +4995,8 @@ class _$InsufficientPoolFundsImpl extends InsufficientPoolFunds {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -4273,6 +5030,8 @@ class _$InsufficientPoolFundsImpl extends InsufficientPoolFunds {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -4306,6 +5065,8 @@ class _$InsufficientPoolFundsImpl extends InsufficientPoolFunds {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -4344,6 +5105,8 @@ class _$InsufficientPoolFundsImpl extends InsufficientPoolFunds {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -4382,6 +5145,8 @@ class _$InsufficientPoolFundsImpl extends InsufficientPoolFunds {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -4416,6 +5181,8 @@ class _$InsufficientPoolFundsImpl extends InsufficientPoolFunds {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -4514,6 +5281,8 @@ class _$IncompatibleBrowserImpl extends IncompatibleBrowser {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -4547,6 +5316,8 @@ class _$IncompatibleBrowserImpl extends IncompatibleBrowser {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -4580,6 +5351,8 @@ class _$IncompatibleBrowserImpl extends IncompatibleBrowser {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -4618,6 +5391,8 @@ class _$IncompatibleBrowserImpl extends IncompatibleBrowser {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -4656,6 +5431,8 @@ class _$IncompatibleBrowserImpl extends IncompatibleBrowser {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -4690,6 +5467,8 @@ class _$IncompatibleBrowserImpl extends IncompatibleBrowser {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -4790,6 +5569,8 @@ class _$ChainSwitchNotSupportedImpl extends ChainSwitchNotSupported {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -4823,6 +5604,8 @@ class _$ChainSwitchNotSupportedImpl extends ChainSwitchNotSupported {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -4856,6 +5639,8 @@ class _$ChainSwitchNotSupportedImpl extends ChainSwitchNotSupported {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -4894,6 +5679,8 @@ class _$ChainSwitchNotSupportedImpl extends ChainSwitchNotSupported {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -4932,6 +5719,8 @@ class _$ChainSwitchNotSupportedImpl extends ChainSwitchNotSupported {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -4966,6 +5755,8 @@ class _$ChainSwitchNotSupportedImpl extends ChainSwitchNotSupported {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -5063,6 +5854,8 @@ class _$ConnectivityEVMImpl extends ConnectivityEVM {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -5096,6 +5889,8 @@ class _$ConnectivityEVMImpl extends ConnectivityEVM {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -5129,6 +5924,8 @@ class _$ConnectivityEVMImpl extends ConnectivityEVM {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -5167,6 +5964,8 @@ class _$ConnectivityEVMImpl extends ConnectivityEVM {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -5205,6 +6004,8 @@ class _$ConnectivityEVMImpl extends ConnectivityEVM {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -5239,6 +6040,8 @@ class _$ConnectivityEVMImpl extends ConnectivityEVM {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -5338,6 +6141,8 @@ class _$WalletNotSupportedEVMImpl extends WalletNotSupportedEVM {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -5371,6 +6176,8 @@ class _$WalletNotSupportedEVMImpl extends WalletNotSupportedEVM {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -5404,6 +6211,8 @@ class _$WalletNotSupportedEVMImpl extends WalletNotSupportedEVM {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -5442,6 +6251,8 @@ class _$WalletNotSupportedEVMImpl extends WalletNotSupportedEVM {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -5480,6 +6291,8 @@ class _$WalletNotSupportedEVMImpl extends WalletNotSupportedEVM {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -5514,6 +6327,8 @@ class _$WalletNotSupportedEVMImpl extends WalletNotSupportedEVM {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -5612,6 +6427,8 @@ class _$NoWalletSupportedEVMImpl extends NoWalletSupportedEVM {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -5645,6 +6462,8 @@ class _$NoWalletSupportedEVMImpl extends NoWalletSupportedEVM {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -5678,6 +6497,8 @@ class _$NoWalletSupportedEVMImpl extends NoWalletSupportedEVM {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -5716,6 +6537,8 @@ class _$NoWalletSupportedEVMImpl extends NoWalletSupportedEVM {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -5754,6 +6577,8 @@ class _$NoWalletSupportedEVMImpl extends NoWalletSupportedEVM {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -5788,6 +6613,8 @@ class _$NoWalletSupportedEVMImpl extends NoWalletSupportedEVM {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -5885,6 +6712,8 @@ class _$ParamEVMChainImpl extends ParamEVMChain {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -5918,6 +6747,8 @@ class _$ParamEVMChainImpl extends ParamEVMChain {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -5951,6 +6782,8 @@ class _$ParamEVMChainImpl extends ParamEVMChain {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -5989,6 +6822,8 @@ class _$ParamEVMChainImpl extends ParamEVMChain {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -6027,6 +6862,8 @@ class _$ParamEVMChainImpl extends ParamEVMChain {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -6061,6 +6898,8 @@ class _$ParamEVMChainImpl extends ParamEVMChain {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -6158,6 +6997,8 @@ class _$UserRejectedImpl extends UserRejected {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -6191,6 +7032,8 @@ class _$UserRejectedImpl extends UserRejected {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -6224,6 +7067,8 @@ class _$UserRejectedImpl extends UserRejected {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -6262,6 +7107,8 @@ class _$UserRejectedImpl extends UserRejected {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -6300,6 +7147,8 @@ class _$UserRejectedImpl extends UserRejected {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -6334,6 +7183,8 @@ class _$UserRejectedImpl extends UserRejected {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -6433,6 +7284,8 @@ class _$ConnectivityArchethicImpl extends ConnectivityArchethic {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -6466,6 +7319,8 @@ class _$ConnectivityArchethicImpl extends ConnectivityArchethic {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -6499,6 +7354,8 @@ class _$ConnectivityArchethicImpl extends ConnectivityArchethic {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -6537,6 +7394,8 @@ class _$ConnectivityArchethicImpl extends ConnectivityArchethic {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -6575,6 +7434,8 @@ class _$ConnectivityArchethicImpl extends ConnectivityArchethic {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -6609,6 +7470,8 @@ class _$ConnectivityArchethicImpl extends ConnectivityArchethic {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -6706,6 +7569,8 @@ class _$TimeoutImpl extends Timeout {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -6739,6 +7604,8 @@ class _$TimeoutImpl extends Timeout {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -6772,6 +7639,8 @@ class _$TimeoutImpl extends Timeout {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -6810,6 +7679,8 @@ class _$TimeoutImpl extends Timeout {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -6848,6 +7719,8 @@ class _$TimeoutImpl extends Timeout {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -6882,6 +7755,8 @@ class _$TimeoutImpl extends Timeout {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -7004,6 +7879,8 @@ class _$RPCErrorEVMImpl extends RPCErrorEVM {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -7037,6 +7914,8 @@ class _$RPCErrorEVMImpl extends RPCErrorEVM {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -7070,6 +7949,8 @@ class _$RPCErrorEVMImpl extends RPCErrorEVM {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -7108,6 +7989,8 @@ class _$RPCErrorEVMImpl extends RPCErrorEVM {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -7146,6 +8029,8 @@ class _$RPCErrorEVMImpl extends RPCErrorEVM {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -7180,6 +8065,8 @@ class _$RPCErrorEVMImpl extends RPCErrorEVM {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -7316,6 +8203,8 @@ class _$OtherFailureImpl extends OtherFailure {
     required TResult Function() invalidValue,
     required TResult Function() htlcWithoutFunds,
     required TResult Function() notHTLC,
+    required TResult Function() faucetUCOError,
+    required TResult Function() faucetUCOUserRejected,
     required TResult Function(String cause) wrongNetwork,
     required TResult Function() insufficientPoolFunds,
     required TResult Function() incompatibleBrowser,
@@ -7349,6 +8238,8 @@ class _$OtherFailureImpl extends OtherFailure {
     TResult? Function()? invalidValue,
     TResult? Function()? htlcWithoutFunds,
     TResult? Function()? notHTLC,
+    TResult? Function()? faucetUCOError,
+    TResult? Function()? faucetUCOUserRejected,
     TResult? Function(String cause)? wrongNetwork,
     TResult? Function()? insufficientPoolFunds,
     TResult? Function()? incompatibleBrowser,
@@ -7382,6 +8273,8 @@ class _$OtherFailureImpl extends OtherFailure {
     TResult Function()? invalidValue,
     TResult Function()? htlcWithoutFunds,
     TResult Function()? notHTLC,
+    TResult Function()? faucetUCOError,
+    TResult Function()? faucetUCOUserRejected,
     TResult Function(String cause)? wrongNetwork,
     TResult Function()? insufficientPoolFunds,
     TResult Function()? incompatibleBrowser,
@@ -7420,6 +8313,8 @@ class _$OtherFailureImpl extends OtherFailure {
     required TResult Function(InvalidValue value) invalidValue,
     required TResult Function(HTLCWithoutFunds value) htlcWithoutFunds,
     required TResult Function(NotHTLC value) notHTLC,
+    required TResult Function(FaucetUCOError value) faucetUCOError,
+    required TResult Function(FaucetUCUserRejected value) faucetUCOUserRejected,
     required TResult Function(WrongNetwork value) wrongNetwork,
     required TResult Function(InsufficientPoolFunds value)
         insufficientPoolFunds,
@@ -7458,6 +8353,8 @@ class _$OtherFailureImpl extends OtherFailure {
     TResult? Function(InvalidValue value)? invalidValue,
     TResult? Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult? Function(NotHTLC value)? notHTLC,
+    TResult? Function(FaucetUCOError value)? faucetUCOError,
+    TResult? Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult? Function(WrongNetwork value)? wrongNetwork,
     TResult? Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult? Function(IncompatibleBrowser value)? incompatibleBrowser,
@@ -7492,6 +8389,8 @@ class _$OtherFailureImpl extends OtherFailure {
     TResult Function(InvalidValue value)? invalidValue,
     TResult Function(HTLCWithoutFunds value)? htlcWithoutFunds,
     TResult Function(NotHTLC value)? notHTLC,
+    TResult Function(FaucetUCOError value)? faucetUCOError,
+    TResult Function(FaucetUCUserRejected value)? faucetUCOUserRejected,
     TResult Function(WrongNetwork value)? wrongNetwork,
     TResult Function(InsufficientPoolFunds value)? insufficientPoolFunds,
     TResult Function(IncompatibleBrowser value)? incompatibleBrowser,
