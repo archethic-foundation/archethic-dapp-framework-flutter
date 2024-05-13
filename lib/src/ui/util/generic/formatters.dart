@@ -136,7 +136,7 @@ class AmountTextInputFormatter extends TextInputFormatter {
 
     return TextEditingValue(
       text: newText,
-      selection: TextSelection.collapsed(offset: cursorPosition),
+      selection: TextSelection.collapsed(offset: max(0, cursorPosition)),
     );
   }
 
