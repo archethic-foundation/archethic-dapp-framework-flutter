@@ -52,8 +52,8 @@ class VerifiedTokensRepositoryImpl
   Future<List<String>> _getVerifiedTokensFromBlockchain(
     String txAddress,
   ) async {
-    final lastAddressMap = await sl
-        .get<ApiService>()
+    final apiService = sl.get<ApiService>();
+    final lastAddressMap = await apiService
         .getLastTransaction([txAddress], request: 'data { content }');
     if (lastAddressMap[txAddress] != null &&
         lastAddressMap[txAddress]!.data != null &&

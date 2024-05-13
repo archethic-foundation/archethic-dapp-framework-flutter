@@ -11,9 +11,9 @@ class _UcidsTokensNotifier extends Notifier<Map<String, int>> {
     return {};
   }
 
-  Future<void> init() async {
-    state =
-        await ref.read(UcidsTokensProviders.getUcidsTokensFromNetwork.future);
+  Future<void> init(String network) async {
+    state = await ref
+        .read(UcidsTokensProviders.getUcidsTokensFromNetwork(network).future);
   }
 }
 
@@ -35,10 +35,11 @@ Future<UcidsTokens> _getUcidsTokens(
 @Riverpod(keepAlive: true)
 Future<Map<String, int>> _getUcidsTokensFromNetwork(
   _GetUcidsTokensFromNetworkRef ref,
+  String network,
 ) async {
   final ucidsTokensFromNetwork = await ref
       .watch(_ucidsTokensRepositoryProvider)
-      .getUcidsTokensFromNetwork();
+      .getUcidsTokensFromNetwork(network);
   return ucidsTokensFromNetwork;
 }
 
@@ -46,10 +47,11 @@ Future<Map<String, int>> _getUcidsTokensFromNetwork(
 Future<int> _getUcidFromAddress(
   _GetUcidFromAddressRef ref,
   String address,
+  String network,
 ) async {
   final ucidsTokensFromNetwork = await ref
       .watch(_ucidsTokensRepositoryProvider)
-      .getUcidsTokensFromNetwork();
+      .getUcidsTokensFromNetwork(network);
 
   return ucidsTokensFromNetwork[address] ?? 0;
 }
@@ -58,5 +60,5 @@ abstract class UcidsTokensProviders {
   static final ucidsTokens = _ucidsTokensNotifierProvider;
   static final getUcidsTokens = _getUcidsTokensProvider;
   static const getUcidFromAddress = _getUcidFromAddressProvider;
-  static final getUcidsTokensFromNetwork = _getUcidsTokensFromNetworkProvider;
+  static const getUcidsTokensFromNetwork = _getUcidsTokensFromNetworkProvider;
 }

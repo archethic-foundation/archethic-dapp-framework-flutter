@@ -39,24 +39,7 @@ final _getUcidsTokensProvider = FutureProvider<UcidsTokens>.internal(
 
 typedef _GetUcidsTokensRef = FutureProviderRef<UcidsTokens>;
 String _$getUcidsTokensFromNetworkHash() =>
-    r'fea8de4fa85c8aa43752ee3c589f994775df98f1';
-
-/// See also [_getUcidsTokensFromNetwork].
-@ProviderFor(_getUcidsTokensFromNetwork)
-final _getUcidsTokensFromNetworkProvider =
-    FutureProvider<Map<String, int>>.internal(
-  _getUcidsTokensFromNetwork,
-  name: r'_getUcidsTokensFromNetworkProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$getUcidsTokensFromNetworkHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
-
-typedef _GetUcidsTokensFromNetworkRef = FutureProviderRef<Map<String, int>>;
-String _$getUcidFromAddressHash() =>
-    r'0e954f4ecfc46d430a93dd5fa87cf4fb3183bf13';
+    r'b758d283fb94ffa8b49ce43112d87721ac00af21';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -79,6 +62,140 @@ class _SystemHash {
   }
 }
 
+/// See also [_getUcidsTokensFromNetwork].
+@ProviderFor(_getUcidsTokensFromNetwork)
+const _getUcidsTokensFromNetworkProvider = _GetUcidsTokensFromNetworkFamily();
+
+/// See also [_getUcidsTokensFromNetwork].
+class _GetUcidsTokensFromNetworkFamily
+    extends Family<AsyncValue<Map<String, int>>> {
+  /// See also [_getUcidsTokensFromNetwork].
+  const _GetUcidsTokensFromNetworkFamily();
+
+  /// See also [_getUcidsTokensFromNetwork].
+  _GetUcidsTokensFromNetworkProvider call(
+    String network,
+  ) {
+    return _GetUcidsTokensFromNetworkProvider(
+      network,
+    );
+  }
+
+  @override
+  _GetUcidsTokensFromNetworkProvider getProviderOverride(
+    covariant _GetUcidsTokensFromNetworkProvider provider,
+  ) {
+    return call(
+      provider.network,
+    );
+  }
+
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'_getUcidsTokensFromNetworkProvider';
+}
+
+/// See also [_getUcidsTokensFromNetwork].
+class _GetUcidsTokensFromNetworkProvider
+    extends FutureProvider<Map<String, int>> {
+  /// See also [_getUcidsTokensFromNetwork].
+  _GetUcidsTokensFromNetworkProvider(
+    String network,
+  ) : this._internal(
+          (ref) => _getUcidsTokensFromNetwork(
+            ref as _GetUcidsTokensFromNetworkRef,
+            network,
+          ),
+          from: _getUcidsTokensFromNetworkProvider,
+          name: r'_getUcidsTokensFromNetworkProvider',
+          debugGetCreateSourceHash:
+              const bool.fromEnvironment('dart.vm.product')
+                  ? null
+                  : _$getUcidsTokensFromNetworkHash,
+          dependencies: _GetUcidsTokensFromNetworkFamily._dependencies,
+          allTransitiveDependencies:
+              _GetUcidsTokensFromNetworkFamily._allTransitiveDependencies,
+          network: network,
+        );
+
+  _GetUcidsTokensFromNetworkProvider._internal(
+    super._createNotifier, {
+    required super.name,
+    required super.dependencies,
+    required super.allTransitiveDependencies,
+    required super.debugGetCreateSourceHash,
+    required super.from,
+    required this.network,
+  }) : super.internal();
+
+  final String network;
+
+  @override
+  Override overrideWith(
+    FutureOr<Map<String, int>> Function(_GetUcidsTokensFromNetworkRef provider)
+        create,
+  ) {
+    return ProviderOverride(
+      origin: this,
+      override: _GetUcidsTokensFromNetworkProvider._internal(
+        (ref) => create(ref as _GetUcidsTokensFromNetworkRef),
+        from: from,
+        name: null,
+        dependencies: null,
+        allTransitiveDependencies: null,
+        debugGetCreateSourceHash: null,
+        network: network,
+      ),
+    );
+  }
+
+  @override
+  FutureProviderElement<Map<String, int>> createElement() {
+    return _GetUcidsTokensFromNetworkProviderElement(this);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return other is _GetUcidsTokensFromNetworkProvider &&
+        other.network == network;
+  }
+
+  @override
+  int get hashCode {
+    var hash = _SystemHash.combine(0, runtimeType.hashCode);
+    hash = _SystemHash.combine(hash, network.hashCode);
+
+    return _SystemHash.finish(hash);
+  }
+}
+
+mixin _GetUcidsTokensFromNetworkRef on FutureProviderRef<Map<String, int>> {
+  /// The parameter `network` of this provider.
+  String get network;
+}
+
+class _GetUcidsTokensFromNetworkProviderElement
+    extends FutureProviderElement<Map<String, int>>
+    with _GetUcidsTokensFromNetworkRef {
+  _GetUcidsTokensFromNetworkProviderElement(super.provider);
+
+  @override
+  String get network => (origin as _GetUcidsTokensFromNetworkProvider).network;
+}
+
+String _$getUcidFromAddressHash() =>
+    r'8b45bfdb95d2c0a8bd5455e594e7c91d6b215274';
+
 /// See also [_getUcidFromAddress].
 @ProviderFor(_getUcidFromAddress)
 const _getUcidFromAddressProvider = _GetUcidFromAddressFamily();
@@ -91,9 +208,11 @@ class _GetUcidFromAddressFamily extends Family<AsyncValue<int>> {
   /// See also [_getUcidFromAddress].
   _GetUcidFromAddressProvider call(
     String address,
+    String network,
   ) {
     return _GetUcidFromAddressProvider(
       address,
+      network,
     );
   }
 
@@ -103,6 +222,7 @@ class _GetUcidFromAddressFamily extends Family<AsyncValue<int>> {
   ) {
     return call(
       provider.address,
+      provider.network,
     );
   }
 
@@ -126,10 +246,12 @@ class _GetUcidFromAddressProvider extends FutureProvider<int> {
   /// See also [_getUcidFromAddress].
   _GetUcidFromAddressProvider(
     String address,
+    String network,
   ) : this._internal(
           (ref) => _getUcidFromAddress(
             ref as _GetUcidFromAddressRef,
             address,
+            network,
           ),
           from: _getUcidFromAddressProvider,
           name: r'_getUcidFromAddressProvider',
@@ -141,6 +263,7 @@ class _GetUcidFromAddressProvider extends FutureProvider<int> {
           allTransitiveDependencies:
               _GetUcidFromAddressFamily._allTransitiveDependencies,
           address: address,
+          network: network,
         );
 
   _GetUcidFromAddressProvider._internal(
@@ -151,9 +274,11 @@ class _GetUcidFromAddressProvider extends FutureProvider<int> {
     required super.debugGetCreateSourceHash,
     required super.from,
     required this.address,
+    required this.network,
   }) : super.internal();
 
   final String address;
+  final String network;
 
   @override
   Override overrideWith(
@@ -169,6 +294,7 @@ class _GetUcidFromAddressProvider extends FutureProvider<int> {
         allTransitiveDependencies: null,
         debugGetCreateSourceHash: null,
         address: address,
+        network: network,
       ),
     );
   }
@@ -180,13 +306,16 @@ class _GetUcidFromAddressProvider extends FutureProvider<int> {
 
   @override
   bool operator ==(Object other) {
-    return other is _GetUcidFromAddressProvider && other.address == address;
+    return other is _GetUcidFromAddressProvider &&
+        other.address == address &&
+        other.network == network;
   }
 
   @override
   int get hashCode {
     var hash = _SystemHash.combine(0, runtimeType.hashCode);
     hash = _SystemHash.combine(hash, address.hashCode);
+    hash = _SystemHash.combine(hash, network.hashCode);
 
     return _SystemHash.finish(hash);
   }
@@ -195,6 +324,9 @@ class _GetUcidFromAddressProvider extends FutureProvider<int> {
 mixin _GetUcidFromAddressRef on FutureProviderRef<int> {
   /// The parameter `address` of this provider.
   String get address;
+
+  /// The parameter `network` of this provider.
+  String get network;
 }
 
 class _GetUcidFromAddressProviderElement extends FutureProviderElement<int>
@@ -203,10 +335,12 @@ class _GetUcidFromAddressProviderElement extends FutureProviderElement<int>
 
   @override
   String get address => (origin as _GetUcidFromAddressProvider).address;
+  @override
+  String get network => (origin as _GetUcidFromAddressProvider).network;
 }
 
 String _$ucidsTokensNotifierHash() =>
-    r'8e9056b2dc25ddb45fafda90e7869d8f188a3d43';
+    r'd9b47b3203cfbc64177f4c18fda691a24c227379';
 
 /// See also [_UcidsTokensNotifier].
 @ProviderFor(_UcidsTokensNotifier)

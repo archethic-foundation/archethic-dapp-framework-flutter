@@ -3,7 +3,6 @@
 import 'dart:convert';
 import 'package:archethic_dapp_framework_flutter/src/domain/models/ucids_tokens.dart';
 import 'package:archethic_dapp_framework_flutter/src/domain/repositories/tokens/ucids_tokens.repository.dart';
-import 'package:archethic_dapp_framework_flutter/src/util/endpoint_util.dart';
 import 'package:flutter/services.dart';
 
 class UcidsTokensRepositoryImpl implements UcidsTokensRepositoryInterface {
@@ -19,9 +18,8 @@ class UcidsTokensRepositoryImpl implements UcidsTokensRepositoryInterface {
   }
 
   @override
-  Future<Map<String, int>> getUcidsTokensFromNetwork() async {
+  Future<Map<String, int>> getUcidsTokensFromNetwork(String network) async {
     final ucidsTokens = await getUcidsTokens();
-    final network = EndpointUtil.getEnvironnement();
 
     switch (network) {
       case 'testnet':

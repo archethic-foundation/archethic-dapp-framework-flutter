@@ -1,6 +1,5 @@
 import 'package:archethic_dapp_framework_flutter/src/domain/models/verified_tokens.dart';
 import 'package:archethic_dapp_framework_flutter/src/infrastructure/verified_tokens.repository.dart';
-import 'package:archethic_dapp_framework_flutter/src/util/endpoint_util.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'verified_tokens.g.dart';
@@ -13,12 +12,11 @@ class _VerifiedTokensNotifier
     return (network: '', verifiedTokensList: <String>[]);
   }
 
-  Future<void> init() async {
-    await _getValue();
+  Future<void> init(String network) async {
+    await _getValue(network);
   }
 
-  Future<void> _getValue() async {
-    final network = EndpointUtil.getEnvironnement();
+  Future<void> _getValue(String network) async {
     final verifiedTokensFromNetwork = await ref
         .watch(_verifiedTokensRepositoryProvider)
         .getVerifiedTokensFromNetwork(network);
