@@ -1,6 +1,10 @@
 Changelog
 =========
 
+#### Version 1.1.15
+* VerifiedTokensNotifier & UcidsTokensNotifier init - Add network in param
+* Fix bugs
+
 #### Version 1.1.14
 * Add new Failures
 
