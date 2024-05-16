@@ -85,7 +85,7 @@ double _coinPriceFromAddress(
   );
   final ucidsList = ref.read(UcidsTokensProviders.ucidsTokens);
 
-  final ucid = ucidsList[address] ?? 0;
+  final ucid = ucidsList[address.toUpperCase()] ?? 0;
   if (ucid != 0) {
     switch (ucid) {
       case 1027:
