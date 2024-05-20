@@ -59,11 +59,13 @@ mixin TransactionMixin {
         transaction: transaction,
         onConfirmation: (confirmation) async {
           if (confirmation.isEnoughConfirmed) {
-            sl.get<LogManager>().log(
-                  'nbConfirmations: ${confirmation.nbConfirmations}, transactionAddress: ${confirmation.transactionAddress}, maxConfirmations: ${confirmation.maxConfirmations}',
-                  level: LogLevel.debug,
-                  name: 'TransactionDexMixin - sendTransactions',
-                );
+            if (kDebugMode) {
+              sl.get<LogManager>().log(
+                    'nbConfirmations: ${confirmation.nbConfirmations}, transactionAddress: ${confirmation.transactionAddress}, maxConfirmations: ${confirmation.maxConfirmations}',
+                    level: LogLevel.debug,
+                    name: 'TransactionDexMixin - sendTransactions',
+                  );
+            }
             transactionRepository.close();
             next = true;
           }

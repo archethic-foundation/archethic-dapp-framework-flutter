@@ -1,6 +1,9 @@
 Changelog
 =========
 
+#### Version 1.1.17
+* Adjust logs
+ 
 #### Version 1.1.16
 * Fix bugs
 
