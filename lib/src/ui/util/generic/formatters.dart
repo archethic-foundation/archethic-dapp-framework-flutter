@@ -95,11 +95,13 @@ class AmountTextInputFormatter extends TextInputFormatter {
     this.decimalSeparator = '.',
     this.thousandsSeparator = ' ',
     this.precision = 2,
+    this.useUnifyDecimalSeparator = true,
   });
 
   final String thousandsSeparator;
   final String decimalSeparator;
   final int precision;
+  final bool useUnifyDecimalSeparator;
 
   @override
   TextEditingValue formatEditUpdate(
@@ -111,8 +113,11 @@ class AmountTextInputFormatter extends TextInputFormatter {
     }
 
     final valueFiltered = TextEditingValue(
-      text:
-          newValue.text.unifyDecimalSeparator().removeIllegalNumberCharacters(),
+      text: useUnifyDecimalSeparator
+          ? newValue.text
+              .unifyDecimalSeparator()
+              .removeIllegalNumberCharacters()
+          : newValue.text.removeIllegalNumberCharacters(),
     );
 
     if (!valueFiltered.text.isValidNumber()) {

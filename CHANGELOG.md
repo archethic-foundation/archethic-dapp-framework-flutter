@@ -1,6 +1,9 @@
 Changelog
 =========
 
+#### Version 1.1.18
+* Add useUnifyDecimalSeparator param in AmountTextInputFormatter
+
 #### Version 1.1.17
 * Adjust logs
  
