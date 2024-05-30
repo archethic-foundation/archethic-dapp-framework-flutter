@@ -7,7 +7,7 @@ part of 'coin_price.dart';
 // **************************************************************************
 
 String _$coinPriceFromAddressHash() =>
-    r'852af160ea8bac86f3de318e7de7d09b81c3b65c';
+    r'd4cf14e2e2e1fd34deef8c581223ffa4061133fc';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -156,7 +156,7 @@ class _CoinPriceFromAddressProviderElement
   String get address => (origin as _CoinPriceFromAddressProvider).address;
 }
 
-String _$coinPriceNotifierHash() => r'99351ec572a0761a7e68fd9a0d549601a5a79b80';
+String _$coinPriceNotifierHash() => r'f94183cf325bd219b2a840ed16c28e692618119d';
 
 /// See also [_CoinPriceNotifier].
 @ProviderFor(_CoinPriceNotifier)

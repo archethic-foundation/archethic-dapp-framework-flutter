@@ -1,6 +1,9 @@
 Changelog
 =========
 
+#### Version 1.1.20
+* Add token EURe info + coin name fixed
+
 #### Version 1.1.19
 * Update Archethic Dart SDK version 3.3.16
 
