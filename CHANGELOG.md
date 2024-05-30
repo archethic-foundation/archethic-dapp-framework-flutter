@@ -1,6 +1,9 @@
 Changelog
 =========
 
+#### Version 1.1.22
+* Fix aeEURe address in ucids_tokens config file
+
 #### Version 1.1.21
 * Add aeEURe in ucids_tokens config file
 
