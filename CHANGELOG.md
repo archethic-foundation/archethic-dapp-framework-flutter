@@ -1,6 +1,9 @@
 Changelog
 =========
 
+#### Version 1.1.21
+* Add aeEURe in ucids_tokens config file
+
 #### Version 1.1.20
 * Add token EURe info + coin name fixed
 
