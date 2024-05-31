@@ -1,6 +1,9 @@
 Changelog
 =========
 
+#### Version 1.1.23
+* Update dependencies
+
 #### Version 1.1.22
 * Fix aeEURe address in ucids_tokens config file
 
