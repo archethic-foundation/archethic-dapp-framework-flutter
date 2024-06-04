@@ -6,6 +6,18 @@ extension FutureResult<ValueT, FailureT extends Exception>
     on Future<Result<ValueT, FailureT>> {
   /// Returns the value if it is a success.
   /// Else, throws the error as an [Exception].
+  ///
+  /// Thanks to this extension, instead of :
+  /// ```dart
+  /// Future<Result<Value, Failure>> result;
+  /// final value = (await result).valueOrThrow;
+  /// ```
+  ///
+  /// You can do :
+  /// ```dart
+  /// Future<Result<Value, Failure>> result;
+  /// final value = await result.valueOrThrow;
+  /// ```
   Future<ValueT> get valueOrThrow async {
     return (await this).valueOrThrow;
   }
@@ -48,9 +60,9 @@ class _VoidSuccess<FailureT extends Exception> implements VoidResult<FailureT> {
   void get valueOrThrow {}
 
   @override
-  FutureOr<T> asyncMap<T>({
-    required FutureOr<T> Function(void value) success,
-    required FutureOr<T> Function(FailureT failure) failure,
+  Future<T> asyncMap<T>({
+    required Future<T> Function(void value) success,
+    required Future<T> Function(FailureT failure) failure,
   }) async =>
       success(null);
 }
@@ -85,9 +97,9 @@ class _VoidFailure<FailureT extends Exception> implements VoidResult<FailureT> {
   }
 
   @override
-  FutureOr<T> asyncMap<T>({
-    required FutureOr<T> Function(void value) success,
-    required FutureOr<T> Function(FailureT failure) failure,
+  Future<T> asyncMap<T>({
+    required Future<T> Function(void value) success,
+    required Future<T> Function(FailureT failure) failure,
   }) async =>
       failure(_failure);
 }
@@ -110,9 +122,9 @@ abstract class Result<ValueT, FailureT extends Exception> {
     required T Function(FailureT failure) failure,
   });
 
-  FutureOr<T> asyncMap<T>({
-    required FutureOr<T> Function(ValueT value) success,
-    required FutureOr<T> Function(FailureT failure) failure,
+  Future<T> asyncMap<T>({
+    required Future<T> Function(ValueT value) success,
+    required Future<T> Function(FailureT failure) failure,
   });
 
   /// Returns the value if it is a success.
@@ -171,9 +183,9 @@ class _Success<ValueT, FailureT extends Exception>
       success(_value);
 
   @override
-  FutureOr<T> asyncMap<T>({
-    required FutureOr<T> Function(ValueT value) success,
-    required FutureOr<T> Function(FailureT failure) failure,
+  Future<T> asyncMap<T>({
+    required Future<T> Function(ValueT value) success,
+    required Future<T> Function(FailureT failure) failure,
   }) async =>
       success(_value);
 }
@@ -207,9 +219,9 @@ class _Failure<ValueT, FailureT extends Exception>
       failure(_failure);
 
   @override
-  FutureOr<T> asyncMap<T>({
-    required FutureOr<T> Function(ValueT value) success,
-    required FutureOr<T> Function(FailureT failure) failure,
+  Future<T> asyncMap<T>({
+    required Future<T> Function(ValueT value) success,
+    required Future<T> Function(FailureT failure) failure,
   }) async =>
       failure(_failure);
 }
