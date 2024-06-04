@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:archethic_dapp_framework_flutter/src/domain/models/failures.dart';
 import 'package:flutter/foundation.dart';
 
@@ -57,6 +58,13 @@ class _VoidSuccess<FailureT extends Exception> implements VoidResult<FailureT> {
 
   @override
   void get valueOrThrow {}
+
+  @override
+  Future<T> asyncMap<T>({
+    required Future<T> Function(void value) success,
+    required Future<T> Function(FailureT failure) failure,
+  }) async =>
+      success(null);
 }
 
 class _VoidFailure<FailureT extends Exception> implements VoidResult<FailureT> {
@@ -87,6 +95,13 @@ class _VoidFailure<FailureT extends Exception> implements VoidResult<FailureT> {
   void get valueOrThrow {
     throw _failure;
   }
+
+  @override
+  Future<T> asyncMap<T>({
+    required Future<T> Function(void value) success,
+    required Future<T> Function(FailureT failure) failure,
+  }) async =>
+      failure(_failure);
 }
 
 /// An operation's result.
@@ -105,6 +120,11 @@ abstract class Result<ValueT, FailureT extends Exception> {
   T map<T>({
     required T Function(ValueT value) success,
     required T Function(FailureT failure) failure,
+  });
+
+  Future<T> asyncMap<T>({
+    required Future<T> Function(ValueT value) success,
+    required Future<T> Function(FailureT failure) failure,
   });
 
   /// Returns the value if it is a success.
@@ -161,6 +181,13 @@ class _Success<ValueT, FailureT extends Exception>
     required T Function(FailureT failure) failure,
   }) =>
       success(_value);
+
+  @override
+  Future<T> asyncMap<T>({
+    required Future<T> Function(ValueT value) success,
+    required Future<T> Function(FailureT failure) failure,
+  }) async =>
+      success(_value);
 }
 
 class _Failure<ValueT, FailureT extends Exception>
@@ -189,5 +216,12 @@ class _Failure<ValueT, FailureT extends Exception>
     required T Function(ValueT value) success,
     required T Function(FailureT failure) failure,
   }) =>
+      failure(_failure);
+
+  @override
+  Future<T> asyncMap<T>({
+    required Future<T> Function(ValueT value) success,
+    required Future<T> Function(FailureT failure) failure,
+  }) async =>
       failure(_failure);
 }
