@@ -1,5 +1,7 @@
 Changelog
 =========
+#### Version 1.1.24
+* `Result` class. Support asynchronous callbacks in map method 
 
 #### Version 1.1.23
 * Update dependencies
