@@ -1,5 +1,8 @@
 Changelog
 =========
+#### Version 1.1.25
+* Add aeEURe mainnet in ucids_tokens config file
+
 #### Version 1.1.24
 * `Result` class. Support asynchronous callbacks in map method 
 
