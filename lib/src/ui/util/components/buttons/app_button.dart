@@ -13,7 +13,7 @@ class AppButton extends StatefulWidget {
     this.onPressed,
     this.height = 40,
     this.disabled = false,
-    this.background = const Color(0xFF3D1D63),
+    this.background,
     this.fontSize = 16,
     this.dimens = Dimens.buttonDimens,
   });
@@ -21,7 +21,7 @@ class AppButton extends StatefulWidget {
   final Function? onPressed;
   final bool disabled;
   final double height;
-  final Color background;
+  final Color? background;
   final double fontSize;
   final List<double> dimens;
 
@@ -53,10 +53,13 @@ class AppButtonState extends State<AppButton> {
     return Container(
       alignment: Alignment.center,
       height: widget.height,
-      decoration: ShapeDecoration(
-        gradient: AppThemeBase.gradientBtn,
-        shape: const StadiumBorder(),
-      ),
+      decoration: widget.background == null
+          ? ShapeDecoration(
+              gradient: AppThemeBase.gradientBtn,
+              shape: const StadiumBorder(),
+            )
+          : null,
+      color: widget.background,
       margin: EdgeInsetsDirectional.fromSTEB(
         widget.dimens[0],
         widget.dimens[1],
