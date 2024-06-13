@@ -56,14 +56,6 @@ class AppButtonState extends State<AppButton> {
       decoration: ShapeDecoration(
         gradient: AppThemeBase.gradientBtn,
         shape: const StadiumBorder(),
-        shadows: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.5),
-            blurRadius: 7,
-            spreadRadius: 1,
-            offset: const Offset(0, 5),
-          ),
-        ],
       ),
       margin: EdgeInsetsDirectional.fromSTEB(
         widget.dimens[0],
