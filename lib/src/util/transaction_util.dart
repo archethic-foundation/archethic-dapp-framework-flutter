@@ -89,7 +89,7 @@ mixin TransactionMixin {
               errorDetail = 'Insufficient funds';
             },
             other: (error) {
-              errorDetail = error.message;
+              errorDetail = error.messageLabel;
             },
             orElse: () {
               errorDetail = 'An error is occured';

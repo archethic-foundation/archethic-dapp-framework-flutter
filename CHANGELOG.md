@@ -1,5 +1,9 @@
 Changelog
 =========
+#### Version 1.2.0
+* BREAKING CHANGES: Handle custom errors codes/messages in Dart SDK
+* UI Adjustements
+
 #### Version 1.1.25
 * Add aeEURe mainnet in ucids_tokens config file
 

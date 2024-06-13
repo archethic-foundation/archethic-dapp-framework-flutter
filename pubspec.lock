@@ -37,10 +37,10 @@ packages:
     dependency: "direct main"
     description:
       name: archethic_lib_dart
-      sha256: "34654e90c7cfdc326f8bdeea396c18eb34dba9109838ac15d2de5f58184c38c6"
+      sha256: ecdf2e5619725f4f5ca4f2ce6a35b3ac99fa8ca46ec2bac4b2ed6990b350cbfe
       url: "https://pub.dev"
     source: hosted
-    version: "3.3.18"
+    version: "3.4.0"
   archethic_wallet_client:
     dependency: "direct main"
     description:
@@ -372,10 +372,10 @@ packages:
     dependency: transitive
     description:
       name: gql
-      sha256: "5b011ec89d08eede5a33518b7195b1b0fa1be543f82e16848d185e9042513504"
+      sha256: "8ecd3585bb9e40d671aa58f52575d950670f99e5ffab18e2b34a757e071a6693"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.1-alpha+1715931674451"
+    version: "1.0.1-alpha+1717789143880"
   gql_dedupe_link:
     dependency: transitive
     description:
@@ -404,18 +404,18 @@ packages:
     dependency: transitive
     description:
       name: gql_http_link
-      sha256: "1f922eed1b7078fdbfd602187663026f9f659fe9a9499e2207b5d5e01617f658"
+      sha256: ef6ad24d31beb5a30113e9b919eec20876903cc4b0ee0d31550047aaaba7d5dd
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.1+1"
+    version: "1.1.0"
   gql_link:
     dependency: transitive
     description:
       name: gql_link
-      sha256: a0dae65d022285564ad333763a6988a603d6b9a075760ae178d6d22586bd342b
+      sha256: "70fd5b5cbcc50601679f4b9fea3bcc994e583f59cfec7e1fec11113074b1a565"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.1-alpha+1715521079517"
+    version: "1.0.1-alpha+1717789143896"
   gql_transform_link:
     dependency: transitive
     description:
@@ -700,10 +700,10 @@ packages:
     dependency: transitive
     description:
       name: platform
-      sha256: "12220bb4b65720483f8fa9450b4332347737cf8213dd2840d8b2c823e47243ec"
+      sha256: "9b71283fc13df574056616011fb138fd3b793ea47cc509c189a6c3fa5f8a1a65"
       url: "https://pub.dev"
     source: hosted
-    version: "3.1.4"
+    version: "3.1.5"
   plugin_platform_interface:
     dependency: transitive
     description:
