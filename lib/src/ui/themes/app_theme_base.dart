@@ -9,7 +9,7 @@ class AppThemeBase {
 
   static Color primaryColor = ArchethicThemeBase.purple500;
   static Color secondaryColor = ArchethicThemeBase.raspberry300;
-  static Color backgroundColor = ArchethicThemeBase.neutral900;
+  static Color backgroundColor = ArchethicThemeBase.darkenedBackground;
   static Color maxButtonColor = ArchethicThemeBase.raspberry300;
   static Color halfButtonColor = ArchethicThemeBase.raspberry300;
   static Color backgroundPopupColor = ArchethicThemeBase.purple500;

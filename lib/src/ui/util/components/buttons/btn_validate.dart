@@ -12,7 +12,7 @@ class ButtonValidate extends ConsumerWidget {
     required this.onPressed,
     required this.isConnected,
     required this.displayWalletConnectOnPressed,
-    this.background = const Color(0xFF3D1D63),
+    this.backgroundGradient,
     this.height = 40,
     this.fontSize = 16,
     this.displayWalletConnect = false,
@@ -23,7 +23,7 @@ class ButtonValidate extends ConsumerWidget {
   final bool controlOk;
   final String labelBtn;
   final Function onPressed;
-  final Color background;
+  final Gradient? backgroundGradient;
   final double height;
   final double fontSize;
   final bool displayWalletConnect;
@@ -44,7 +44,7 @@ class ButtonValidate extends ConsumerWidget {
 
     if (controlOk == false) {
       return AppButton(
-        background: background,
+        backgroundGradient: backgroundGradient,
         labelBtn: labelBtn,
         disabled: true,
         height: height,
@@ -54,7 +54,7 @@ class ButtonValidate extends ConsumerWidget {
     }
 
     return AppButton(
-      background: background,
+      backgroundGradient: backgroundGradient,
       labelBtn: labelBtn,
       onPressed: onPressed,
       height: height,

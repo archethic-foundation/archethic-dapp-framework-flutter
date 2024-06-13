@@ -16,9 +16,7 @@ class AppBackground extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
-          color: Colors.black,
-        ),
+        Container(color: AppThemeBase.backgroundColor),
         Container(
           decoration: BoxDecoration(
             image: DecorationImage(

@@ -7,7 +7,7 @@ class ButtonConfirm extends StatelessWidget {
   const ButtonConfirm({
     required this.labelBtn,
     required this.onPressed,
-    this.background = const Color(0xFF3D1D63),
+    this.backgroundGradient,
     this.disabled = false,
     this.dimens = Dimens.buttonDimens,
     super.key,
@@ -15,14 +15,14 @@ class ButtonConfirm extends StatelessWidget {
 
   final String labelBtn;
   final Function onPressed;
-  final Color background;
+  final Gradient? backgroundGradient;
   final bool disabled;
   final List<double> dimens;
 
   @override
   Widget build(BuildContext context) {
     return AppButton(
-      background: background,
+      backgroundGradient: backgroundGradient,
       labelBtn: labelBtn,
       onPressed: onPressed,
       disabled: disabled,

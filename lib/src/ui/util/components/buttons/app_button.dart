@@ -13,16 +13,18 @@ class AppButton extends StatefulWidget {
     this.onPressed,
     this.height = 40,
     this.disabled = false,
-    this.background,
+    this.backgroundGradient,
     this.fontSize = 16,
+    this.textColor,
     this.dimens = Dimens.buttonDimens,
   });
   final String labelBtn;
   final Function? onPressed;
   final bool disabled;
   final double height;
-  final Color? background;
+  final Gradient? backgroundGradient;
   final double fontSize;
+  final Color? textColor;
   final List<double> dimens;
 
   @override
@@ -53,13 +55,10 @@ class AppButtonState extends State<AppButton> {
     return Container(
       alignment: Alignment.center,
       height: widget.height,
-      decoration: widget.background == null
-          ? ShapeDecoration(
-              gradient: AppThemeBase.gradientBtn,
-              shape: const StadiumBorder(),
-            )
-          : null,
-      color: widget.background,
+      decoration: ShapeDecoration(
+        gradient: widget.backgroundGradient ?? AppThemeBase.gradientBtn,
+        shape: const StadiumBorder(),
+      ),
       margin: EdgeInsetsDirectional.fromSTEB(
         widget.dimens[0],
         widget.dimens[1],
@@ -88,16 +87,20 @@ class AppButtonState extends State<AppButton> {
                 textAlign: TextAlign.center,
                 stepGranularity: 0.5,
                 style: TextStyle(
-                  color: widget.disabled
-                      ? ArchethicThemeBase.neutral0.withOpacity(0.3)
-                      : ArchethicThemeBase.neutral0,
+                  color: widget.textColor == null
+                      ? widget.disabled
+                          ? ArchethicThemeBase.neutral0.withOpacity(0.3)
+                          : ArchethicThemeBase.neutral0
+                      : widget.disabled
+                          ? widget.textColor!.withOpacity(0.3)
+                          : widget.textColor,
                   fontSize: Responsive.fontSizeFromValue(
                     context,
                     desktopValue: widget.fontSize,
                     ratioMobile: 1,
                     ratioTablet: 1,
                   ),
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w400,
                 ),
                 maxLines: 1,
               ),

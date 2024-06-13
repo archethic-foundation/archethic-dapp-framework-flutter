@@ -10,19 +10,19 @@ class ButtonClose extends ConsumerWidget {
     required this.onPressed,
     this.fontSize = 16,
     super.key,
-    this.background = const Color(0xFF3D1D63),
+    this.backgroundGradient,
     this.dimens = Dimens.buttonDimens,
   });
 
   final VoidCallback onPressed;
-  final Color background;
+  final Gradient? backgroundGradient;
   final double fontSize;
   final List<double> dimens;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return AppButton(
-      background: background,
+      backgroundGradient: backgroundGradient,
       labelBtn: AppLocalizations.of(context)!.aedappfm_btn_close,
       onPressed: onPressed,
       fontSize: fontSize,
