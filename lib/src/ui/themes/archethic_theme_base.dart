@@ -53,6 +53,11 @@ class ArchethicThemeBase {
   static Color dropdownBackgroundBorder =
       const HSLColor.fromAHSL(1, 255, 0.2, 0.225).toColor();
 
+  static Color canvasBackground =
+      const HSLColor.fromAHSL(1, 250, 1, 0.0225).toColor();
+  static Color darkenedBackground =
+      const HSLColor.fromAHSL(1, 250, 1, 0.04).toColor();
+
   // Cards
   // - Transparent
   static Color paleTransparentBackground =
@@ -122,4 +127,23 @@ class ArchethicThemeBase {
       const HSLColor.fromAHSL(1, 140, 0.8, 0.5).toColor();
   static Color systemPositive600 =
       const HSLColor.fromAHSL(1, 140, 0.8, 0.4).toColor();
+
+  /// Gradients
+  static LinearGradient get gradientLightToDarkBlue => LinearGradient(
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        colors: [
+          ArchethicThemeBase.purple800,
+          ArchethicThemeBase.purple500,
+        ],
+      );
+
+  static LinearGradient get gradientDarkToLightBlue => LinearGradient(
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        colors: [
+          ArchethicThemeBase.purple500,
+          const HSLColor.fromAHSL(1, 240, 0.39, 0.12).toColor(),
+        ],
+      );
 }
