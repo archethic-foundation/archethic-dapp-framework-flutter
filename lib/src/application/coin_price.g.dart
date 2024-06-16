@@ -6,8 +6,24 @@ part of 'coin_price.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+String _$coinPriceRepositoryHash() =>
+    r'd571b12cd0c140f89007d4b6ce9b11a5a0caa01f';
+
+/// See also [_coinPriceRepository].
+@ProviderFor(_coinPriceRepository)
+final _coinPriceRepositoryProvider = Provider<CoinPriceRepositoryImpl>.internal(
+  _coinPriceRepository,
+  name: r'_coinPriceRepositoryProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$coinPriceRepositoryHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef _CoinPriceRepositoryRef = ProviderRef<CoinPriceRepositoryImpl>;
 String _$coinPriceFromAddressHash() =>
-    r'd4cf14e2e2e1fd34deef8c581223ffa4061133fc';
+    r'51a4e40e9f512b16cae706118ccd1e77cc4ca99a';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -156,7 +172,7 @@ class _CoinPriceFromAddressProviderElement
   String get address => (origin as _CoinPriceFromAddressProvider).address;
 }
 
-String _$coinPriceNotifierHash() => r'f94183cf325bd219b2a840ed16c28e692618119d';
+String _$coinPriceNotifierHash() => r'c2146a769b108b892ee8df3a26acb362ca8b25e7';
 
 /// See also [_CoinPriceNotifier].
 @ProviderFor(_CoinPriceNotifier)
