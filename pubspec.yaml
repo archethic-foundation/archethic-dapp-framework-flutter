@@ -46,6 +46,9 @@ dependencies:
   # Simple direct Service Locator that allows to decouple the interface from a concrete implementation and to access the concrete implementation from everywhere in your App
   get_it: ^7.6.7
 
+  # Gradient borders for inputs and containers. Borders package integrated with a basic flutter widgets as a container and input decorations. Easy in use, platform independent.
+  gradient_borders: ^1.0.0
+
   # Hive is a lightweight and blazing fast key-value database written in pure Dart
   hive: ^2.2.3
   hive_flutter: ^1.1.0
@@ -95,3 +98,4 @@ flutter:
   assets:
     - lib/src/domain/repositories/tokens/verified_tokens.json
     - lib/src/domain/repositories/tokens/ucids_tokens.json
+    - lib/src/domain/repositories/tokens/def_tokens.json
