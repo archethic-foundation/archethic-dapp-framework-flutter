@@ -9,6 +9,8 @@
 .history
 .svn/
 migrate_working_dir/
+pubspec_overrides.yaml
+.dart_tool/
 
 # IntelliJ related
 *.iml
