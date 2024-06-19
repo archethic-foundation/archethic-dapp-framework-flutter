@@ -1,5 +1,8 @@
 Changelog
 =========
+#### Version 1.2.1
+* refactor: Use archethic_wallet_client 2.0.0
+
 #### Version 1.2.0
 * BREAKING CHANGES: Handle custom errors codes/messages in Dart SDK
 * UI Adjustements
