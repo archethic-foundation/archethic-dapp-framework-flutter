@@ -116,13 +116,19 @@ mixin TransactionMixin {
   ) async {
     final newTransactions = <Transaction>[];
 
-    final payload = {
-      'serviceName': serviceName,
-      'pathSuffix': pathSuffix,
-      'transactions': List<dynamic>.from(
-        transactions.map((Transaction x) => x.toJson()),
-      ),
-    };
+    final payload = awc.SignTransactionRequest(
+      serviceName: serviceName,
+      pathSuffix: pathSuffix,
+      transactions: transactions
+          .map(
+            (Transaction x) => awc.SignTransactionRequestData(
+              data: x.data!,
+              type: x.type!,
+              version: x.version,
+            ),
+          )
+          .toList(),
+    );
 
     final result =
         await sl.get<awc.ArchethicDAppClient>().signTransactions(payload);
@@ -133,7 +139,6 @@ mixin TransactionMixin {
         }
         throw Failure.other(
           cause: failure.message,
-          stack: failure.stack.toString(),
         );
       },
       success: (result) {
