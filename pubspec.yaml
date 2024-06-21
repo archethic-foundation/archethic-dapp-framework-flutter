@@ -9,6 +9,7 @@ environment:
 
 dependencies:
   # Archethic dart library for Flutter based on Official Archethic Javascript library for Node and Browser
+
   archethic_lib_dart: ^3.4.2
   #archethic_lib_dart:
   #  git:
