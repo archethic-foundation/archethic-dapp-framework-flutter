@@ -1,5 +1,8 @@
 Changelog
 =========
+#### Version 1.2.2
+* Update dependencies
+
 #### Version 1.2.1
 * refactor: Use archethic_wallet_client 2.0.0
 

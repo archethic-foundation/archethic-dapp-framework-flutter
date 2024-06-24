@@ -45,10 +45,10 @@ packages:
     dependency: "direct main"
     description:
       name: archethic_wallet_client
-      sha256: "207e5351c0d13b8e6a853127c8cab26bac881a7ec1b99a6e2ef57c0a4547948c"
+      sha256: "94343bdb2b602fe8e4c9f3c558f0295663efef76714ebac22a37497618d87f65"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.0"
+    version: "2.0.1"
   archive:
     dependency: "direct main"
     description:
@@ -245,10 +245,10 @@ packages:
     dependency: transitive
     description:
       name: deeplink_rpc
-      sha256: eefff517ccc79f26b4414fc3387932d49f80248640ebfbf8331d4a998531d1d9
+      sha256: e08e6422913fcdb12b5243ba6f622c841e523ed0577a6442fe90f7ccd6652901
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.6"
+    version: "1.0.8"
   ecdsa:
     dependency: transitive
     description:
