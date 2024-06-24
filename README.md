@@ -26,5 +26,5 @@ For example: `import 'package:archethic_dapp_framework_flutter/archethic-dapp-fr
 
 ### Pre-requisites
 
-- Flutter 3.19+
-- Dart 3.3+
+- Flutter 3.22+
+- Dart 3.4+
