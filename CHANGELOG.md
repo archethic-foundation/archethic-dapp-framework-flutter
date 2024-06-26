@@ -1,8 +1,12 @@
 Changelog
 =========
 
-#### Version 1.2.2
+#### Version 1.2.4
+* Update dependencies
+
+#### Version 1.2.3
 * Migration to flutter 3.22
+
 #### Version 1.2.2
 * Update dependencies
 
