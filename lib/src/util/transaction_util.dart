@@ -112,13 +112,15 @@ mixin TransactionMixin {
   Future<List<Transaction>> signTx(
     String serviceName,
     String pathSuffix,
-    List<Transaction> transactions,
-  ) async {
+    List<Transaction> transactions, {
+    Map<String, dynamic>? description,
+  }) async {
     final newTransactions = <Transaction>[];
 
     final payload = awc.SignTransactionRequest(
       serviceName: serviceName,
       pathSuffix: pathSuffix,
+      description: description ?? {},
       transactions: transactions
           .map(
             (Transaction x) => awc.SignTransactionRequestData(
