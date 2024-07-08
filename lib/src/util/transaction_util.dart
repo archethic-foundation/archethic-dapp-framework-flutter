@@ -90,6 +90,12 @@ mixin TransactionMixin {
             },
             other: (error) {
               errorDetail = error.messageLabel;
+              if (error.data != null) {
+                final data = error.data! as Map<String, dynamic>;
+                if (data['data'] != null && data['data']['message'] != null) {
+                  errorDetail = data['data']['message'];
+                }
+              }
             },
             orElse: () {
               errorDetail = 'An error is occured';
