@@ -39,7 +39,6 @@ class PopupCloseButton extends StatelessWidget {
 
           return showDialog(
             context: context,
-            barrierDismissible: true,
             builder: (context) {
               return PopupTemplate(
                 displayCloseButton: false,
