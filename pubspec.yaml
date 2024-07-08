@@ -86,6 +86,8 @@ dev_dependencies:
   json_serializable: ^6.7.1
   # A code generator for Riverpod. This both simplifies the syntax empowers it, such as allowing stateful hot-reload.
   riverpod_generator: ^2.4.0
+  # Automated tests
+  test: ^1.25.2
 
 flutter:
   generate: true
