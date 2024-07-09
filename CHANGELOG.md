@@ -3,6 +3,7 @@ Changelog
 
 #### Version 1.2.5
 * Add description in RPC sign tx method
+* Fix PeriodicFuture class
 
 #### Version 1.2.4
 * Update dependencies
