@@ -1,6 +1,9 @@
 Changelog
 =========
 
+#### Version 1.2.6
+* Add color params in SingleCard widget
+
 #### Version 1.2.5
 * Add description in RPC sign tx method
 * Fix PeriodicFuture class
