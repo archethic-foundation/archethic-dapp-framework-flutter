@@ -1,6 +1,9 @@
 Changelog
 =========
 
+#### Version 1.2.7
+* Update dependencies
+
 #### Version 1.2.6
 * Add color params in SingleCard widget
 
