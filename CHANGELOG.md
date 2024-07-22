@@ -1,5 +1,7 @@
 Changelog
 =========
+#### Version 1.2.8
+* Update dependencies
 
 #### Version 1.2.7
 * Update dependencies
