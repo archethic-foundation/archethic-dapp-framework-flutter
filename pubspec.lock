@@ -44,11 +44,22 @@ packages:
   archethic_wallet_client:
     dependency: "direct main"
     description:
+<<<<<<< HEAD
       name: archethic_wallet_client
       sha256: "69bd1dbd85035554e930339d9c03a0fd12ba161003090435fc4d750c366f0595"
       url: "https://pub.dev"
     source: hosted
+<<<<<<< HEAD
     version: "2.0.8"
+=======
+    version: "2.0.7"
+=======
+      path: "../archethic-wallet-client-dart"
+      relative: true
+    source: path
+    version: "2.0.4"
+>>>>>>> f872e4c (chore: :bug: Fix Oracle subscription)
+>>>>>>> 29d1774 (chore: :bug: Fix Oracle subscription)
   archive:
     dependency: "direct main"
     description:
