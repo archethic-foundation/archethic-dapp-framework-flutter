@@ -26,7 +26,7 @@ class DefTokensRepositoryImpl implements DefTokensRepositoryInterface {
             address.toUpperCase()) {
           defToken = AEToken(
             name: token['name'],
-            coingeckoCoinId: token['coingeckoCoinId'],
+            ucid: token['ucid'],
             icon: token['icon'],
             address: token['address'].toString().toUpperCase(),
             symbol: token['symbol'],

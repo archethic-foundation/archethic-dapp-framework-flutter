@@ -6,14 +6,14 @@
                 "symbol": "UCO",
                 "address": "UCO",
                 "icon": "Archethic.svg",
-                "coingeckoCoinId": "archethic"
+                "ucid": 6887
             },
             {
                 "name": "Wrapped Ether",
                 "symbol": "aeETH",
                 "address": "0000FA3D1170A5069BA06C558905C9619FB66F7F4CB48D7A4323C9DC40F4D07E9BC1",
                 "icon": "Ethereum.svg",
-                "coingeckoCoinId": "ethereum"
+                "ucid": 1027
             }
         ],
         "testnet": [
@@ -22,35 +22,35 @@
                 "symbol": "UCO",
                 "address": "UCO",
                 "icon": "Archethic.svg",
-                "coingeckoCoinId": "archethic"
+                "ucid": 6887
             },
             {
                 "name": "Wrapped Ether",
                 "symbol": "aeETH",
                 "address": "00003DF600E329199BF3EE8FBE2B8223413D70BCDD97E15089E6A74D94DE3F1173B4",
                 "icon": "Ethereum.svg",
-                "coingeckoCoinId": "ethereum"
+                "ucid": 1027
             },
             {
                 "name": "Wrapped Polygon",
                 "symbol": "aeMATIC",
                 "address": "00001A4AB7AD0CE2B494C965C66FF2962692A5FE5ECB71B345ABB53BAD88A83A01F1",
                 "icon": "Matic.svg",
-                "coingeckoCoinId": "matic-network"
+                "ucid": 3890
             },
             {
                 "name": "Wrapped BNB",
                 "symbol": "aeBNB",
                 "address": "0000288BF6F0E12457B125DC54D2DFA4EB010BE3073CF02E10FB79B696180F55B827",
                 "icon": "BNB.svg",
-                "coingeckoCoinId": "binancecoin"
+                "ucid": 1839
             },
             {
                 "name": "Archethic aeEURe",
                 "symbol": "aeEURe",
                 "address": "00001ED63AC2850CEA282D3D0CA5047418BC2720CB49D15B611D2845611F605716A1",
                 "icon": "EURe.svg",
-                "coingeckoCoinId": "monerium-eur-money"
+                "ucid": 20920
             }
         ],
         "mainnet": [
@@ -59,21 +59,21 @@
                 "symbol": "UCO",
                 "address": "UCO",
                 "icon": "Archethic.svg",
-                "coingeckoCoinId": "archethic"
+                "ucid": 6887
             },
             {
                 "name": "Wrapped Ether",
                 "symbol": "aeETH",
                 "address": "0000457eaca7fbaa96db4a8d506a0b69684f546166fbf3c55391b1461907efa58eaf",
                 "icon": "Ethereum.svg",
-                "coingeckoCoinId": "ethereum"
+                "ucid": 1027
             },
             {
                 "name": "Archethic aeEURe",
                 "symbol": "aeEURe",
                 "address": "00005751A05BA007E7E2518DEA171DBBD67B0527C637232F923830C39BFF9E8F159A",
                 "icon": "EURe.svg",
-                "coingeckoCoinId": "monerium-eur-money"
+                "ucid": 20920
             }
         ]
     }

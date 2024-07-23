@@ -23,7 +23,6 @@ mixin _$AEToken {
   String get name => throw _privateConstructorUsedError;
   String? get address => throw _privateConstructorUsedError;
   String? get icon => throw _privateConstructorUsedError;
-  String? get coingeckoCoinId => throw _privateConstructorUsedError;
   String get symbol => throw _privateConstructorUsedError;
   double get balance => throw _privateConstructorUsedError;
   double get reserve => throw _privateConstructorUsedError;
@@ -48,7 +47,6 @@ abstract class $AETokenCopyWith<$Res> {
       {String name,
       String? address,
       String? icon,
-      String? coingeckoCoinId,
       String symbol,
       double balance,
       double reserve,
@@ -77,7 +75,6 @@ class _$AETokenCopyWithImpl<$Res, $Val extends AEToken>
     Object? name = null,
     Object? address = freezed,
     Object? icon = freezed,
-    Object? coingeckoCoinId = freezed,
     Object? symbol = null,
     Object? balance = null,
     Object? reserve = null,
@@ -99,10 +96,6 @@ class _$AETokenCopyWithImpl<$Res, $Val extends AEToken>
       icon: freezed == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
-              as String?,
-      coingeckoCoinId: freezed == coingeckoCoinId
-          ? _value.coingeckoCoinId
-          : coingeckoCoinId // ignore: cast_nullable_to_non_nullable
               as String?,
       symbol: null == symbol
           ? _value.symbol
@@ -163,7 +156,6 @@ abstract class _$$AETokenImplCopyWith<$Res> implements $AETokenCopyWith<$Res> {
       {String name,
       String? address,
       String? icon,
-      String? coingeckoCoinId,
       String symbol,
       double balance,
       double reserve,
@@ -191,7 +183,6 @@ class __$$AETokenImplCopyWithImpl<$Res>
     Object? name = null,
     Object? address = freezed,
     Object? icon = freezed,
-    Object? coingeckoCoinId = freezed,
     Object? symbol = null,
     Object? balance = null,
     Object? reserve = null,
@@ -213,10 +204,6 @@ class __$$AETokenImplCopyWithImpl<$Res>
       icon: freezed == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
-              as String?,
-      coingeckoCoinId: freezed == coingeckoCoinId
-          ? _value.coingeckoCoinId
-          : coingeckoCoinId // ignore: cast_nullable_to_non_nullable
               as String?,
       symbol: null == symbol
           ? _value.symbol
@@ -261,7 +248,6 @@ class _$AETokenImpl extends _AEToken {
       {this.name = '',
       this.address,
       this.icon,
-      this.coingeckoCoinId,
       this.symbol = '',
       this.balance = 0.0,
       this.reserve = 0.0,
@@ -282,8 +268,6 @@ class _$AETokenImpl extends _AEToken {
   final String? address;
   @override
   final String? icon;
-  @override
-  final String? coingeckoCoinId;
   @override
   @JsonKey()
   final String symbol;
@@ -310,7 +294,7 @@ class _$AETokenImpl extends _AEToken {
 
   @override
   String toString() {
-    return 'AEToken(name: $name, address: $address, icon: $icon, coingeckoCoinId: $coingeckoCoinId, symbol: $symbol, balance: $balance, reserve: $reserve, supply: $supply, isVerified: $isVerified, isLpToken: $isLpToken, lpTokenPair: $lpTokenPair, ucid: $ucid)';
+    return 'AEToken(name: $name, address: $address, icon: $icon, symbol: $symbol, balance: $balance, reserve: $reserve, supply: $supply, isVerified: $isVerified, isLpToken: $isLpToken, lpTokenPair: $lpTokenPair, ucid: $ucid)';
   }
 
   @override
@@ -321,8 +305,6 @@ class _$AETokenImpl extends _AEToken {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.icon, icon) || other.icon == icon) &&
-            (identical(other.coingeckoCoinId, coingeckoCoinId) ||
-                other.coingeckoCoinId == coingeckoCoinId) &&
             (identical(other.symbol, symbol) || other.symbol == symbol) &&
             (identical(other.balance, balance) || other.balance == balance) &&
             (identical(other.reserve, reserve) || other.reserve == reserve) &&
@@ -338,20 +320,8 @@ class _$AETokenImpl extends _AEToken {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      name,
-      address,
-      icon,
-      coingeckoCoinId,
-      symbol,
-      balance,
-      reserve,
-      supply,
-      isVerified,
-      isLpToken,
-      lpTokenPair,
-      ucid);
+  int get hashCode => Object.hash(runtimeType, name, address, icon, symbol,
+      balance, reserve, supply, isVerified, isLpToken, lpTokenPair, ucid);
 
   @JsonKey(ignore: true)
   @override
@@ -372,7 +342,6 @@ abstract class _AEToken extends AEToken {
       {final String name,
       final String? address,
       final String? icon,
-      final String? coingeckoCoinId,
       final String symbol,
       final double balance,
       final double reserve,
@@ -391,8 +360,6 @@ abstract class _AEToken extends AEToken {
   String? get address;
   @override
   String? get icon;
-  @override
-  String? get coingeckoCoinId;
   @override
   String get symbol;
   @override

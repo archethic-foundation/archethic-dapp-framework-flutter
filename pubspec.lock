@@ -45,6 +45,7 @@ packages:
     dependency: "direct main"
     description:
 <<<<<<< HEAD
+<<<<<<< HEAD
       name: archethic_wallet_client
       sha256: "69bd1dbd85035554e930339d9c03a0fd12ba161003090435fc4d750c366f0595"
       url: "https://pub.dev"
@@ -59,7 +60,17 @@ packages:
     source: path
     version: "2.0.4"
 >>>>>>> f872e4c (chore: :bug: Fix Oracle subscription)
+<<<<<<< HEAD
 >>>>>>> 29d1774 (chore: :bug: Fix Oracle subscription)
+=======
+=======
+      name: archethic_wallet_client
+      sha256: "42354078ff5838186939b7a263ae97724cdd388a497f7c7bf31e8029eef35bb2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.5"
+>>>>>>> da25654 (feat: :sparkles: Use fetch-api-service instead of coingecko)
+>>>>>>> 2629b2e (feat: :sparkles: Use fetch-api-service instead of coingecko)
   archive:
     dependency: "direct main"
     description:

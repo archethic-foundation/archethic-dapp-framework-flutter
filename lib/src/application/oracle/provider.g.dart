@@ -7,7 +7,7 @@ part of 'provider.dart';
 // **************************************************************************
 
 String _$archethicOracleUCONotifierHash() =>
-    r'379fa7582c4e0daaf39096b8d50afc24a5c05e6e';
+    r'3e00e9755feb11604891177d31c5f8bcb4544589';
 
 /// See also [_ArchethicOracleUCONotifier].
 @ProviderFor(_ArchethicOracleUCONotifier)
