@@ -24,7 +24,6 @@ class AEToken with _$AEToken {
     @Default('') String name,
     String? address,
     String? icon,
-    String? coingeckoCoinId,
     @Default('') String symbol,
     @Default(0.0) double balance,
     @Default(0.0) double reserve,
