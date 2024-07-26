@@ -223,6 +223,45 @@ mixin TransactionMixin {
     return;
   }
 
+  Future<bool> isSCCallExecuted(
+    String contractAddress,
+    String txAddress,
+  ) async {
+    var executed = false;
+    final apiService = sl.get<ApiService>();
+
+    final transactionChainResult = await apiService.getTransactionChain(
+      {contractAddress: ''},
+      orderAsc: false,
+      request:
+          'validationStamp {ledgerOperations { consumedInputs { from, type } } }',
+    );
+
+    if (transactionChainResult[contractAddress] != null) {
+      final transactions = transactionChainResult[contractAddress];
+      for (final transaction in transactions!) {
+        if (transaction.validationStamp != null &&
+            transaction.validationStamp!.ledgerOperations != null &&
+            transaction
+                .validationStamp!.ledgerOperations!.consumedInputs.isNotEmpty) {
+          for (final consumedInput in transaction
+              .validationStamp!.ledgerOperations!.consumedInputs) {
+            if (consumedInput.type == 'call' &&
+                consumedInput.from != null &&
+                consumedInput.from!.toUpperCase() == txAddress.toUpperCase()) {
+              executed = true;
+              break;
+            }
+          }
+        }
+        if (executed) {
+          break;
+        }
+      }
+    }
+    return executed;
+  }
+
   Future<double> getAmountFromTxInput(
     String txAddress,
     String? tokenAddress,

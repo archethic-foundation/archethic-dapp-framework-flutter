@@ -1,5 +1,8 @@
 Changelog
 =========
+#### Version 1.2.9
+* Add `TransactionUtil.isSCCallExecuted` method to check is a SC has been executed 
+
 #### Version 1.2.8
 * Update dependencies
 
