@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:developer' as dev;
+
 import 'package:archethic_dapp_framework_flutter/src/domain/models/failures.dart';
 import 'package:archethic_dapp_framework_flutter/src/util/custom_logs.dart';
 import 'package:archethic_dapp_framework_flutter/src/util/generic/get_it_instance.dart';
@@ -191,16 +192,11 @@ mixin TransactionMixin {
 
     // TODO(a): remove the try catch, not mandatory but I added it to have the connection issue front exception for the user
     try {
-      final result =
-          await sl.get<awc.ArchethicDAppClient>().getCurrentAccount();
-      result.when(
-        failure: (failure) {
-          throw Exception('An error occurs');
-        },
-        success: (result) {
-          accountName = result.shortName;
-        },
-      );
+      final result = await sl
+          .get<awc.ArchethicDAppClient>()
+          .getCurrentAccount()
+          .valueOrThrow;
+      accountName = result.shortName;
     } catch (e, stackTrace) {
       sl.get<LogManager>().log(
             '$e',
