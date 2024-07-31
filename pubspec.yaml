@@ -18,7 +18,7 @@ dependencies:
   #  path: ../libdart-2
 
   # A client dart library to interact with Archethic Wallet RPC API.
-  archethic_wallet_client: ^2.0.5
+  archethic_wallet_client: ^2.0.6
   #archethic_wallet_client:
   #  path: ../archethic-wallet-client-dart
 
