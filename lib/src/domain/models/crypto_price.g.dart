@@ -9,6 +9,7 @@ part of 'crypto_price.dart';
 _$CryptoPriceImpl _$$CryptoPriceImplFromJson(Map<String, dynamic> json) =>
     _$CryptoPriceImpl(
       timestamp: (json['timestamp'] as num?)?.toInt(),
+      bitcoin: (json['bitcoin'] as num?)?.toDouble() ?? 0.0,
       matic: (json['matic'] as num?)?.toDouble() ?? 0.0,
       ethereum: (json['ethereum'] as num?)?.toDouble() ?? 0.0,
       bnb: (json['bnb'] as num?)?.toDouble() ?? 0.0,
@@ -19,6 +20,7 @@ _$CryptoPriceImpl _$$CryptoPriceImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$CryptoPriceImplToJson(_$CryptoPriceImpl instance) =>
     <String, dynamic>{
       'timestamp': instance.timestamp,
+      'bitcoin': instance.bitcoin,
       'matic': instance.matic,
       'ethereum': instance.ethereum,
       'bnb': instance.bnb,

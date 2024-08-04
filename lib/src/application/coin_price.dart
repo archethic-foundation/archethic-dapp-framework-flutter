@@ -31,6 +31,7 @@ class _CoinPriceNotifier extends Notifier<CryptoPrice> {
 
   Future<CryptoPrice?> fetchPrices() async {
     // UCIDs
+    // 1 : BTC
     // 3890 : MATIC
     // 1027 : Ethereum
     // 1839 : BNB
@@ -38,7 +39,7 @@ class _CoinPriceNotifier extends Notifier<CryptoPrice> {
     // 20920 : Monerium EURe
 
     const url =
-        'https://fas.archethic.net/api/v1/quotes/latest?ucids=1027,3890,1839,3408,20920';
+        'https://fas.archethic.net/api/v1/quotes/latest?ucids=1027,3890,1839,3408,20920,1';
     final headers = {
       'Content-type': 'application/json',
       'Accept': 'application/json',
@@ -69,6 +70,7 @@ class _CoinPriceNotifier extends Notifier<CryptoPrice> {
   Map<String, double> _extractPriceMethods(String responseBody) {
     final jsonData = json.decode(responseBody) as Map<String, dynamic>;
     return {
+      'bitcoin': jsonData['1'],
       'matic': jsonData['3890'],
       'ethereum': jsonData['1027'],
       'bnb': jsonData['1839'],
@@ -91,6 +93,8 @@ double _coinPriceFromAddress(
   final ucid = ucidsList[address.toUpperCase()] ?? 0;
   if (ucid != 0) {
     switch (ucid) {
+      case 1:
+        return coinPrice.bitcoin;
       case 1027:
         return coinPrice.ethereum;
       case 1839:
