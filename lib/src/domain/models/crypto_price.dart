@@ -8,6 +8,7 @@ class CryptoPrice with _$CryptoPrice {
   factory CryptoPrice({
     int? timestamp,
     // Used UCIDs
+    @Default(0.0) double bitcoin, // 1
     @Default(0.0) double matic, // 3890
     @Default(0.0) double ethereum, // 1027
     @Default(0.0) double bnb, // 1839
