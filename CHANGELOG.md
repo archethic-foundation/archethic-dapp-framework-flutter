@@ -1,5 +1,8 @@
 Changelog
 =========
+#### Version 1.2.11
+* Add `precision` param in ArchethicOracleUco widget
+
 #### Version 1.2.10
 * Update dependencies
 
