@@ -10,10 +10,12 @@ import 'package:url_launcher/url_launcher.dart';
 class ArchethicOracleUco extends ConsumerWidget {
   const ArchethicOracleUco({
     required this.faqLink,
+    this.precision = 2,
     super.key,
   });
 
   final String faqLink;
+  final int precision;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -46,7 +48,7 @@ class ArchethicOracleUco extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             SelectableText(
-              '1 UCO = \$${archethicOracleUCO.usd.formatNumber(precision: 2)} ($timestamp)',
+              '1 UCO = \$${archethicOracleUCO.usd.formatNumber(precision: precision)} ($timestamp)',
               style: TextStyle(
                 fontSize: Theme.of(context).textTheme.labelSmall!.fontSize,
               ),
