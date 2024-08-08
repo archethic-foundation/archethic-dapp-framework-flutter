@@ -1,5 +1,8 @@
 Changelog
 =========
+#### Version 1.2.11
+* Add Bitcoin in ucids_tokens config file
+
 #### Version 1.2.10
 * Update dependencies
 

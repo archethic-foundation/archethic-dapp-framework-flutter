@@ -3,6 +3,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:archethic_dapp_framework_flutter/src/application/ucids_tokens.dart';
 import 'package:archethic_dapp_framework_flutter/src/domain/models/crypto_price.dart';
+import 'package:archethic_dapp_framework_flutter/src/domain/models/ucid.dart';
 import 'package:http/http.dart' as http;
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -30,15 +31,8 @@ class _CoinPriceNotifier extends Notifier<CryptoPrice> {
   }
 
   Future<CryptoPrice?> fetchPrices() async {
-    // UCIDs
-    // 3890 : MATIC
-    // 1027 : Ethereum
-    // 1839 : BNB
-    // 3408 : USDC
-    // 20920 : Monerium EURe
-
     const url =
-        'https://fas.archethic.net/api/v1/quotes/latest?ucids=1027,3890,1839,3408,20920';
+        'https://fas.archethic.net/api/v1/quotes/latest?ucids=1027,3890,1839,3408,20920,1';
     final headers = {
       'Content-type': 'application/json',
       'Accept': 'application/json',
@@ -69,11 +63,12 @@ class _CoinPriceNotifier extends Notifier<CryptoPrice> {
   Map<String, double> _extractPriceMethods(String responseBody) {
     final jsonData = json.decode(responseBody) as Map<String, dynamic>;
     return {
-      'matic': jsonData['3890'],
-      'ethereum': jsonData['1027'],
-      'bnb': jsonData['1839'],
-      'usdc': jsonData['3408'],
-      'eure': jsonData['20920'],
+      'bitcoin': jsonData[UCID.bitcoin.toString()],
+      'matic': jsonData[UCID.matic.toString()],
+      'ethereum': jsonData[UCID.ethereum.toString()],
+      'bnb': jsonData[UCID.bnb.toString()],
+      'usdc': jsonData[UCID.usdc.toString()],
+      'eure': jsonData[UCID.eure.toString()],
     };
   }
 }
@@ -91,15 +86,17 @@ double _coinPriceFromAddress(
   final ucid = ucidsList[address.toUpperCase()] ?? 0;
   if (ucid != 0) {
     switch (ucid) {
-      case 1027:
+      case UCID.bitcoin:
+        return coinPrice.bitcoin;
+      case UCID.ethereum:
         return coinPrice.ethereum;
-      case 1839:
+      case UCID.bnb:
         return coinPrice.bnb;
-      case 3890:
+      case UCID.matic:
         return coinPrice.matic;
-      case 3408:
+      case UCID.usdc:
         return coinPrice.usdc;
-      case 20920:
+      case UCID.eure:
         return coinPrice.eure;
       default:
         return 0;
