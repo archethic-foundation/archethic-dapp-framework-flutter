@@ -10,26 +10,29 @@ import 'package:flutter/foundation.dart';
 
 mixin TransactionMixin {
   Future<double> calculateFees(
-    Transaction transaction, {
+    Transaction transaction,
+    ApiService apiService, {
     double slippage = 1.01,
   }) async {
-    final transactionFee =
-        await sl.get<ApiService>().getTransactionFee(transaction);
+    final transactionFee = await apiService.getTransactionFee(transaction);
     final fees = fromBigInt(transactionFee.fee) * slippage;
     return fees;
   }
 
-  ArchethicTransactionSender getArchethicTransactionSender() {
+  ArchethicTransactionSender getArchethicTransactionSender(
+    ApiService apiService,
+  ) {
     return ArchethicTransactionSender(
-      apiService: sl.get<ApiService>(),
-      phoenixHttpEndpoint: '${sl.get<ApiService>().endpoint}/socket/websocket',
+      apiService: apiService,
+      phoenixHttpEndpoint: '${apiService.endpoint}/socket/websocket',
       websocketEndpoint:
-          '${sl.get<ApiService>().endpoint.replaceAll('https:', 'wss:').replaceAll('http:', 'wss:')}/socket/websocket',
+          '${apiService.endpoint.replaceAll('https:', 'wss:').replaceAll('http:', 'wss:')}/socket/websocket',
     );
   }
 
   Future<void> sendTransactions(
     List<Transaction> transactions,
+    ApiService apiService,
   ) async {
     var errorDetail = '';
     for (final transaction in transactions) {
@@ -38,22 +41,21 @@ mixin TransactionMixin {
       }
       var next = false;
       String websocketEndpoint;
-      switch (sl.get<ApiService>().endpoint) {
+      switch (apiService.endpoint) {
         case 'https://mainnet.archethic.net':
         case 'https://testnet.archethic.net':
           websocketEndpoint =
-              "${sl.get<ApiService>().endpoint.replaceAll('https:', 'wss:').replaceAll('http:', 'wss:')}/socket/websocket";
+              "${apiService.endpoint.replaceAll('https:', 'wss:').replaceAll('http:', 'wss:')}/socket/websocket";
           break;
         default:
           websocketEndpoint =
-              "${sl.get<ApiService>().endpoint.replaceAll('https:', 'wss:').replaceAll('http:', 'ws:')}/socket/websocket";
+              "${apiService.endpoint.replaceAll('https:', 'wss:').replaceAll('http:', 'ws:')}/socket/websocket";
           break;
       }
 
       final transactionRepository = ArchethicTransactionSender(
-        apiService: sl.get<ApiService>(),
-        phoenixHttpEndpoint:
-            '${sl.get<ApiService>().endpoint}/socket/websocket',
+        apiService: apiService,
+        phoenixHttpEndpoint: '${apiService.endpoint}/socket/websocket',
         websocketEndpoint: websocketEndpoint,
       );
       await transactionRepository.send(
@@ -169,11 +171,10 @@ mixin TransactionMixin {
 
   Future<bool> waitForManualTxConfirmation(
     String txChainAddress,
-    int targetIndex, {
+    int targetIndex,
+    ApiService apiService, {
     int nbTrials = 60,
   }) async {
-    final apiService = sl.get<ApiService>();
-
     for (var i = 0; i < nbTrials; i++) {
       final txIndexMap = await apiService.getTransactionIndex([txChainAddress]);
       if (txIndexMap[txChainAddress] != null &&
@@ -261,9 +262,9 @@ mixin TransactionMixin {
   Future<double> getAmountFromTxInput(
     String txAddress,
     String? tokenAddress,
+    ApiService apiService,
   ) async {
-    final transactionMap =
-        await sl.get<ApiService>().getTransaction([txAddress]);
+    final transactionMap = await apiService.getTransaction([txAddress]);
     if (transactionMap[txAddress] == null) {
       return 0.0;
     }
@@ -300,23 +301,24 @@ mixin TransactionMixin {
   }
 
   Future<double> getAmountFromTx(
+    ApiService apiService,
     String txAddress,
     bool isUCO,
     String to, {
     bool withLastAddress = false,
   }) async {
-    final genesisTo = await sl.get<ApiService>().getGenesisAddress(to);
+    final genesisTo = await apiService.getGenesisAddress(to);
 
     var transactionMap = <String, Transaction>{};
     var amount = 0.0;
     if (isUCO) {
       if (withLastAddress) {
-        transactionMap = await sl.get<ApiService>().getLastTransaction(
+        transactionMap = await apiService.getLastTransaction(
           [txAddress],
           request: ' data {ledger {uco { transfers { amount, to } } } }',
         );
       } else {
-        transactionMap = await sl.get<ApiService>().getTransaction(
+        transactionMap = await apiService.getTransaction(
           [txAddress],
           request: ' data {ledger {uco { transfers { amount, to } } } }',
         );
@@ -338,12 +340,12 @@ mixin TransactionMixin {
       return amount;
     } else {
       if (withLastAddress) {
-        transactionMap = await sl.get<ApiService>().getLastTransaction(
+        transactionMap = await apiService.getLastTransaction(
           [txAddress],
           request: ' data {ledger {token { transfers { amount, to } } } }',
         );
       } else {
-        transactionMap = await sl.get<ApiService>().getTransaction(
+        transactionMap = await apiService.getTransaction(
           [txAddress],
           request: ' data {ledger {token { transfers { amount, to } } } }',
         );

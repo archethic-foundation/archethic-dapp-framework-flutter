@@ -1,31 +1,45 @@
 /// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import 'dart:async';
+
 import 'package:archethic_dapp_framework_flutter/src/application/oracle/state.dart';
 import 'package:archethic_dapp_framework_flutter/src/util/generic/get_it_instance.dart';
 import 'package:archethic_lib_dart/archethic_lib_dart.dart';
+import 'package:logging/logging.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'provider.g.dart';
 
 @Riverpod(keepAlive: true)
 class _ArchethicOracleUCONotifier extends Notifier<ArchethicOracleUCO> {
-  ArchethicOracle? archethicOracle;
+  ArchethicOracle? archethicOracleSubscription;
+
+  static final _logger = Logger('ArchethicOracleUCONotifier');
 
   @override
   ArchethicOracleUCO build() {
-    ref.onDispose(() {
-      if (archethicOracle != null) {
-        sl
-            .get<OracleService>()
-            .closeOracleUpdatesSubscription(archethicOracle!);
-      }
-    });
+    ref.onDispose(stopSubscription);
+
+    _getValue();
+
+    startSubscription();
     return const ArchethicOracleUCO();
   }
 
-  Future<void> init() async {
-    await _getValue();
+  Future<void> startSubscription() async {
+    if (archethicOracleSubscription != null) return;
+
+    _logger.info('Start listening to Oracle');
     await _subscribe();
+  }
+
+  Future<void> stopSubscription() async {
+    _logger.info('Stop listening to Oracle');
+    if (archethicOracleSubscription == null) return;
+    sl
+        .get<OracleService>()
+        .closeOracleUpdatesSubscription(archethicOracleSubscription!);
+    archethicOracleSubscription = null;
   }
 
   Future<void> _getValue() async {
@@ -34,7 +48,7 @@ class _ArchethicOracleUCONotifier extends Notifier<ArchethicOracleUCO> {
   }
 
   Future<void> _subscribe() async {
-    archethicOracle = await sl
+    archethicOracleSubscription = await sl
         .get<OracleService>()
         .subscribeToOracleUpdates((oracleUcoPrice) {
       _fillInfo(oracleUcoPrice!);
@@ -42,6 +56,7 @@ class _ArchethicOracleUCONotifier extends Notifier<ArchethicOracleUCO> {
   }
 
   void _fillInfo(OracleUcoPrice oracleUcoPrice) {
+    _logger.info('Oracle: ${oracleUcoPrice.timestamp}, ${oracleUcoPrice.uco}');
     state = state.copyWith(
       timestamp: oracleUcoPrice.timestamp ?? 0,
       eur: oracleUcoPrice.uco!.eur ?? 0,

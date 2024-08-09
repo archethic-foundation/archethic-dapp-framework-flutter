@@ -1,5 +1,11 @@
 Changelog
 =========
+
+#### Version 1.3.0
+* BREAKING CHANGES: `TransactionUtil` - Add `apiService` param for each method
+* Move coin price management to an infrastructure repository
+* Add a generic token model and associated def
+
 #### Version 1.2.11
 * Add `precision` param in ArchethicOracleUco widget
 
