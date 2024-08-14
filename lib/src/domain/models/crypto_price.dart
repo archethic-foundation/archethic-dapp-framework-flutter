@@ -7,12 +7,12 @@ part 'crypto_price.g.dart';
 class CryptoPrice with _$CryptoPrice {
   factory CryptoPrice({
     int? timestamp,
-    // Used UCIDs
-    @Default(0.0) double matic, // 3890
-    @Default(0.0) double ethereum, // 1027
-    @Default(0.0) double bnb, // 1839
-    @Default(0.0) double usdc, // 3408
-    @Default(0.0) double eure, // 20920
+    @Default(0.0) double bitcoin,
+    @Default(0.0) double matic,
+    @Default(0.0) double ethereum,
+    @Default(0.0) double bnb,
+    @Default(0.0) double usdc,
+    @Default(0.0) double eure,
   }) = _CryptoPrice;
 
   factory CryptoPrice.fromJson(Map<String, dynamic> json) =>

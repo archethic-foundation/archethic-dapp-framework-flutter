@@ -21,6 +21,7 @@ CryptoPrice _$CryptoPriceFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$CryptoPrice {
   int? get timestamp => throw _privateConstructorUsedError; // Used UCIDs
+  double get bitcoin => throw _privateConstructorUsedError; // 1
   double get matic => throw _privateConstructorUsedError; // 3890
   double get ethereum => throw _privateConstructorUsedError; // 1027
   double get bnb => throw _privateConstructorUsedError; // 1839
@@ -41,6 +42,7 @@ abstract class $CryptoPriceCopyWith<$Res> {
   @useResult
   $Res call(
       {int? timestamp,
+      double bitcoin,
       double matic,
       double ethereum,
       double bnb,
@@ -62,6 +64,7 @@ class _$CryptoPriceCopyWithImpl<$Res, $Val extends CryptoPrice>
   @override
   $Res call({
     Object? timestamp = freezed,
+    Object? bitcoin = null,
     Object? matic = null,
     Object? ethereum = null,
     Object? bnb = null,
@@ -73,6 +76,10 @@ class _$CryptoPriceCopyWithImpl<$Res, $Val extends CryptoPrice>
           ? _value.timestamp
           : timestamp // ignore: cast_nullable_to_non_nullable
               as int?,
+      bitcoin: null == bitcoin
+          ? _value.bitcoin
+          : bitcoin // ignore: cast_nullable_to_non_nullable
+              as double,
       matic: null == matic
           ? _value.matic
           : matic // ignore: cast_nullable_to_non_nullable
@@ -107,6 +114,7 @@ abstract class _$$CryptoPriceImplCopyWith<$Res>
   @useResult
   $Res call(
       {int? timestamp,
+      double bitcoin,
       double matic,
       double ethereum,
       double bnb,
@@ -126,6 +134,7 @@ class __$$CryptoPriceImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? timestamp = freezed,
+    Object? bitcoin = null,
     Object? matic = null,
     Object? ethereum = null,
     Object? bnb = null,
@@ -137,6 +146,10 @@ class __$$CryptoPriceImplCopyWithImpl<$Res>
           ? _value.timestamp
           : timestamp // ignore: cast_nullable_to_non_nullable
               as int?,
+      bitcoin: null == bitcoin
+          ? _value.bitcoin
+          : bitcoin // ignore: cast_nullable_to_non_nullable
+              as double,
       matic: null == matic
           ? _value.matic
           : matic // ignore: cast_nullable_to_non_nullable
@@ -166,6 +179,7 @@ class __$$CryptoPriceImplCopyWithImpl<$Res>
 class _$CryptoPriceImpl implements _CryptoPrice {
   _$CryptoPriceImpl(
       {this.timestamp,
+      this.bitcoin = 0.0,
       this.matic = 0.0,
       this.ethereum = 0.0,
       this.bnb = 0.0,
@@ -178,6 +192,10 @@ class _$CryptoPriceImpl implements _CryptoPrice {
   @override
   final int? timestamp;
 // Used UCIDs
+  @override
+  @JsonKey()
+  final double bitcoin;
+// 1
   @override
   @JsonKey()
   final double matic;
@@ -200,7 +218,7 @@ class _$CryptoPriceImpl implements _CryptoPrice {
 
   @override
   String toString() {
-    return 'CryptoPrice(timestamp: $timestamp, matic: $matic, ethereum: $ethereum, bnb: $bnb, usdc: $usdc, eure: $eure)';
+    return 'CryptoPrice(timestamp: $timestamp, bitcoin: $bitcoin, matic: $matic, ethereum: $ethereum, bnb: $bnb, usdc: $usdc, eure: $eure)';
   }
 
   @override
@@ -210,6 +228,7 @@ class _$CryptoPriceImpl implements _CryptoPrice {
             other is _$CryptoPriceImpl &&
             (identical(other.timestamp, timestamp) ||
                 other.timestamp == timestamp) &&
+            (identical(other.bitcoin, bitcoin) || other.bitcoin == bitcoin) &&
             (identical(other.matic, matic) || other.matic == matic) &&
             (identical(other.ethereum, ethereum) ||
                 other.ethereum == ethereum) &&
@@ -220,8 +239,8 @@ class _$CryptoPriceImpl implements _CryptoPrice {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, timestamp, matic, ethereum, bnb, usdc, eure);
+  int get hashCode => Object.hash(
+      runtimeType, timestamp, bitcoin, matic, ethereum, bnb, usdc, eure);
 
   @JsonKey(ignore: true)
   @override
@@ -240,6 +259,7 @@ class _$CryptoPriceImpl implements _CryptoPrice {
 abstract class _CryptoPrice implements CryptoPrice {
   factory _CryptoPrice(
       {final int? timestamp,
+      final double bitcoin,
       final double matic,
       final double ethereum,
       final double bnb,
@@ -252,6 +272,8 @@ abstract class _CryptoPrice implements CryptoPrice {
   @override
   int? get timestamp;
   @override // Used UCIDs
+  double get bitcoin;
+  @override // 1
   double get matic;
   @override // 3890
   double get ethereum;
