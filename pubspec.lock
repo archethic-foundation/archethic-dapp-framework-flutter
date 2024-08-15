@@ -44,40 +44,11 @@ packages:
   archethic_wallet_client:
     dependency: "direct main"
     description:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
       name: archethic_wallet_client
       sha256: "69bd1dbd85035554e930339d9c03a0fd12ba161003090435fc4d750c366f0595"
       url: "https://pub.dev"
     source: hosted
-<<<<<<< HEAD
     version: "2.0.8"
-=======
-    version: "2.0.7"
-=======
-      path: "../archethic-wallet-client-dart"
-      relative: true
-    source: path
-    version: "2.0.4"
->>>>>>> f872e4c (chore: :bug: Fix Oracle subscription)
-<<<<<<< HEAD
->>>>>>> 29d1774 (chore: :bug: Fix Oracle subscription)
-=======
-=======
-      name: archethic_wallet_client
-      sha256: "42354078ff5838186939b7a263ae97724cdd388a497f7c7bf31e8029eef35bb2"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.5"
->>>>>>> da25654 (feat: :sparkles: Use fetch-api-service instead of coingecko)
->>>>>>> 2629b2e (feat: :sparkles: Use fetch-api-service instead of coingecko)
-=======
-      path: "../archethic-wallet-client-dart"
-      relative: true
-    source: path
-    version: "2.0.5"
->>>>>>> 27337c7 (rebase)
   archive:
     dependency: "direct main"
     description:
@@ -242,10 +213,10 @@ packages:
     dependency: transitive
     description:
       name: crypto
-      sha256: ff625774173754681d66daaf4a448684fb04b78f902da9cb3d308c19cc5e8bab
+      sha256: ec30d999af904f33454ba22ed9a86162b35e52b44ac4807d1d93c288041d7d27
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.3"
+    version: "3.0.5"
   cryptography:
     dependency: transitive
     description:
@@ -306,10 +277,10 @@ packages:
     dependency: transitive
     description:
       name: ffi
-      sha256: "493f37e7df1804778ff3a53bd691d8692ddf69702cf4c1c1096a2e41b4779e21"
+      sha256: "16ed7b077ef01ad6170a3d0c57caa4a112a38d7a2ed5602e0aca9ca6f3d98da6"
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.2"
+    version: "2.1.3"
   file:
     dependency: transitive
     description:
@@ -697,10 +668,10 @@ packages:
     dependency: transitive
     description:
       name: path_provider_android
-      sha256: "490539678396d4c3c0b06efdaab75ae60675c3e0c66f72bc04c2e2c1e0e2abeb"
+      sha256: "6f01f8e37ec30b07bc424b4deabac37cacb1bc7e2e515ad74486039918a37eb7"
       url: "https://pub.dev"
     source: hosted
-    version: "2.2.9"
+    version: "2.2.10"
   path_provider_foundation:
     dependency: transitive
     description:
@@ -1046,10 +1017,10 @@ packages:
     dependency: transitive
     description:
       name: url_launcher_android
-      sha256: "94d8ad05f44c6d4e2ffe5567ab4d741b82d62e3c8e288cc1fcea45965edf47c9"
+      sha256: f0c73347dfcfa5b3db8bc06e1502668265d39c08f310c29bff4e28eea9699f79
       url: "https://pub.dev"
     source: hosted
-    version: "6.3.8"
+    version: "6.3.9"
   url_launcher_ios:
     dependency: transitive
     description:
@@ -1166,10 +1137,10 @@ packages:
     dependency: transitive
     description:
       name: win32
-      sha256: "015002c060f1ae9f41a818f2d5640389cc05283e368be19dc8d77cecb43c40c9"
+      sha256: "68d1e89a91ed61ad9c370f9f8b6effed9ae5e0ede22a270bdfa6daf79fc2290a"
       url: "https://pub.dev"
     source: hosted
-    version: "5.5.3"
+    version: "5.5.4"
   x25519:
     dependency: transitive
     description:

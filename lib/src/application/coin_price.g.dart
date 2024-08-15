@@ -23,11 +23,7 @@ final _coinPriceRepositoryProvider = Provider<CoinPriceRepositoryImpl>.internal(
 
 typedef _CoinPriceRepositoryRef = ProviderRef<CoinPriceRepositoryImpl>;
 String _$coinPriceFromAddressHash() =>
-<<<<<<< HEAD
-    r'f70fc08512773ba431ad574ba14b2dfa8028c3c7';
-=======
     r'51a4e40e9f512b16cae706118ccd1e77cc4ca99a';
->>>>>>> 1081fab (✨ Add a generic token model and associated def)
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -176,11 +172,7 @@ class _CoinPriceFromAddressProviderElement
   String get address => (origin as _CoinPriceFromAddressProvider).address;
 }
 
-<<<<<<< HEAD
-String _$coinPriceNotifierHash() => r'7d65d3f7305007fd65b98eda0b012ad0ccd380a0';
-=======
 String _$coinPriceNotifierHash() => r'c2146a769b108b892ee8df3a26acb362ca8b25e7';
->>>>>>> 1081fab (✨ Add a generic token model and associated def)
 
 /// See also [_CoinPriceNotifier].
 @ProviderFor(_CoinPriceNotifier)
