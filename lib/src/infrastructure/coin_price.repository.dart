@@ -2,6 +2,7 @@
 
 import 'dart:convert';
 import 'package:archethic_dapp_framework_flutter/src/domain/models/crypto_price.dart';
+import 'package:archethic_dapp_framework_flutter/src/domain/models/ucid.dart';
 import 'package:archethic_dapp_framework_flutter/src/domain/repositories/tokens/coin_price.repository.dart';
 import 'package:http/http.dart' as http;
 
@@ -16,7 +17,7 @@ class CoinPriceRepositoryImpl implements CoinPriceRepositoryInterface {
     // 20920 : Monerium EURe
 
     const url =
-        'https://fas.archethic.net/api/v1/quotes/latest?ucids=1027,3890,1839,3408,20920';
+        'https://fas.archethic.net/api/v1/quotes/latest?ucids=1027,3890,1839,3408,20920,1';
     final headers = {
       'Content-type': 'application/json',
       'Accept': 'application/json',
@@ -40,30 +41,36 @@ class CoinPriceRepositoryImpl implements CoinPriceRepositoryInterface {
   // TODO(reddwarf03): Externalise this...
   @override
   double getPriceFromUcid(int ucid, CryptoPrice coinPrice) {
-    switch (ucid) {
-      case 1027:
-        return coinPrice.ethereum;
-      case 1839:
-        return coinPrice.bnb;
-      case 3890:
-        return coinPrice.matic;
-      case 3408:
-        return coinPrice.usdc;
-      case 20920:
-        return coinPrice.eure;
-      default:
-        return 0;
+    if (ucid != 0) {
+      switch (ucid) {
+        case UCID.bitcoin:
+          return coinPrice.bitcoin;
+        case UCID.ethereum:
+          return coinPrice.ethereum;
+        case UCID.bnb:
+          return coinPrice.bnb;
+        case UCID.matic:
+          return coinPrice.matic;
+        case UCID.usdc:
+          return coinPrice.usdc;
+        case UCID.eure:
+          return coinPrice.eure;
+        default:
+          return 0;
+      }
     }
+    return 0;
   }
 
   Map<String, double> _extractPriceMethods(String responseBody) {
     final jsonData = json.decode(responseBody) as Map<String, dynamic>;
     return {
-      'matic': jsonData['3890'],
-      'ethereum': jsonData['1027'],
-      'bnb': jsonData['1839'],
-      'usdc': jsonData['3408'],
-      'eure': jsonData['20920'],
+      'bitcoin': jsonData[UCID.bitcoin.toString()],
+      'matic': jsonData[UCID.matic.toString()],
+      'ethereum': jsonData[UCID.ethereum.toString()],
+      'bnb': jsonData[UCID.bnb.toString()],
+      'usdc': jsonData[UCID.usdc.toString()],
+      'eure': jsonData[UCID.eure.toString()],
     };
   }
 }
