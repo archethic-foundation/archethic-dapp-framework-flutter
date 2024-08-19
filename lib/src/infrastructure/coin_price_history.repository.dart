@@ -61,7 +61,7 @@ class CoinPriceHistoryRepository
       case MarketPriceHistoryInterval.week:
         return 'weekly';
       case MarketPriceHistoryInterval.twoWeeks:
-        return 'biWeekly';
+        return 'biweekly';
       case MarketPriceHistoryInterval.month:
         return 'monthly';
       case MarketPriceHistoryInterval.twoMonths:
