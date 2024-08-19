@@ -51,6 +51,13 @@
                 "address": "00001ED63AC2850CEA282D3D0CA5047418BC2720CB49D15B611D2845611F605716A1",
                 "icon": "EURe.svg",
                 "ucid": 20920
+            },
+            {
+                "name": "Archethic aeBTC",
+                "symbol": "aeBTC",
+                "address": "00009C0384202D700AE02D939E09532BC9C5E58C2D618561F590E91C58E2AC24A6C5",
+                "icon": "BTC.svg",
+                "ucid": 1
             }
         ],
         "mainnet": [
@@ -74,6 +81,13 @@
                 "address": "00005751A05BA007E7E2518DEA171DBBD67B0527C637232F923830C39BFF9E8F159A",
                 "icon": "EURe.svg",
                 "ucid": 20920
+            },
+            {
+                "name": "Archethic aeBTC",
+                "symbol": "aeBTC",
+                "address": "00002CEC79D588D5CDD24331968BEF0A9CFE8B1B03B8AEFC4454726DEF79AA10C125",
+                "icon": "BTC.svg",
+                "ucid": 1
             }
         ]
     }
