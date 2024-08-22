@@ -41,4 +41,8 @@ class AEToken with _$AEToken {
   bool get isUCO => symbol == 'UCO' && (address == null || address! == 'UCO');
 }
 
-AEToken get ucoToken => const AEToken(name: 'Universal Coin', symbol: 'UCO');
+AEToken get ucoToken => const AEToken(
+      name: 'Universal Coin',
+      symbol: 'UCO',
+      ucid: 6887,
+    );

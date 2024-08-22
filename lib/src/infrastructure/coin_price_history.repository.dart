@@ -15,9 +15,8 @@ class CoinPriceHistoryRepository
   }) =>
       Result.guard(
         () async {
-          //TODO
           final url =
-              'http://localhost:33333/api/v1/quotes/history?ucid=$ucid&interval=${_marketPriceHistoryIntervalToString(interval)}';
+              'https://fas.archethic.net/api/v1/quotes/history?ucid=$ucid&interval=${_marketPriceHistoryIntervalToString(interval)}';
           final headers = {
             'Content-type': 'application/json',
             'Accept': 'application/json',
