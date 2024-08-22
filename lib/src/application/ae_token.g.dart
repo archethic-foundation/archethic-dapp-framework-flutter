@@ -7,7 +7,7 @@ part of 'ae_token.dart';
 // **************************************************************************
 
 String _$estimateTokenInFiatHash() =>
-    r'2a2761c3f673a0b218c260fea92101f23bfb5bdf';
+    r'3625a125152a8d63971b251480621115fa878abf';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -35,7 +35,7 @@ class _SystemHash {
 const _estimateTokenInFiatProvider = _EstimateTokenInFiatFamily();
 
 /// See also [_estimateTokenInFiat].
-class _EstimateTokenInFiatFamily extends Family<double> {
+class _EstimateTokenInFiatFamily extends Family<AsyncValue<double>> {
   /// See also [_estimateTokenInFiat].
   const _EstimateTokenInFiatFamily();
 
@@ -73,7 +73,7 @@ class _EstimateTokenInFiatFamily extends Family<double> {
 }
 
 /// See also [_estimateTokenInFiat].
-class _EstimateTokenInFiatProvider extends AutoDisposeProvider<double> {
+class _EstimateTokenInFiatProvider extends AutoDisposeFutureProvider<double> {
   /// See also [_estimateTokenInFiat].
   _EstimateTokenInFiatProvider(
     AEToken token,
@@ -108,7 +108,7 @@ class _EstimateTokenInFiatProvider extends AutoDisposeProvider<double> {
 
   @override
   Override overrideWith(
-    double Function(_EstimateTokenInFiatRef provider) create,
+    FutureOr<double> Function(_EstimateTokenInFiatRef provider) create,
   ) {
     return ProviderOverride(
       origin: this,
@@ -125,7 +125,7 @@ class _EstimateTokenInFiatProvider extends AutoDisposeProvider<double> {
   }
 
   @override
-  AutoDisposeProviderElement<double> createElement() {
+  AutoDisposeFutureProviderElement<double> createElement() {
     return _EstimateTokenInFiatProviderElement(this);
   }
 
@@ -143,13 +143,14 @@ class _EstimateTokenInFiatProvider extends AutoDisposeProvider<double> {
   }
 }
 
-mixin _EstimateTokenInFiatRef on AutoDisposeProviderRef<double> {
+mixin _EstimateTokenInFiatRef on AutoDisposeFutureProviderRef<double> {
   /// The parameter `token` of this provider.
   AEToken get token;
 }
 
 class _EstimateTokenInFiatProviderElement
-    extends AutoDisposeProviderElement<double> with _EstimateTokenInFiatRef {
+    extends AutoDisposeFutureProviderElement<double>
+    with _EstimateTokenInFiatRef {
   _EstimateTokenInFiatProviderElement(super.provider);
 
   @override

@@ -1,15 +1,13 @@
 /// SPDX-License-Identifier: AGPL-3.0-or-later
 import 'dart:async';
 
-import 'package:archethic_dapp_framework_flutter/src/application/ucids_tokens.dart';
-import 'package:archethic_dapp_framework_flutter/src/domain/models/crypto_price.dart';
-import 'package:archethic_dapp_framework_flutter/src/infrastructure/coin_price.repository.dart';
+import 'package:archethic_dapp_framework_flutter/archethic_dapp_framework_flutter.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'coin_price.g.dart';
 
 @Riverpod(keepAlive: true)
-class _CoinPriceNotifier extends Notifier<CryptoPrice> {
+class _CoinPricesNotifier extends Notifier<CryptoPrice> {
   Timer? _timer;
 
   @override
@@ -39,15 +37,20 @@ CoinPriceRepositoryImpl _coinPriceRepository(
     CoinPriceRepositoryImpl();
 
 @riverpod
-double _coinPriceFromAddress(
-  _CoinPriceFromAddressRef ref,
-  String address,
-) {
-  final coinPrice = ref.read(
-    CoinPriceProviders.coinPrice,
+Future<double> _coinPrice(
+  _CoinPriceRef ref, {
+  required String address,
+  String? network,
+}) async {
+  final coinPrice = ref.watch(
+    CoinPriceProviders.coinPrices,
   );
-  final ucidsList = ref.read(UcidsTokensProviders.ucidsTokens);
-  final ucid = ucidsList[address.toUpperCase()] ?? 0;
+  final ucid = await ref.watch(
+    UcidsTokensProviders.ucid(
+      address: address.toUpperCase(),
+      network: network,
+    ).future,
+  );
 
   return ref
       .read(_coinPriceRepositoryProvider)
@@ -55,6 +58,6 @@ double _coinPriceFromAddress(
 }
 
 abstract class CoinPriceProviders {
-  static final coinPrice = _coinPriceNotifierProvider;
-  static const coinPriceFromAddress = _coinPriceFromAddressProvider;
+  static final coinPrices = _coinPricesNotifierProvider;
+  static const coinPrice = _coinPriceProvider;
 }

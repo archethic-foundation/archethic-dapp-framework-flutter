@@ -6,24 +6,20 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'ae_token.g.dart';
 
 @riverpod
-double _estimateTokenInFiat(
+Future<double> _estimateTokenInFiat(
   _EstimateTokenInFiatRef ref,
   AEToken token,
-) {
-  var fiatValue = 0.0;
+) async {
   if (token.symbol == 'UCO') {
     final archethicOracleUCO =
         ref.watch(aedappfm.ArchethicOracleUCOProviders.archethicOracleUCO);
 
-    fiatValue = archethicOracleUCO.usd;
+    return archethicOracleUCO.usd;
   } else {
-    final price = ref.watch(
-      aedappfm.CoinPriceProviders.coinPriceFromAddress(token.address!),
+    return await ref.watch(
+      aedappfm.CoinPriceProviders.coinPrice(address: token.address!).future,
     );
-
-    fiatValue = price;
   }
-  return fiatValue;
 }
 
 abstract class AETokensProviders {
