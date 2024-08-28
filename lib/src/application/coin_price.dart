@@ -31,8 +31,7 @@ class _CoinPricesNotifier extends Notifier<CryptoPrice> {
 
     _logger.info('Start timer');
     _timer = Timer.periodic(const Duration(minutes: 1), (_) async {
-      state =
-          state = (await ref.read(_coinPriceRepositoryProvider).fetchPrices())!;
+      state = (await ref.read(_coinPriceRepositoryProvider).fetchPrices())!;
     });
   }
 
