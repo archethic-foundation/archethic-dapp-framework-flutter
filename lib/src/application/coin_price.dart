@@ -9,7 +9,7 @@ part 'coin_price.g.dart';
 
 @Riverpod(keepAlive: true)
 class _CoinPricesNotifier extends Notifier<CryptoPrice> {
-  static final _logger = Logger('ArchethicOracleUCONotifier');
+  static final _logger = Logger('CoinPricesNotifier');
 
   Timer? _timer;
 
