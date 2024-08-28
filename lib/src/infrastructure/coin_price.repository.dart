@@ -16,8 +16,7 @@ class CoinPriceRepositoryImpl implements CoinPriceRepositoryInterface {
     // 3408 : USDC
     // 20920 : Monerium EURe
 
-    const url =
-        'https://fas.archethic.net/api/v1/quotes/latest?ucids=1027,3890,1839,3408,20920,1';
+    const url = 'https://fas.archethic.net/api/v1/quotes/latest';
     final headers = {
       'Content-type': 'application/json',
       'Accept': 'application/json',

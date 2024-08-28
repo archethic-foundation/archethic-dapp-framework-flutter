@@ -2,12 +2,15 @@
 import 'dart:async';
 
 import 'package:archethic_dapp_framework_flutter/archethic_dapp_framework_flutter.dart';
+import 'package:logging/logging.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'coin_price.g.dart';
 
 @Riverpod(keepAlive: true)
 class _CoinPricesNotifier extends Notifier<CryptoPrice> {
+  static final _logger = Logger('ArchethicOracleUCONotifier');
+
   Timer? _timer;
 
   @override
@@ -17,16 +20,30 @@ class _CoinPricesNotifier extends Notifier<CryptoPrice> {
         _timer!.cancel();
       }
     });
+
+    _getValue();
+
     return CryptoPrice();
   }
 
-  Future<void> init() async {
-    state = (await ref.read(_coinPriceRepositoryProvider).fetchPrices())!;
+  Future<void> starTimer() async {
+    if (_timer != null) return;
 
+    _logger.info('Start timer');
     _timer = Timer.periodic(const Duration(minutes: 1), (_) async {
       state =
           state = (await ref.read(_coinPriceRepositoryProvider).fetchPrices())!;
     });
+  }
+
+  Future<void> stopTimer() async {
+    _logger.info('Stop timer');
+    if (_timer == null) return;
+    _timer?.cancel();
+  }
+
+  Future<void> _getValue() async {
+    state = (await ref.read(_coinPriceRepositoryProvider).fetchPrices())!;
   }
 }
 
