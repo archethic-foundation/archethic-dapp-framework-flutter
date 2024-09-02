@@ -66,6 +66,9 @@ dependencies:
   # A Flutter plugin for rendering an animated and customizable starfield on a dark background.
   lit_starfield: ^0.1.1
 
+  # Provides APIs for debugging and error logging, similar to loggers in other languages, such as the Closure JS Logger and java.util.logging.Logger.
+  logging: ^1.2.0
+
   # Flutter plugin for querying information about the application package, such as CFBundleVersion on iOS or versionCode on Android
   package_info_plus: ^6.0.0
 
