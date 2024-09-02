@@ -29,27 +29,28 @@ class LogManager {
     StackTrace? stackTrace,
     LogLevel level = LogLevel.info,
   }) {
+    final timeStamp = DateTime.now().toIso8601String();
     if (logsActived == false) return;
     if (message.isEmpty) return;
     if (kDebugMode) {
       if (name != null) {
         if (stackTrace != null) {
-          debugPrint('$message, $name, $stackTrace');
+          debugPrint('$timeStamp, $message, $name, $stackTrace');
         } else {
-          debugPrint('$message, $name');
+          debugPrint('$timeStamp, $message, $name');
         }
       } else {
         if (stackTrace != null) {
-          debugPrint('$message, $stackTrace');
+          debugPrint('$timeStamp, $message, $stackTrace');
         } else {
-          debugPrint(message);
+          debugPrint('$timeStamp, $message');
         }
       }
     } else {
       final logEntry = <String, dynamic>{
+        'timestamp': timeStamp,
         'message': message,
         'level': level.toString(),
-        'timestamp': DateTime.now().toIso8601String(),
         'stacktrace': stackTrace.toString(),
         'name': name ?? '',
       };
