@@ -1,5 +1,10 @@
 Changelog
 =========
+#### Version 1.3.0
+* BREAKING CHANGES: `TransactionUtil` - Add `apiService` param for each method
+* BREAKING CHANGES: Changing the way you load providers: `UcidsTokensProviders` & `CoinPriceProviders` 
+* Move coin price management to an infrastructure repository
+* Add a generic token model and associated def
 
 #### Version 1.2.14
 * Add timestamp in debug logs

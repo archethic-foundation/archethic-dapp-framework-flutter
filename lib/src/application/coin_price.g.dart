@@ -6,8 +6,23 @@ part of 'coin_price.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$coinPriceFromAddressHash() =>
-    r'f70fc08512773ba431ad574ba14b2dfa8028c3c7';
+String _$coinPriceRepositoryHash() =>
+    r'd571b12cd0c140f89007d4b6ce9b11a5a0caa01f';
+
+/// See also [_coinPriceRepository].
+@ProviderFor(_coinPriceRepository)
+final _coinPriceRepositoryProvider = Provider<CoinPriceRepositoryImpl>.internal(
+  _coinPriceRepository,
+  name: r'_coinPriceRepositoryProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$coinPriceRepositoryHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef _CoinPriceRepositoryRef = ProviderRef<CoinPriceRepositoryImpl>;
+String _$coinPriceHash() => r'9c3db9288398f63b60a58ffbc6c616950d949f3e';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -30,30 +45,33 @@ class _SystemHash {
   }
 }
 
-/// See also [_coinPriceFromAddress].
-@ProviderFor(_coinPriceFromAddress)
-const _coinPriceFromAddressProvider = _CoinPriceFromAddressFamily();
+/// See also [_coinPrice].
+@ProviderFor(_coinPrice)
+const _coinPriceProvider = _CoinPriceFamily();
 
-/// See also [_coinPriceFromAddress].
-class _CoinPriceFromAddressFamily extends Family<double> {
-  /// See also [_coinPriceFromAddress].
-  const _CoinPriceFromAddressFamily();
+/// See also [_coinPrice].
+class _CoinPriceFamily extends Family<AsyncValue<double>> {
+  /// See also [_coinPrice].
+  const _CoinPriceFamily();
 
-  /// See also [_coinPriceFromAddress].
-  _CoinPriceFromAddressProvider call(
-    String address,
-  ) {
-    return _CoinPriceFromAddressProvider(
-      address,
+  /// See also [_coinPrice].
+  _CoinPriceProvider call({
+    required String address,
+    String? network,
+  }) {
+    return _CoinPriceProvider(
+      address: address,
+      network: network,
     );
   }
 
   @override
-  _CoinPriceFromAddressProvider getProviderOverride(
-    covariant _CoinPriceFromAddressProvider provider,
+  _CoinPriceProvider getProviderOverride(
+    covariant _CoinPriceProvider provider,
   ) {
     return call(
-      provider.address,
+      address: provider.address,
+      network: provider.network,
     );
   }
 
@@ -69,32 +87,35 @@ class _CoinPriceFromAddressFamily extends Family<double> {
       _allTransitiveDependencies;
 
   @override
-  String? get name => r'_coinPriceFromAddressProvider';
+  String? get name => r'_coinPriceProvider';
 }
 
-/// See also [_coinPriceFromAddress].
-class _CoinPriceFromAddressProvider extends AutoDisposeProvider<double> {
-  /// See also [_coinPriceFromAddress].
-  _CoinPriceFromAddressProvider(
-    String address,
-  ) : this._internal(
-          (ref) => _coinPriceFromAddress(
-            ref as _CoinPriceFromAddressRef,
-            address,
+/// See also [_coinPrice].
+class _CoinPriceProvider extends AutoDisposeFutureProvider<double> {
+  /// See also [_coinPrice].
+  _CoinPriceProvider({
+    required String address,
+    String? network,
+  }) : this._internal(
+          (ref) => _coinPrice(
+            ref as _CoinPriceRef,
+            address: address,
+            network: network,
           ),
-          from: _coinPriceFromAddressProvider,
-          name: r'_coinPriceFromAddressProvider',
+          from: _coinPriceProvider,
+          name: r'_coinPriceProvider',
           debugGetCreateSourceHash:
               const bool.fromEnvironment('dart.vm.product')
                   ? null
-                  : _$coinPriceFromAddressHash,
-          dependencies: _CoinPriceFromAddressFamily._dependencies,
+                  : _$coinPriceHash,
+          dependencies: _CoinPriceFamily._dependencies,
           allTransitiveDependencies:
-              _CoinPriceFromAddressFamily._allTransitiveDependencies,
+              _CoinPriceFamily._allTransitiveDependencies,
           address: address,
+          network: network,
         );
 
-  _CoinPriceFromAddressProvider._internal(
+  _CoinPriceProvider._internal(
     super._createNotifier, {
     required super.name,
     required super.dependencies,
@@ -102,75 +123,87 @@ class _CoinPriceFromAddressProvider extends AutoDisposeProvider<double> {
     required super.debugGetCreateSourceHash,
     required super.from,
     required this.address,
+    required this.network,
   }) : super.internal();
 
   final String address;
+  final String? network;
 
   @override
   Override overrideWith(
-    double Function(_CoinPriceFromAddressRef provider) create,
+    FutureOr<double> Function(_CoinPriceRef provider) create,
   ) {
     return ProviderOverride(
       origin: this,
-      override: _CoinPriceFromAddressProvider._internal(
-        (ref) => create(ref as _CoinPriceFromAddressRef),
+      override: _CoinPriceProvider._internal(
+        (ref) => create(ref as _CoinPriceRef),
         from: from,
         name: null,
         dependencies: null,
         allTransitiveDependencies: null,
         debugGetCreateSourceHash: null,
         address: address,
+        network: network,
       ),
     );
   }
 
   @override
-  AutoDisposeProviderElement<double> createElement() {
-    return _CoinPriceFromAddressProviderElement(this);
+  AutoDisposeFutureProviderElement<double> createElement() {
+    return _CoinPriceProviderElement(this);
   }
 
   @override
   bool operator ==(Object other) {
-    return other is _CoinPriceFromAddressProvider && other.address == address;
+    return other is _CoinPriceProvider &&
+        other.address == address &&
+        other.network == network;
   }
 
   @override
   int get hashCode {
     var hash = _SystemHash.combine(0, runtimeType.hashCode);
     hash = _SystemHash.combine(hash, address.hashCode);
+    hash = _SystemHash.combine(hash, network.hashCode);
 
     return _SystemHash.finish(hash);
   }
 }
 
-mixin _CoinPriceFromAddressRef on AutoDisposeProviderRef<double> {
+mixin _CoinPriceRef on AutoDisposeFutureProviderRef<double> {
   /// The parameter `address` of this provider.
   String get address;
+
+  /// The parameter `network` of this provider.
+  String? get network;
 }
 
-class _CoinPriceFromAddressProviderElement
-    extends AutoDisposeProviderElement<double> with _CoinPriceFromAddressRef {
-  _CoinPriceFromAddressProviderElement(super.provider);
+class _CoinPriceProviderElement extends AutoDisposeFutureProviderElement<double>
+    with _CoinPriceRef {
+  _CoinPriceProviderElement(super.provider);
 
   @override
-  String get address => (origin as _CoinPriceFromAddressProvider).address;
+  String get address => (origin as _CoinPriceProvider).address;
+  @override
+  String? get network => (origin as _CoinPriceProvider).network;
 }
 
-String _$coinPriceNotifierHash() => r'7d65d3f7305007fd65b98eda0b012ad0ccd380a0';
+String _$coinPricesNotifierHash() =>
+    r'9dc4f40746f9f7e2d580a2146eb728a294f404c0';
 
-/// See also [_CoinPriceNotifier].
-@ProviderFor(_CoinPriceNotifier)
-final _coinPriceNotifierProvider =
-    NotifierProvider<_CoinPriceNotifier, CryptoPrice>.internal(
-  _CoinPriceNotifier.new,
-  name: r'_coinPriceNotifierProvider',
+/// See also [_CoinPricesNotifier].
+@ProviderFor(_CoinPricesNotifier)
+final _coinPricesNotifierProvider =
+    NotifierProvider<_CoinPricesNotifier, CryptoPrice>.internal(
+  _CoinPricesNotifier.new,
+  name: r'_coinPricesNotifierProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$coinPriceNotifierHash,
+      : _$coinPricesNotifierHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$CoinPriceNotifier = Notifier<CryptoPrice>;
+typedef _$CoinPricesNotifier = Notifier<CryptoPrice>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

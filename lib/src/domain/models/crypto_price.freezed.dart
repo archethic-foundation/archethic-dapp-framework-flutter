@@ -20,12 +20,12 @@ CryptoPrice _$CryptoPriceFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CryptoPrice {
-  int? get timestamp => throw _privateConstructorUsedError; // Used UCIDs
-  double get bitcoin => throw _privateConstructorUsedError; // 1
-  double get matic => throw _privateConstructorUsedError; // 3890
-  double get ethereum => throw _privateConstructorUsedError; // 1027
-  double get bnb => throw _privateConstructorUsedError; // 1839
-  double get usdc => throw _privateConstructorUsedError; // 3408
+  int? get timestamp => throw _privateConstructorUsedError;
+  double get bitcoin => throw _privateConstructorUsedError;
+  double get matic => throw _privateConstructorUsedError;
+  double get ethereum => throw _privateConstructorUsedError;
+  double get bnb => throw _privateConstructorUsedError;
+  double get usdc => throw _privateConstructorUsedError;
   double get eure => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -191,27 +191,21 @@ class _$CryptoPriceImpl implements _CryptoPrice {
 
   @override
   final int? timestamp;
-// Used UCIDs
   @override
   @JsonKey()
   final double bitcoin;
-// 1
   @override
   @JsonKey()
   final double matic;
-// 3890
   @override
   @JsonKey()
   final double ethereum;
-// 1027
   @override
   @JsonKey()
   final double bnb;
-// 1839
   @override
   @JsonKey()
   final double usdc;
-// 3408
   @override
   @JsonKey()
   final double eure;
@@ -271,17 +265,17 @@ abstract class _CryptoPrice implements CryptoPrice {
 
   @override
   int? get timestamp;
-  @override // Used UCIDs
+  @override
   double get bitcoin;
-  @override // 1
+  @override
   double get matic;
-  @override // 3890
+  @override
   double get ethereum;
-  @override // 1027
+  @override
   double get bnb;
-  @override // 1839
+  @override
   double get usdc;
-  @override // 3408
+  @override
   double get eure;
   @override
   @JsonKey(ignore: true)
