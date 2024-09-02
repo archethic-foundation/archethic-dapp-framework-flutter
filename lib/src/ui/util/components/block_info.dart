@@ -1,8 +1,7 @@
 /// SPDX-License-Identifier: AGPL-3.0-or-later
 import 'dart:ui';
 
-import 'package:archethic_dapp_framework_flutter/archethic_dapp_framework_flutter.dart'
-    as aedappfm;
+import 'package:archethic_dapp_framework_flutter/src/ui/themes/app_theme_base.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
@@ -24,6 +23,7 @@ class BlockInfo extends ConsumerWidget {
       top: 8,
       bottom: 8,
     ),
+    this.borderWith = 1.0,
     super.key,
   });
 
@@ -35,6 +35,7 @@ class BlockInfo extends ConsumerWidget {
   final BlockInfoColor blockInfoColor;
   final Widget? backgroundWidget;
   final Widget? bottomWidget;
+  final double borderWith;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -56,9 +57,9 @@ class BlockInfo extends ConsumerWidget {
                       gradient: blockInfoColor == BlockInfoColor.blue
                           ? LinearGradient(
                               colors: [
-                                aedappfm.AppThemeBase.sheetBackgroundTertiary
+                                AppThemeBase.sheetBackgroundTertiary
                                     .withOpacity(0.3),
-                                aedappfm.AppThemeBase.sheetBackgroundTertiary
+                                AppThemeBase.sheetBackgroundTertiary
                                     .withOpacity(0.3),
                               ],
                               stops: const [0, 1],
@@ -66,31 +67,29 @@ class BlockInfo extends ConsumerWidget {
                           : blockInfoColor == BlockInfoColor.purple
                               ? LinearGradient(
                                   colors: [
-                                    aedappfm.ArchethicThemeBase.raspberry500
-                                        .withOpacity(0.3),
-                                    aedappfm.ArchethicThemeBase.raspberry500
-                                        .withOpacity(0.3),
+                                    ArchethicThemeBase.raspberry500
+                                        .withOpacity(0.5),
+                                    ArchethicThemeBase.raspberry500
+                                        .withOpacity(0.2),
                                   ],
                                   stops: const [0, 1],
                                 )
                               : blockInfoColor == BlockInfoColor.green
                                   ? LinearGradient(
                                       colors: [
-                                        aedappfm.ArchethicThemeBase
-                                            .systemPositive300
+                                        ArchethicThemeBase.systemPositive300
                                             .withOpacity(0.3),
-                                        aedappfm.ArchethicThemeBase
-                                            .systemPositive600
+                                        ArchethicThemeBase.systemPositive600
                                             .withOpacity(0.3),
                                       ],
                                       stops: const [0, 1],
                                     )
                                   : LinearGradient(
                                       colors: [
-                                        aedappfm.ArchethicThemeBase
+                                        ArchethicThemeBase
                                             .paleTransparentBackground
                                             .withOpacity(0.3),
-                                        aedappfm.ArchethicThemeBase
+                                        ArchethicThemeBase
                                             .paleTransparentBackground
                                             .withOpacity(0.3),
                                       ],
@@ -100,9 +99,9 @@ class BlockInfo extends ConsumerWidget {
                         gradient: blockInfoColor == BlockInfoColor.blue
                             ? LinearGradient(
                                 colors: [
-                                  aedappfm.AppThemeBase.sheetBorderTertiary
+                                  AppThemeBase.sheetBorderTertiary
                                       .withOpacity(0.4),
-                                  aedappfm.AppThemeBase.sheetBackgroundTertiary
+                                  AppThemeBase.sheetBackgroundTertiary
                                       .withOpacity(0.4),
                                 ],
                                 stops: const [0, 1],
@@ -110,9 +109,9 @@ class BlockInfo extends ConsumerWidget {
                             : blockInfoColor == BlockInfoColor.purple
                                 ? LinearGradient(
                                     colors: [
-                                      aedappfm.ArchethicThemeBase.raspberry500
-                                          .withOpacity(0.3),
-                                      aedappfm.ArchethicThemeBase.raspberry500
+                                      AppThemeBase.sheetBorderSecondary
+                                          .withOpacity(0.1),
+                                      AppThemeBase.sheetBorderSecondary
                                           .withOpacity(0.4),
                                     ],
                                     stops: const [0, 1],
@@ -120,26 +119,25 @@ class BlockInfo extends ConsumerWidget {
                                 : blockInfoColor == BlockInfoColor.green
                                     ? LinearGradient(
                                         colors: [
-                                          aedappfm.ArchethicThemeBase
-                                              .systemPositive100
+                                          ArchethicThemeBase.systemPositive100
                                               .withOpacity(0.2),
-                                          aedappfm.ArchethicThemeBase
-                                              .systemPositive300
+                                          ArchethicThemeBase.systemPositive300
                                               .withOpacity(0.2),
                                         ],
                                         stops: const [0, 1],
                                       )
                                     : LinearGradient(
                                         colors: [
-                                          aedappfm.ArchethicThemeBase
+                                          ArchethicThemeBase
                                               .paleTransparentBorder
                                               .withOpacity(0.2),
-                                          aedappfm.ArchethicThemeBase
+                                          ArchethicThemeBase
                                               .paleTransparentBorder
                                               .withOpacity(0.2),
                                         ],
                                         stops: const [0, 1],
                                       ),
+                        width: borderWith,
                       ),
                       borderRadius: BorderRadius.circular(10),
                     ),
