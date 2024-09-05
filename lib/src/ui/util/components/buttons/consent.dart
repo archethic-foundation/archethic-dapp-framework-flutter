@@ -1,4 +1,6 @@
-import 'package:archethic_dapp_framework_flutter/archethic_dapp_framework_flutter.dart';
+import 'package:archethic_dapp_framework_flutter/src/l10n/localizations-ae-dapp-framework.dart';
+import 'package:archethic_dapp_framework_flutter/src/ui/util/generic/responsive.dart';
+import 'package:archethic_dapp_framework_flutter/src/ui/util/iconsax.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
