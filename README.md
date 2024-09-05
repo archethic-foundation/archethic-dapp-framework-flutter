@@ -4,7 +4,7 @@ This project provides widgets to facilitate the creation of Archethic DApps
 ## Arb file management
 
 Please, fill `/lib/src/l10n/intl_en.arb` file to externalize texts. 
-Best practice: prefix each key with `edappfm_` to avoid doublons with DApp projects
+Best practice: prefix each key with `aedappfm_` to avoid doublons with DApp projects
 
 ### To generate the arb file, you should:
 - Generate with Flutter_Gen (command: `flutter gen-l10n`) the `AppLocalizations` and `AppLocalizationsEn` classes in the hidden folder `.dart_tool/flutter_gen/gen_l10n`. (see `/l10n.yaml` conf)

@@ -26,7 +26,7 @@ class _CoinPricesNotifier extends Notifier<CryptoPrice> {
     return CryptoPrice();
   }
 
-  Future<void> starTimer() async {
+  Future<void> startTimer() async {
     if (_timer != null) return;
 
     _logger.info('Start timer');
