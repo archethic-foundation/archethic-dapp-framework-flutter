@@ -1,5 +1,9 @@
 Changelog
 =========
+#### Version 1.3.1
+* Fix bug: `CoinPriceProvider` : Return 0 when ucid doesn't exist for a token
+* Fix typo: fix method `startTimer` instead of `starTimer` in `CoinPriceNotifier`
+
 #### Version 1.3.0
 * BREAKING CHANGES: `TransactionUtil` - Add `apiService` param for each method
 * BREAKING CHANGES: Changing the way you load providers: `UcidsTokensProviders` & `CoinPriceProviders` 

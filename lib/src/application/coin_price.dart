@@ -58,19 +58,23 @@ Future<double> _coinPrice(
   required String address,
   String? network,
 }) async {
-  final coinPrice = ref.watch(
-    CoinPriceProviders.coinPrices,
-  );
-  final ucid = await ref.watch(
-    UcidsTokensProviders.ucid(
-      address: address.toUpperCase(),
-      network: network,
-    ).future,
-  );
+  try {
+    final coinPrice = ref.watch(
+      CoinPriceProviders.coinPrices,
+    );
+    final ucid = await ref.watch(
+      UcidsTokensProviders.ucid(
+        address: address.toUpperCase(),
+        network: network,
+      ).future,
+    );
 
-  return ref
-      .read(_coinPriceRepositoryProvider)
-      .getPriceFromUcid(ucid, coinPrice);
+    return ref
+        .read(_coinPriceRepositoryProvider)
+        .getPriceFromUcid(ucid, coinPrice);
+  } catch (e) {
+    return 0;
+  }
 }
 
 abstract class CoinPriceProviders {
