@@ -21,8 +21,7 @@ class VerifiedTokensRepositoryImpl
   final ApiService apiService;
   final Environment environment;
 
-  @override
-  Future<VerifiedTokens> getVerifiedTokens() async {
+  Future<VerifiedTokens> _getLocalVerifiedTokens() async {
     final jsonContent = await rootBundle.loadString(
       'packages/archethic_dapp_framework_flutter/lib/src/domain/repositories/tokens/verified_tokens.json',
     );
@@ -33,8 +32,8 @@ class VerifiedTokensRepositoryImpl
   }
 
   @override
-  Future<List<String>> getVerifiedTokensFromNetwork() async {
-    final verifiedTokens = await getVerifiedTokens();
+  Future<List<String>> getVerifiedTokens() async {
+    final verifiedTokens = await _getLocalVerifiedTokens();
     return switch (environment) {
       Environment.testnet => _getVerifiedTokensFromBlockchain(
           '0000b01e7a497f0576a004c5957d14956e165a6f301d76cda35ba49be4444dac00eb',
