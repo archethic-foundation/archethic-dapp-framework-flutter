@@ -1,14 +1,26 @@
 /// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'dart:convert';
+
+import 'package:archethic_dapp_framework_flutter/src/domain/models/environment.dart';
 import 'package:archethic_dapp_framework_flutter/src/domain/models/verified_tokens.dart';
 import 'package:archethic_dapp_framework_flutter/src/domain/repositories/tokens/verified_tokens.repository.dart';
-import 'package:archethic_dapp_framework_flutter/src/util/generic/get_it_instance.dart';
 import 'package:archethic_lib_dart/archethic_lib_dart.dart';
 import 'package:flutter/services.dart';
 
 class VerifiedTokensRepositoryImpl
     implements VerifiedTokensRepositoryInterface {
+  VerifiedTokensRepositoryImpl({
+    required this.apiService,
+    required this.environment,
+  }) : assert(
+          apiService.endpoint == environment.endpoint,
+          'ApiService should use environment endpoint',
+        );
+
+  final ApiService apiService;
+  final Environment environment;
+
   @override
   Future<VerifiedTokens> getVerifiedTokens() async {
     final jsonContent = await rootBundle.loadString(
@@ -21,24 +33,20 @@ class VerifiedTokensRepositoryImpl
   }
 
   @override
-  Future<List<String>> getVerifiedTokensFromNetwork(
-    String network,
-  ) async {
+  Future<List<String>> getVerifiedTokensFromNetwork() async {
     final verifiedTokens = await getVerifiedTokens();
-    switch (network) {
-      case 'testnet':
-        return _getVerifiedTokensFromBlockchain(
+    return switch (environment) {
+      Environment.testnet => _getVerifiedTokensFromBlockchain(
           '0000b01e7a497f0576a004c5957d14956e165a6f301d76cda35ba49be4444dac00eb',
-        );
-      case 'mainnet':
-        return _getVerifiedTokensFromBlockchain(
+        ),
+      Environment.mainnet => _getVerifiedTokensFromBlockchain(
           '000030ed4ed79a05cfaa90b803c0ba933307de9923064651975b59047df3aaf223bb',
-        );
-      default:
-        return verifiedTokens.devnet;
-    }
+        ),
+      Environment.devnet => Future.value(verifiedTokens.devnet),
+    };
   }
 
+  @override
   Future<bool> isVerifiedToken(
     String address,
     List<String> verifiedTokensList,
@@ -52,7 +60,6 @@ class VerifiedTokensRepositoryImpl
   Future<List<String>> _getVerifiedTokensFromBlockchain(
     String txAddress,
   ) async {
-    final apiService = sl.get<ApiService>();
     final lastAddressMap = await apiService
         .getLastTransaction([txAddress], request: 'data { content }');
     if (lastAddressMap[txAddress] != null &&

@@ -221,11 +221,11 @@ mixin TransactionMixin {
   }
 
   Future<bool> isSCCallExecuted(
+    ApiService apiService,
     String contractAddress,
     String txAddress,
   ) async {
     var executed = false;
-    final apiService = sl.get<ApiService>();
 
     final transactionChainResult = await apiService.getTransactionChain(
       {contractAddress: ''},

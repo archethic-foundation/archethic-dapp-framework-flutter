@@ -5,7 +5,10 @@ import 'package:archethic_dapp_framework_flutter/src/domain/models/verified_toke
 abstract class VerifiedTokensRepositoryInterface {
   Future<VerifiedTokens> getVerifiedTokens();
 
-  Future<List<String>> getVerifiedTokensFromNetwork(
-    String network,
+  Future<List<String>> getVerifiedTokensFromNetwork();
+
+  Future<bool> isVerifiedToken(
+    String address,
+    List<String> verifiedTokensList,
   );
 }

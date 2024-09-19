@@ -6,12 +6,12 @@ part 'ucids_tokens.g.dart';
 @Riverpod(keepAlive: true)
 Future<Map<String, int>> _ucidsTokens(
   _UcidsTokensRef ref, {
-  String? network,
+  Environment? environment,
 }) async {
-  if (network != null) {
+  if (environment != null) {
     return ref
         .watch(_ucidsTokensRepositoryProvider)
-        .getUcidsTokensFromNetwork(network);
+        .getUcidsTokensFromNetwork(environment);
   }
 
   final allUcids = await ref
@@ -30,10 +30,10 @@ Future<Map<String, int>> _ucidsTokens(
 Future<int> _ucid(
   _UcidRef ref, {
   required String address,
-  String? network,
+  Environment? environment,
 }) async {
   final ucidsTokens = await ref.watch(
-    _ucidsTokensProvider(network: network).future,
+    _ucidsTokensProvider(environment: environment).future,
   );
 
   final ucid = ucidsTokens[address];

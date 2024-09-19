@@ -6,7 +6,7 @@ part of 'ucids_tokens.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$ucidsTokensHash() => r'9324c436181882b1e20b882e64ad2890c6b01f07';
+String _$ucidsTokensHash() => r'a0cc054d3b248d9c929021a02ad1ff69a122a62b';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -40,10 +40,10 @@ class _UcidsTokensFamily extends Family<AsyncValue<Map<String, int>>> {
 
   /// See also [_ucidsTokens].
   _UcidsTokensProvider call({
-    String? network,
+    Environment? environment,
   }) {
     return _UcidsTokensProvider(
-      network: network,
+      environment: environment,
     );
   }
 
@@ -52,7 +52,7 @@ class _UcidsTokensFamily extends Family<AsyncValue<Map<String, int>>> {
     covariant _UcidsTokensProvider provider,
   ) {
     return call(
-      network: provider.network,
+      environment: provider.environment,
     );
   }
 
@@ -75,11 +75,11 @@ class _UcidsTokensFamily extends Family<AsyncValue<Map<String, int>>> {
 class _UcidsTokensProvider extends FutureProvider<Map<String, int>> {
   /// See also [_ucidsTokens].
   _UcidsTokensProvider({
-    String? network,
+    Environment? environment,
   }) : this._internal(
           (ref) => _ucidsTokens(
             ref as _UcidsTokensRef,
-            network: network,
+            environment: environment,
           ),
           from: _ucidsTokensProvider,
           name: r'_ucidsTokensProvider',
@@ -90,7 +90,7 @@ class _UcidsTokensProvider extends FutureProvider<Map<String, int>> {
           dependencies: _UcidsTokensFamily._dependencies,
           allTransitiveDependencies:
               _UcidsTokensFamily._allTransitiveDependencies,
-          network: network,
+          environment: environment,
         );
 
   _UcidsTokensProvider._internal(
@@ -100,10 +100,10 @@ class _UcidsTokensProvider extends FutureProvider<Map<String, int>> {
     required super.allTransitiveDependencies,
     required super.debugGetCreateSourceHash,
     required super.from,
-    required this.network,
+    required this.environment,
   }) : super.internal();
 
-  final String? network;
+  final Environment? environment;
 
   @override
   Override overrideWith(
@@ -118,7 +118,7 @@ class _UcidsTokensProvider extends FutureProvider<Map<String, int>> {
         dependencies: null,
         allTransitiveDependencies: null,
         debugGetCreateSourceHash: null,
-        network: network,
+        environment: environment,
       ),
     );
   }
@@ -130,21 +130,21 @@ class _UcidsTokensProvider extends FutureProvider<Map<String, int>> {
 
   @override
   bool operator ==(Object other) {
-    return other is _UcidsTokensProvider && other.network == network;
+    return other is _UcidsTokensProvider && other.environment == environment;
   }
 
   @override
   int get hashCode {
     var hash = _SystemHash.combine(0, runtimeType.hashCode);
-    hash = _SystemHash.combine(hash, network.hashCode);
+    hash = _SystemHash.combine(hash, environment.hashCode);
 
     return _SystemHash.finish(hash);
   }
 }
 
 mixin _UcidsTokensRef on FutureProviderRef<Map<String, int>> {
-  /// The parameter `network` of this provider.
-  String? get network;
+  /// The parameter `environment` of this provider.
+  Environment? get environment;
 }
 
 class _UcidsTokensProviderElement
@@ -152,10 +152,10 @@ class _UcidsTokensProviderElement
   _UcidsTokensProviderElement(super.provider);
 
   @override
-  String? get network => (origin as _UcidsTokensProvider).network;
+  Environment? get environment => (origin as _UcidsTokensProvider).environment;
 }
 
-String _$ucidHash() => r'4d6dfd27cd477d31b6566d21238e0853afccc4e4';
+String _$ucidHash() => r'654f4fcfcc9aa985784e0892c6a18d170a24d055';
 
 /// See also [_ucid].
 @ProviderFor(_ucid)
@@ -169,11 +169,11 @@ class _UcidFamily extends Family<AsyncValue<int>> {
   /// See also [_ucid].
   _UcidProvider call({
     required String address,
-    String? network,
+    Environment? environment,
   }) {
     return _UcidProvider(
       address: address,
-      network: network,
+      environment: environment,
     );
   }
 
@@ -183,7 +183,7 @@ class _UcidFamily extends Family<AsyncValue<int>> {
   ) {
     return call(
       address: provider.address,
-      network: provider.network,
+      environment: provider.environment,
     );
   }
 
@@ -207,12 +207,12 @@ class _UcidProvider extends FutureProvider<int> {
   /// See also [_ucid].
   _UcidProvider({
     required String address,
-    String? network,
+    Environment? environment,
   }) : this._internal(
           (ref) => _ucid(
             ref as _UcidRef,
             address: address,
-            network: network,
+            environment: environment,
           ),
           from: _ucidProvider,
           name: r'_ucidProvider',
@@ -221,7 +221,7 @@ class _UcidProvider extends FutureProvider<int> {
           dependencies: _UcidFamily._dependencies,
           allTransitiveDependencies: _UcidFamily._allTransitiveDependencies,
           address: address,
-          network: network,
+          environment: environment,
         );
 
   _UcidProvider._internal(
@@ -232,11 +232,11 @@ class _UcidProvider extends FutureProvider<int> {
     required super.debugGetCreateSourceHash,
     required super.from,
     required this.address,
-    required this.network,
+    required this.environment,
   }) : super.internal();
 
   final String address;
-  final String? network;
+  final Environment? environment;
 
   @override
   Override overrideWith(
@@ -252,7 +252,7 @@ class _UcidProvider extends FutureProvider<int> {
         allTransitiveDependencies: null,
         debugGetCreateSourceHash: null,
         address: address,
-        network: network,
+        environment: environment,
       ),
     );
   }
@@ -266,14 +266,14 @@ class _UcidProvider extends FutureProvider<int> {
   bool operator ==(Object other) {
     return other is _UcidProvider &&
         other.address == address &&
-        other.network == network;
+        other.environment == environment;
   }
 
   @override
   int get hashCode {
     var hash = _SystemHash.combine(0, runtimeType.hashCode);
     hash = _SystemHash.combine(hash, address.hashCode);
-    hash = _SystemHash.combine(hash, network.hashCode);
+    hash = _SystemHash.combine(hash, environment.hashCode);
 
     return _SystemHash.finish(hash);
   }
@@ -283,8 +283,8 @@ mixin _UcidRef on FutureProviderRef<int> {
   /// The parameter `address` of this provider.
   String get address;
 
-  /// The parameter `network` of this provider.
-  String? get network;
+  /// The parameter `environment` of this provider.
+  Environment? get environment;
 }
 
 class _UcidProviderElement extends FutureProviderElement<int> with _UcidRef {
@@ -293,7 +293,7 @@ class _UcidProviderElement extends FutureProviderElement<int> with _UcidRef {
   @override
   String get address => (origin as _UcidProvider).address;
   @override
-  String? get network => (origin as _UcidProvider).network;
+  Environment? get environment => (origin as _UcidProvider).environment;
 }
 
 String _$ucidsTokensRepositoryHash() =>

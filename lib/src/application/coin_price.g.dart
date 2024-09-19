@@ -22,7 +22,7 @@ final _coinPriceRepositoryProvider = Provider<CoinPriceRepositoryImpl>.internal(
 );
 
 typedef _CoinPriceRepositoryRef = ProviderRef<CoinPriceRepositoryImpl>;
-String _$coinPriceHash() => r'9c3db9288398f63b60a58ffbc6c616950d949f3e';
+String _$coinPriceHash() => r'5b8ef5836a77a2716a95391022b058d0c5e849af';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -57,11 +57,11 @@ class _CoinPriceFamily extends Family<AsyncValue<double>> {
   /// See also [_coinPrice].
   _CoinPriceProvider call({
     required String address,
-    String? network,
+    Environment? environment,
   }) {
     return _CoinPriceProvider(
       address: address,
-      network: network,
+      environment: environment,
     );
   }
 
@@ -71,7 +71,7 @@ class _CoinPriceFamily extends Family<AsyncValue<double>> {
   ) {
     return call(
       address: provider.address,
-      network: provider.network,
+      environment: provider.environment,
     );
   }
 
@@ -91,16 +91,16 @@ class _CoinPriceFamily extends Family<AsyncValue<double>> {
 }
 
 /// See also [_coinPrice].
-class _CoinPriceProvider extends AutoDisposeFutureProvider<double> {
+class _CoinPriceProvider extends FutureProvider<double> {
   /// See also [_coinPrice].
   _CoinPriceProvider({
     required String address,
-    String? network,
+    Environment? environment,
   }) : this._internal(
           (ref) => _coinPrice(
             ref as _CoinPriceRef,
             address: address,
-            network: network,
+            environment: environment,
           ),
           from: _coinPriceProvider,
           name: r'_coinPriceProvider',
@@ -112,7 +112,7 @@ class _CoinPriceProvider extends AutoDisposeFutureProvider<double> {
           allTransitiveDependencies:
               _CoinPriceFamily._allTransitiveDependencies,
           address: address,
-          network: network,
+          environment: environment,
         );
 
   _CoinPriceProvider._internal(
@@ -123,11 +123,11 @@ class _CoinPriceProvider extends AutoDisposeFutureProvider<double> {
     required super.debugGetCreateSourceHash,
     required super.from,
     required this.address,
-    required this.network,
+    required this.environment,
   }) : super.internal();
 
   final String address;
-  final String? network;
+  final Environment? environment;
 
   @override
   Override overrideWith(
@@ -143,13 +143,13 @@ class _CoinPriceProvider extends AutoDisposeFutureProvider<double> {
         allTransitiveDependencies: null,
         debugGetCreateSourceHash: null,
         address: address,
-        network: network,
+        environment: environment,
       ),
     );
   }
 
   @override
-  AutoDisposeFutureProviderElement<double> createElement() {
+  FutureProviderElement<double> createElement() {
     return _CoinPriceProviderElement(this);
   }
 
@@ -157,39 +157,39 @@ class _CoinPriceProvider extends AutoDisposeFutureProvider<double> {
   bool operator ==(Object other) {
     return other is _CoinPriceProvider &&
         other.address == address &&
-        other.network == network;
+        other.environment == environment;
   }
 
   @override
   int get hashCode {
     var hash = _SystemHash.combine(0, runtimeType.hashCode);
     hash = _SystemHash.combine(hash, address.hashCode);
-    hash = _SystemHash.combine(hash, network.hashCode);
+    hash = _SystemHash.combine(hash, environment.hashCode);
 
     return _SystemHash.finish(hash);
   }
 }
 
-mixin _CoinPriceRef on AutoDisposeFutureProviderRef<double> {
+mixin _CoinPriceRef on FutureProviderRef<double> {
   /// The parameter `address` of this provider.
   String get address;
 
-  /// The parameter `network` of this provider.
-  String? get network;
+  /// The parameter `environment` of this provider.
+  Environment? get environment;
 }
 
-class _CoinPriceProviderElement extends AutoDisposeFutureProviderElement<double>
+class _CoinPriceProviderElement extends FutureProviderElement<double>
     with _CoinPriceRef {
   _CoinPriceProviderElement(super.provider);
 
   @override
   String get address => (origin as _CoinPriceProvider).address;
   @override
-  String? get network => (origin as _CoinPriceProvider).network;
+  Environment? get environment => (origin as _CoinPriceProvider).environment;
 }
 
 String _$coinPricesNotifierHash() =>
-    r'9dc4f40746f9f7e2d580a2146eb728a294f404c0';
+    r'9d72c7353bf5ef51e7fcc9644a99877f49e26dd6';
 
 /// See also [_CoinPricesNotifier].
 @ProviderFor(_CoinPricesNotifier)
