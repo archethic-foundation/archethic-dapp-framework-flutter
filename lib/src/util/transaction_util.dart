@@ -119,6 +119,7 @@ mixin TransactionMixin {
   }
 
   Future<List<Transaction>> signTx(
+    awc.ArchethicDAppClient dappClient,
     String serviceName,
     String pathSuffix,
     List<Transaction> transactions, {
@@ -141,8 +142,7 @@ mixin TransactionMixin {
           .toList(),
     );
 
-    final result =
-        await sl.get<awc.ArchethicDAppClient>().signTransactions(payload);
+    final result = await dappClient.signTransactions(payload);
     result.when(
       failure: (failure) {
         if (failure.code == 4001) {
@@ -188,15 +188,14 @@ mixin TransactionMixin {
     return false;
   }
 
-  Future<String> getCurrentAccount() async {
+  Future<String> getCurrentAccount(
+    awc.ArchethicDAppClient dappClient,
+  ) async {
     var accountName = '';
 
     // TODO(a): remove the try catch, not mandatory but I added it to have the connection issue front exception for the user
     try {
-      final result = await sl
-          .get<awc.ArchethicDAppClient>()
-          .getCurrentAccount()
-          .valueOrThrow;
+      final result = await dappClient.getCurrentAccount().valueOrThrow;
       accountName = result.shortName;
     } catch (e, stackTrace) {
       sl.get<LogManager>().log(
@@ -210,9 +209,11 @@ mixin TransactionMixin {
     return accountName;
   }
 
-  Future<void> refreshCurrentAccountInfoWallet() async {
+  Future<void> refreshCurrentAccountInfoWallet(
+    awc.ArchethicDAppClient dappClient,
+  ) async {
     try {
-      await sl.get<awc.ArchethicDAppClient>().refreshCurrentAccount();
+      await dappClient.refreshCurrentAccount();
     } catch (e) {
       // No need to notify error
     }

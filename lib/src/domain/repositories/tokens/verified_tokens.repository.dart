@@ -3,7 +3,7 @@
 abstract class VerifiedTokensRepositoryInterface {
   Future<List<String>> getVerifiedTokens();
 
-  Future<bool> isVerifiedToken(
+  bool isVerifiedToken(
     String address,
     List<String> verifiedTokensList,
   );

@@ -15,7 +15,7 @@ class VerifiedTokensRepositoryImpl
     required this.environment,
   }) : assert(
           apiService.endpoint == environment.endpoint,
-          'ApiService should use environment endpoint',
+          'ApiService should use `${environment.endpoint}` endpoint',
         );
 
   final ApiService apiService;
@@ -33,7 +33,6 @@ class VerifiedTokensRepositoryImpl
 
   @override
   Future<List<String>> getVerifiedTokens() async {
-    final verifiedTokens = await _getLocalVerifiedTokens();
     return switch (environment) {
       Environment.testnet => _getVerifiedTokensFromBlockchain(
           '0000b01e7a497f0576a004c5957d14956e165a6f301d76cda35ba49be4444dac00eb',
@@ -41,15 +40,17 @@ class VerifiedTokensRepositoryImpl
       Environment.mainnet => _getVerifiedTokensFromBlockchain(
           '000030ed4ed79a05cfaa90b803c0ba933307de9923064651975b59047df3aaf223bb',
         ),
-      Environment.devnet => Future.value(verifiedTokens.devnet),
+      Environment.devnet => _getLocalVerifiedTokens().then(
+          (local) => local.devnet,
+        ),
     };
   }
 
   @override
-  Future<bool> isVerifiedToken(
+  bool isVerifiedToken(
     String address,
     List<String> verifiedTokensList,
-  ) async {
+  ) {
     if (verifiedTokensList.contains(address.toUpperCase())) {
       return true;
     }
