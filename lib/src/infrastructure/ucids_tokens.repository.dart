@@ -2,7 +2,9 @@
 
 import 'dart:convert';
 
-import 'package:archethic_dapp_framework_flutter/archethic_dapp_framework_flutter.dart';
+import 'package:archethic_dapp_framework_flutter/src/domain/models/environment.dart';
+import 'package:archethic_dapp_framework_flutter/src/domain/models/ucids_tokens.dart';
+import 'package:archethic_dapp_framework_flutter/src/domain/repositories/tokens/ucids_tokens.repository.dart';
 import 'package:flutter/services.dart';
 
 class UcidsTokensRepositoryImpl implements UcidsTokensRepositoryInterface {
