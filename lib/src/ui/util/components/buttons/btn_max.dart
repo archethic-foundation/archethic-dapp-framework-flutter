@@ -10,10 +10,14 @@ class ButtonMax extends StatelessWidget {
     super.key,
     required this.balanceAmount,
     required this.onTap,
+    this.height,
+    this.style,
   });
 
   final double balanceAmount;
   final VoidCallback onTap;
+  final double? height;
+  final TextStyle? style;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +29,7 @@ class ButtonMax extends StatelessWidget {
       onTap: onTap,
       child: Container(
         alignment: Alignment.center,
+        height: height,
         padding: const EdgeInsets.only(left: 10, right: 10),
         decoration: BoxDecoration(
           color: Colors.transparent,
@@ -35,13 +40,14 @@ class ButtonMax extends StatelessWidget {
           padding: const EdgeInsets.only(top: 2),
           child: Text(
             AppLocalizations.of(context)!.aedappfm_btn_max,
-            style: DefaultTextStyle.of(context).style.copyWith(
-                  color: AppThemeBase.maxButtonColor,
-                  fontSize: Responsive.fontSizeFromTextStyle(
-                    context,
-                    DefaultTextStyle.of(context).style,
-                  ),
-                ),
+            style: style ??
+                DefaultTextStyle.of(context).style.copyWith(
+                      color: AppThemeBase.maxButtonColor,
+                      fontSize: Responsive.fontSizeFromTextStyle(
+                        context,
+                        DefaultTextStyle.of(context).style,
+                      ),
+                    ),
           ),
         ),
       )

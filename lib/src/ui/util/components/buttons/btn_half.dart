@@ -10,10 +10,14 @@ class ButtonHalf extends StatelessWidget {
     super.key,
     required this.balanceAmount,
     required this.onTap,
+    this.height,
+    this.style,
   });
 
   final double balanceAmount;
   final VoidCallback onTap;
+  final double? height;
+  final TextStyle? style;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +28,7 @@ class ButtonHalf extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
+        height: height,
         alignment: Alignment.center,
         padding: const EdgeInsets.only(left: 10, right: 10),
         decoration: BoxDecoration(
@@ -35,13 +40,14 @@ class ButtonHalf extends StatelessWidget {
           padding: const EdgeInsets.only(top: 2),
           child: Text(
             AppLocalizations.of(context)!.aedappfm_btn_half,
-            style: DefaultTextStyle.of(context).style.copyWith(
-                  color: AppThemeBase.halfButtonColor,
-                  fontSize: Responsive.fontSizeFromTextStyle(
-                    context,
-                    DefaultTextStyle.of(context).style,
-                  ),
-                ),
+            style: style ??
+                DefaultTextStyle.of(context).style.copyWith(
+                      color: AppThemeBase.halfButtonColor,
+                      fontSize: Responsive.fontSizeFromTextStyle(
+                        context,
+                        DefaultTextStyle.of(context).style,
+                      ),
+                    ),
           ),
         ),
       )
