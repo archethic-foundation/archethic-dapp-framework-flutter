@@ -1,0 +1,22 @@
+{
+    "@@last_modified": "2021-12-07T12:33:16.270871",
+    "aedappfm_yes": "Oui",
+    "aedappfm_no": "Non",
+    "aedappfm_btn_close": "Fermer",
+    "aedappfm_btn_max": "MAX",
+    "aedappfm_btn_half": "1/2",
+    "aedappfm_btn_resume": "Reprendre",
+    "aedappfm_confirmationPopupTitle": "Demande de confirmation",
+    "aedappfm_version": "Version :",
+    "aedappfm_build": "Build :",
+    "aedappfm_connectionWalletConnect": "Connectez votre portefeuille",
+    "aedappfm_consent_already_part1": "Les ",
+    "aedappfm_consent_already_part2": "Conditions d'utilisation",
+    "aedappfm_consent_already_part3": " et ",
+    "aedappfm_consent_already_part4": "Politique de confidentialité",
+    "aedappfm_consent_already_part5": " ont été acceptées pour la dernière fois le ",
+    "aedappfm_consent_to_check_part1": "J'accepte les ",
+    "aedappfm_consent_to_check_part2": "Conditions d'utilisation",
+    "aedappfm_consent_to_check_part3": " et ",
+    "aedappfm_consent_to_check_part4": "Politique de confidentialité"
+}
