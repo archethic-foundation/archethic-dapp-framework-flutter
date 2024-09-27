@@ -8,7 +8,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'coin_price.g.dart';
 
 @Riverpod(keepAlive: true)
-class _CoinPricesNotifier extends Notifier<CryptoPrice> {
+class _CoinPricesNotifier extends _$CoinPricesNotifier {
   static final _logger = Logger('CoinPricesNotifier');
 
   Timer? _timer;

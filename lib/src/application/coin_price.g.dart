@@ -189,7 +189,7 @@ class _CoinPriceProviderElement extends FutureProviderElement<double>
 }
 
 String _$coinPricesNotifierHash() =>
-    r'9d72c7353bf5ef51e7fcc9644a99877f49e26dd6';
+    r'6f2b703169d62c9ef9968588d6e780566034dc84';
 
 /// See also [_CoinPricesNotifier].
 @ProviderFor(_CoinPricesNotifier)
