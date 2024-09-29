@@ -8,7 +8,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'coin_price.g.dart';
 
 @Riverpod(keepAlive: true)
-class _CoinPricesNotifier extends Notifier<CryptoPrice> {
+class _CoinPricesNotifier extends _$CoinPricesNotifier {
   static final _logger = Logger('CoinPricesNotifier');
 
   Timer? _timer;
@@ -31,7 +31,7 @@ class _CoinPricesNotifier extends Notifier<CryptoPrice> {
 
     _logger.info('Start timer');
     _timer = Timer.periodic(const Duration(minutes: 1), (_) async {
-      state = (await ref.read(_coinPriceRepositoryProvider).fetchPrices())!;
+      state = (await ref.watch(_coinPriceRepositoryProvider).fetchPrices())!;
     });
   }
 
@@ -42,7 +42,7 @@ class _CoinPricesNotifier extends Notifier<CryptoPrice> {
   }
 
   Future<void> _getValue() async {
-    state = (await ref.read(_coinPriceRepositoryProvider).fetchPrices())!;
+    state = (await ref.watch(_coinPriceRepositoryProvider).fetchPrices())!;
   }
 }
 
@@ -52,11 +52,11 @@ CoinPriceRepositoryImpl _coinPriceRepository(
 ) =>
     CoinPriceRepositoryImpl();
 
-@riverpod
+@Riverpod(keepAlive: true)
 Future<double> _coinPrice(
   _CoinPriceRef ref, {
   required String address,
-  String? network,
+  Environment? environment,
 }) async {
   try {
     final coinPrice = ref.watch(
@@ -65,12 +65,12 @@ Future<double> _coinPrice(
     final ucid = await ref.watch(
       UcidsTokensProviders.ucid(
         address: address.toUpperCase(),
-        network: network,
+        environment: environment,
       ).future,
     );
 
     return ref
-        .read(_coinPriceRepositoryProvider)
+        .watch(_coinPriceRepositoryProvider)
         .getPriceFromUcid(ucid, coinPrice);
   } catch (e) {
     return 0;

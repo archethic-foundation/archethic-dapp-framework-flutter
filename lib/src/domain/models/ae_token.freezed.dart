@@ -20,10 +20,8 @@ AEToken _$AETokenFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AEToken {
-  String get name =>
-      throw _privateConstructorUsedError; // TODO(Reddwarf03) : on peut vraiment avoir un Token sans nom ?
-  String? get address =>
-      throw _privateConstructorUsedError; // TODO(Reddwarf03) : on peut vraiment avoir un Token sans address ?
+  String get name => throw _privateConstructorUsedError;
+  String? get address => throw _privateConstructorUsedError;
   String? get icon => throw _privateConstructorUsedError;
   String get symbol => throw _privateConstructorUsedError;
   double get balance => throw _privateConstructorUsedError;
@@ -266,10 +264,8 @@ class _$AETokenImpl extends _AEToken {
   @override
   @JsonKey()
   final String name;
-// TODO(Reddwarf03) : on peut vraiment avoir un Token sans nom ?
   @override
   final String? address;
-// TODO(Reddwarf03) : on peut vraiment avoir un Token sans address ?
   @override
   final String? icon;
   @override
@@ -360,9 +356,9 @@ abstract class _AEToken extends AEToken {
 
   @override
   String get name;
-  @override // TODO(Reddwarf03) : on peut vraiment avoir un Token sans nom ?
+  @override
   String? get address;
-  @override // TODO(Reddwarf03) : on peut vraiment avoir un Token sans address ?
+  @override
   String? get icon;
   @override
   String get symbol;

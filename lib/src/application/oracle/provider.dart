@@ -11,7 +11,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'provider.g.dart';
 
 @Riverpod(keepAlive: true)
-class _ArchethicOracleUCONotifier extends Notifier<ArchethicOracleUCO> {
+class _ArchethicOracleUCONotifier extends _$ArchethicOracleUCONotifier {
   ArchethicOracle? archethicOracleSubscription;
 
   static final _logger = Logger('ArchethicOracleUCONotifier');
