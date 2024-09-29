@@ -1,5 +1,8 @@
 Changelog
 =========
+#### Version 2.1.0
+* Upgrade AWC version to 2.1.0
+
 #### Version 2.0.0
 * BREAKING CHANGES: Introduce the Environment type
 
