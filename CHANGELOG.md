@@ -1,5 +1,8 @@
 Changelog
 =========
+#### Version 2.0.0
+* BREAKING CHANGES: Introduce the Environment type
+
 #### Version 1.3.1
 * Fix bug: `CoinPriceProvider` : Return 0 when ucid doesn't exist for a token
 * Fix typo: fix method `startTimer` instead of `starTimer` in `CoinPriceNotifier`
