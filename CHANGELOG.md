@@ -1,5 +1,8 @@
 Changelog
 =========
+#### Version 2.1.1
+* Upgrade AWC version to 2.1.2
+
 #### Version 2.1.0
 * Upgrade AWC version to 2.1.0
 
