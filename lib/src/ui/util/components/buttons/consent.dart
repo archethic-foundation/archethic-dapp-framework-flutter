@@ -1,6 +1,6 @@
 import 'package:archethic_dapp_framework_flutter/src/l10n/localizations-ae-dapp-framework.dart';
-import 'package:archethic_dapp_framework_flutter/src/ui/util/generic/responsive.dart';
 import 'package:archethic_dapp_framework_flutter/src/ui/util/iconsax.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
@@ -13,78 +13,62 @@ class ConsentToCheck extends ConsumerWidget {
     required this.onToggleConsent,
     required this.uriTermsOfUse,
     required this.uriPrivacyPolicy,
+    this.textStyle,
   });
 
   final bool consentChecked;
   final Function(bool? newValue) onToggleConsent;
   final String uriTermsOfUse;
   final String uriPrivacyPolicy;
+  final TextStyle? textStyle;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final defaultStyle = textStyle ?? Theme.of(context).textTheme.bodyMedium!;
+    final linkStyle = defaultStyle.copyWith(
+      decoration: TextDecoration.underline,
+    );
+
     return Row(
       children: [
         Expanded(
           child: CheckboxListTile(
-            title: Row(
-              children: [
-                Text(
-                  AppLocalizations.of(context)!.aedappfm_consent_to_check_part1,
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        fontSize: Responsive.fontSizeFromTextStyle(
-                          context,
-                          Theme.of(context).textTheme.bodyMedium!,
-                        ),
-                      ),
-                ),
-                InkWell(
-                  onTap: () async {
-                    if (!await canLaunchUrl(Uri.parse(uriTermsOfUse))) return;
-
-                    await launchUrl(Uri.parse(uriTermsOfUse));
-                  },
-                  child: Text(
-                    AppLocalizations.of(context)!
+            title: RichText(
+              text: TextSpan(
+                style: defaultStyle,
+                children: [
+                  TextSpan(
+                    text: AppLocalizations.of(context)!
+                        .aedappfm_consent_to_check_part1,
+                  ),
+                  TextSpan(
+                    text: AppLocalizations.of(context)!
                         .aedappfm_consent_to_check_part2,
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          decoration: TextDecoration.underline,
-                          fontSize: Responsive.fontSizeFromTextStyle(
-                            context,
-                            Theme.of(context).textTheme.bodyMedium!,
-                          ),
-                        ),
+                    style: linkStyle,
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () async {
+                        if (await canLaunchUrl(Uri.parse(uriTermsOfUse))) {
+                          await launchUrl(Uri.parse(uriTermsOfUse));
+                        }
+                      },
                   ),
-                ),
-                Text(
-                  AppLocalizations.of(context)!.aedappfm_consent_to_check_part3,
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        fontSize: Responsive.fontSizeFromTextStyle(
-                          context,
-                          Theme.of(context).textTheme.bodyMedium!,
-                        ),
-                      ),
-                ),
-                InkWell(
-                  onTap: () async {
-                    if (!await canLaunchUrl(Uri.parse(uriPrivacyPolicy))) {
-                      return;
-                    }
-
-                    await launchUrl(Uri.parse(uriPrivacyPolicy));
-                  },
-                  child: Text(
-                    AppLocalizations.of(context)!
+                  TextSpan(
+                    text: AppLocalizations.of(context)!
+                        .aedappfm_consent_to_check_part3,
+                  ),
+                  TextSpan(
+                    text: AppLocalizations.of(context)!
                         .aedappfm_consent_to_check_part4,
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          decoration: TextDecoration.underline,
-                          fontSize: Responsive.fontSizeFromTextStyle(
-                            context,
-                            Theme.of(context).textTheme.bodyMedium!,
-                          ),
-                        ),
+                    style: linkStyle,
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () async {
+                        if (await canLaunchUrl(Uri.parse(uriPrivacyPolicy))) {
+                          await launchUrl(Uri.parse(uriPrivacyPolicy));
+                        }
+                      },
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             value: consentChecked,
             onChanged: onToggleConsent,
@@ -102,108 +86,80 @@ class ConsentAlready extends ConsumerWidget {
     required this.consentDateTime,
     required this.uriTermsOfUse,
     required this.uriPrivacyPolicy,
+    this.textStyle,
   });
 
   final DateTime consentDateTime;
   final String uriTermsOfUse;
   final String uriPrivacyPolicy;
+  final TextStyle? textStyle;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final defaultStyle = textStyle ?? Theme.of(context).textTheme.bodyMedium!;
+    final linkStyle = defaultStyle.copyWith(
+      decoration: TextDecoration.underline,
+    );
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: Row(
         children: [
           Expanded(
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(
-                    bottom: 3,
-                    right: 7,
-                  ),
-                  child: Icon(
-                    Iconsax.info_circle,
-                    size: Theme.of(context).textTheme.bodyMedium!.fontSize! - 1,
-                  ),
-                ),
-                Text(
-                  AppLocalizations.of(context)!.aedappfm_consent_already_part1,
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        fontSize: Responsive.fontSizeFromTextStyle(
-                          context,
-                          Theme.of(context).textTheme.bodyMedium!,
-                        ),
+            child: RichText(
+              text: TextSpan(
+                style: defaultStyle,
+                children: [
+                  WidgetSpan(
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 3, right: 7),
+                      child: Icon(
+                        Iconsax.info_circle,
+                        size: defaultStyle.fontSize! - 1,
                       ),
-                ),
-                InkWell(
-                  onTap: () async {
-                    if (!await canLaunchUrl(Uri.parse(uriTermsOfUse))) return;
-
-                    await launchUrl(Uri.parse(uriTermsOfUse));
-                  },
-                  child: Text(
-                    AppLocalizations.of(context)!
+                    ),
+                  ),
+                  TextSpan(
+                    text: AppLocalizations.of(context)!
+                        .aedappfm_consent_already_part1,
+                  ),
+                  TextSpan(
+                    text: AppLocalizations.of(context)!
                         .aedappfm_consent_already_part2,
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          decoration: TextDecoration.underline,
-                          fontSize: Responsive.fontSizeFromTextStyle(
-                            context,
-                            Theme.of(context).textTheme.bodyMedium!,
-                          ),
-                        ),
+                    style: linkStyle,
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () async {
+                        if (await canLaunchUrl(Uri.parse(uriTermsOfUse))) {
+                          await launchUrl(Uri.parse(uriTermsOfUse));
+                        }
+                      },
                   ),
-                ),
-                Text(
-                  AppLocalizations.of(context)!.aedappfm_consent_already_part3,
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        fontSize: Responsive.fontSizeFromTextStyle(
-                          context,
-                          Theme.of(context).textTheme.bodyMedium!,
-                        ),
-                      ),
-                ),
-                InkWell(
-                  onTap: () async {
-                    if (!await canLaunchUrl(Uri.parse(uriPrivacyPolicy))) {
-                      return;
-                    }
-
-                    await launchUrl(Uri.parse(uriPrivacyPolicy));
-                  },
-                  child: Text(
-                    AppLocalizations.of(context)!
+                  TextSpan(
+                    text: AppLocalizations.of(context)!
+                        .aedappfm_consent_already_part3,
+                  ),
+                  TextSpan(
+                    text: AppLocalizations.of(context)!
                         .aedappfm_consent_already_part4,
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          decoration: TextDecoration.underline,
-                          fontSize: Responsive.fontSizeFromTextStyle(
-                            context,
-                            Theme.of(context).textTheme.bodyMedium!,
-                          ),
-                        ),
+                    style: linkStyle,
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () async {
+                        if (await canLaunchUrl(Uri.parse(uriPrivacyPolicy))) {
+                          await launchUrl(Uri.parse(uriPrivacyPolicy));
+                        }
+                      },
                   ),
-                ),
-                Text(
-                  AppLocalizations.of(context)!.aedappfm_consent_already_part5,
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        fontSize: Responsive.fontSizeFromTextStyle(
-                          context,
-                          Theme.of(context).textTheme.bodyMedium!,
-                        ),
-                      ),
-                ),
-                Text(
-                  DateFormat.yMd(
-                    Localizations.localeOf(context).languageCode,
-                  ).add_Hm().format(consentDateTime),
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        fontSize: Responsive.fontSizeFromTextStyle(
-                          context,
-                          Theme.of(context).textTheme.bodyMedium!,
-                        ),
-                      ),
-                ),
-              ],
+                  TextSpan(
+                    text: AppLocalizations.of(context)!
+                        .aedappfm_consent_already_part5,
+                  ),
+                  TextSpan(
+                    text: DateFormat.yMd(
+                      Localizations.localeOf(context).languageCode,
+                    ).add_Hm().format(consentDateTime),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
