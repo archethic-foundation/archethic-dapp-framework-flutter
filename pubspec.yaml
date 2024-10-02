@@ -70,7 +70,7 @@ dependencies:
   logging: ^1.2.0
 
   # Flutter plugin for querying information about the application package, such as CFBundleVersion on iOS or versionCode on Android
-  package_info_plus: ^6.0.0
+  package_info_plus: ^8.0.2
 
   # A package exposing annotations for riverpod_generator
   riverpod_annotation: ^2.3.5
