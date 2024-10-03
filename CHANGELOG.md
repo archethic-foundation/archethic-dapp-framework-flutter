@@ -1,5 +1,9 @@
 Changelog
 =========
+
+#### Version 2.1.3
+* Upgrade archethic_wallet_client to 2.1.3
+
 #### Version 2.1.2
 * Upgrade package_info_plus to 8.0.2
 * Add textStyle param in Consent Widgets
