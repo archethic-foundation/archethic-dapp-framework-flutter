@@ -1,3 +1,9 @@
+## Version 3.0.0
+* Use Logging library for [LogManager]
+
+### Breaking changes
+* [LogManager.logsActived] replaced by [LogManager.remoteLogsEnabled]
+
 ## 2.1.3
 * Upgrade archethic_wallet_client to 2.1.3
 
