@@ -1,16 +1,24 @@
 /// SPDX-License-Identifier: AGPL-3.0-or-later
 import 'dart:async';
 import 'dart:convert';
-import 'dart:developer' as developer;
+
+import 'package:archethic_dapp_framework_flutter/src/util/logger_output.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
+import 'package:logging/logging.dart';
 
+/// Logger which sends logs to grafana.
+///
+/// Grafana logs can be disabled using [remoteLogsEnabled] flag.
+/// Logs are sent to the server in batches of [batchSize] every [sendInterval].
+///
+/// Logs are sent to the standard output. Visible log level can be set using [LoggerOutput.setup].
 class LogManager {
   LogManager({
     required this.url,
     this.sendInterval = const Duration(seconds: 60),
     this.batchSize = 1,
-    this.logsActived = true,
+    this.remoteLogsEnabled = true,
   }) {
     if (!kDebugMode) {
       _timer = Timer.periodic(sendInterval, (Timer t) => _sendLogs());
@@ -18,7 +26,7 @@ class LogManager {
   }
   final Duration sendInterval;
   final int batchSize;
-  bool logsActived;
+  bool remoteLogsEnabled;
   List<Map<String, dynamic>> _logQueue = [];
   Timer? _timer;
   final String url;
@@ -26,27 +34,21 @@ class LogManager {
   void log(
     String message, {
     String? name,
+    Object? error,
     StackTrace? stackTrace,
     LogLevel level = LogLevel.info,
   }) {
-    final timeStamp = DateTime.now().toIso8601String();
-    if (logsActived == false) return;
+    final _logger = Logger(name ?? 'ArchethicDApp');
+
     if (message.isEmpty) return;
-    if (kDebugMode) {
-      if (name != null) {
-        if (stackTrace != null) {
-          debugPrint('$timeStamp, $message, $name, $stackTrace');
-        } else {
-          debugPrint('$timeStamp, $message, $name');
-        }
-      } else {
-        if (stackTrace != null) {
-          debugPrint('$timeStamp, $message, $stackTrace');
-        } else {
-          debugPrint('$timeStamp, $message');
-        }
-      }
-    } else {
+    _logger.log(
+      level.toLogger,
+      message,
+      error,
+      stackTrace,
+    );
+    if (remoteLogsEnabled && !kDebugMode) {
+      final timeStamp = DateTime.now().toIso8601String();
       final logEntry = <String, dynamic>{
         'timestamp': timeStamp,
         'message': message,
@@ -64,6 +66,7 @@ class LogManager {
   Future<void> _sendLogs() async {
     if (_logQueue.isEmpty) return;
 
+    final _logger = Logger('ArchethicDAppLogger');
     try {
       final response = await http.post(
         Uri.parse(
@@ -75,12 +78,14 @@ class LogManager {
       if (response.statusCode == 200) {
         _logQueue = [];
       } else {
-        developer.log(
+        _logger.warning(
           'Failed to send logs to server, response status code: ${response.statusCode}',
         );
       }
     } catch (e) {
-      developer.log('Error sending logs to server: $e');
+      _logger.warning(
+        'Error sending logs to server: $e',
+      );
     }
   }
 
@@ -90,3 +95,18 @@ class LogManager {
 }
 
 enum LogLevel { debug, info, warning, error }
+
+extension _LogLevelToLoggerExt on LogLevel {
+  Level get toLogger {
+    switch (this) {
+      case LogLevel.debug:
+        return Level.FINE;
+      case LogLevel.info:
+        return Level.INFO;
+      case LogLevel.warning:
+        return Level.WARNING;
+      case LogLevel.error:
+        return Level.SEVERE;
+    }
+  }
+}
