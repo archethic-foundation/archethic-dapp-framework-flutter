@@ -1,20 +1,20 @@
-import 'dart:developer';
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:logging/logging.dart';
 
 class ProvidersLogger extends ProviderObserver {
-  ProvidersLogger({this.logger = true});
+  ProvidersLogger();
 
-  final bool logger;
+  Logger _logger(ProviderBase<Object?> provider) => Logger(
+        '${provider.name ?? 'Provider'}<${provider.hashCode}>',
+      );
+
   @override
   void didAddProvider(
     ProviderBase<Object?> provider,
     Object? value,
     ProviderContainer container,
   ) {
-    if (provider.name != null && logger) {
-      log('didAddProvider($value)', name: '${provider.name}');
-    }
+    _logger(provider).fine('didAddProvider($value)');
   }
 
   @override
@@ -24,9 +24,7 @@ class ProvidersLogger extends ProviderObserver {
     Object? newValue,
     ProviderContainer container,
   ) {
-    if (provider.name != null && logger) {
-      log('didUpdateProvider($newValue)', name: '${provider.name}');
-    }
+    _logger(provider).fine('didUpdateProvider($newValue)');
   }
 
   @override
@@ -36,15 +34,11 @@ class ProvidersLogger extends ProviderObserver {
     StackTrace stackTrace,
     ProviderContainer container,
   ) {
-    if (provider.name != null && logger) {
-      log('providerDidFail($error)', name: '${provider.name}');
-    }
+    _logger(provider).fine('providerDidFail($error)');
   }
 
   @override
   void didDisposeProvider(ProviderBase provider, ProviderContainer container) {
-    if (provider.name != null && logger) {
-      log('didDisposeProvider', name: '${provider.name}');
-    }
+    _logger(provider).fine('didDisposeProvider');
   }
 }

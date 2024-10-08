@@ -75,6 +75,7 @@ export 'src/util/custom_logs.dart';
 export 'src/util/file_util.dart';
 export 'src/util/generic/get_it_instance.dart';
 export 'src/util/generic/providers_observer.dart';
+export 'src/util/logger_output.dart';
 export 'src/util/periodic_future.dart';
 export 'src/util/router_util.dart';
 export 'src/util/transaction_util.dart';
