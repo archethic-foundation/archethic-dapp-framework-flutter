@@ -1,3 +1,7 @@
+# 3.0.2
+
+* build: :arrow_up: Upgrade `archethic_wallet_client`
+
 # 3.0.1
 
 * build: :arrow_up: Upgrade `archethic_lib_dart` & `archethic_wallet_client`
