@@ -6,11 +6,13 @@ class AppBackground extends StatelessWidget {
   const AppBackground({
     required this.backgroundImage,
     this.withAnimation = false,
+    this.boxFit = BoxFit.cover,
     super.key,
   });
 
   final bool withAnimation;
   final String backgroundImage;
+  final BoxFit boxFit;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class AppBackground extends StatelessWidget {
               image: AssetImage(
                 backgroundImage,
               ),
-              fit: BoxFit.cover,
+              fit: boxFit,
             ),
           ),
         ),
