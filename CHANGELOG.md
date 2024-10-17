@@ -1,3 +1,8 @@
+# 3.0.3
+
+* ✨ `AppBackground` widget : Add boxfit in param
+* ✨ `ProvidersLogger` : Add timestamp in provider logs
+
 # 3.0.2
 
 * build: :arrow_up: Upgrade `archethic_wallet_client`
