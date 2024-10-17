@@ -1,20 +1,18 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
 import 'package:logging/logging.dart';
 
 class ProvidersLogger extends ProviderObserver {
-  ProvidersLogger();
-
-  Logger _logger(ProviderBase<Object?> provider) => Logger(
-        '${provider.name ?? 'Provider'}<${provider.hashCode}>',
-      );
-
   @override
   void didAddProvider(
     ProviderBase<Object?> provider,
     Object? value,
     ProviderContainer container,
   ) {
-    _logger(provider).fine('didAddProvider($value)');
+    if (provider.name != null) {
+      Logger('${DateFormat('yyyy-MM-dd HH:mm:ss.SSS').format(DateTime.now())} ${provider.name!}${provider.argument != null ? ':${provider.argument}' : ''}')
+          .info('didAddProvider($value)');
+    }
   }
 
   @override
@@ -24,7 +22,11 @@ class ProvidersLogger extends ProviderObserver {
     Object? newValue,
     ProviderContainer container,
   ) {
-    _logger(provider).fine('didUpdateProvider($newValue)');
+    if (provider.name != null) {
+      Logger(provider.name!).info(
+        '${DateFormat('yyyy-MM-dd HH:mm:ss.SSS').format(DateTime.now())} didUpdateProvider($newValue)',
+      );
+    }
   }
 
   @override
@@ -34,11 +36,19 @@ class ProvidersLogger extends ProviderObserver {
     StackTrace stackTrace,
     ProviderContainer container,
   ) {
-    _logger(provider).fine('providerDidFail($error)');
+    if (provider.name != null) {
+      Logger(provider.name!).info(
+        '${DateFormat('yyyy-MM-dd HH:mm:ss.SSS').format(DateTime.now())} providerDidFail($error)',
+      );
+    }
   }
 
   @override
   void didDisposeProvider(ProviderBase provider, ProviderContainer container) {
-    _logger(provider).fine('didDisposeProvider');
+    if (provider.name != null) {
+      Logger(provider.name!).info(
+        '${DateFormat('yyyy-MM-dd HH:mm:ss.SSS').format(DateTime.now())} didDisposeProvider',
+      );
+    }
   }
 }
