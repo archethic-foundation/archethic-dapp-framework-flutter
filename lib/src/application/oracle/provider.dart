@@ -3,7 +3,6 @@
 import 'dart:async';
 
 import 'package:archethic_dapp_framework_flutter/src/application/oracle/state.dart';
-import 'package:archethic_dapp_framework_flutter/src/util/generic/get_it_instance.dart';
 import 'package:archethic_lib_dart/archethic_lib_dart.dart';
 import 'package:logging/logging.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -13,6 +12,8 @@ part 'provider.g.dart';
 @Riverpod(keepAlive: true)
 class _ArchethicOracleUCONotifier extends _$ArchethicOracleUCONotifier {
   ArchethicOracle? archethicOracleSubscription;
+  final OracleService _oracleService =
+      OracleService('https://mainnet.archethic.net');
 
   static final _logger = Logger('ArchethicOracleUCONotifier');
 
@@ -36,21 +37,18 @@ class _ArchethicOracleUCONotifier extends _$ArchethicOracleUCONotifier {
   Future<void> stopSubscription() async {
     _logger.info('Stop listening to Oracle');
     if (archethicOracleSubscription == null) return;
-    sl
-        .get<OracleService>()
-        .closeOracleUpdatesSubscription(archethicOracleSubscription!);
+    _oracleService.closeOracleUpdatesSubscription(archethicOracleSubscription!);
     archethicOracleSubscription = null;
   }
 
   Future<void> _getValue() async {
-    final oracleUcoPrice = await sl.get<OracleService>().getOracleData();
+    final oracleUcoPrice = await _oracleService.getOracleData();
     _fillInfo(oracleUcoPrice);
   }
 
   Future<void> _subscribe() async {
-    archethicOracleSubscription = await sl
-        .get<OracleService>()
-        .subscribeToOracleUpdates((oracleUcoPrice) {
+    archethicOracleSubscription =
+        await _oracleService.subscribeToOracleUpdates((oracleUcoPrice) {
       _fillInfo(oracleUcoPrice!);
     });
   }

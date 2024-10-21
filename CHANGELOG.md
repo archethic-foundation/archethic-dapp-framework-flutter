@@ -1,3 +1,7 @@
+# 3.1.0
+
+* Remove GetIt usage for `OracleService`
+ 
 # 3.0.3
 
 * ✨ `AppBackground` widget : Add boxfit in param
