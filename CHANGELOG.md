@@ -1,3 +1,7 @@
+# 3.2.1
+
+* Coin price notifier starts auto updates on creation.
+
 # 3.2.0
 
 * All providers are auto-disposable
