@@ -27,9 +27,7 @@ Future<Map<String, int>> _ucidsTokens(
 }
 
 @riverpod
-// TODO(reddwarf03): Return null instead of invalidValue
-@Riverpod(keepAlive: true)
-Future<int> _ucid(
+Future<int?> _ucid(
   _UcidRef ref, {
   required String address,
   Environment? environment,
@@ -38,11 +36,7 @@ Future<int> _ucid(
     _ucidsTokensProvider(environment: environment).future,
   );
 
-  final ucid = ucidsTokens[address];
-  if (ucid == null) {
-    throw const Failure.invalidValue();
-  }
-  return ucid;
+  return ucidsTokens[address];
 }
 
 @riverpod
