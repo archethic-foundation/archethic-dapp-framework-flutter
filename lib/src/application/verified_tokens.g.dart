@@ -7,7 +7,7 @@ part of 'verified_tokens.dart';
 // **************************************************************************
 
 String _$verifiedTokensRepositoryHash() =>
-    r'587f9126ad90c8730f2a2661a7c8ad88aee86ced';
+    r'e8bec28549349b82be3c40c9d2f0253e4cda472c';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -75,7 +75,7 @@ class _VerifiedTokensRepositoryFamily
 
 /// See also [_verifiedTokensRepository].
 class _VerifiedTokensRepositoryProvider
-    extends Provider<VerifiedTokensRepositoryInterface> {
+    extends AutoDisposeProvider<VerifiedTokensRepositoryInterface> {
   /// See also [_verifiedTokensRepository].
   _VerifiedTokensRepositoryProvider(
     Environment environment,
@@ -129,7 +129,8 @@ class _VerifiedTokensRepositoryProvider
   }
 
   @override
-  ProviderElement<VerifiedTokensRepositoryInterface> createElement() {
+  AutoDisposeProviderElement<VerifiedTokensRepositoryInterface>
+      createElement() {
     return _VerifiedTokensRepositoryProviderElement(this);
   }
 
@@ -149,13 +150,13 @@ class _VerifiedTokensRepositoryProvider
 }
 
 mixin _VerifiedTokensRepositoryRef
-    on ProviderRef<VerifiedTokensRepositoryInterface> {
+    on AutoDisposeProviderRef<VerifiedTokensRepositoryInterface> {
   /// The parameter `environment` of this provider.
   Environment get environment;
 }
 
 class _VerifiedTokensRepositoryProviderElement
-    extends ProviderElement<VerifiedTokensRepositoryInterface>
+    extends AutoDisposeProviderElement<VerifiedTokensRepositoryInterface>
     with _VerifiedTokensRepositoryRef {
   _VerifiedTokensRepositoryProviderElement(super.provider);
 
@@ -165,7 +166,7 @@ class _VerifiedTokensRepositoryProviderElement
 }
 
 String _$verifiedTokensByNetworkHash() =>
-    r'c5e22714fa12d20e9b7f0097e0fcd1bf0b3b59e7';
+    r'2504c5530c3cc8eeaf5d0b7889ca5b8ee1ac3078';
 
 /// See also [_verifiedTokensByNetwork].
 @ProviderFor(_verifiedTokensByNetwork)
@@ -210,7 +211,8 @@ class _VerifiedTokensByNetworkFamily extends Family<AsyncValue<List<String>>> {
 }
 
 /// See also [_verifiedTokensByNetwork].
-class _VerifiedTokensByNetworkProvider extends FutureProvider<List<String>> {
+class _VerifiedTokensByNetworkProvider
+    extends AutoDisposeFutureProvider<List<String>> {
   /// See also [_verifiedTokensByNetwork].
   _VerifiedTokensByNetworkProvider(
     Environment environment,
@@ -263,7 +265,7 @@ class _VerifiedTokensByNetworkProvider extends FutureProvider<List<String>> {
   }
 
   @override
-  FutureProviderElement<List<String>> createElement() {
+  AutoDisposeFutureProviderElement<List<String>> createElement() {
     return _VerifiedTokensByNetworkProviderElement(this);
   }
 
@@ -282,13 +284,14 @@ class _VerifiedTokensByNetworkProvider extends FutureProvider<List<String>> {
   }
 }
 
-mixin _VerifiedTokensByNetworkRef on FutureProviderRef<List<String>> {
+mixin _VerifiedTokensByNetworkRef
+    on AutoDisposeFutureProviderRef<List<String>> {
   /// The parameter `environment` of this provider.
   Environment get environment;
 }
 
 class _VerifiedTokensByNetworkProviderElement
-    extends FutureProviderElement<List<String>>
+    extends AutoDisposeFutureProviderElement<List<String>>
     with _VerifiedTokensByNetworkRef {
   _VerifiedTokensByNetworkProviderElement(super.provider);
 
@@ -297,7 +300,7 @@ class _VerifiedTokensByNetworkProviderElement
       (origin as _VerifiedTokensByNetworkProvider).environment;
 }
 
-String _$isVerifiedTokenHash() => r'9a24e04382122181300d7306eb44580cd5ba7572';
+String _$isVerifiedTokenHash() => r'def427a75540acd4428768a4ae59f02c2201ff79';
 
 /// See also [_isVerifiedToken].
 @ProviderFor(_isVerifiedToken)
@@ -345,7 +348,7 @@ class _IsVerifiedTokenFamily extends Family<AsyncValue<bool>> {
 }
 
 /// See also [_isVerifiedToken].
-class _IsVerifiedTokenProvider extends FutureProvider<bool> {
+class _IsVerifiedTokenProvider extends AutoDisposeFutureProvider<bool> {
   /// See also [_isVerifiedToken].
   _IsVerifiedTokenProvider(
     Environment environment,
@@ -403,7 +406,7 @@ class _IsVerifiedTokenProvider extends FutureProvider<bool> {
   }
 
   @override
-  FutureProviderElement<bool> createElement() {
+  AutoDisposeFutureProviderElement<bool> createElement() {
     return _IsVerifiedTokenProviderElement(this);
   }
 
@@ -424,7 +427,7 @@ class _IsVerifiedTokenProvider extends FutureProvider<bool> {
   }
 }
 
-mixin _IsVerifiedTokenRef on FutureProviderRef<bool> {
+mixin _IsVerifiedTokenRef on AutoDisposeFutureProviderRef<bool> {
   /// The parameter `environment` of this provider.
   Environment get environment;
 
@@ -432,8 +435,8 @@ mixin _IsVerifiedTokenRef on FutureProviderRef<bool> {
   String get address;
 }
 
-class _IsVerifiedTokenProviderElement extends FutureProviderElement<bool>
-    with _IsVerifiedTokenRef {
+class _IsVerifiedTokenProviderElement
+    extends AutoDisposeFutureProviderElement<bool> with _IsVerifiedTokenRef {
   _IsVerifiedTokenProviderElement(super.provider);
 
   @override

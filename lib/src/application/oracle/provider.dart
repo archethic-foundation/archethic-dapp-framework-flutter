@@ -9,7 +9,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'provider.g.dart';
 
-@Riverpod(keepAlive: true)
+@riverpod
 class _ArchethicOracleUCONotifier extends _$ArchethicOracleUCONotifier {
   ArchethicOracle? archethicOracleSubscription;
   final OracleService _oracleService =

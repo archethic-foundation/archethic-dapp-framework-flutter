@@ -6,7 +6,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'verified_tokens.g.dart';
 
-@Riverpod(keepAlive: true)
+@riverpod
 VerifiedTokensRepositoryInterface _verifiedTokensRepository(
   _VerifiedTokensRepositoryRef ref,
   Environment environment,
@@ -18,7 +18,7 @@ VerifiedTokensRepositoryInterface _verifiedTokensRepository(
   );
 }
 
-@Riverpod(keepAlive: true)
+@riverpod
 Future<List<String>> _verifiedTokensByNetwork(
   _VerifiedTokensByNetworkRef ref,
   Environment environment,
@@ -28,7 +28,7 @@ Future<List<String>> _verifiedTokensByNetwork(
       .getVerifiedTokens();
 }
 
-@Riverpod(keepAlive: true)
+@riverpod
 Future<bool> _isVerifiedToken(
   _IsVerifiedTokenRef ref,
   Environment environment,

@@ -7,11 +7,12 @@ part of 'coin_price.dart';
 // **************************************************************************
 
 String _$coinPriceRepositoryHash() =>
-    r'd571b12cd0c140f89007d4b6ce9b11a5a0caa01f';
+    r'6432142cf71159eeb175c588c1bf1116d557da58';
 
 /// See also [_coinPriceRepository].
 @ProviderFor(_coinPriceRepository)
-final _coinPriceRepositoryProvider = Provider<CoinPriceRepositoryImpl>.internal(
+final _coinPriceRepositoryProvider =
+    AutoDisposeProvider<CoinPriceRepositoryImpl>.internal(
   _coinPriceRepository,
   name: r'_coinPriceRepositoryProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -21,8 +22,9 @@ final _coinPriceRepositoryProvider = Provider<CoinPriceRepositoryImpl>.internal(
   allTransitiveDependencies: null,
 );
 
-typedef _CoinPriceRepositoryRef = ProviderRef<CoinPriceRepositoryImpl>;
-String _$coinPriceHash() => r'5b8ef5836a77a2716a95391022b058d0c5e849af';
+typedef _CoinPriceRepositoryRef
+    = AutoDisposeProviderRef<CoinPriceRepositoryImpl>;
+String _$coinPriceHash() => r'ac5c49bfed4afd7b32235774ddbf4b3489b48e46';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -91,7 +93,7 @@ class _CoinPriceFamily extends Family<AsyncValue<double>> {
 }
 
 /// See also [_coinPrice].
-class _CoinPriceProvider extends FutureProvider<double> {
+class _CoinPriceProvider extends AutoDisposeFutureProvider<double> {
   /// See also [_coinPrice].
   _CoinPriceProvider({
     required String address,
@@ -149,7 +151,7 @@ class _CoinPriceProvider extends FutureProvider<double> {
   }
 
   @override
-  FutureProviderElement<double> createElement() {
+  AutoDisposeFutureProviderElement<double> createElement() {
     return _CoinPriceProviderElement(this);
   }
 
@@ -170,7 +172,7 @@ class _CoinPriceProvider extends FutureProvider<double> {
   }
 }
 
-mixin _CoinPriceRef on FutureProviderRef<double> {
+mixin _CoinPriceRef on AutoDisposeFutureProviderRef<double> {
   /// The parameter `address` of this provider.
   String get address;
 
@@ -178,7 +180,7 @@ mixin _CoinPriceRef on FutureProviderRef<double> {
   Environment? get environment;
 }
 
-class _CoinPriceProviderElement extends FutureProviderElement<double>
+class _CoinPriceProviderElement extends AutoDisposeFutureProviderElement<double>
     with _CoinPriceRef {
   _CoinPriceProviderElement(super.provider);
 
@@ -189,12 +191,12 @@ class _CoinPriceProviderElement extends FutureProviderElement<double>
 }
 
 String _$coinPricesNotifierHash() =>
-    r'6f2b703169d62c9ef9968588d6e780566034dc84';
+    r'6b372d2331a900161bcb22ba51bb5da8e0141e79';
 
 /// See also [_CoinPricesNotifier].
 @ProviderFor(_CoinPricesNotifier)
 final _coinPricesNotifierProvider =
-    NotifierProvider<_CoinPricesNotifier, CryptoPrice>.internal(
+    AutoDisposeNotifierProvider<_CoinPricesNotifier, CryptoPrice>.internal(
   _CoinPricesNotifier.new,
   name: r'_coinPricesNotifierProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -204,6 +206,6 @@ final _coinPricesNotifierProvider =
   allTransitiveDependencies: null,
 );
 
-typedef _$CoinPricesNotifier = Notifier<CryptoPrice>;
+typedef _$CoinPricesNotifier = AutoDisposeNotifier<CryptoPrice>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
