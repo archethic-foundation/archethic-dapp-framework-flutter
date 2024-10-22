@@ -15,13 +15,9 @@ class _CoinPricesNotifier extends _$CoinPricesNotifier {
 
   @override
   CryptoPrice build() {
-    ref.onDispose(() {
-      if (_timer != null) {
-        _timer!.cancel();
-      }
-    });
+    ref.onDispose(stopTimer);
 
-    _getValue();
+    startTimer();
 
     return CryptoPrice();
   }
@@ -30,8 +26,9 @@ class _CoinPricesNotifier extends _$CoinPricesNotifier {
     if (_timer != null) return;
 
     _logger.info('Start timer');
+    state = (await ref.read(_coinPriceRepositoryProvider).fetchPrices())!;
     _timer = Timer.periodic(const Duration(minutes: 1), (_) async {
-      state = (await ref.watch(_coinPriceRepositoryProvider).fetchPrices())!;
+      state = (await ref.read(_coinPriceRepositoryProvider).fetchPrices())!;
     });
   }
 
@@ -39,10 +36,7 @@ class _CoinPricesNotifier extends _$CoinPricesNotifier {
     _logger.info('Stop timer');
     if (_timer == null) return;
     _timer?.cancel();
-  }
-
-  Future<void> _getValue() async {
-    state = (await ref.watch(_coinPriceRepositoryProvider).fetchPrices())!;
+    _timer = null;
   }
 }
 
