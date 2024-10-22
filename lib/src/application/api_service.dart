@@ -4,7 +4,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'api_service.g.dart';
 
-@Riverpod(keepAlive: true)
+@riverpod
 ApiService apiService(
   ApiServiceRef ref,
   Environment environment,

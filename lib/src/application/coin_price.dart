@@ -7,7 +7,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'coin_price.g.dart';
 
-@Riverpod(keepAlive: true)
+@riverpod
 class _CoinPricesNotifier extends _$CoinPricesNotifier {
   static final _logger = Logger('CoinPricesNotifier');
 
@@ -46,13 +46,13 @@ class _CoinPricesNotifier extends _$CoinPricesNotifier {
   }
 }
 
-@Riverpod(keepAlive: true)
+@riverpod
 CoinPriceRepositoryImpl _coinPriceRepository(
   _CoinPriceRepositoryRef ref,
 ) =>
     CoinPriceRepositoryImpl();
 
-@Riverpod(keepAlive: true)
+@riverpod
 Future<double> _coinPrice(
   _CoinPriceRef ref, {
   required String address,
@@ -69,6 +69,9 @@ Future<double> _coinPrice(
       ).future,
     );
 
+    if (ucid == null) {
+      return 0;
+    }
     return ref
         .watch(_coinPriceRepositoryProvider)
         .getPriceFromUcid(ucid, coinPrice);

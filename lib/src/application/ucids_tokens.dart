@@ -3,7 +3,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'ucids_tokens.g.dart';
 
-@Riverpod(keepAlive: true)
+@riverpod
 Future<Map<String, int>> _ucidsTokens(
   _UcidsTokensRef ref, {
   Environment? environment,
@@ -26,6 +26,7 @@ Future<Map<String, int>> _ucidsTokens(
   };
 }
 
+@riverpod
 // TODO(reddwarf03): Return null instead of invalidValue
 @Riverpod(keepAlive: true)
 Future<int> _ucid(
@@ -44,7 +45,7 @@ Future<int> _ucid(
   return ucid;
 }
 
-@Riverpod(keepAlive: true)
+@riverpod
 UcidsTokensRepositoryImpl _ucidsTokensRepository(
   _UcidsTokensRepositoryRef ref,
 ) =>

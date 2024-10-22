@@ -7,12 +7,12 @@ part of 'provider.dart';
 // **************************************************************************
 
 String _$archethicOracleUCONotifierHash() =>
-    r'd2bf719dd6843e6b79c51d3635c9c76f115a9620';
+    r'5abf1a3a6a35b1e7a4edf9012bccaa0d6c2bfcbd';
 
 /// See also [_ArchethicOracleUCONotifier].
 @ProviderFor(_ArchethicOracleUCONotifier)
-final _archethicOracleUCONotifierProvider =
-    NotifierProvider<_ArchethicOracleUCONotifier, ArchethicOracleUCO>.internal(
+final _archethicOracleUCONotifierProvider = AutoDisposeNotifierProvider<
+    _ArchethicOracleUCONotifier, ArchethicOracleUCO>.internal(
   _ArchethicOracleUCONotifier.new,
   name: r'_archethicOracleUCONotifierProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -22,6 +22,6 @@ final _archethicOracleUCONotifierProvider =
   allTransitiveDependencies: null,
 );
 
-typedef _$ArchethicOracleUCONotifier = Notifier<ArchethicOracleUCO>;
+typedef _$ArchethicOracleUCONotifier = AutoDisposeNotifier<ArchethicOracleUCO>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

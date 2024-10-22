@@ -6,7 +6,7 @@ part of 'api_service.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$apiServiceHash() => r'75b02dfe93e1731b7cc68cc703b7b1767e7003a9';
+String _$apiServiceHash() => r'01ee6186e17e769a292d6287c4b48bd0eb637acf';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -72,7 +72,7 @@ class ApiServiceFamily extends Family<ApiService> {
 }
 
 /// See also [apiService].
-class ApiServiceProvider extends Provider<ApiService> {
+class ApiServiceProvider extends AutoDisposeProvider<ApiService> {
   /// See also [apiService].
   ApiServiceProvider(
     Environment environment,
@@ -124,7 +124,7 @@ class ApiServiceProvider extends Provider<ApiService> {
   }
 
   @override
-  ProviderElement<ApiService> createElement() {
+  AutoDisposeProviderElement<ApiService> createElement() {
     return _ApiServiceProviderElement(this);
   }
 
@@ -142,12 +142,12 @@ class ApiServiceProvider extends Provider<ApiService> {
   }
 }
 
-mixin ApiServiceRef on ProviderRef<ApiService> {
+mixin ApiServiceRef on AutoDisposeProviderRef<ApiService> {
   /// The parameter `environment` of this provider.
   Environment get environment;
 }
 
-class _ApiServiceProviderElement extends ProviderElement<ApiService>
+class _ApiServiceProviderElement extends AutoDisposeProviderElement<ApiService>
     with ApiServiceRef {
   _ApiServiceProviderElement(super.provider);
 
