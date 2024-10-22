@@ -1,3 +1,8 @@
+# 3.2.0
+
+* All providers are auto-disposable
+* UCID provider returns NULL for unknown UCIDs.
+
 # 3.1.0
 
 * Remove GetIt usage for `OracleService`
