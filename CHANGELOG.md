@@ -1,3 +1,7 @@
+# 3.2.2
+
+* Use MediaQuery.sizeOf(context) instead of MediaQuery.of(context).size
+
 # 3.2.1
 
 * Coin price notifier starts auto updates on creation.

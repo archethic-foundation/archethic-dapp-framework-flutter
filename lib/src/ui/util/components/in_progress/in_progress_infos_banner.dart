@@ -28,7 +28,7 @@ class InProgressInfosBanner extends StatelessWidget {
       return InfoBanner(
         failureMessage!,
         InfoBannerType.error,
-        width: MediaQuery.of(context).size.width * 0.9,
+        width: MediaQuery.sizeOf(context).width * 0.9,
       );
     }
 
@@ -36,7 +36,7 @@ class InProgressInfosBanner extends StatelessWidget {
       return InfoBanner(
         walletConfirmationTxt,
         InfoBannerType.request,
-        width: MediaQuery.of(context).size.width * 0.9,
+        width: MediaQuery.sizeOf(context).width * 0.9,
       );
     }
 
@@ -44,14 +44,14 @@ class InProgressInfosBanner extends StatelessWidget {
       return InfoBanner(
         successTxt,
         InfoBannerType.success,
-        width: MediaQuery.of(context).size.width * 0.9,
+        width: MediaQuery.sizeOf(context).width * 0.9,
       );
     }
 
     return InfoBanner(
       inProgressTxt,
       InfoBannerType.request,
-      width: MediaQuery.of(context).size.width * 0.9,
+      width: MediaQuery.sizeOf(context).width * 0.9,
       waitAnimation: true,
     );
   }
