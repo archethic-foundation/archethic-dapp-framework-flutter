@@ -6,7 +6,7 @@ class ScaleSize {
     BuildContext context, {
     double maxTextScaleFactor = 2,
   }) {
-    final width = MediaQuery.of(context).size.width - 40;
+    final width = MediaQuery.sizeOf(context).width - 40;
     final val = (width / 1400) * maxTextScaleFactor;
     return max(0.5, min(val, maxTextScaleFactor));
   }

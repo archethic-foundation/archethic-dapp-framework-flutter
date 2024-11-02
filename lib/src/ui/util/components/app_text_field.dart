@@ -102,8 +102,8 @@ class _AppTextFieldState extends ConsumerState<AppTextField> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
-        left: widget.leftMargin ?? MediaQuery.of(context).size.width * 0.105,
-        right: widget.rightMargin ?? MediaQuery.of(context).size.width * 0.105,
+        left: widget.leftMargin ?? MediaQuery.sizeOf(context).width * 0.105,
+        right: widget.rightMargin ?? MediaQuery.sizeOf(context).width * 0.105,
         top: widget.topMargin!,
       ),
       padding: widget.padding,
@@ -167,7 +167,7 @@ class _AppTextFieldState extends ConsumerState<AppTextField> {
                 bottom: 1,
                 child: SizedBox(
                   height: 1,
-                  width: MediaQuery.of(context).size.width,
+                  width: MediaQuery.sizeOf(context).width,
                 ),
               ),
               // Buttons
