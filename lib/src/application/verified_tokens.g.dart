@@ -7,7 +7,7 @@ part of 'verified_tokens.dart';
 // **************************************************************************
 
 String _$verifiedTokensRepositoryHash() =>
-    r'e8bec28549349b82be3c40c9d2f0253e4cda472c';
+    r'ab387489895918941c15e73ecc866e6e15346543';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -149,6 +149,8 @@ class _VerifiedTokensRepositoryProvider
   }
 }
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 mixin _VerifiedTokensRepositoryRef
     on AutoDisposeProviderRef<VerifiedTokensRepositoryInterface> {
   /// The parameter `environment` of this provider.
@@ -166,7 +168,7 @@ class _VerifiedTokensRepositoryProviderElement
 }
 
 String _$verifiedTokensByNetworkHash() =>
-    r'2504c5530c3cc8eeaf5d0b7889ca5b8ee1ac3078';
+    r'f1db2b5a32e6b1d92e1f080e7e31a9d8ea142fe4';
 
 /// See also [_verifiedTokensByNetwork].
 @ProviderFor(_verifiedTokensByNetwork)
@@ -284,6 +286,8 @@ class _VerifiedTokensByNetworkProvider
   }
 }
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 mixin _VerifiedTokensByNetworkRef
     on AutoDisposeFutureProviderRef<List<String>> {
   /// The parameter `environment` of this provider.
@@ -300,7 +304,7 @@ class _VerifiedTokensByNetworkProviderElement
       (origin as _VerifiedTokensByNetworkProvider).environment;
 }
 
-String _$isVerifiedTokenHash() => r'def427a75540acd4428768a4ae59f02c2201ff79';
+String _$isVerifiedTokenHash() => r'df6167474a17c69a944cf0450a794020f0d88a56';
 
 /// See also [_isVerifiedToken].
 @ProviderFor(_isVerifiedToken)
@@ -427,6 +431,8 @@ class _IsVerifiedTokenProvider extends AutoDisposeFutureProvider<bool> {
   }
 }
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 mixin _IsVerifiedTokenRef on AutoDisposeFutureProviderRef<bool> {
   /// The parameter `environment` of this provider.
   Environment get environment;
@@ -446,4 +452,4 @@ class _IsVerifiedTokenProviderElement
   String get address => (origin as _IsVerifiedTokenProvider).address;
 }
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

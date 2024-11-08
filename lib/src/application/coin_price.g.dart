@@ -7,7 +7,7 @@ part of 'coin_price.dart';
 // **************************************************************************
 
 String _$coinPriceRepositoryHash() =>
-    r'6432142cf71159eeb175c588c1bf1116d557da58';
+    r'6dcbcdb051cb63028959c3e48c1456e63c39120d';
 
 /// See also [_coinPriceRepository].
 @ProviderFor(_coinPriceRepository)
@@ -22,9 +22,11 @@ final _coinPriceRepositoryProvider =
   allTransitiveDependencies: null,
 );
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 typedef _CoinPriceRepositoryRef
     = AutoDisposeProviderRef<CoinPriceRepositoryImpl>;
-String _$coinPriceHash() => r'ac5c49bfed4afd7b32235774ddbf4b3489b48e46';
+String _$coinPriceHash() => r'ae132cff68c2d792031208693b5023775e4a9cbb';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -172,6 +174,8 @@ class _CoinPriceProvider extends AutoDisposeFutureProvider<double> {
   }
 }
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 mixin _CoinPriceRef on AutoDisposeFutureProviderRef<double> {
   /// The parameter `address` of this provider.
   String get address;
@@ -191,7 +195,7 @@ class _CoinPriceProviderElement extends AutoDisposeFutureProviderElement<double>
 }
 
 String _$coinPricesNotifierHash() =>
-    r'6b372d2331a900161bcb22ba51bb5da8e0141e79';
+    r'b3a6a14230dab614d3b92c766fb43598417597fb';
 
 /// See also [_CoinPricesNotifier].
 @ProviderFor(_CoinPricesNotifier)
@@ -208,4 +212,4 @@ final _coinPricesNotifierProvider =
 
 typedef _$CoinPricesNotifier = AutoDisposeNotifier<CryptoPrice>;
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

@@ -1,11 +1,12 @@
 import 'package:archethic_dapp_framework_flutter/archethic_dapp_framework_flutter.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'ucids_tokens.g.dart';
 
 @riverpod
 Future<Map<String, int>> _ucidsTokens(
-  _UcidsTokensRef ref, {
+  Ref ref, {
   Environment? environment,
 }) async {
   if (environment != null) {
@@ -28,7 +29,7 @@ Future<Map<String, int>> _ucidsTokens(
 
 @riverpod
 Future<int?> _ucid(
-  _UcidRef ref, {
+  Ref ref, {
   required String address,
   Environment? environment,
 }) async {
@@ -41,7 +42,7 @@ Future<int?> _ucid(
 
 @riverpod
 UcidsTokensRepositoryImpl _ucidsTokensRepository(
-  _UcidsTokensRepositoryRef ref,
+  Ref ref,
 ) =>
     UcidsTokensRepositoryImpl();
 

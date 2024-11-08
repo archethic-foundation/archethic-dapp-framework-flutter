@@ -1,3 +1,7 @@
+# 3.2.3
+
+* Add `defTokensRepository` provider
+
 # 3.2.2
 
 * Use MediaQuery.sizeOf(context) instead of MediaQuery.of(context).size

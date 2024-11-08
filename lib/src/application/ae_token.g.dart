@@ -7,7 +7,7 @@ part of 'ae_token.dart';
 // **************************************************************************
 
 String _$estimateTokenInFiatHash() =>
-    r'3625a125152a8d63971b251480621115fa878abf';
+    r'9380fec22b438a5e643c8b230f0c23d1c8745eb1';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -143,6 +143,8 @@ class _EstimateTokenInFiatProvider extends AutoDisposeFutureProvider<double> {
   }
 }
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 mixin _EstimateTokenInFiatRef on AutoDisposeFutureProviderRef<double> {
   /// The parameter `token` of this provider.
   AEToken get token;
@@ -157,4 +159,4 @@ class _EstimateTokenInFiatProviderElement
   AEToken get token => (origin as _EstimateTokenInFiatProvider).token;
 }
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

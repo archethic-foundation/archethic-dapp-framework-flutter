@@ -13,6 +13,8 @@ analyzer:
     - lib/src/l10n/*
     - "**/*.freezed.dart"
     - "**/*.g.dart"
+  plugins:
+    - custom_lint
 
 language:
   strict-casts: true

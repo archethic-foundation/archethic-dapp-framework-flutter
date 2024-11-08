@@ -6,7 +6,7 @@ part of 'ucids_tokens.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$ucidsTokensHash() => r'0fed124f581f84881a8a9e85b49e377334fc922b';
+String _$ucidsTokensHash() => r'7b1be27e366d2e26ea4b641f49192e9af3c8e2bc';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -142,6 +142,8 @@ class _UcidsTokensProvider extends AutoDisposeFutureProvider<Map<String, int>> {
   }
 }
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 mixin _UcidsTokensRef on AutoDisposeFutureProviderRef<Map<String, int>> {
   /// The parameter `environment` of this provider.
   Environment? get environment;
@@ -156,7 +158,7 @@ class _UcidsTokensProviderElement
   Environment? get environment => (origin as _UcidsTokensProvider).environment;
 }
 
-String _$ucidHash() => r'e812831521689c4d5aa24eaea82ac52e1f6ff812';
+String _$ucidHash() => r'4ebdadf9d4949befd9f859e31f1c95fa59509417';
 
 /// See also [_ucid].
 @ProviderFor(_ucid)
@@ -280,6 +282,8 @@ class _UcidProvider extends AutoDisposeFutureProvider<int?> {
   }
 }
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 mixin _UcidRef on AutoDisposeFutureProviderRef<int?> {
   /// The parameter `address` of this provider.
   String get address;
@@ -299,7 +303,7 @@ class _UcidProviderElement extends AutoDisposeFutureProviderElement<int?>
 }
 
 String _$ucidsTokensRepositoryHash() =>
-    r'dbdd645655354e9a475a86e6ad929258d479133c';
+    r'3ed9d212ff21a0982591184a165bb4e9d4e103a8';
 
 /// See also [_ucidsTokensRepository].
 @ProviderFor(_ucidsTokensRepository)
@@ -314,7 +318,9 @@ final _ucidsTokensRepositoryProvider =
   allTransitiveDependencies: null,
 );
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 typedef _UcidsTokensRepositoryRef
     = AutoDisposeProviderRef<UcidsTokensRepositoryImpl>;
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

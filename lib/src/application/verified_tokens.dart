@@ -2,13 +2,14 @@ import 'package:archethic_dapp_framework_flutter/src/application/api_service.dar
 import 'package:archethic_dapp_framework_flutter/src/domain/models/environment.dart';
 import 'package:archethic_dapp_framework_flutter/src/domain/repositories/tokens/verified_tokens.repository.dart';
 import 'package:archethic_dapp_framework_flutter/src/infrastructure/verified_tokens.repository.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'verified_tokens.g.dart';
 
 @riverpod
 VerifiedTokensRepositoryInterface _verifiedTokensRepository(
-  _VerifiedTokensRepositoryRef ref,
+  Ref ref,
   Environment environment,
 ) {
   final apiService = ref.watch(apiServiceProvider(environment));
@@ -20,7 +21,7 @@ VerifiedTokensRepositoryInterface _verifiedTokensRepository(
 
 @riverpod
 Future<List<String>> _verifiedTokensByNetwork(
-  _VerifiedTokensByNetworkRef ref,
+  Ref ref,
   Environment environment,
 ) async {
   return ref
@@ -30,7 +31,7 @@ Future<List<String>> _verifiedTokensByNetwork(
 
 @riverpod
 Future<bool> _isVerifiedToken(
-  _IsVerifiedTokenRef ref,
+  Ref ref,
   Environment environment,
   String address,
 ) async {
