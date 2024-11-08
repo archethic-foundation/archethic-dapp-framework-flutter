@@ -1,13 +1,14 @@
 import 'package:archethic_dapp_framework_flutter/archethic_dapp_framework_flutter.dart'
     as aedappfm;
 import 'package:archethic_dapp_framework_flutter/src/domain/models/ae_token.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'ae_token.g.dart';
 
 @riverpod
 Future<double> _estimateTokenInFiat(
-  _EstimateTokenInFiatRef ref,
+  Ref ref,
   AEToken token,
 ) async {
   if (token.symbol == 'UCO') {

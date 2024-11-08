@@ -6,7 +6,7 @@ part of 'api_service.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$apiServiceHash() => r'01ee6186e17e769a292d6287c4b48bd0eb637acf';
+String _$apiServiceHash() => r'b9a10ec12ecc7ea5cf78d2eca9458a796871dc14';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -142,6 +142,8 @@ class ApiServiceProvider extends AutoDisposeProvider<ApiService> {
   }
 }
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 mixin ApiServiceRef on AutoDisposeProviderRef<ApiService> {
   /// The parameter `environment` of this provider.
   Environment get environment;
@@ -155,4 +157,4 @@ class _ApiServiceProviderElement extends AutoDisposeProviderElement<ApiService>
   Environment get environment => (origin as ApiServiceProvider).environment;
 }
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

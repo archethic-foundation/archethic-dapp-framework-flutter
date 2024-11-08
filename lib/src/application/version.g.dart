@@ -6,7 +6,7 @@ part of 'version.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$versionStringHash() => r'8283c41db98410f65dea4843fc564f26b07cc818';
+String _$versionStringHash() => r'0bcb9712b9031c87cc3cc38dbc34cfb04956077b';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -143,6 +143,8 @@ class VersionStringProvider extends AutoDisposeFutureProvider<String> {
   }
 }
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 mixin VersionStringRef on AutoDisposeFutureProviderRef<String> {
   /// The parameter `localizations` of this provider.
   AppLocalizations get localizations;
@@ -157,4 +159,4 @@ class _VersionStringProviderElement
       (origin as VersionStringProvider).localizations;
 }
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

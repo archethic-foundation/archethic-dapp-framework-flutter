@@ -2,6 +2,7 @@
 import 'dart:async';
 
 import 'package:archethic_dapp_framework_flutter/archethic_dapp_framework_flutter.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:logging/logging.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -42,13 +43,13 @@ class _CoinPricesNotifier extends _$CoinPricesNotifier {
 
 @riverpod
 CoinPriceRepositoryImpl _coinPriceRepository(
-  _CoinPriceRepositoryRef ref,
+  Ref ref,
 ) =>
     CoinPriceRepositoryImpl();
 
 @riverpod
 Future<double> _coinPrice(
-  _CoinPriceRef ref, {
+  Ref ref, {
   required String address,
   Environment? environment,
 }) async {
