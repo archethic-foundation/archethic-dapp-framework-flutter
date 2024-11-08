@@ -1,3 +1,7 @@
+# 3.2.4
+
+* Export `defTokensRepositoryImpl` & `getDefTokenProvider` providers
+
 # 3.2.3
 
 * Add `defTokensRepository` provider

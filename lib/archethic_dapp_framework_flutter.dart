@@ -3,6 +3,7 @@ library archethic_dapp_framework_flutter;
 export 'src/application/ae_token.dart';
 export 'src/application/api_service.dart';
 export 'src/application/coin_price.dart';
+export 'src/application/def_tokens.dart';
 export 'src/application/oracle/provider.dart';
 export 'src/application/oracle/state.dart';
 export 'src/application/ucids_tokens.dart';
