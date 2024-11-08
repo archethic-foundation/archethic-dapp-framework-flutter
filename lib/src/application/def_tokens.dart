@@ -19,6 +19,6 @@ Future<AEToken?> getDefToken(
   String address,
 ) async {
   return ref
-      .read(defTokensRepositoryImplProvider)
+      .watch(defTokensRepositoryImplProvider)
       .getDefToken(environment, address);
 }

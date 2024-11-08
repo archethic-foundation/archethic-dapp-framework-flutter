@@ -26,7 +26,7 @@ final defTokensRepositoryImplProvider =
 // ignore: unused_element
 typedef DefTokensRepositoryImplRef
     = AutoDisposeProviderRef<DefTokensRepositoryImpl>;
-String _$getDefTokenHash() => r'92cfb34467f55442f12a48ae4261beaf2b515ad8';
+String _$getDefTokenHash() => r'6dc037580b95cd2e73808d831eef8278bbe4eca4';
 
 /// Copied from Dart SDK
 class _SystemHash {
