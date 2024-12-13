@@ -1,4 +1,6 @@
-import 'localizations-ae-dapp-framework.dart';
+import 'localizations_ae_dapp_framework.dart';
+
+// ignore_for_file: type=lint
 
 /// The translations for French (`fr`).
 class AppLocalizationsFr extends AppLocalizations {

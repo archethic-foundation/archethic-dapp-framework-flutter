@@ -282,6 +282,8 @@ mixin _$Failure {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this Failure to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
@@ -300,6 +302,9 @@ class _$FailureCopyWithImpl<$Res, $Val extends Failure>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -316,6 +321,9 @@ class __$$LoggedOutImplCopyWithImpl<$Res>
   __$$LoggedOutImplCopyWithImpl(
       _$LoggedOutImpl _value, $Res Function(_$LoggedOutImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -342,7 +350,7 @@ class _$LoggedOutImpl extends LoggedOut {
         (other.runtimeType == runtimeType && other is _$LoggedOutImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -601,6 +609,9 @@ class __$$NetworkFailureImplCopyWithImpl<$Res>
   __$$NetworkFailureImplCopyWithImpl(
       _$NetworkFailureImpl _value, $Res Function(_$NetworkFailureImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -627,7 +638,7 @@ class _$NetworkFailureImpl extends NetworkFailure {
         (other.runtimeType == runtimeType && other is _$NetworkFailureImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -889,6 +900,8 @@ class __$$QuotaExceededFailureImplCopyWithImpl<$Res>
       $Res Function(_$QuotaExceededFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -933,11 +946,13 @@ class _$QuotaExceededFailureImpl extends QuotaExceededFailure {
                 other.cooldownEndDate == cooldownEndDate));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, cooldownEndDate);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$QuotaExceededFailureImplCopyWith<_$QuotaExceededFailureImpl>
@@ -1187,7 +1202,10 @@ abstract class QuotaExceededFailure extends Failure {
       _$QuotaExceededFailureImpl.fromJson;
 
   DateTime? get cooldownEndDate;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$QuotaExceededFailureImplCopyWith<_$QuotaExceededFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1206,6 +1224,9 @@ class __$$ServiceNotFoundImplCopyWithImpl<$Res>
   __$$ServiceNotFoundImplCopyWithImpl(
       _$ServiceNotFoundImpl _value, $Res Function(_$ServiceNotFoundImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1232,7 +1253,7 @@ class _$ServiceNotFoundImpl extends ServiceNotFound {
         (other.runtimeType == runtimeType && other is _$ServiceNotFoundImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -1491,6 +1512,9 @@ class __$$ServiceAlreadyExistsImplCopyWithImpl<$Res>
   __$$ServiceAlreadyExistsImplCopyWithImpl(_$ServiceAlreadyExistsImpl _value,
       $Res Function(_$ServiceAlreadyExistsImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1518,7 +1542,7 @@ class _$ServiceAlreadyExistsImpl extends ServiceAlreadyExists {
             other is _$ServiceAlreadyExistsImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -1777,6 +1801,9 @@ class __$$PoolAlreadyExistsImplCopyWithImpl<$Res>
   __$$PoolAlreadyExistsImplCopyWithImpl(_$PoolAlreadyExistsImpl _value,
       $Res Function(_$PoolAlreadyExistsImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1803,7 +1830,7 @@ class _$PoolAlreadyExistsImpl extends PoolAlreadyExists {
         (other.runtimeType == runtimeType && other is _$PoolAlreadyExistsImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -2064,6 +2091,9 @@ class __$$LPTokenAmountExceedBalanceImplCopyWithImpl<$Res>
       _$LPTokenAmountExceedBalanceImpl _value,
       $Res Function(_$LPTokenAmountExceedBalanceImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2092,7 +2122,7 @@ class _$LPTokenAmountExceedBalanceImpl extends LPTokenAmountExceedBalance {
             other is _$LPTokenAmountExceedBalanceImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -2351,6 +2381,9 @@ class __$$PoolNotExistsImplCopyWithImpl<$Res>
   __$$PoolNotExistsImplCopyWithImpl(
       _$PoolNotExistsImpl _value, $Res Function(_$PoolNotExistsImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2377,7 +2410,7 @@ class _$PoolNotExistsImpl extends PoolNotExists {
         (other.runtimeType == runtimeType && other is _$PoolNotExistsImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -2636,6 +2669,9 @@ class __$$InsufficientFundsImplCopyWithImpl<$Res>
   __$$InsufficientFundsImplCopyWithImpl(_$InsufficientFundsImpl _value,
       $Res Function(_$InsufficientFundsImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2662,7 +2698,7 @@ class _$InsufficientFundsImpl extends InsufficientFunds {
         (other.runtimeType == runtimeType && other is _$InsufficientFundsImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -2921,6 +2957,9 @@ class __$$UnauthorizedImplCopyWithImpl<$Res>
   __$$UnauthorizedImplCopyWithImpl(
       _$UnauthorizedImpl _value, $Res Function(_$UnauthorizedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2947,7 +2986,7 @@ class _$UnauthorizedImpl extends Unauthorized {
         (other.runtimeType == runtimeType && other is _$UnauthorizedImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -3206,6 +3245,9 @@ class __$$InvalidValueImplCopyWithImpl<$Res>
   __$$InvalidValueImplCopyWithImpl(
       _$InvalidValueImpl _value, $Res Function(_$InvalidValueImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3232,7 +3274,7 @@ class _$InvalidValueImpl extends InvalidValue {
         (other.runtimeType == runtimeType && other is _$InvalidValueImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -3491,6 +3533,9 @@ class __$$HTLCWithoutFundsImplCopyWithImpl<$Res>
   __$$HTLCWithoutFundsImplCopyWithImpl(_$HTLCWithoutFundsImpl _value,
       $Res Function(_$HTLCWithoutFundsImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3517,7 +3562,7 @@ class _$HTLCWithoutFundsImpl extends HTLCWithoutFunds {
         (other.runtimeType == runtimeType && other is _$HTLCWithoutFundsImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -3776,6 +3821,9 @@ class __$$NotHTLCImplCopyWithImpl<$Res>
   __$$NotHTLCImplCopyWithImpl(
       _$NotHTLCImpl _value, $Res Function(_$NotHTLCImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3802,7 +3850,7 @@ class _$NotHTLCImpl extends NotHTLC {
         (other.runtimeType == runtimeType && other is _$NotHTLCImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -4060,6 +4108,9 @@ class __$$FaucetUCOErrorImplCopyWithImpl<$Res>
   __$$FaucetUCOErrorImplCopyWithImpl(
       _$FaucetUCOErrorImpl _value, $Res Function(_$FaucetUCOErrorImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -4086,7 +4137,7 @@ class _$FaucetUCOErrorImpl extends FaucetUCOError {
         (other.runtimeType == runtimeType && other is _$FaucetUCOErrorImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -4345,6 +4396,9 @@ class __$$FaucetUCUserRejectedImplCopyWithImpl<$Res>
   __$$FaucetUCUserRejectedImplCopyWithImpl(_$FaucetUCUserRejectedImpl _value,
       $Res Function(_$FaucetUCUserRejectedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -4372,7 +4426,7 @@ class _$FaucetUCUserRejectedImpl extends FaucetUCUserRejected {
             other is _$FaucetUCUserRejectedImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -4634,6 +4688,8 @@ class __$$WrongNetworkImplCopyWithImpl<$Res>
       _$WrongNetworkImpl _value, $Res Function(_$WrongNetworkImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4677,11 +4733,13 @@ class _$WrongNetworkImpl extends WrongNetwork {
             (identical(other.cause, cause) || other.cause == cause));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, cause);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$WrongNetworkImplCopyWith<_$WrongNetworkImpl> get copyWith =>
@@ -4928,7 +4986,10 @@ abstract class WrongNetwork extends Failure {
       _$WrongNetworkImpl.fromJson;
 
   String get cause;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$WrongNetworkImplCopyWith<_$WrongNetworkImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4948,6 +5009,9 @@ class __$$InsufficientPoolFundsImplCopyWithImpl<$Res>
   __$$InsufficientPoolFundsImplCopyWithImpl(_$InsufficientPoolFundsImpl _value,
       $Res Function(_$InsufficientPoolFundsImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -4975,7 +5039,7 @@ class _$InsufficientPoolFundsImpl extends InsufficientPoolFunds {
             other is _$InsufficientPoolFundsImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -5234,6 +5298,9 @@ class __$$IncompatibleBrowserImplCopyWithImpl<$Res>
   __$$IncompatibleBrowserImplCopyWithImpl(_$IncompatibleBrowserImpl _value,
       $Res Function(_$IncompatibleBrowserImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -5261,7 +5328,7 @@ class _$IncompatibleBrowserImpl extends IncompatibleBrowser {
             other is _$IncompatibleBrowserImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -5522,6 +5589,9 @@ class __$$ChainSwitchNotSupportedImplCopyWithImpl<$Res>
       _$ChainSwitchNotSupportedImpl _value,
       $Res Function(_$ChainSwitchNotSupportedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -5549,7 +5619,7 @@ class _$ChainSwitchNotSupportedImpl extends ChainSwitchNotSupported {
             other is _$ChainSwitchNotSupportedImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -5808,6 +5878,9 @@ class __$$ConnectivityEVMImplCopyWithImpl<$Res>
   __$$ConnectivityEVMImplCopyWithImpl(
       _$ConnectivityEVMImpl _value, $Res Function(_$ConnectivityEVMImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -5834,7 +5907,7 @@ class _$ConnectivityEVMImpl extends ConnectivityEVM {
         (other.runtimeType == runtimeType && other is _$ConnectivityEVMImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -6094,6 +6167,9 @@ class __$$WalletNotSupportedEVMImplCopyWithImpl<$Res>
   __$$WalletNotSupportedEVMImplCopyWithImpl(_$WalletNotSupportedEVMImpl _value,
       $Res Function(_$WalletNotSupportedEVMImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -6121,7 +6197,7 @@ class _$WalletNotSupportedEVMImpl extends WalletNotSupportedEVM {
             other is _$WalletNotSupportedEVMImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -6380,6 +6456,9 @@ class __$$NoWalletSupportedEVMImplCopyWithImpl<$Res>
   __$$NoWalletSupportedEVMImplCopyWithImpl(_$NoWalletSupportedEVMImpl _value,
       $Res Function(_$NoWalletSupportedEVMImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -6407,7 +6486,7 @@ class _$NoWalletSupportedEVMImpl extends NoWalletSupportedEVM {
             other is _$NoWalletSupportedEVMImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -6666,6 +6745,9 @@ class __$$ParamEVMChainImplCopyWithImpl<$Res>
   __$$ParamEVMChainImplCopyWithImpl(
       _$ParamEVMChainImpl _value, $Res Function(_$ParamEVMChainImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -6692,7 +6774,7 @@ class _$ParamEVMChainImpl extends ParamEVMChain {
         (other.runtimeType == runtimeType && other is _$ParamEVMChainImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -6951,6 +7033,9 @@ class __$$UserRejectedImplCopyWithImpl<$Res>
   __$$UserRejectedImplCopyWithImpl(
       _$UserRejectedImpl _value, $Res Function(_$UserRejectedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -6977,7 +7062,7 @@ class _$UserRejectedImpl extends UserRejected {
         (other.runtimeType == runtimeType && other is _$UserRejectedImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -7237,6 +7322,9 @@ class __$$ConnectivityArchethicImplCopyWithImpl<$Res>
   __$$ConnectivityArchethicImplCopyWithImpl(_$ConnectivityArchethicImpl _value,
       $Res Function(_$ConnectivityArchethicImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -7264,7 +7352,7 @@ class _$ConnectivityArchethicImpl extends ConnectivityArchethic {
             other is _$ConnectivityArchethicImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -7523,6 +7611,9 @@ class __$$TimeoutImplCopyWithImpl<$Res>
   __$$TimeoutImplCopyWithImpl(
       _$TimeoutImpl _value, $Res Function(_$TimeoutImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -7549,7 +7640,7 @@ class _$TimeoutImpl extends Timeout {
         (other.runtimeType == runtimeType && other is _$TimeoutImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -7810,6 +7901,8 @@ class __$$RPCErrorEVMImplCopyWithImpl<$Res>
       _$RPCErrorEVMImpl _value, $Res Function(_$RPCErrorEVMImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -7853,11 +7946,13 @@ class _$RPCErrorEVMImpl extends RPCErrorEVM {
             (identical(other.cause, cause) || other.cause == cause));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, cause);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RPCErrorEVMImplCopyWith<_$RPCErrorEVMImpl> get copyWith =>
@@ -8104,7 +8199,10 @@ abstract class RPCErrorEVM extends Failure {
       _$RPCErrorEVMImpl.fromJson;
 
   String? get cause;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RPCErrorEVMImplCopyWith<_$RPCErrorEVMImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -8126,6 +8224,8 @@ class __$$OtherFailureImplCopyWithImpl<$Res>
       _$OtherFailureImpl _value, $Res Function(_$OtherFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -8177,11 +8277,13 @@ class _$OtherFailureImpl extends OtherFailure {
             (identical(other.stack, stack) || other.stack == stack));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, cause, stack);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OtherFailureImplCopyWith<_$OtherFailureImpl> get copyWith =>
@@ -8430,7 +8532,10 @@ abstract class OtherFailure extends Failure {
 
   String? get cause;
   String? get stack;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Failure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OtherFailureImplCopyWith<_$OtherFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

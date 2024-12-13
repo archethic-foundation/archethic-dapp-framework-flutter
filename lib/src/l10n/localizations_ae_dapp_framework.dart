@@ -5,8 +5,10 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
-import 'localizations-ae-dapp-framework_en.dart';
-import 'localizations-ae-dapp-framework_fr.dart';
+import 'localizations_ae_dapp_framework_en.dart';
+import 'localizations_ae_dapp_framework_fr.dart';
+
+// ignore_for_file: type=lint
 
 /// Callers can lookup localized strings with an instance of AppLocalizations
 /// returned by `AppLocalizations.of(context)`.
@@ -16,7 +18,7 @@ import 'localizations-ae-dapp-framework_fr.dart';
 /// `supportedLocales` list. For example:
 ///
 /// ```dart
-/// import 'gen_l10n/localizations-ae-dapp-framework.dart';
+/// import 'gen_l10n/localizations_ae_dapp_framework.dart';
 ///
 /// return MaterialApp(
 ///   localizationsDelegates: AppLocalizations.localizationsDelegates,

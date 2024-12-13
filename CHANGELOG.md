@@ -1,344 +1,349 @@
+# 3.2.5
+
+- ✅ Improve lib score. 
+- ⬆️ Upgrade dependencies
+
 # 3.2.4
 
-* Export `defTokensRepositoryImpl` & `getDefTokenProvider` providers
+- Export `defTokensRepositoryImpl` & `getDefTokenProvider` providers
 
 # 3.2.3
 
-* Add `defTokensRepository` provider
+- Add `defTokensRepository` provider
 
 # 3.2.2
 
-* Use MediaQuery.sizeOf(context) instead of MediaQuery.of(context).size
+- Use MediaQuery.sizeOf(context) instead of MediaQuery.of(context).size
 
 # 3.2.1
 
-* Coin price notifier starts auto updates on creation.
+- Coin price notifier starts auto updates on creation.
 
 # 3.2.0
 
-* All providers are auto-disposable
-* UCID provider returns NULL for unknown UCIDs.
+- All providers are auto-disposable
+- UCID provider returns NULL for unknown UCIDs.
 
 # 3.1.0
 
-* Remove GetIt usage for `OracleService`
+- Remove GetIt usage for `OracleService`
  
 # 3.0.3
 
-* ✨ `AppBackground` widget : Add boxfit in param
-* ✨ `ProvidersLogger` : Add timestamp in provider logs
+- ✨ `AppBackground` widget : Add boxfit in param
+- ✨ `ProvidersLogger` : Add timestamp in provider logs
 
 # 3.0.2
 
-* build: :arrow_up: Upgrade `archethic_wallet_client`
+- build: :arrow_up: Upgrade `archethic_wallet_client`
 
 # 3.0.1
 
-* build: :arrow_up: Upgrade `archethic_lib_dart` & `archethic_wallet_client`
+- build: :arrow_up: Upgrade `archethic_lib_dart` & `archethic_wallet_client`
 
 # 3.0.0
 
-* Use Logging library for [LogManager]
-* **Breaking change : **[LogManager.logsActived] replaced by [LogManager.remoteLogsEnabled]
+- Use Logging library for [LogManager]
+- **Breaking change : **[LogManager.logsActived] replaced by [LogManager.remoteLogsEnabled]
 
 
 # 2.1.3
 
-* Upgrade archethic_wallet_client to 2.1.3
+- Upgrade archethic_wallet_client to 2.1.3
 
 
 # 2.1.2
 
-* Upgrade package_info_plus to 8.0.2
-* Add textStyle param in Consent Widgets
+- Upgrade package_info_plus to 8.0.2
+- Add textStyle param in Consent Widgets
  
 
 # 2.1.1
 
-* Upgrade AWC version to 2.1.2
+- Upgrade AWC version to 2.1.2
 
 
 # 2.1.0
 
-* Upgrade AWC version to 2.1.0
+- Upgrade AWC version to 2.1.0
 
 
 # 2.0.0
 
-* BREAKING CHANGES: Introduce the Environment type
+- BREAKING CHANGES: Introduce the Environment type
 
 
 # 1.3.1
 
-* Fix bug: `CoinPriceProvider` : Return 0 when ucid doesn't exist for a token
-* Fix typo: fix method `startTimer` instead of `starTimer` in `CoinPriceNotifier`
+- Fix bug: `CoinPriceProvider` : Return 0 when ucid doesn't exist for a token
+- Fix typo: fix method `startTimer` instead of `starTimer` in `CoinPriceNotifier`
 
 
 # 1.3.0
 
-* BREAKING CHANGES: `TransactionUtil` - Add `apiService` param for each method
-* BREAKING CHANGES: Changing the way you load providers: `UcidsTokensProviders` & `CoinPriceProviders` 
-* Move coin price management to an infrastructure repository
-* Add a generic token model and associated def
+- BREAKING CHANGES: `TransactionUtil` - Add `apiService` param for each method
+- BREAKING CHANGES: Changing the way you load providers: `UcidsTokensProviders` & `CoinPriceProviders` 
+- Move coin price management to an infrastructure repository
+- Add a generic token model and associated def
 
 
 # 1.2.14
 
-* Add timestamp in debug logs
+- Add timestamp in debug logs
 
 
 # 1.2.13
 
-* Add Bitcoin in ucids_tokens config file
+- Add Bitcoin in ucids_tokens config file
 
 
 # 1.2.12
 
-* Update dependencies
+- Update dependencies
 
 
 # 1.2.11
 
-* Add `precision` param in ArchethicOracleUco widget
+- Add `precision` param in ArchethicOracleUco widget
 
 
 # 1.2.10
 
-* Update dependencies
+- Update dependencies
 
 
 # 1.2.9
 
-* Add `TransactionUtil.isSCCallExecuted` method to check is a SC has been executed 
+- Add `TransactionUtil.isSCCallExecuted` method to check is a SC has been executed 
 
 
 # 1.2.8
 
-* Update dependencies
+- Update dependencies
 
 
 # 1.2.7
 
-* Update dependencies
+- Update dependencies
 
 
 # 1.2.6
 
-* Add color params in SingleCard widget
+- Add color params in SingleCard widget
 
 
 # 1.2.5
 
-* Add description in RPC sign tx method
-* Fix PeriodicFuture class
+- Add description in RPC sign tx method
+- Fix PeriodicFuture class
 
 
 # 1.2.4
 
-* Update dependencies
+- Update dependencies
 
 
 # 1.2.3
 
-* Migration to flutter 3.22
+- Migration to flutter 3.22
 
 
 # 1.2.2
 
-* Update dependencies
+- Update dependencies
 
 
 # 1.2.1
 
-* refactor: Use archethic_wallet_client 2.0.0
+- refactor: Use archethic_wallet_client 2.0.0
 
 
 # 1.2.0
 
-* BREAKING CHANGES: Handle custom errors codes/messages in Dart SDK
-* UI Adjustements
+- BREAKING CHANGES: Handle custom errors codes/messages in Dart SDK
+- UI Adjustements
 
 
 # 1.1.25
 
-* Add aeEURe mainnet in ucids_tokens config file
+- Add aeEURe mainnet in ucids_tokens config file
 
 
 # 1.1.24
 
-* `Result` class. Support asynchronous callbacks in map method 
+- `Result` class. Support asynchronous callbacks in map method 
 
 
 # 1.1.23
 
-* Update dependencies
+- Update dependencies
 
 
 # 1.1.22
 
-* Fix aeEURe address in ucids_tokens config file
+- Fix aeEURe address in ucids_tokens config file
 
 
 # 1.1.21
 
-* Add aeEURe in ucids_tokens config file
+- Add aeEURe in ucids_tokens config file
 
 
 # 1.1.20
 
-* Add token EURe info + coin name fixed
+- Add token EURe info + coin name fixed
 
 
 # 1.1.19
 
-* Update Archethic Dart SDK version 3.3.16
+- Update Archethic Dart SDK version 3.3.16
 
 
 # 1.1.18
 
-* Add useUnifyDecimalSeparator param in AmountTextInputFormatter
+- Add useUnifyDecimalSeparator param in AmountTextInputFormatter
 
 
 # 1.1.17
 
-* Adjust logs
+- Adjust logs
  
 
 # 1.1.16
 
-* Fix bugs
+- Fix bugs
 
 
 # 1.1.15
 
-* VerifiedTokensNotifier & UcidsTokensNotifier init - Add network in param
-* Fix bugs
+- VerifiedTokensNotifier & UcidsTokensNotifier init - Add network in param
+- Fix bugs
 
 
 # 1.1.14
 
-* Add new Failures
+- Add new Failures
 
 
 # 1.1.13
 
-* Add aeETH UCID
+- Add aeETH UCID
 
 
 # 1.1.12
 
-* Update Archethic Dart SDK version 3.3.15
+- Update Archethic Dart SDK version 3.3.15
 
 
 # 1.1.11
 
-* Add icon param in InProgressCircularStepProgressIndicator Widget
-* Fix onPress action when AppButton is disabled
+- Add icon param in InProgressCircularStepProgressIndicator Widget
+- Fix onPress action when AppButton is disabled
 
 
 # 1.1.10
 
-* Fix consentement local db management
+- Fix consentement local db management
 
 
 # 1.1.9
 
-* Fix crash with PopupCloseButton widget
+- Fix crash with PopupCloseButton widget
 
 
 # 1.1.8
 
-* Update Archethic Dart SDK version 3.3.14
+- Update Archethic Dart SDK version 3.3.14
 
 
 # 1.1.7
 
-* Widgets UI Improvements
+- Widgets UI Improvements
  
 
 # 1.1.6
 
-* Add UDSC market price (for testnet usage)
-* Update Archethic Dart SDK version 3.3.13
+- Add UDSC market price (for testnet usage)
+- Update Archethic Dart SDK version 3.3.13
 
 
 # 1.1.5
 
-* Fix legal consentement management
+- Fix legal consentement management
 
 
 # 1.1.4
 
-* Add legal consentement management
+- Add legal consentement management
 
 
 # 1.1.3
 
-* Upgrade dependencies
+- Upgrade dependencies
 
 
 # 1.1.2
 
-* Improve AmountTextInputFormatter behavior
+- Improve AmountTextInputFormatter behavior
 
 
 # 1.1.1
 
-* Upgrade dependencies
+- Upgrade dependencies
 
 
 # 1.1.0
 
-* Upgrade dependencies (AWC web extension support)
+- Upgrade dependencies (AWC web extension support)
 
 
 # 1.0.0
 
-* Stable version
+- Stable version
 
 
 # 0.0.9
 
-* Fix responsive
-* Fix popup navigation
+- Fix responsive
+- Fix popup navigation
 
 
 # 0.0.8
 
-* Upgrade dependencies
+- Upgrade dependencies
 
 
 # 0.0.7
 
-* Upgrade dependencies
+- Upgrade dependencies
 
 
 # 0.0.6
 
-* Upgrade dependencies
+- Upgrade dependencies
 
 
 # 0.0.5
 
-* Get Verified tokens from blockchain
+- Get Verified tokens from blockchain
 
 
 # 0.0.4
 
-* Responsive: Add tools
+- Responsive: Add tools
 
 
 # 0.0.3
 
-* Fix bug
+- Fix bug
 
 
 # 0.0.2
 
-* Migrate to Dart 3.3 and Flutter 3.19
-* Upgrade dependencies
+- Migrate to Dart 3.3 and Flutter 3.19
+- Upgrade dependencies
 
 
 # 0.0.1
 
-* First version
+- First version

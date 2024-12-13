@@ -24,8 +24,12 @@ mixin _$UcidsTokens {
   Map<String, int> get testnet => throw _privateConstructorUsedError;
   Map<String, int> get devnet => throw _privateConstructorUsedError;
 
+  /// Serializes this UcidsTokens to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UcidsTokens
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $UcidsTokensCopyWith<UcidsTokens> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,6 +56,8 @@ class _$UcidsTokensCopyWithImpl<$Res, $Val extends UcidsTokens>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of UcidsTokens
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -98,6 +104,8 @@ class __$$UcidsTokensImplCopyWithImpl<$Res>
       _$UcidsTokensImpl _value, $Res Function(_$UcidsTokensImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UcidsTokens
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -175,7 +183,7 @@ class _$UcidsTokensImpl implements _UcidsTokens {
             const DeepCollectionEquality().equals(other._devnet, _devnet));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -183,7 +191,9 @@ class _$UcidsTokensImpl implements _UcidsTokens {
       const DeepCollectionEquality().hash(_testnet),
       const DeepCollectionEquality().hash(_devnet));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UcidsTokens
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UcidsTokensImplCopyWith<_$UcidsTokensImpl> get copyWith =>
@@ -212,8 +222,11 @@ abstract class _UcidsTokens implements UcidsTokens {
   Map<String, int> get testnet;
   @override
   Map<String, int> get devnet;
+
+  /// Create a copy of UcidsTokens
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UcidsTokensImplCopyWith<_$UcidsTokensImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

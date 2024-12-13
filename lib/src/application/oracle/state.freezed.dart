@@ -24,8 +24,12 @@ mixin _$ArchethicOracleUCO {
   double get eur => throw _privateConstructorUsedError;
   double get usd => throw _privateConstructorUsedError;
 
+  /// Serializes this ArchethicOracleUCO to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ArchethicOracleUCO
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ArchethicOracleUCOCopyWith<ArchethicOracleUCO> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +53,8 @@ class _$ArchethicOracleUCOCopyWithImpl<$Res, $Val extends ArchethicOracleUCO>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ArchethicOracleUCO
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class __$$ArchethicOracleUCOImplCopyWithImpl<$Res>
       $Res Function(_$ArchethicOracleUCOImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ArchethicOracleUCO
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -151,11 +159,13 @@ class _$ArchethicOracleUCOImpl implements _ArchethicOracleUCO {
             (identical(other.usd, usd) || other.usd == usd));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, timestamp, eur, usd);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ArchethicOracleUCO
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ArchethicOracleUCOImplCopyWith<_$ArchethicOracleUCOImpl> get copyWith =>
@@ -185,8 +195,11 @@ abstract class _ArchethicOracleUCO implements ArchethicOracleUCO {
   double get eur;
   @override
   double get usd;
+
+  /// Create a copy of ArchethicOracleUCO
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ArchethicOracleUCOImplCopyWith<_$ArchethicOracleUCOImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

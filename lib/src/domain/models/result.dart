@@ -2,22 +2,22 @@ import 'dart:async';
 import 'package:archethic_dapp_framework_flutter/src/domain/models/failures.dart';
 import 'package:flutter/foundation.dart';
 
+/// Returns the value if it is a success.
+/// Else, throws the error as an [Exception].
+///
+/// Thanks to this extension, instead of :
+/// ```dart
+/// Future<Result<Value, Failure>> result;
+/// final value = (await result).valueOrThrow;
+/// ```
+///
+/// You can do :
+/// ```dart
+/// Future<Result<Value, Failure>> result;
+/// final value = await result.valueOrThrow;
+/// ```
 extension FutureResult<ValueT, FailureT extends Exception>
     on Future<Result<ValueT, FailureT>> {
-  /// Returns the value if it is a success.
-  /// Else, throws the error as an [Exception].
-  ///
-  /// Thanks to this extension, instead of :
-  /// ```dart
-  /// Future<Result<Value, Failure>> result;
-  /// final value = (await result).valueOrThrow;
-  /// ```
-  ///
-  /// You can do :
-  /// ```dart
-  /// Future<Result<Value, Failure>> result;
-  /// final value = await result.valueOrThrow;
-  /// ```
   Future<ValueT> get valueOrThrow async {
     return (await this).valueOrThrow;
   }

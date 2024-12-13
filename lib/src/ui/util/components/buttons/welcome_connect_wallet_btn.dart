@@ -1,5 +1,5 @@
-/// SPDX-License-Identifier: AGPL-3.0-or-later
-import 'package:archethic_dapp_framework_flutter/src/l10n/localizations-ae-dapp-framework.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
+import 'package:archethic_dapp_framework_flutter/src/l10n/localizations_ae_dapp_framework.dart';
 import 'package:archethic_dapp_framework_flutter/src/ui/util/components/buttons/app_button.dart';
 import 'package:flutter/material.dart';
 

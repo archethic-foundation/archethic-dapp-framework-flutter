@@ -1,4 +1,4 @@
-import 'package:archethic_dapp_framework_flutter/src/l10n/localizations-ae-dapp-framework.dart';
+import 'package:archethic_dapp_framework_flutter/src/l10n/localizations_ae_dapp_framework.dart';
 import 'package:archethic_dapp_framework_flutter/src/ui/util/iconsax.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';

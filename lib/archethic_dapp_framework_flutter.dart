@@ -1,3 +1,4 @@
+/// An internal framework for archethic flutter development
 library archethic_dapp_framework_flutter;
 
 export 'src/application/ae_token.dart';
@@ -30,8 +31,8 @@ export 'src/infrastructure/consent.respository.dart';
 export 'src/infrastructure/def_tokens.repository.dart';
 export 'src/infrastructure/ucids_tokens.repository.dart';
 export 'src/infrastructure/verified_tokens.repository.dart';
-export 'src/l10n/localizations-ae-dapp-framework.dart';
-export 'src/l10n/localizations-ae-dapp-framework_en.dart';
+export 'src/l10n/localizations_ae_dapp_framework.dart';
+export 'src/l10n/localizations_ae_dapp_framework_en.dart';
 export 'src/ui/themes/app_theme_base.dart';
 export 'src/ui/util/components/app_background.dart';
 export 'src/ui/util/components/app_text_field.dart';

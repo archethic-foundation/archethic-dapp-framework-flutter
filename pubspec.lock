@@ -42,18 +42,18 @@ packages:
     dependency: "direct main"
     description:
       name: archethic_lib_dart
-      sha256: "6abb532e25212c10782e09274d8a17b00a745910f4410e558b17d305cc202ce5"
+      sha256: "9200c8b49322c01e765ecd44cca97658a0436767abb76cbeda5f742d23d0e61e"
       url: "https://pub.dev"
     source: hosted
-    version: "5.0.1"
+    version: "5.0.2"
   archethic_wallet_client:
     dependency: "direct main"
     description:
       name: archethic_wallet_client
-      sha256: b67757e69306743bfeff80f59db385b3097bcef2de10bb1d6793077dd5202f05
+      sha256: "69463fe1716b365b17623745fadc7e8ca37135c0bbd908e88fb9d68b05030a85"
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.6"
+    version: "2.1.7"
   archive:
     dependency: "direct main"
     description:
@@ -194,10 +194,10 @@ packages:
     dependency: transitive
     description:
       name: clock
-      sha256: fddb70d9b5277016c77a80201021d40a2247104d9f4aa7bab7157b7e3f05b84b
+      sha256: cb6d7f03e1de671e34607e909a7213e31d7752be4fb66a86d29fe1eb14bfb5cf
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.2"
+    version: "1.1.1"
   code_builder:
     dependency: transitive
     description:
@@ -266,18 +266,10 @@ packages:
     dependency: transitive
     description:
       name: custom_lint_core
-      sha256: "02450c3e45e2a6e8b26c4d16687596ab3c4644dd5792e3313aa9ceba5a49b7f5"
+      sha256: a85e8f78f4c52f6c63cdaf8c872eb573db0231dcdf3c3a5906d493c1f8bc20e6
       url: "https://pub.dev"
     source: hosted
-    version: "0.7.0"
-  custom_lint_visitor:
-    dependency: transitive
-    description:
-      name: custom_lint_visitor
-      sha256: "8aeb3b6ae2bb765e7716b93d1d10e8356d04e0ff6d7592de6ee04e0dd7d6587d"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.0+6.7.0"
+    version: "0.6.3"
   dart_style:
     dependency: transitive
     description:
@@ -290,10 +282,10 @@ packages:
     dependency: transitive
     description:
       name: decimal
-      sha256: da8f65df568345f2738cc8b0de74971c86d2d93ce5fc8c4ec094f6b7c5d48eb5
+      sha256: "4140a688f9e443e2f4de3a1162387bf25e1ac6d51e24c9da263f245210f41440"
       url: "https://pub.dev"
     source: hosted
-    version: "3.1.0"
+    version: "3.0.2"
   deeplink_rpc:
     dependency: transitive
     description:
@@ -355,6 +347,11 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.5.2"
+  flutter_localizations:
+    dependency: "direct main"
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   flutter_riverpod:
     dependency: "direct main"
     description:
@@ -548,10 +545,10 @@ packages:
     dependency: "direct main"
     description:
       name: intl
-      sha256: "00f33b908655e606b86d2ade4710a231b802eec6f11e87e4ea3783fd72077a50"
+      sha256: d6f56758b7d3014a48af9701c085700aac781a92a87a62b1333b46d8879661cf
       url: "https://pub.dev"
     source: hosted
-    version: "0.20.1"
+    version: "0.19.0"
   io:
     dependency: transitive
     description:
@@ -600,6 +597,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.3"
+  lints:
+    dependency: "direct dev"
+    description:
+      name: lints
+      sha256: "3315600f3fb3b135be672bf4a178c55f274bebe368325ae18462c89ac1e3b413"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.0.0"
   lit_starfield:
     dependency: "direct main"
     description:
@@ -708,10 +713,10 @@ packages:
     dependency: transitive
     description:
       name: path
-      sha256: "75cca69d1490965be98c73ceaea117e8a04dd21217b37b292c9ddbec0d955bc5"
+      sha256: "087ce49c3f0dc39180befefc60fdb4acd8f8620e5682fe2476afd0b3688bb4af"
       url: "https://pub.dev"
     source: hosted
-    version: "1.9.1"
+    version: "1.9.0"
   path_provider:
     dependency: transitive
     description:
@@ -852,10 +857,10 @@ packages:
     dependency: transitive
     description:
       name: riverpod_analyzer_utils
-      sha256: c6b8222b2b483cb87ae77ad147d6408f400c64f060df7a225b127f4afef4f8c8
+      sha256: "0dcb0af32d561f8fa000c6a6d95633c9fb08ea8a8df46e3f9daca59f11218167"
       url: "https://pub.dev"
     source: hosted
-    version: "0.5.8"
+    version: "0.5.6"
   riverpod_annotation:
     dependency: "direct main"
     description:
@@ -876,10 +881,10 @@ packages:
     dependency: "direct dev"
     description:
       name: riverpod_lint
-      sha256: "63546d70952015f0981361636bf8f356d9cfd9d7f6f0815e3c07789a41233188"
+      sha256: "0684c21a9a4582c28c897d55c7b611fa59a351579061b43f8c92c005804e63a8"
       url: "https://pub.dev"
     source: hosted
-    version: "2.6.3"
+    version: "2.6.1"
   rxdart:
     dependency: transitive
     description:
@@ -1153,10 +1158,10 @@ packages:
     dependency: transitive
     description:
       name: vm_service
-      sha256: ddfa8d30d89985b96407efce8acbdd124701f96741f2d981ca860662f1c0dc02
+      sha256: "0968250880a6c5fe7edc067ed0a13d4bae1577fe2771dcf3010d52c4a9d3ca14"
       url: "https://pub.dev"
     source: hosted
-    version: "15.0.0"
+    version: "14.3.1"
   watcher:
     dependency: transitive
     description:
