@@ -41,18 +41,20 @@ packages:
   archethic_lib_dart:
     dependency: "direct main"
     description:
-      name: archethic_lib_dart
-      sha256: "741e01c105feea9e49da15ee8742fa1a831bcdb371adb623b49516034520ee1c"
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: upgrade_graqhql
+      resolved-ref: "9b2f293359595cf498d4c33074327d93233486dd"
+      url: "https://github.com/archethic-foundation/libdart.git"
+    source: git
     version: "4.0.0"
   archethic_wallet_client:
     dependency: "direct main"
     description:
-      name: archethic_wallet_client
-      sha256: "692f87f11d4515e9fb8d74b37a2d7da01674f1f9fc95b487b835fb647538a2a6"
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: "70-add-encrypt-and-decrypt-methods"
+      resolved-ref: "712e10c8d4d94e6f42effb4b228ed9bf65925a2a"
+      url: "https://github.com/archethic-foundation/archethic-wallet-client-dart.git"
+    source: git
     version: "2.1.5"
   archive:
     dependency: "direct main"
@@ -480,11 +482,12 @@ packages:
   graphql:
     dependency: transitive
     description:
-      name: graphql
-      sha256: d066e53446166c12537458386b507f7426f2b8801ebafc184576aab3cbc64d56
-      url: "https://pub.dev"
-    source: hosted
-    version: "5.2.0-beta.7"
+      path: "packages/graphql"
+      ref: hagen00-upgrade-packages
+      resolved-ref: "3d4ef96def5234adcd5c41af281c84a8a6ed7850"
+      url: "https://github.com/hagen00/graphql-flutter.git"
+    source: git
+    version: "5.2.0-beta.9"
   graphs:
     dependency: transitive
     description:
@@ -761,10 +764,10 @@ packages:
     dependency: transitive
     description:
       name: phoenix_socket
-      sha256: "2d56ffde59875673bffdabd1f709307ab34b317bd868402e3d3a61c23c333b1b"
+      sha256: "6f1a355177eb1bf61b388407cf18f200fdf06bc5c1d9d05ac87cdd8a27d3ddd6"
       url: "https://pub.dev"
     source: hosted
-    version: "0.7.4"
+    version: "0.7.6"
   pinenacl:
     dependency: transitive
     description:
@@ -913,10 +916,10 @@ packages:
     dependency: transitive
     description:
       name: shelf_web_socket
-      sha256: "9ca081be41c60190ebcb4766b2486a7d50261db7bd0f5d9615f2d653637a84c1"
+      sha256: cc36c297b52866d203dbf9332263c94becc2fe0ceaa9681d07b6ef9807023b67
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.4"
+    version: "2.0.1"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -1030,26 +1033,26 @@ packages:
     dependency: "direct dev"
     description:
       name: test
-      sha256: "7ee446762c2c50b3bd4ea96fe13ffac69919352bd3b4b17bac3f3465edc58073"
+      sha256: "22eb7769bee38c7e032d532e8daa2e1cc901b799f603550a4db8f3a5f5173ea2"
       url: "https://pub.dev"
     source: hosted
-    version: "1.25.2"
+    version: "1.25.12"
   test_api:
     dependency: transitive
     description:
       name: test_api
-      sha256: "9955ae474176f7ac8ee4e989dadfb411a58c30415bcfb648fa04b2b8a03afa7f"
+      sha256: fb31f383e2ee25fbbfe06b40fe21e1e458d14080e3c67e7ba0acfde4df4e0bbd
       url: "https://pub.dev"
     source: hosted
-    version: "0.7.0"
+    version: "0.7.4"
   test_core:
     dependency: transitive
     description:
       name: test_core
-      sha256: "2bc4b4ecddd75309300d8096f781c0e3280ca1ef85beda558d33fcbedc2eead4"
+      sha256: "84d17c3486c8dfdbe5e12a50c8ae176d15e2a771b96909a9442b40173649ccaa"
       url: "https://pub.dev"
     source: hosted
-    version: "0.6.0"
+    version: "0.6.8"
   timing:
     dependency: transitive
     description:
@@ -1174,18 +1177,26 @@ packages:
     dependency: transitive
     description:
       name: web
-      sha256: "97da13628db363c635202ad97068d47c5b8aa555808e7a9411963c533b449b27"
+      sha256: cd3543bd5798f6ad290ea73d210f423502e71900302dde696f8bff84bf89a1cb
       url: "https://pub.dev"
     source: hosted
-    version: "0.5.1"
+    version: "1.1.0"
+  web_socket:
+    dependency: transitive
+    description:
+      name: web_socket
+      sha256: "3c12d96c0c9a4eec095246debcea7b86c0324f22df69893d538fcc6f1b8cce83"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.6"
   web_socket_channel:
     dependency: transitive
     description:
       name: web_socket_channel
-      sha256: "58c6666b342a38816b2e7e50ed0f1e261959630becd4c879c4f26bfa14aa5a42"
+      sha256: "9f187088ed104edd8662ca07af4b124465893caf063ba29758f97af57e61da8f"
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.5"
+    version: "3.0.1"
   webkit_inspection_protocol:
     dependency: transitive
     description:
@@ -1227,5 +1238,5 @@ packages:
     source: hosted
     version: "3.1.2"
 sdks:
-  dart: ">=3.4.0 <4.0.0"
+  dart: ">=3.5.0 <4.0.0"
   flutter: ">=3.22.0"
