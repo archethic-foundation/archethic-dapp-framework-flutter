@@ -33,8 +33,12 @@ mixin _$AEToken {
   AETokenPair? get lpTokenPair => throw _privateConstructorUsedError;
   int? get ucid => throw _privateConstructorUsedError;
 
+  /// Serializes this AEToken to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AEToken
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AETokenCopyWith<AEToken> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -69,6 +73,8 @@ class _$AETokenCopyWithImpl<$Res, $Val extends AEToken>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AEToken
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -132,6 +138,8 @@ class _$AETokenCopyWithImpl<$Res, $Val extends AEToken>
     ) as $Val);
   }
 
+  /// Create a copy of AEToken
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AETokenPairCopyWith<$Res>? get lpTokenPair {
@@ -177,6 +185,8 @@ class __$$AETokenImplCopyWithImpl<$Res>
       _$AETokenImpl _value, $Res Function(_$AETokenImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AEToken
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -318,12 +328,14 @@ class _$AETokenImpl extends _AEToken {
             (identical(other.ucid, ucid) || other.ucid == ucid));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, name, address, icon, symbol,
       balance, reserve, supply, isVerified, isLpToken, lpTokenPair, ucid);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AEToken
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AETokenImplCopyWith<_$AETokenImpl> get copyWith =>
@@ -377,8 +389,11 @@ abstract class _AEToken extends AEToken {
   AETokenPair? get lpTokenPair;
   @override
   int? get ucid;
+
+  /// Create a copy of AEToken
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AETokenImplCopyWith<_$AETokenImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

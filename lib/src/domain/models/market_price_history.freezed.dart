@@ -23,8 +23,12 @@ mixin _$PriceHistoryValue {
   num get price => throw _privateConstructorUsedError;
   DateTime get time => throw _privateConstructorUsedError;
 
+  /// Serializes this PriceHistoryValue to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PriceHistoryValue
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PriceHistoryValueCopyWith<PriceHistoryValue> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$PriceHistoryValueCopyWithImpl<$Res, $Val extends PriceHistoryValue>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PriceHistoryValue
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$PriceHistoryValueImplCopyWithImpl<$Res>
       $Res Function(_$PriceHistoryValueImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PriceHistoryValue
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -132,11 +140,13 @@ class _$PriceHistoryValueImpl implements _PriceHistoryValue {
             (identical(other.time, time) || other.time == time));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, price, time);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PriceHistoryValue
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PriceHistoryValueImplCopyWith<_$PriceHistoryValueImpl> get copyWith =>
@@ -163,8 +173,11 @@ abstract class _PriceHistoryValue implements PriceHistoryValue {
   num get price;
   @override
   DateTime get time;
+
+  /// Create a copy of PriceHistoryValue
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PriceHistoryValueImplCopyWith<_$PriceHistoryValueImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

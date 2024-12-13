@@ -1,12 +1,17 @@
-/// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'state.freezed.dart';
 part 'state.g.dart';
 
+/// A JSON converter for [ArchethicOracleUCO].
+///
+/// This converter handles the serialization and deserialization of
+/// [ArchethicOracleUCO] instances to and from JSON.
 class ArchethicOracleUCOJsonConverter
     extends JsonConverter<ArchethicOracleUCO, Map<String, dynamic>> {
+  /// Creates a new [ArchethicOracleUCOJsonConverter].
   const ArchethicOracleUCOJsonConverter();
 
   @override
@@ -18,14 +23,41 @@ class ArchethicOracleUCOJsonConverter
   Map<String, dynamic> toJson(ArchethicOracleUCO object) => object.toJson();
 }
 
+/// Represents the UCO price information provided by the Archethic Oracle.
+///
+/// This class includes information about the price of UCO in various fiat
+/// currencies, such as EUR and USD, along with a timestamp indicating
+/// when the data was retrieved.
+///
+/// Example:
+/// ```dart
+/// final ucoData = ArchethicOracleUCO(
+///   timestamp: 1672531199,
+///   eur: 10.5,
+///   usd: 12.3,
+/// );
+/// ```
 @freezed
 class ArchethicOracleUCO with _$ArchethicOracleUCO {
+  /// Creates a new [ArchethicOracleUCO] instance.
+  ///
+  /// [timestamp] represents the time when the data was retrieved (in UNIX format).
+  /// [eur] and [usd] represent the price of UCO in Euros and US Dollars, respectively.
   const factory ArchethicOracleUCO({
+    /// The timestamp (UNIX format) when the data was retrieved.
     @Default(0) int timestamp,
+
+    /// The price of UCO in Euros.
     @Default(0) double eur,
+
+    /// The price of UCO in US Dollars.
     @Default(0) double usd,
   }) = _ArchethicOracleUCO;
 
+  /// Creates an [ArchethicOracleUCO] instance from a JSON object.
+  ///
+  /// This factory method is used for deserializing JSON data into
+  /// an [ArchethicOracleUCO] instance.
   factory ArchethicOracleUCO.fromJson(Map<String, dynamic> json) =>
       _$ArchethicOracleUCOFromJson(json);
 }

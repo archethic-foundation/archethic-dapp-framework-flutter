@@ -1,4 +1,6 @@
-import 'localizations-ae-dapp-framework.dart';
+import 'localizations_ae_dapp_framework.dart';
+
+// ignore_for_file: type=lint
 
 /// The translations for French (`fr`).
 class AppLocalizationsFr extends AppLocalizations {
@@ -47,7 +49,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get aedappfm_consent_already_part4 => 'Politique de confidentialité';
 
   @override
-  String get aedappfm_consent_already_part5 => ' ont été acceptées pour la dernière fois le ';
+  String get aedappfm_consent_already_part5 =>
+      ' ont été acceptées pour la dernière fois le ';
 
   @override
   String get aedappfm_consent_to_check_part1 => 'J\'accepte les ';

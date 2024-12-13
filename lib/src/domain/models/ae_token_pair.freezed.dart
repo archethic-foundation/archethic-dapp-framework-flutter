@@ -25,8 +25,12 @@ mixin _$AETokenPair {
   @AETokenJsonConverter()
   AEToken get token2 => throw _privateConstructorUsedError;
 
+  /// Serializes this AETokenPair to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AETokenPair
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AETokenPairCopyWith<AETokenPair> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -55,6 +59,8 @@ class _$AETokenPairCopyWithImpl<$Res, $Val extends AETokenPair>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AETokenPair
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -73,6 +79,8 @@ class _$AETokenPairCopyWithImpl<$Res, $Val extends AETokenPair>
     ) as $Val);
   }
 
+  /// Create a copy of AETokenPair
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AETokenCopyWith<$Res> get token1 {
@@ -81,6 +89,8 @@ class _$AETokenPairCopyWithImpl<$Res, $Val extends AETokenPair>
     });
   }
 
+  /// Create a copy of AETokenPair
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AETokenCopyWith<$Res> get token2 {
@@ -116,6 +126,8 @@ class __$$AETokenPairImplCopyWithImpl<$Res>
       _$AETokenPairImpl _value, $Res Function(_$AETokenPairImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AETokenPair
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -167,11 +179,13 @@ class _$AETokenPairImpl extends _AETokenPair {
             (identical(other.token2, token2) || other.token2 == token2));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, token1, token2);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AETokenPair
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AETokenPairImplCopyWith<_$AETokenPairImpl> get copyWith =>
@@ -201,8 +215,11 @@ abstract class _AETokenPair extends AETokenPair {
   @override
   @AETokenJsonConverter()
   AEToken get token2;
+
+  /// Create a copy of AETokenPair
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AETokenPairImplCopyWith<_$AETokenPairImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
