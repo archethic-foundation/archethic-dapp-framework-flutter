@@ -5,21 +5,25 @@ homepage: https://github.com/archethic-foundation/archethic-dapp-framework-flutt
 version: 3.2.4
 
 environment:
-  sdk: ">=3.3.0 <4.0.0"
+  sdk: ">=3.5.3 <4.0.0"
 
 dependencies:
   # Archethic dart library for Flutter based on Official Archethic Javascript library for Node and Browser
 
-  archethic_lib_dart: ^4.0.0
+  archethic_lib_dart: ^5.0.0
   #archethic_lib_dart:
   #  git:
   #    url: https://github.com/archethic-foundation/libdart.git
-  #    ref: dev
+  #    ref: main
   # archethic_lib_dart:
   #   path: ../../packages/libdart
 
   # A client dart library to interact with Archethic Wallet RPC API.
-  archethic_wallet_client: ^2.1.5
+  archethic_wallet_client: ^2.1.6
+  #archethic_wallet_client:
+  #  git:
+  #    url: https://github.com/archethic-foundation/archethic-wallet-client-dart.git
+  #    ref: main
   # archethic_wallet_client:
   #   path: ../../packages/archethic-wallet-client-dart
 
@@ -34,9 +38,6 @@ dependencies:
 
   # Add beautiful animated effects & builders in Flutter, via an easy, customizable, unified API.
   flutter_animate: ^4.5.0
-
-  flutter_localizations:
-    sdk: flutter
 
   # State management
   flutter_riverpod: ^2.6.1
@@ -58,7 +59,7 @@ dependencies:
   http: ^1.2.1
 
   # Contains code to deal with internationalized/localized messages, date and number formatting and parsing, bi-directional text, and other internationalization issues.
-  intl: ^0.19.0
+  intl: ^0.20.0
 
   # Classes and helper functions that support JSON code generation via the `json_serializable` package
   json_annotation: ^4.8.1

@@ -24,9 +24,6 @@ mixin TransactionMixin {
   ) {
     return ArchethicTransactionSender(
       apiService: apiService,
-      phoenixHttpEndpoint: '${apiService.endpoint}/socket/websocket',
-      websocketEndpoint:
-          '${apiService.endpoint.replaceAll('https:', 'wss:').replaceAll('http:', 'wss:')}/socket/websocket',
     );
   }
 
@@ -40,72 +37,29 @@ mixin TransactionMixin {
         break;
       }
       var next = false;
-      String websocketEndpoint;
-      switch (apiService.endpoint) {
-        case 'https://mainnet.archethic.net':
-        case 'https://testnet.archethic.net':
-          websocketEndpoint =
-              "${apiService.endpoint.replaceAll('https:', 'wss:').replaceAll('http:', 'wss:')}/socket/websocket";
-          break;
-        default:
-          websocketEndpoint =
-              "${apiService.endpoint.replaceAll('https:', 'wss:').replaceAll('http:', 'ws:')}/socket/websocket";
-          break;
-      }
-
       final transactionRepository = ArchethicTransactionSender(
         apiService: apiService,
-        phoenixHttpEndpoint: '${apiService.endpoint}/socket/websocket',
-        websocketEndpoint: websocketEndpoint,
       );
-      await transactionRepository.send(
-        transaction: transaction,
-        onConfirmation: (confirmation) async {
-          if (confirmation.isEnoughConfirmed) {
-            if (kDebugMode) {
-              sl.get<LogManager>().log(
-                    'nbConfirmations: ${confirmation.nbConfirmations}, transactionAddress: ${confirmation.transactionAddress}, maxConfirmations: ${confirmation.maxConfirmations}',
-                    level: LogLevel.debug,
-                    name: 'TransactionDexMixin - sendTransactions',
-                  );
-            }
-            transactionRepository.close();
-            next = true;
-          }
-        },
-        onError: (error) async {
-          transactionRepository.close();
-          error.maybeMap(
-            connectivity: (_) {
-              errorDetail = 'No connection';
-            },
-            consensusNotReached: (_) {
-              errorDetail = 'Consensus not reached';
-            },
-            timeout: (_) {
-              errorDetail = 'Timeout';
-            },
-            invalidConfirmation: (_) {
-              errorDetail = 'Invalid Confirmation';
-            },
-            insufficientFunds: (_) {
-              errorDetail = 'Insufficient funds';
-            },
-            other: (error) {
-              errorDetail = error.messageLabel;
-              if (error.data != null) {
-                final data = error.data! as Map<String, dynamic>;
-                if (data['data'] != null && data['data']['message'] != null) {
-                  errorDetail = data['data']['message'];
-                }
+      try {
+        await transactionRepository.send(
+          transaction: transaction,
+          onConfirmation: (confirmation) async {
+            if (confirmation.isEnoughConfirmed) {
+              if (kDebugMode) {
+                sl.get<LogManager>().log(
+                      'nbConfirmations: ${confirmation.nbConfirmations}, transactionAddress: ${confirmation.transactionAddress}, maxConfirmations: ${confirmation.maxConfirmations}',
+                      level: LogLevel.debug,
+                      name: 'TransactionDexMixin - sendTransactions',
+                    );
               }
-            },
-            orElse: () {
-              errorDetail = 'An error is occured';
-            },
-          );
-        },
-      );
+              transactionRepository.close();
+              next = true;
+            }
+          },
+        );
+      } catch (transactionError) {
+        errorDetail = transactionError.toString();
+      }
 
       while (next == false && errorDetail.isEmpty) {
         await Future.delayed(const Duration(seconds: 1));
