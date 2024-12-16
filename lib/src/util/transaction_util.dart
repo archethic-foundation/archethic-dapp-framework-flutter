@@ -19,14 +19,6 @@ mixin TransactionMixin {
     return fees;
   }
 
-  ArchethicTransactionSender getArchethicTransactionSender(
-    ApiService apiService,
-  ) {
-    return ArchethicTransactionSender(
-      apiService: apiService,
-    );
-  }
-
   Future<void> sendTransactions(
     List<Transaction> transactions,
     ApiService apiService,
