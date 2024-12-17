@@ -20,6 +20,7 @@ VerifiedTokens _$VerifiedTokensFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$VerifiedTokens {
+  /// A list of verified token identifiers on the Devnet.
   List<String> get devnet => throw _privateConstructorUsedError;
 
   /// Serializes this VerifiedTokens to a JSON map.
@@ -111,7 +112,10 @@ class _$VerifiedTokensImpl implements _VerifiedTokens {
   factory _$VerifiedTokensImpl.fromJson(Map<String, dynamic> json) =>
       _$$VerifiedTokensImplFromJson(json);
 
+  /// A list of verified token identifiers on the Devnet.
   final List<String> _devnet;
+
+  /// A list of verified token identifiers on the Devnet.
   @override
   List<String> get devnet {
     if (_devnet is EqualUnmodifiableListView) return _devnet;
@@ -161,6 +165,7 @@ abstract class _VerifiedTokens implements VerifiedTokens {
   factory _VerifiedTokens.fromJson(Map<String, dynamic> json) =
       _$VerifiedTokensImpl.fromJson;
 
+  /// A list of verified token identifiers on the Devnet.
   @override
   List<String> get devnet;
 

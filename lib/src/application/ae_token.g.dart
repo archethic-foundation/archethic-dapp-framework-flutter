@@ -7,7 +7,7 @@ part of 'ae_token.dart';
 // **************************************************************************
 
 String _$estimateTokenInFiatHash() =>
-    r'9380fec22b438a5e643c8b230f0c23d1c8745eb1';
+    r'3bdf7cb21f65e246142a45179d50be0987315e3b';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -30,16 +30,60 @@ class _SystemHash {
   }
 }
 
-/// See also [_estimateTokenInFiat].
+/// Estimates the value of a token in fiat currency.
+///
+/// This provider fetches the token's price in USD based on its symbol and address.
+/// - If the token's symbol is `UCO`, the price is fetched using the Archethic Oracle.
+/// - For other tokens, the price is fetched using the Coin Price provider.
+///
+/// Example:
+/// ```dart
+/// final priceInFiat = await ref.read(estimateTokenInFiatProvider(token));
+/// ```
+///
+/// Copied from [_estimateTokenInFiat].
 @ProviderFor(_estimateTokenInFiat)
 const _estimateTokenInFiatProvider = _EstimateTokenInFiatFamily();
 
-/// See also [_estimateTokenInFiat].
+/// Estimates the value of a token in fiat currency.
+///
+/// This provider fetches the token's price in USD based on its symbol and address.
+/// - If the token's symbol is `UCO`, the price is fetched using the Archethic Oracle.
+/// - For other tokens, the price is fetched using the Coin Price provider.
+///
+/// Example:
+/// ```dart
+/// final priceInFiat = await ref.read(estimateTokenInFiatProvider(token));
+/// ```
+///
+/// Copied from [_estimateTokenInFiat].
 class _EstimateTokenInFiatFamily extends Family<AsyncValue<double>> {
-  /// See also [_estimateTokenInFiat].
+  /// Estimates the value of a token in fiat currency.
+  ///
+  /// This provider fetches the token's price in USD based on its symbol and address.
+  /// - If the token's symbol is `UCO`, the price is fetched using the Archethic Oracle.
+  /// - For other tokens, the price is fetched using the Coin Price provider.
+  ///
+  /// Example:
+  /// ```dart
+  /// final priceInFiat = await ref.read(estimateTokenInFiatProvider(token));
+  /// ```
+  ///
+  /// Copied from [_estimateTokenInFiat].
   const _EstimateTokenInFiatFamily();
 
-  /// See also [_estimateTokenInFiat].
+  /// Estimates the value of a token in fiat currency.
+  ///
+  /// This provider fetches the token's price in USD based on its symbol and address.
+  /// - If the token's symbol is `UCO`, the price is fetched using the Archethic Oracle.
+  /// - For other tokens, the price is fetched using the Coin Price provider.
+  ///
+  /// Example:
+  /// ```dart
+  /// final priceInFiat = await ref.read(estimateTokenInFiatProvider(token));
+  /// ```
+  ///
+  /// Copied from [_estimateTokenInFiat].
   _EstimateTokenInFiatProvider call(
     AEToken token,
   ) {
@@ -72,9 +116,31 @@ class _EstimateTokenInFiatFamily extends Family<AsyncValue<double>> {
   String? get name => r'_estimateTokenInFiatProvider';
 }
 
-/// See also [_estimateTokenInFiat].
+/// Estimates the value of a token in fiat currency.
+///
+/// This provider fetches the token's price in USD based on its symbol and address.
+/// - If the token's symbol is `UCO`, the price is fetched using the Archethic Oracle.
+/// - For other tokens, the price is fetched using the Coin Price provider.
+///
+/// Example:
+/// ```dart
+/// final priceInFiat = await ref.read(estimateTokenInFiatProvider(token));
+/// ```
+///
+/// Copied from [_estimateTokenInFiat].
 class _EstimateTokenInFiatProvider extends AutoDisposeFutureProvider<double> {
-  /// See also [_estimateTokenInFiat].
+  /// Estimates the value of a token in fiat currency.
+  ///
+  /// This provider fetches the token's price in USD based on its symbol and address.
+  /// - If the token's symbol is `UCO`, the price is fetched using the Archethic Oracle.
+  /// - For other tokens, the price is fetched using the Coin Price provider.
+  ///
+  /// Example:
+  /// ```dart
+  /// final priceInFiat = await ref.read(estimateTokenInFiatProvider(token));
+  /// ```
+  ///
+  /// Copied from [_estimateTokenInFiat].
   _EstimateTokenInFiatProvider(
     AEToken token,
   ) : this._internal(

@@ -20,8 +20,8 @@ class ArchethicOracleUco extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final archethicOracleUCO =
-        ref.watch(ArchethicOracleUCOProviders.archethicOracleUCO);
-    if (archethicOracleUCO.usd == 0) {
+        ref.watch(ArchethicOracleUCOProviders.archethicOracleUCO).valueOrNull;
+    if (archethicOracleUCO == null) {
       return const SizedBox.shrink();
     }
     final timestamp = DateFormat.yMd(

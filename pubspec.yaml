@@ -10,7 +10,7 @@ environment:
 dependencies:
   # Archethic dart library for Flutter based on Official Archethic Javascript library for Node and Browser
 
-  archethic_lib_dart: ^5.0.2
+  archethic_lib_dart: ^6.0.0-beta
   #archethic_lib_dart:
   #  git:
   #    url: https://github.com/archethic-foundation/libdart.git
@@ -19,7 +19,7 @@ dependencies:
   #   path: ../../packages/libdart
 
   # A client dart library to interact with Archethic Wallet RPC API.
-  archethic_wallet_client: ^2.1.7
+  archethic_wallet_client: ^2.1.8-beta
   #archethic_wallet_client:
   #  git:
   #    url: https://github.com/archethic-foundation/archethic-wallet-client-dart.git

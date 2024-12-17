@@ -23,8 +23,9 @@ Future<double> _estimateTokenInFiat(
 ) async {
   if (token.symbol == 'UCO') {
     // Fetch the UCO price from the Archethic Oracle.
-    final archethicOracleUCO =
-        ref.watch(aedappfm.ArchethicOracleUCOProviders.archethicOracleUCO);
+    final archethicOracleUCO = await ref.watch(
+      aedappfm.ArchethicOracleUCOProviders.archethicOracleUCO.future,
+    );
 
     return archethicOracleUCO.usd;
   } else {

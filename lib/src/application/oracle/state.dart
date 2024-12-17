@@ -1,9 +1,18 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+import 'package:archethic_lib_dart/archethic_lib_dart.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'state.freezed.dart';
 part 'state.g.dart';
+
+extension OraclePriceConverterExt on OracleUcoPrice {
+  ArchethicOracleUCO get toArchethic => ArchethicOracleUCO(
+        timestamp: timestamp ?? 0,
+        eur: uco?.eur ?? 0,
+        usd: uco?.usd ?? 0,
+      );
+}
 
 /// A JSON converter for [ArchethicOracleUCO].
 ///

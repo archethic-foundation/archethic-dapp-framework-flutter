@@ -9,7 +9,11 @@ part of 'coin_price.dart';
 String _$coinPriceRepositoryHash() =>
     r'6dcbcdb051cb63028959c3e48c1456e63c39120d';
 
-/// See also [_coinPriceRepository].
+/// Provides an instance of [CoinPriceRepositoryImpl].
+///
+/// This repository is used to fetch cryptocurrency prices from an external source.
+///
+/// Copied from [_coinPriceRepository].
 @ProviderFor(_coinPriceRepository)
 final _coinPriceRepositoryProvider =
     AutoDisposeProvider<CoinPriceRepositoryImpl>.internal(
@@ -49,16 +53,56 @@ class _SystemHash {
   }
 }
 
-/// See also [_coinPrice].
+/// Fetches the price of a cryptocurrency based on its address.
+///
+/// This provider retrieves the token's UCID and uses it to find the corresponding price.
+/// If the UCID cannot be resolved, the price defaults to 0.
+///
+/// Example usage:
+/// ```dart
+/// final price = await ref.read(coinPriceProvider(address: 'some-address').future);
+/// ```
+///
+/// Copied from [_coinPrice].
 @ProviderFor(_coinPrice)
 const _coinPriceProvider = _CoinPriceFamily();
 
-/// See also [_coinPrice].
+/// Fetches the price of a cryptocurrency based on its address.
+///
+/// This provider retrieves the token's UCID and uses it to find the corresponding price.
+/// If the UCID cannot be resolved, the price defaults to 0.
+///
+/// Example usage:
+/// ```dart
+/// final price = await ref.read(coinPriceProvider(address: 'some-address').future);
+/// ```
+///
+/// Copied from [_coinPrice].
 class _CoinPriceFamily extends Family<AsyncValue<double>> {
-  /// See also [_coinPrice].
+  /// Fetches the price of a cryptocurrency based on its address.
+  ///
+  /// This provider retrieves the token's UCID and uses it to find the corresponding price.
+  /// If the UCID cannot be resolved, the price defaults to 0.
+  ///
+  /// Example usage:
+  /// ```dart
+  /// final price = await ref.read(coinPriceProvider(address: 'some-address').future);
+  /// ```
+  ///
+  /// Copied from [_coinPrice].
   const _CoinPriceFamily();
 
-  /// See also [_coinPrice].
+  /// Fetches the price of a cryptocurrency based on its address.
+  ///
+  /// This provider retrieves the token's UCID and uses it to find the corresponding price.
+  /// If the UCID cannot be resolved, the price defaults to 0.
+  ///
+  /// Example usage:
+  /// ```dart
+  /// final price = await ref.read(coinPriceProvider(address: 'some-address').future);
+  /// ```
+  ///
+  /// Copied from [_coinPrice].
   _CoinPriceProvider call({
     required String address,
     Environment? environment,
@@ -94,9 +138,29 @@ class _CoinPriceFamily extends Family<AsyncValue<double>> {
   String? get name => r'_coinPriceProvider';
 }
 
-/// See also [_coinPrice].
+/// Fetches the price of a cryptocurrency based on its address.
+///
+/// This provider retrieves the token's UCID and uses it to find the corresponding price.
+/// If the UCID cannot be resolved, the price defaults to 0.
+///
+/// Example usage:
+/// ```dart
+/// final price = await ref.read(coinPriceProvider(address: 'some-address').future);
+/// ```
+///
+/// Copied from [_coinPrice].
 class _CoinPriceProvider extends AutoDisposeFutureProvider<double> {
-  /// See also [_coinPrice].
+  /// Fetches the price of a cryptocurrency based on its address.
+  ///
+  /// This provider retrieves the token's UCID and uses it to find the corresponding price.
+  /// If the UCID cannot be resolved, the price defaults to 0.
+  ///
+  /// Example usage:
+  /// ```dart
+  /// final price = await ref.read(coinPriceProvider(address: 'some-address').future);
+  /// ```
+  ///
+  /// Copied from [_coinPrice].
   _CoinPriceProvider({
     required String address,
     Environment? environment,
@@ -197,7 +261,12 @@ class _CoinPriceProviderElement extends AutoDisposeFutureProviderElement<double>
 String _$coinPricesNotifierHash() =>
     r'b3a6a14230dab614d3b92c766fb43598417597fb';
 
-/// See also [_CoinPricesNotifier].
+/// A notifier responsible for managing and updating cryptocurrency prices.
+///
+/// This notifier fetches cryptocurrency prices from the repository at
+/// regular intervals (1 minute) and updates the state with the latest prices.
+///
+/// Copied from [_CoinPricesNotifier].
 @ProviderFor(_CoinPricesNotifier)
 final _coinPricesNotifierProvider =
     AutoDisposeNotifierProvider<_CoinPricesNotifier, CryptoPrice>.internal(

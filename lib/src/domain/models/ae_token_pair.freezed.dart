@@ -20,8 +20,11 @@ AETokenPair _$AETokenPairFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AETokenPair {
+  /// The first token in the pair.
   @AETokenJsonConverter()
   AEToken get token1 => throw _privateConstructorUsedError;
+
+  /// The second token in the pair.
   @AETokenJsonConverter()
   AEToken get token2 => throw _privateConstructorUsedError;
 
@@ -158,9 +161,12 @@ class _$AETokenPairImpl extends _AETokenPair {
   factory _$AETokenPairImpl.fromJson(Map<String, dynamic> json) =>
       _$$AETokenPairImplFromJson(json);
 
+  /// The first token in the pair.
   @override
   @AETokenJsonConverter()
   final AEToken token1;
+
+  /// The second token in the pair.
   @override
   @AETokenJsonConverter()
   final AEToken token2;
@@ -209,9 +215,12 @@ abstract class _AETokenPair extends AETokenPair {
   factory _AETokenPair.fromJson(Map<String, dynamic> json) =
       _$AETokenPairImpl.fromJson;
 
+  /// The first token in the pair.
   @override
   @AETokenJsonConverter()
   AEToken get token1;
+
+  /// The second token in the pair.
   @override
   @AETokenJsonConverter()
   AEToken get token2;

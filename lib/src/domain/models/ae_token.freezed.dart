@@ -20,15 +20,34 @@ AEToken _$AETokenFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AEToken {
+  /// The name of the token.
   String get name => throw _privateConstructorUsedError;
+
+  /// The address of the token on the Archethic blockchain.
   String? get address => throw _privateConstructorUsedError;
+
+  /// The icon URL or path representing the token.
   String? get icon => throw _privateConstructorUsedError;
+
+  /// The symbol of the token.
   String get symbol => throw _privateConstructorUsedError;
+
+  /// The current balance of the token.
   double get balance => throw _privateConstructorUsedError;
+
+  /// The reserve balance of the token.
   double get reserve => throw _privateConstructorUsedError;
+
+  /// The total supply of the token.
   double get supply => throw _privateConstructorUsedError;
+
+  /// Indicates if the token is verified.
   bool get isVerified => throw _privateConstructorUsedError;
+
+  /// Indicates if the token is a liquidity provider token.
   bool get isLpToken => throw _privateConstructorUsedError;
+
+  /// The pair of tokens for LP tokens.
   @AETokenPairJsonConverter()
   AETokenPair? get lpTokenPair => throw _privateConstructorUsedError;
   int? get ucid => throw _privateConstructorUsedError;
@@ -271,31 +290,50 @@ class _$AETokenImpl extends _AEToken {
   factory _$AETokenImpl.fromJson(Map<String, dynamic> json) =>
       _$$AETokenImplFromJson(json);
 
+  /// The name of the token.
   @override
   @JsonKey()
   final String name;
+
+  /// The address of the token on the Archethic blockchain.
   @override
   final String? address;
+
+  /// The icon URL or path representing the token.
   @override
   final String? icon;
+
+  /// The symbol of the token.
   @override
   @JsonKey()
   final String symbol;
+
+  /// The current balance of the token.
   @override
   @JsonKey()
   final double balance;
+
+  /// The reserve balance of the token.
   @override
   @JsonKey()
   final double reserve;
+
+  /// The total supply of the token.
   @override
   @JsonKey()
   final double supply;
+
+  /// Indicates if the token is verified.
   @override
   @JsonKey()
   final bool isVerified;
+
+  /// Indicates if the token is a liquidity provider token.
   @override
   @JsonKey()
   final bool isLpToken;
+
+  /// The pair of tokens for LP tokens.
   @override
   @AETokenPairJsonConverter()
   final AETokenPair? lpTokenPair;
@@ -366,24 +404,43 @@ abstract class _AEToken extends AEToken {
 
   factory _AEToken.fromJson(Map<String, dynamic> json) = _$AETokenImpl.fromJson;
 
+  /// The name of the token.
   @override
   String get name;
+
+  /// The address of the token on the Archethic blockchain.
   @override
   String? get address;
+
+  /// The icon URL or path representing the token.
   @override
   String? get icon;
+
+  /// The symbol of the token.
   @override
   String get symbol;
+
+  /// The current balance of the token.
   @override
   double get balance;
+
+  /// The reserve balance of the token.
   @override
   double get reserve;
+
+  /// The total supply of the token.
   @override
   double get supply;
+
+  /// Indicates if the token is verified.
   @override
   bool get isVerified;
+
+  /// Indicates if the token is a liquidity provider token.
   @override
   bool get isLpToken;
+
+  /// The pair of tokens for LP tokens.
   @override
   @AETokenPairJsonConverter()
   AETokenPair? get lpTokenPair;
