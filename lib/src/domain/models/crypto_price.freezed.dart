@@ -20,12 +20,25 @@ CryptoPrice _$CryptoPriceFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CryptoPrice {
+  /// The timestamp of the price data, represented as a UNIX timestamp.
   int? get timestamp => throw _privateConstructorUsedError;
+
+  /// The price of Bitcoin (BTC) in USD or the relevant currency.
   double get bitcoin => throw _privateConstructorUsedError;
+
+  /// The price of Matic (Polygon) in USD or the relevant currency.
   double get matic => throw _privateConstructorUsedError;
+
+  /// The price of Ethereum (ETH) in USD or the relevant currency.
   double get ethereum => throw _privateConstructorUsedError;
+
+  /// The price of Binance Coin (BNB) in USD or the relevant currency.
   double get bnb => throw _privateConstructorUsedError;
+
+  /// The price of USD Coin (USDC) in USD or the relevant currency.
   double get usdc => throw _privateConstructorUsedError;
+
+  /// The price of EURE (a euro-backed stablecoin) in USD or the relevant currency.
   double get eure => throw _privateConstructorUsedError;
 
   /// Serializes this CryptoPrice to a JSON map.
@@ -197,23 +210,36 @@ class _$CryptoPriceImpl implements _CryptoPrice {
   factory _$CryptoPriceImpl.fromJson(Map<String, dynamic> json) =>
       _$$CryptoPriceImplFromJson(json);
 
+  /// The timestamp of the price data, represented as a UNIX timestamp.
   @override
   final int? timestamp;
+
+  /// The price of Bitcoin (BTC) in USD or the relevant currency.
   @override
   @JsonKey()
   final double bitcoin;
+
+  /// The price of Matic (Polygon) in USD or the relevant currency.
   @override
   @JsonKey()
   final double matic;
+
+  /// The price of Ethereum (ETH) in USD or the relevant currency.
   @override
   @JsonKey()
   final double ethereum;
+
+  /// The price of Binance Coin (BNB) in USD or the relevant currency.
   @override
   @JsonKey()
   final double bnb;
+
+  /// The price of USD Coin (USDC) in USD or the relevant currency.
   @override
   @JsonKey()
   final double usdc;
+
+  /// The price of EURE (a euro-backed stablecoin) in USD or the relevant currency.
   @override
   @JsonKey()
   final double eure;
@@ -273,18 +299,31 @@ abstract class _CryptoPrice implements CryptoPrice {
   factory _CryptoPrice.fromJson(Map<String, dynamic> json) =
       _$CryptoPriceImpl.fromJson;
 
+  /// The timestamp of the price data, represented as a UNIX timestamp.
   @override
   int? get timestamp;
+
+  /// The price of Bitcoin (BTC) in USD or the relevant currency.
   @override
   double get bitcoin;
+
+  /// The price of Matic (Polygon) in USD or the relevant currency.
   @override
   double get matic;
+
+  /// The price of Ethereum (ETH) in USD or the relevant currency.
   @override
   double get ethereum;
+
+  /// The price of Binance Coin (BNB) in USD or the relevant currency.
   @override
   double get bnb;
+
+  /// The price of USD Coin (USDC) in USD or the relevant currency.
   @override
   double get usdc;
+
+  /// The price of EURE (a euro-backed stablecoin) in USD or the relevant currency.
   @override
   double get eure;
 

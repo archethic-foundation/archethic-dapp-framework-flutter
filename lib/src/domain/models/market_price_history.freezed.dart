@@ -20,7 +20,10 @@ PriceHistoryValue _$PriceHistoryValueFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PriceHistoryValue {
+  /// The price of the asset at the specified time.
   num get price => throw _privateConstructorUsedError;
+
+  /// The timestamp for the price entry.
   DateTime get time => throw _privateConstructorUsedError;
 
   /// Serializes this PriceHistoryValue to a JSON map.
@@ -121,8 +124,11 @@ class _$PriceHistoryValueImpl implements _PriceHistoryValue {
   factory _$PriceHistoryValueImpl.fromJson(Map<String, dynamic> json) =>
       _$$PriceHistoryValueImplFromJson(json);
 
+  /// The price of the asset at the specified time.
   @override
   final num price;
+
+  /// The timestamp for the price entry.
   @override
   final DateTime time;
 
@@ -169,8 +175,11 @@ abstract class _PriceHistoryValue implements PriceHistoryValue {
   factory _PriceHistoryValue.fromJson(Map<String, dynamic> json) =
       _$PriceHistoryValueImpl.fromJson;
 
+  /// The price of the asset at the specified time.
   @override
   num get price;
+
+  /// The timestamp for the price entry.
   @override
   DateTime get time;
 

@@ -20,8 +20,13 @@ UcidsTokens _$UcidsTokensFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UcidsTokens {
+  /// A map of cryptocurrency names to their UCIDs on the Mainnet.
   Map<String, int> get mainnet => throw _privateConstructorUsedError;
+
+  /// A map of cryptocurrency names to their UCIDs on the Testnet.
   Map<String, int> get testnet => throw _privateConstructorUsedError;
+
+  /// A map of cryptocurrency names to their UCIDs on the Devnet.
   Map<String, int> get devnet => throw _privateConstructorUsedError;
 
   /// Serializes this UcidsTokens to a JSON map.
@@ -144,7 +149,10 @@ class _$UcidsTokensImpl implements _UcidsTokens {
   factory _$UcidsTokensImpl.fromJson(Map<String, dynamic> json) =>
       _$$UcidsTokensImplFromJson(json);
 
+  /// A map of cryptocurrency names to their UCIDs on the Mainnet.
   final Map<String, int> _mainnet;
+
+  /// A map of cryptocurrency names to their UCIDs on the Mainnet.
   @override
   Map<String, int> get mainnet {
     if (_mainnet is EqualUnmodifiableMapView) return _mainnet;
@@ -152,7 +160,10 @@ class _$UcidsTokensImpl implements _UcidsTokens {
     return EqualUnmodifiableMapView(_mainnet);
   }
 
+  /// A map of cryptocurrency names to their UCIDs on the Testnet.
   final Map<String, int> _testnet;
+
+  /// A map of cryptocurrency names to their UCIDs on the Testnet.
   @override
   Map<String, int> get testnet {
     if (_testnet is EqualUnmodifiableMapView) return _testnet;
@@ -160,7 +171,10 @@ class _$UcidsTokensImpl implements _UcidsTokens {
     return EqualUnmodifiableMapView(_testnet);
   }
 
+  /// A map of cryptocurrency names to their UCIDs on the Devnet.
   final Map<String, int> _devnet;
+
+  /// A map of cryptocurrency names to their UCIDs on the Devnet.
   @override
   Map<String, int> get devnet {
     if (_devnet is EqualUnmodifiableMapView) return _devnet;
@@ -216,10 +230,15 @@ abstract class _UcidsTokens implements UcidsTokens {
   factory _UcidsTokens.fromJson(Map<String, dynamic> json) =
       _$UcidsTokensImpl.fromJson;
 
+  /// A map of cryptocurrency names to their UCIDs on the Mainnet.
   @override
   Map<String, int> get mainnet;
+
+  /// A map of cryptocurrency names to their UCIDs on the Testnet.
   @override
   Map<String, int> get testnet;
+
+  /// A map of cryptocurrency names to their UCIDs on the Devnet.
   @override
   Map<String, int> get devnet;
 

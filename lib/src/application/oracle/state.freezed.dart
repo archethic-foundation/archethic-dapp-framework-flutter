@@ -20,8 +20,13 @@ ArchethicOracleUCO _$ArchethicOracleUCOFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ArchethicOracleUCO {
+  /// The timestamp (UNIX format) when the data was retrieved.
   int get timestamp => throw _privateConstructorUsedError;
+
+  /// The price of UCO in Euros.
   double get eur => throw _privateConstructorUsedError;
+
+  /// The price of UCO in US Dollars.
   double get usd => throw _privateConstructorUsedError;
 
   /// Serializes this ArchethicOracleUCO to a JSON map.
@@ -133,12 +138,17 @@ class _$ArchethicOracleUCOImpl implements _ArchethicOracleUCO {
   factory _$ArchethicOracleUCOImpl.fromJson(Map<String, dynamic> json) =>
       _$$ArchethicOracleUCOImplFromJson(json);
 
+  /// The timestamp (UNIX format) when the data was retrieved.
   @override
   @JsonKey()
   final int timestamp;
+
+  /// The price of UCO in Euros.
   @override
   @JsonKey()
   final double eur;
+
+  /// The price of UCO in US Dollars.
   @override
   @JsonKey()
   final double usd;
@@ -189,10 +199,15 @@ abstract class _ArchethicOracleUCO implements ArchethicOracleUCO {
   factory _ArchethicOracleUCO.fromJson(Map<String, dynamic> json) =
       _$ArchethicOracleUCOImpl.fromJson;
 
+  /// The timestamp (UNIX format) when the data was retrieved.
   @override
   int get timestamp;
+
+  /// The price of UCO in Euros.
   @override
   double get eur;
+
+  /// The price of UCO in US Dollars.
   @override
   double get usd;
 

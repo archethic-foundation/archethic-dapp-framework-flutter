@@ -11,55 +11,56 @@ part 'provider.g.dart';
 
 @riverpod
 class _ArchethicOracleUCONotifier extends _$ArchethicOracleUCONotifier {
-  ArchethicOracle? archethicOracleSubscription;
+  StreamSubscription? archethicOracleSubscription;
   final OracleService _oracleService =
       OracleService('https://mainnet.archethic.net');
 
   static final _logger = Logger('ArchethicOracleUCONotifier');
 
   @override
-  ArchethicOracleUCO build() {
+  Future<ArchethicOracleUCO> build() async {
     ref.onDispose(stopSubscription);
 
-    _getValue();
-
-    startSubscription();
-    return const ArchethicOracleUCO();
+    return _subscribe();
   }
 
   Future<void> startSubscription() async {
     if (archethicOracleSubscription != null) return;
 
+    final oracleValue = await _subscribe();
+
+    await update((_) {
+      return oracleValue;
+    });
+  }
+
+  /// Starts listening to oracle stream.
+  ///
+  /// Retrieves and returns current oracle value.
+  /// This is useful to immediately get oracle state.
+  Future<ArchethicOracleUCO> _subscribe() async {
     _logger.info('Start listening to Oracle');
-    await _subscribe();
+    final oracleUcoPrice = await _oracleService.getOracleData();
+
+    final oracleStream = await _oracleService.subscribe();
+
+    archethicOracleSubscription =
+        oracleStream.map((event) => event.toArchethic).listen((oracleEvent) {
+      _logger.info(
+        'Oracle: ${oracleEvent.timestamp}, eur: ${oracleEvent.eur}, usd: ${oracleEvent.usd}',
+      );
+      update((_) {
+        return oracleEvent;
+      });
+    });
+    return oracleUcoPrice.toArchethic;
   }
 
   Future<void> stopSubscription() async {
     _logger.info('Stop listening to Oracle');
     if (archethicOracleSubscription == null) return;
-    _oracleService.closeOracleUpdatesSubscription(archethicOracleSubscription!);
+    await archethicOracleSubscription?.cancel();
     archethicOracleSubscription = null;
-  }
-
-  Future<void> _getValue() async {
-    final oracleUcoPrice = await _oracleService.getOracleData();
-    _fillInfo(oracleUcoPrice);
-  }
-
-  Future<void> _subscribe() async {
-    archethicOracleSubscription =
-        await _oracleService.subscribeToOracleUpdates((oracleUcoPrice) {
-      _fillInfo(oracleUcoPrice!);
-    });
-  }
-
-  void _fillInfo(OracleUcoPrice oracleUcoPrice) {
-    _logger.info('Oracle: ${oracleUcoPrice.timestamp}, ${oracleUcoPrice.uco}');
-    state = state.copyWith(
-      timestamp: oracleUcoPrice.timestamp ?? 0,
-      eur: oracleUcoPrice.uco!.eur ?? 0,
-      usd: oracleUcoPrice.uco!.usd ?? 0,
-    );
   }
 }
 
