@@ -2,7 +2,7 @@ name: archethic_dapp_framework_flutter
 description: An internal framework for archethic flutter development
 homepage: https://github.com/archethic-foundation/archethic-dapp-framework-flutter
 
-version: 3.2.6-beta
+version: 3.2.6-beta.2
 
 environment:
   sdk: ">=3.5.3 <4.0.0"
@@ -19,13 +19,11 @@ dependencies:
   #   path: ../../packages/libdart
 
   # A client dart library to interact with Archethic Wallet RPC API.
-  archethic_wallet_client: ^2.1.8-beta
-  #archethic_wallet_client:
-  #  git:
-  #    url: https://github.com/archethic-foundation/archethic-wallet-client-dart.git
-  #    ref: main
+  archethic_wallet_client: ^2.1.8-beta.1
   # archethic_wallet_client:
-  #   path: ../../packages/archethic-wallet-client-dart
+  #   git: # TODO Waiting for https://github.com/zino-hofmann/graphql-flutter/issues/1460 resolution to use stable versions.
+  #     url: https://github.com/archethic-foundation/archethic-wallet-client-dart.git
+  #     ref: 70-add-encrypt-and-decrypt-methods
 
   # Compression
   archive: ^3.4.10
