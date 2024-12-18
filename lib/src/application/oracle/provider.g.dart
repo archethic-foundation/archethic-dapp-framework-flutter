@@ -6,8 +6,25 @@ part of 'provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+String _$oracleServiceHash() => r'dfb4d6ae3350d93df5889209610d22297962f55a';
+
+/// See also [oracleService].
+@ProviderFor(oracleService)
+final oracleServiceProvider = AutoDisposeProvider<OracleService>.internal(
+  oracleService,
+  name: r'oracleServiceProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$oracleServiceHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+typedef OracleServiceRef = AutoDisposeProviderRef<OracleService>;
 String _$archethicOracleUCONotifierHash() =>
-    r'63c047e03061b57608332785de2ec50f38d2d68c';
+    r'4e95b96ee9d7e49d601c3e60228423d778f51cbd';
 
 /// See also [_ArchethicOracleUCONotifier].
 @ProviderFor(_ArchethicOracleUCONotifier)

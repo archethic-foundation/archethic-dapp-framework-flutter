@@ -4,21 +4,27 @@ import 'dart:async';
 
 import 'package:archethic_dapp_framework_flutter/src/application/oracle/state.dart';
 import 'package:archethic_lib_dart/archethic_lib_dart.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:logging/logging.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'provider.g.dart';
 
 @riverpod
+OracleService oracleService(Ref ref) {
+  // We use always mainnet values
+  return OracleService('https://mainnet.archethic.net');
+}
+
+@riverpod
 class _ArchethicOracleUCONotifier extends _$ArchethicOracleUCONotifier {
   StreamSubscription? archethicOracleSubscription;
-  final OracleService _oracleService =
-      OracleService('https://mainnet.archethic.net');
-
+  late final OracleService _oracleService;
   static final _logger = Logger('ArchethicOracleUCONotifier');
 
   @override
   Future<ArchethicOracleUCO> build() async {
+    _oracleService = ref.watch(oracleServiceProvider);
     ref.onDispose(stopSubscription);
 
     return _subscribe();
