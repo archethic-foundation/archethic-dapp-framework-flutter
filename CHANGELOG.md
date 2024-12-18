@@ -1,3 +1,8 @@
+# 3.2.6-beta.3
+
+- Add `oracleService` provider
+- Add `ProvidersTracker` debugging tool to monitor alive providers.
+
 # 3.2.6-beta.2
 
 - ⬆️ Upgrade `archethic_wallet_client`.
