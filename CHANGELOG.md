@@ -1,3 +1,7 @@
+# 3.2.6-beta.2
+
+- ⬆️ Upgrade `archethic_wallet_client`.
+
 # 3.2.6-beta
 
 - ⬆️ Upgrade dependencies
