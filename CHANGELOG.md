@@ -1,3 +1,8 @@
+# 3.2.6-beta.4
+
+- ⬆️ Upgrade dependencies (archethic_lib_dart: 7.0.0-beta, archethic_wallet_client: 2.1.8-beta.2)
+- Add new properties in `environment` object
+
 # 3.2.6-beta.3
 
 - Add `oracleService` provider
