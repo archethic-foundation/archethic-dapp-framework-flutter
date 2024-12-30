@@ -18,24 +18,28 @@ enum Environment {
   mainnet(
     label: 'Archethic Mainnet',
     endpoint: 'https://mainnet.archethic.net',
+    displayName: 'Archethic Main Network',
   ),
 
   /// The test network (Testnet) of Archethic.
   testnet(
     label: 'Archethic Testnet',
     endpoint: 'https://testnet.archethic.net',
+    displayName: 'Archethic Test Network',
   ),
 
   /// The development network (Devnet) for local testing.
   devnet(
     label: 'Archethic Devnet',
     endpoint: 'http://localhost:4000',
+    displayName: 'Archethic Dev Network',
   );
 
   /// Creates an [Environment] with a specific [label] and [endpoint].
   const Environment({
     required this.label,
     required this.endpoint,
+    required this.displayName,
   });
 
   /// The human-readable name of the environment.
@@ -43,6 +47,9 @@ enum Environment {
 
   /// The URL endpoint for the environment.
   final String endpoint;
+
+  /// The name of the environment.
+  final String displayName;
 
   /// Retrieves the [Environment] corresponding to the given [endpoint].
   ///
@@ -53,4 +60,12 @@ enum Environment {
         orElse: () =>
             throw StateError('No environment found for endpoint $endpoint'),
       );
+
+  String get notificationBackendUrl {
+    return 'https://push.archethic.net';
+  }
+
+  String get aeHostingUri {
+    return '$endpoint/api/web_hosting/';
+  }
 }
