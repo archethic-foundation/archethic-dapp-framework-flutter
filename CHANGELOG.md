@@ -1,6 +1,10 @@
+# 3.2.7
+
+- ⬆️ Upgrade `archethic_wallet_client` & `archethic_lib_dart` versions.
+
 # 3.2.6
 
-- ⬆️ Upgrade `archethic_wallet_client` & 'archethic_lib_dart` stable versions.
+- ⬆️ Upgrade `archethic_wallet_client` & `archethic_lib_dart` stable versions.
 
 # 3.2.6-beta.4
 
