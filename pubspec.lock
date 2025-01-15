@@ -42,18 +42,18 @@ packages:
     dependency: "direct main"
     description:
       name: archethic_lib_dart
-      sha256: "3b00033e9aa6c69f323ca68b044be2d7b7ad5f38063572cace069ff9ded032b1"
+      sha256: "31e5b122df87c337d1ce189acc0f41db37a77b65a6638593ec856be90c8bfe2d"
       url: "https://pub.dev"
     source: hosted
-    version: "7.1.0"
+    version: "7.2.0"
   archethic_wallet_client:
     dependency: "direct main"
     description:
       name: archethic_wallet_client
-      sha256: ccf5c210985621b440bee3c3a7f28ed0d9bb0311c999f775e35f529cdffeba09
+      sha256: "4dccce3738a96e33346cbd6f9316186aa7ea7f5399077b21174dba3160e7051c"
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.9"
+    version: "2.1.10"
   archive:
     dependency: "direct main"
     description:
@@ -697,10 +697,10 @@ packages:
     dependency: "direct main"
     description:
       name: package_info_plus
-      sha256: "70c421fe9d9cc1a9a7f3b05ae56befd469fe4f8daa3b484823141a55442d858d"
+      sha256: "739e0a5c3c4055152520fa321d0645ee98e932718b4c8efeeb51451968fe0790"
       url: "https://pub.dev"
     source: hosted
-    version: "8.1.2"
+    version: "8.1.3"
   package_info_plus_platform_interface:
     dependency: transitive
     description:
