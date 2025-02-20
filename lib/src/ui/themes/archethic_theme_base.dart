@@ -146,4 +146,11 @@ class ArchethicThemeBase {
           const HSLColor.fromAHSL(1, 240, 0.39, 0.12).toColor(),
         ],
       );
+
+  static LinearGradient get linearPurple => LinearGradient(
+        colors: [
+          const HSLColor.fromAHSL(0.1, 275, 0.5, 0.7).toColor(),
+          const HSLColor.fromAHSL(0.1, 275, 0.5, 0.5).toColor(),
+        ],
+      );
 }

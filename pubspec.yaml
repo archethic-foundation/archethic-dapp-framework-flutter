@@ -2,7 +2,7 @@ name: archethic_dapp_framework_flutter
 description: An internal framework for archethic flutter development
 homepage: https://github.com/archethic-foundation/archethic-dapp-framework-flutter
 
-version: 3.2.8
+version: 3.3.0
 
 environment:
   sdk: ">=3.5.3 <4.0.0"

@@ -39,6 +39,7 @@ export 'src/ui/themes/app_theme_base.dart';
 export 'src/ui/util/components/app_background.dart';
 export 'src/ui/util/components/app_text_field.dart';
 export 'src/ui/util/components/archethic_oracle_uco.dart';
+export 'src/ui/util/components/black_box_info.dart';
 export 'src/ui/util/components/block_info.dart';
 export 'src/ui/util/components/buttons/app_button.dart';
 export 'src/ui/util/components/buttons/btn_close.dart';

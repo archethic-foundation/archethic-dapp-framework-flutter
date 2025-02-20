@@ -6,13 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 
-enum BlockInfoColor { blue, purple, green, neutral }
+enum BlockInfoColor { blue, purple, green, neutral, grey }
 
 class BlockInfo extends ConsumerWidget {
   const BlockInfo({
     required this.info,
     this.width = 300,
-    this.height = 170,
     this.blockInfoColor = BlockInfoColor.blue,
     this.backgroundWidget,
     this.bottomWidget,
@@ -23,7 +22,7 @@ class BlockInfo extends ConsumerWidget {
       top: 8,
       bottom: 8,
     ),
-    this.borderWith = 1.0,
+    this.borderWidth = 1.0,
     super.key,
   });
 
@@ -31,11 +30,10 @@ class BlockInfo extends ConsumerWidget {
   final EdgeInsets paddingEdgeInsetsClipRRect;
   final EdgeInsets paddingEdgeInsetsInfo;
   final double width;
-  final double height;
   final BlockInfoColor blockInfoColor;
   final Widget? backgroundWidget;
   final Widget? bottomWidget;
-  final double borderWith;
+  final double borderWidth;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -51,94 +49,105 @@ class BlockInfo extends ConsumerWidget {
                   if (backgroundWidget != null) backgroundWidget!,
                   Container(
                     width: width,
-                    height: height,
                     alignment: Alignment.centerLeft,
                     decoration: BoxDecoration(
-                      gradient: blockInfoColor == BlockInfoColor.blue
-                          ? LinearGradient(
-                              colors: [
-                                AppThemeBase.sheetBackgroundTertiary
-                                    .withOpacity(0.3),
-                                AppThemeBase.sheetBackgroundTertiary
-                                    .withOpacity(0.3),
-                              ],
-                              stops: const [0, 1],
-                            )
-                          : blockInfoColor == BlockInfoColor.purple
+                      color: blockInfoColor == BlockInfoColor.grey
+                          ? ArchethicThemeBase.neutral850
+                          : null,
+                      gradient: blockInfoColor == BlockInfoColor.grey
+                          ? null
+                          : blockInfoColor == BlockInfoColor.blue
                               ? LinearGradient(
                                   colors: [
-                                    ArchethicThemeBase.raspberry500
-                                        .withOpacity(0.5),
-                                    ArchethicThemeBase.raspberry500
-                                        .withOpacity(0.2),
+                                    AppThemeBase.sheetBackgroundTertiary
+                                        .withOpacity(0.3),
+                                    AppThemeBase.sheetBackgroundTertiary
+                                        .withOpacity(0.3),
                                   ],
                                   stops: const [0, 1],
                                 )
-                              : blockInfoColor == BlockInfoColor.green
+                              : blockInfoColor == BlockInfoColor.purple
+                                  ? ArchethicThemeBase.linearPurple
+                                  : blockInfoColor == BlockInfoColor.green
+                                      ? LinearGradient(
+                                          colors: [
+                                            ArchethicThemeBase.systemPositive300
+                                                .withOpacity(0.3),
+                                            ArchethicThemeBase.systemPositive600
+                                                .withOpacity(0.3),
+                                          ],
+                                          stops: const [0, 1],
+                                        )
+                                      : LinearGradient(
+                                          colors: [
+                                            ArchethicThemeBase
+                                                .paleTransparentBackground
+                                                .withOpacity(0.3),
+                                            ArchethicThemeBase
+                                                .paleTransparentBackground
+                                                .withOpacity(0.3),
+                                          ],
+                                          stops: const [0, 1],
+                                        ),
+                      border: borderWidth == 0
+                          ? null
+                          : GradientBoxBorder(
+                              gradient: blockInfoColor == BlockInfoColor.grey
                                   ? LinearGradient(
                                       colors: [
-                                        ArchethicThemeBase.systemPositive300
-                                            .withOpacity(0.3),
-                                        ArchethicThemeBase.systemPositive600
-                                            .withOpacity(0.3),
+                                        ArchethicThemeBase.neutral800,
+                                        ArchethicThemeBase.neutral800,
                                       ],
                                       stops: const [0, 1],
                                     )
-                                  : LinearGradient(
-                                      colors: [
-                                        ArchethicThemeBase
-                                            .paleTransparentBackground
-                                            .withOpacity(0.3),
-                                        ArchethicThemeBase
-                                            .paleTransparentBackground
-                                            .withOpacity(0.3),
-                                      ],
-                                      stops: const [0, 1],
-                                    ),
-                      border: GradientBoxBorder(
-                        gradient: blockInfoColor == BlockInfoColor.blue
-                            ? LinearGradient(
-                                colors: [
-                                  AppThemeBase.sheetBorderTertiary
-                                      .withOpacity(0.4),
-                                  AppThemeBase.sheetBackgroundTertiary
-                                      .withOpacity(0.4),
-                                ],
-                                stops: const [0, 1],
-                              )
-                            : blockInfoColor == BlockInfoColor.purple
-                                ? LinearGradient(
-                                    colors: [
-                                      AppThemeBase.sheetBorderSecondary
-                                          .withOpacity(0.1),
-                                      AppThemeBase.sheetBorderSecondary
-                                          .withOpacity(0.4),
-                                    ],
-                                    stops: const [0, 1],
-                                  )
-                                : blockInfoColor == BlockInfoColor.green
-                                    ? LinearGradient(
-                                        colors: [
-                                          ArchethicThemeBase.systemPositive100
-                                              .withOpacity(0.2),
-                                          ArchethicThemeBase.systemPositive300
-                                              .withOpacity(0.2),
-                                        ],
-                                        stops: const [0, 1],
-                                      )
-                                    : LinearGradient(
-                                        colors: [
-                                          ArchethicThemeBase
-                                              .paleTransparentBorder
-                                              .withOpacity(0.2),
-                                          ArchethicThemeBase
-                                              .paleTransparentBorder
-                                              .withOpacity(0.2),
-                                        ],
-                                        stops: const [0, 1],
-                                      ),
-                        width: borderWith,
-                      ),
+                                  : blockInfoColor == BlockInfoColor.blue
+                                      ? LinearGradient(
+                                          colors: [
+                                            AppThemeBase.sheetBorderTertiary
+                                                .withOpacity(0.4),
+                                            AppThemeBase.sheetBackgroundTertiary
+                                                .withOpacity(0.4),
+                                          ],
+                                          stops: const [0, 1],
+                                        )
+                                      : blockInfoColor == BlockInfoColor.purple
+                                          ? LinearGradient(
+                                              colors: [
+                                                AppThemeBase
+                                                    .sheetBorderSecondary
+                                                    .withOpacity(0.1),
+                                                AppThemeBase
+                                                    .sheetBorderSecondary
+                                                    .withOpacity(0.4),
+                                              ],
+                                              stops: const [0, 1],
+                                            )
+                                          : blockInfoColor ==
+                                                  BlockInfoColor.green
+                                              ? LinearGradient(
+                                                  colors: [
+                                                    ArchethicThemeBase
+                                                        .systemPositive100
+                                                        .withOpacity(0.2),
+                                                    ArchethicThemeBase
+                                                        .systemPositive300
+                                                        .withOpacity(0.2),
+                                                  ],
+                                                  stops: const [0, 1],
+                                                )
+                                              : LinearGradient(
+                                                  colors: [
+                                                    ArchethicThemeBase
+                                                        .paleTransparentBorder
+                                                        .withOpacity(0.2),
+                                                    ArchethicThemeBase
+                                                        .paleTransparentBorder
+                                                        .withOpacity(0.2),
+                                                  ],
+                                                  stops: const [0, 1],
+                                                ),
+                              width: borderWidth,
+                            ),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Padding(

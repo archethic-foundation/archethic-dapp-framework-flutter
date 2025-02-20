@@ -1,3 +1,7 @@
+# 3.3.0
+
+- Update some widgets
+
 # 3.2.8
 
 - ⬆️ Upgrade `archethic_wallet_client` & `archethic_lib_dart` versions.
