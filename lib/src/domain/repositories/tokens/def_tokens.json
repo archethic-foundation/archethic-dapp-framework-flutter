@@ -25,6 +25,13 @@
                 "ucid": 6887
             },
             {
+                "name": "Mining UCO rewards",
+                "symbol": "MUCO",
+                "address": "0000028358B8795002D9A138240246F32CB45A8ACD9078AFA67C39A8FB2657DFD14C",
+                "icon": "Archethic.svg",
+                "ucid": 6887
+            },
+            {
                 "name": "Wrapped Ether",
                 "symbol": "aeETH",
                 "address": "00003DF600E329199BF3EE8FBE2B8223413D70BCDD97E15089E6A74D94DE3F1173B4",
@@ -65,6 +72,13 @@
                 "name": "Universal Coin",
                 "symbol": "UCO",
                 "address": "UCO",
+                "icon": "Archethic.svg",
+                "ucid": 6887
+            },
+            {
+                "name": "Mining UCO rewards",
+                "symbol": "MUCO",
+                "address": "000088CCDFB1DAC2B12C0BBD41A7AC0308693AF9DA0DE045FD2A11E3CE0BA9A49CA2",
                 "icon": "Archethic.svg",
                 "ucid": 6887
             },
