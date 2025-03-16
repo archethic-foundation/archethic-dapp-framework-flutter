@@ -1,3 +1,8 @@
+# 3.4.0
+- ⬆️ Upgrade dependencies (archethic_lib_dart: 7.7.0)
+- ⬆️ Upgrade dependencies (archethic_wallet_client: 2.2.0)
+- Upgrade flutter version to 3.27 
+
 # 3.3.2
 - ⬆️ Upgrade dependencies (archethic_lib_dart: 7.6.0)
 
