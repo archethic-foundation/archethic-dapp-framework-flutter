@@ -1,3 +1,6 @@
+# 3.4.1
+- ⬆️ Upgrade dependencies (archethic_wallet_client: 2.2.1)
+
 # 3.4.0
 - ⬆️ Upgrade dependencies (archethic_lib_dart: 7.7.0)
 - ⬆️ Upgrade dependencies (archethic_wallet_client: 2.2.0)

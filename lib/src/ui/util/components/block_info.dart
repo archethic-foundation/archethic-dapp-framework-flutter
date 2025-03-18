@@ -60,9 +60,9 @@ class BlockInfo extends ConsumerWidget {
                               ? LinearGradient(
                                   colors: [
                                     AppThemeBase.sheetBackgroundTertiary
-                                        .withOpacity(0.3),
+                                        .withValues(alpha: 0.3),
                                     AppThemeBase.sheetBackgroundTertiary
-                                        .withOpacity(0.3),
+                                        .withValues(alpha: 0.3),
                                   ],
                                   stops: const [0, 1],
                                 )
@@ -72,9 +72,9 @@ class BlockInfo extends ConsumerWidget {
                                       ? LinearGradient(
                                           colors: [
                                             ArchethicThemeBase.systemPositive300
-                                                .withOpacity(0.3),
+                                                .withValues(alpha: 0.3),
                                             ArchethicThemeBase.systemPositive600
-                                                .withOpacity(0.3),
+                                                .withValues(alpha: 0.3),
                                           ],
                                           stops: const [0, 1],
                                         )
@@ -82,10 +82,10 @@ class BlockInfo extends ConsumerWidget {
                                           colors: [
                                             ArchethicThemeBase
                                                 .paleTransparentBackground
-                                                .withOpacity(0.3),
+                                                .withValues(alpha: 0.3),
                                             ArchethicThemeBase
                                                 .paleTransparentBackground
-                                                .withOpacity(0.3),
+                                                .withValues(alpha: 0.3),
                                           ],
                                           stops: const [0, 1],
                                         ),
@@ -104,9 +104,9 @@ class BlockInfo extends ConsumerWidget {
                                       ? LinearGradient(
                                           colors: [
                                             AppThemeBase.sheetBorderTertiary
-                                                .withOpacity(0.4),
+                                                .withValues(alpha: 0.4),
                                             AppThemeBase.sheetBackgroundTertiary
-                                                .withOpacity(0.4),
+                                                .withValues(alpha: 0.4),
                                           ],
                                           stops: const [0, 1],
                                         )
@@ -115,10 +115,10 @@ class BlockInfo extends ConsumerWidget {
                                               colors: [
                                                 AppThemeBase
                                                     .sheetBorderSecondary
-                                                    .withOpacity(0.1),
+                                                    .withValues(alpha: 0.1),
                                                 AppThemeBase
                                                     .sheetBorderSecondary
-                                                    .withOpacity(0.4),
+                                                    .withValues(alpha: 0.4),
                                               ],
                                               stops: const [0, 1],
                                             )
@@ -128,10 +128,10 @@ class BlockInfo extends ConsumerWidget {
                                                   colors: [
                                                     ArchethicThemeBase
                                                         .systemPositive100
-                                                        .withOpacity(0.2),
+                                                        .withValues(alpha: 0.2),
                                                     ArchethicThemeBase
                                                         .systemPositive300
-                                                        .withOpacity(0.2),
+                                                        .withValues(alpha: 0.2),
                                                   ],
                                                   stops: const [0, 1],
                                                 )
@@ -139,10 +139,10 @@ class BlockInfo extends ConsumerWidget {
                                                   colors: [
                                                     ArchethicThemeBase
                                                         .paleTransparentBorder
-                                                        .withOpacity(0.2),
+                                                        .withValues(alpha: 0.2),
                                                     ArchethicThemeBase
                                                         .paleTransparentBorder
-                                                        .withOpacity(0.2),
+                                                        .withValues(alpha: 0.2),
                                                   ],
                                                   stops: const [0, 1],
                                                 ),

@@ -89,10 +89,10 @@ class AppButtonState extends State<AppButton> {
                 style: TextStyle(
                   color: widget.textColor == null
                       ? widget.disabled
-                          ? ArchethicThemeBase.neutral0.withOpacity(0.3)
+                          ? ArchethicThemeBase.neutral0.withValues(alpha: 0.3)
                           : ArchethicThemeBase.neutral0
                       : widget.disabled
-                          ? widget.textColor!.withOpacity(0.3)
+                          ? widget.textColor!.withValues(alpha: 0.3)
                           : widget.textColor,
                   fontSize: Responsive.fontSizeFromValue(
                     context,

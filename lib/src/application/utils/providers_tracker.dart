@@ -184,7 +184,7 @@ abstract class ProviderMatcher {
   ///
   /// `ProvidersTracker().aliveProviders('oracle')` would match the following providers :
   ///
-  ///  - AutoDisposeProvider (oracleServiceProvider:AutoDisposeProvider<OracleService>#2d1c8)
+  ///  - AutoDisposeProvider [(oracleServiceProvider:AutoDisposeProvider<OracleService>#2d1c8)]
   ///  - AutoDisposeAsyncNotifierProviderImpl (_archethicOracleUCONotifierProvider:AutoDisposeAsyncNotifierProviderImpl<_ArchethicOracleUCONotifier, ArchethicOracleUCO>#4aa30)
   factory ProviderMatcher.name(String name) => NameProviderMatcher(name);
 

@@ -40,10 +40,10 @@ class InfoBanner extends StatelessWidget {
         ),
         border: Border.all(
           color: infoBannerType == InfoBannerType.error
-              ? Theme.of(context).colorScheme.error.withOpacity(0.6)
+              ? Theme.of(context).colorScheme.error.withValues(alpha: 0.6)
               : infoBannerType == InfoBannerType.request
-                  ? Theme.of(context).colorScheme.primary.withOpacity(0.6)
-                  : AppThemeBase.statusOK.withOpacity(0.6),
+                  ? Theme.of(context).colorScheme.primary.withValues(alpha: 0.6)
+                  : AppThemeBase.statusOK.withValues(alpha: 0.6),
           width: 0.5,
         ),
         gradient: AppThemeBase.gradientInfoBannerBackground,
@@ -89,7 +89,7 @@ class InfoBanner extends StatelessWidget {
               width: 10,
               height: 10,
               child: CircularProgressIndicator(
-                color: Colors.white.withOpacity(0.6),
+                color: Colors.white.withValues(alpha: 0.6),
                 strokeWidth: 1,
               ),
             ),

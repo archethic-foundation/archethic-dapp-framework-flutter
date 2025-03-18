@@ -20,8 +20,8 @@ class AppThemeBase {
 
   static Gradient gradient = LinearGradient(
     colors: [
-      ArchethicThemeBase.neutral0.withOpacity(0.2),
-      ArchethicThemeBase.neutral0.withOpacity(0),
+      ArchethicThemeBase.neutral0.withValues(alpha: 0.2),
+      ArchethicThemeBase.neutral0.withValues(alpha: 0),
     ],
     stops: const [0, 1],
   );
@@ -55,8 +55,8 @@ class AppThemeBase {
 
   static Gradient gradientLine = LinearGradient(
     colors: [
-      ArchethicThemeBase.purple500.withOpacity(1),
-      ArchethicThemeBase.purple500.withOpacity(0.3),
+      ArchethicThemeBase.purple500.withValues(alpha: 1),
+      ArchethicThemeBase.purple500.withValues(alpha: 0.3),
     ],
     stops: const [0, 1],
     begin: Alignment.topLeft,
@@ -65,16 +65,16 @@ class AppThemeBase {
 
   static Gradient gradientInputFormBackground = LinearGradient(
     colors: [
-      ArchethicThemeBase.neutral900.withOpacity(1),
-      ArchethicThemeBase.neutral900.withOpacity(0.3),
+      ArchethicThemeBase.neutral900.withValues(alpha: 1),
+      ArchethicThemeBase.neutral900.withValues(alpha: 0.3),
     ],
     stops: const [0, 1],
   );
 
   static Gradient gradientInfoBannerBackground = LinearGradient(
     colors: [
-      ArchethicThemeBase.neutral900.withOpacity(1),
-      ArchethicThemeBase.neutral900.withOpacity(0.3),
+      ArchethicThemeBase.neutral900.withValues(alpha: 1),
+      ArchethicThemeBase.neutral900.withValues(alpha: 0.3),
     ],
     stops: const [0, 1],
   );

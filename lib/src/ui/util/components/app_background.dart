@@ -23,7 +23,7 @@ class AppBackground extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               colorFilter: ColorFilter.mode(
-                ArchethicThemeBase.purple500.withOpacity(1),
+                ArchethicThemeBase.purple500.withValues(alpha: 1),
                 BlendMode.modulate,
               ),
               image: AssetImage(

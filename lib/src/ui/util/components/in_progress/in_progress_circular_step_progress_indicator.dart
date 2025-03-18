@@ -45,7 +45,7 @@ class InProgressCircularStepProgressIndicator extends StatelessWidget {
                       ? AppThemeBase.gradientCircularStepProgressIndicator
                       : AppThemeBase.gradientCircularStepProgressIndicatorError,
               selectedColor: Colors.white,
-              unselectedColor: Colors.white.withOpacity(0.2),
+              unselectedColor: Colors.white.withValues(alpha: 0.2),
               removeRoundedCapExtraAngle: true,
             ),
             Stack(
@@ -56,7 +56,7 @@ class InProgressCircularStepProgressIndicator extends StatelessWidget {
                     width: 25,
                     height: 25,
                     child: CircularProgressIndicator(
-                      color: Colors.white.withOpacity(0.2),
+                      color: Colors.white.withValues(alpha: 0.2),
                       strokeWidth: 1,
                     ),
                   ),
