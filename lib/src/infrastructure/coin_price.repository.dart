@@ -1,5 +1,3 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
-
 import 'dart:convert';
 import 'package:archethic_dapp_framework_flutter/src/domain/models/crypto_price.dart';
 import 'package:archethic_dapp_framework_flutter/src/domain/models/ucid.dart';

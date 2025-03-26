@@ -1,4 +1,3 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
 import 'package:archethic_dapp_framework_flutter/src/application/oracle/provider.dart';
 import 'package:archethic_dapp_framework_flutter/src/ui/util/components/icon_button_animated.dart';
 import 'package:archethic_dapp_framework_flutter/src/ui/util/generic/formatters.dart';

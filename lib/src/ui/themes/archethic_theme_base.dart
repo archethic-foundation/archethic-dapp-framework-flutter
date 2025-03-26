@@ -1,4 +1,3 @@
-/// SPDX-License-Identifier: AGPL-3.0-or-later
 part of 'app_theme_base.dart';
 
 class ArchethicThemeBase {

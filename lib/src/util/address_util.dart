@@ -1,4 +1,3 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
 class AddressUtil {
   static String reduceAddress(String input) {
     if (input.length <= 14) {

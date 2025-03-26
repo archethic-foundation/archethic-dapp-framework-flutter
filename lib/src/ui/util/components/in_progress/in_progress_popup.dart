@@ -1,4 +1,3 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
 import 'dart:ui';
 import 'package:archethic_dapp_framework_flutter/src/ui/themes/app_theme_base.dart';
 import 'package:archethic_dapp_framework_flutter/src/ui/util/components/buttons/popup_close_button.dart';
