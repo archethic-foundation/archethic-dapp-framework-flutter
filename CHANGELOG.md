@@ -1,3 +1,6 @@
+# 3.4.2
+- License MIT
+
 # 3.4.1
 - ⬆️ Upgrade dependencies (archethic_wallet_client: 2.2.1)
 
