@@ -1,3 +1,6 @@
+# 3.4.3
+- Upgrade dependencies
+
 # 3.4.2
 - License MIT
 

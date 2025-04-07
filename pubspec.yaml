@@ -2,7 +2,7 @@ name: archethic_dapp_framework_flutter
 description: An internal framework for archethic flutter development
 homepage: https://github.com/archethic-foundation/archethic-dapp-framework-flutter
 
-version: 3.4.2
+version: 3.4.3
 
 environment:
   sdk: ">=3.6.0 <4.0.0"
@@ -10,7 +10,7 @@ environment:
 dependencies:
   # Archethic dart library for Flutter based on Official Archethic Javascript library for Node and Browser
 
-  archethic_lib_dart: ^7.7.0
+  archethic_lib_dart: ^7.7.2
   #archethic_lib_dart:
   #  git:
   #    url: https://github.com/archethic-foundation/libdart.git
@@ -19,7 +19,7 @@ dependencies:
   #  path: ../libdart-2
 
   # A client dart library to interact with Archethic Wallet RPC API.
-  archethic_wallet_client: ^2.2.1
+  archethic_wallet_client: ^2.2.3
   # archethic_wallet_client:
   #   git: # TODO Waiting for https://github.com/zino-hofmann/graphql-flutter/issues/1460 resolution to use stable versions.
   #     url: https://github.com/archethic-foundation/archethic-wallet-client-dart.git
@@ -28,7 +28,7 @@ dependencies:
   #  path: ../archethic-wallet-client-dart
 
   # Compression
-  archive: ^3.4.10
+  archive: ^4.0.2
 
   # Flutter widget that automatically resizes text to fit perfectly within its bounds
   auto_size_text: ^3.0.0
