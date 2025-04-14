@@ -1,3 +1,6 @@
+# 3.5.0
+- WASM Activation in mainnet network
+
 # 3.4.4
 - Upgrade dependencies
 
